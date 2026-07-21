@@ -3,64 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOZA IT SOLUTIONS | Enterprise Managed IT Services & Sales Dubai</title>
+    <title>SOZA IT SOLUTIONS | World-Class Managed IT Services & Technology Enterprise Dubai</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 Pro CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
                     colors: {
-                        brand: {
-                            navy: '#0A1128',
-                            slate: '#1C2541',
-                            blue: '#1D4ED8',
-                            lightBlue: '#3B82F6',
-                            accent: '#F59E0B'
+                        corp: {
+                            midnight: '#050B14',
+                            dark: '#0A1220',
+                            navy: '#0F1A2E',
+                            slate: '#1E293B',
+                            blue: '#2563EB',
+                            sky: '#0284C7',
+                            accent: '#38BDF8',
+                            gold: '#F59E0B'
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        .glass-card {
+            background: rgba(15, 26, 46, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(5, 11, 20, 0.95) 70%);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
+<body class="bg-corp-midnight text-slate-100 font-sans selection:bg-corp-blue selection:text-white">
 
-    <!-- Top Contact Bar -->
-    <div class="bg-brand-navy text-slate-300 text-xs py-2.5 px-6 border-b border-slate-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex flex-wrap items-center gap-6">
-                <span><i class="fas fa-location-dot text-brand-lightBlue mr-1"></i> Dubai, United Arab Emirates</span>
-                <span><i class="fas fa-clock text-brand-lightBlue mr-1"></i> Mon - Sat: 8:30 AM - 6:30 PM (24/7 SLA Support)</span>
+    <!-- Top Corporate Announcement Bar -->
+    <div class="bg-corp-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-slate-300">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-location-dot text-corp-accent mr-2"></i> Dubai, United Arab Emirates</span>
+                <span><i class="fas fa-clock text-corp-accent mr-2"></i> 24/7 Enterprise SLA Support Hotline</span>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="tel:+971508760143" class="hover:text-brand-lightBlue transition font-bold text-white"><i class="fas fa-phone mr-1 text-emerald-400"></i> +971 50 876 0143</a>
-                <a href="mailto:sales@sozait.com" class="hover:text-brand-lightBlue transition"><i class="fas fa-envelope mr-1"></i> sales@sozait.com</a>
+            <div class="flex items-center space-x-6">
+                <a href="tel:+971508760143" class="hover:text-corp-accent transition font-bold text-white"><i class="fas fa-phone mr-1.5 text-emerald-400"></i> +971 50 876 0143</a>
+                <a href="mailto:sales@sozait.com" class="hover:text-corp-accent transition"><i class="fas fa-envelope mr-1.5"></i> sales@sozait.com</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
-    <nav class="bg-white/95 backdrop-blur-md shadow-md sticky top-[37px] z-40 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black tracking-tight text-brand-navy flex items-center gap-2">
-                <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md">S</div>
-                <span>SOZA <span class="text-brand-blue">IT SOLUTIONS</span></span>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-corp-midnight/90 backdrop-blur-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-tight text-white flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-corp-blue to-corp-accent rounded-xl flex items-center justify-center font-extrabold text-white shadow-lg shadow-corp-blue/30">
+                    S
+                </div>
+                <span>SOZA <span class="text-corp-accent font-light">IT SOLUTIONS</span></span>
             </a>
-            
-            <div class="hidden xl:flex space-x-7 font-medium text-slate-700 text-sm">
-                <a href="#about" class="hover:text-brand-blue transition">About Us</a>
-                <a href="#services" class="hover:text-brand-blue transition">All IT Services</a>
-                <a href="#amc" class="hover:text-brand-blue transition">IT AMC Support</a>
-                <a href="#sales" class="hover:text-brand-blue transition">Hardware & Licenses</a>
-                <a href="#faq" class="hover:text-brand-blue transition">FAQs</a>
+
+            <div class="hidden xl:flex space-x-8 text-sm font-semibold text-slate-300">
+                <a href="#about" class="hover:text-corp-accent transition">About Us</a>
+                <a href="#services" class="hover:text-corp-accent transition">Services</a>
+                <a href="#sales" class="hover:text-corp-accent transition">Hardware Sales</a>
+                <a href="#amc" class="hover:text-corp-accent transition">AMC Support</a>
+                <a href="#faq" class="hover:text-corp-accent transition">FAQs</a>
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/971508760143" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold text-xs md:text-sm flex items-center gap-2 transition shadow-md">
-                    <i class="fab fa-whatsapp text-base"></i> WhatsApp
+                <a href="https://wa.me/971508760143" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-lg shadow-emerald-600/20">
+                    <i class="fab fa-whatsapp text-lg"></i> WhatsApp
                 </a>
-                <a href="#contact" class="hidden sm:inline-block bg-brand-blue hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold text-xs md:text-sm transition shadow-lg shadow-blue-500/20">
+                <a href="#contact" class="hidden sm:inline-block bg-corp-blue hover:bg-blue-600 text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-corp-blue/30">
                     Request IT Audit
                 </a>
             </div>
@@ -68,215 +93,210 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-brand-navy text-white py-20 lg:py-28 px-6 overflow-hidden">
-        <div class="absolute inset-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80');"></div>
+    <section class="relative hero-gradient py-24 lg:py-32 px-6 overflow-hidden border-b border-slate-800">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
             <div class="lg:col-span-7">
-                <span class="bg-brand-blue/30 text-brand-lightBlue border border-brand-blue/50 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">Top Managed IT Partner in Dubai & UAE</span>
-                <h1 class="text-3xl md:text-5xl font-black leading-tight mt-4 mb-6">
-                    Complete Corporate IT Services, AMC & Enterprise Infrastructure
+                <span class="inline-flex items-center gap-2 bg-corp-blue/20 border border-corp-blue/40 text-corp-accent text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Premier IT Service Provider in UAE
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    Next-Generation IT Infrastructure & Enterprise Managed Services
                 </h1>
-                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
-                    SOZA IT SOLUTIONS provides end-to-end technology solutions—including Managed IT Support, Server Room Deployments, IP Telephony, Cybersecurity, Structured Cabling, Cloud Solutions, and Hardware Procurement across the UAE.
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal">
+                    Empowering corporations across Dubai with high-availability Managed IT Support, Data Center setups, Cybersecurity Firewalls, Cloud Migrations, and Certified Hardware distribution.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="bg-brand-blue hover:bg-blue-700 text-white font-bold px-7 py-3.5 rounded-lg transition shadow-lg">Get Immediate Proposal</a>
-                    <a href="tel:+971508760143" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold px-7 py-3.5 rounded-lg transition"><i class="fas fa-phone mr-2 text-emerald-400"></i> Call 050 876 0143</a>
+                    <a href="#contact" class="bg-gradient-to-r from-corp-blue to-corp-sky hover:opacity-90 text-white font-extrabold px-8 py-4 rounded-xl transition shadow-xl shadow-corp-blue/25 text-sm uppercase tracking-wider">Get Free Proposal</a>
+                    <a href="tel:+971508760143" class="bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold px-8 py-4 rounded-xl transition text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fas fa-phone text-emerald-400"></i> Call 050 876 0143
+                    </a>
                 </div>
             </div>
 
-            <!-- Quick Inquiry Card -->
-            <div id="contact" class="lg:col-span-5 bg-white text-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-100">
-                <h3 class="text-2xl font-extrabold text-brand-navy">Get Free Consultation</h3>
-                <p class="text-xs text-slate-500 mb-6">Connect with a senior IT engineer in Dubai within 15 minutes.</p>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Full Name *" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-brand-blue" required>
-                    <input type="text" placeholder="Company Name *" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-brand-blue" required>
-                    <input type="tel" placeholder="Phone Number (e.g. 050 876 0143) *" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-brand-blue" value="050 876 0143" required>
-                    <select class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm text-slate-700 focus:outline-none focus:border-brand-blue">
-                        <option>Select IT Service Required</option>
-                        <option>Annual Maintenance Contract (IT AMC)</option>
-                        <option>Server Room Setup & Cleaning</option>
-                        <option>Structured Cabling & Office Relocation</option>
-                        <option>Network Security & Firewall Setup</option>
-                        <option>IP Telephony & PABX Phone System</option>
-                        <option>Cloud / Microsoft 365 Migration</option>
-                        <option>CCTV & Access Control Setup</option>
-                        <option>IT Hardware & License Supply</option>
-                    </select>
-                    <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white font-bold py-3.5 rounded-lg transition shadow-md">Request Quote</button>
-                </form>
+            <!-- Hero Lead Form -->
+            <div id="contact" class="lg:col-span-5">
+                <div class="glass-card p-8 rounded-3xl shadow-2xl border border-slate-700/60">
+                    <h3 class="text-2xl font-black text-white mb-2">Request Enterprise Consultation</h3>
+                    <p class="text-xs text-slate-400 mb-6">Get connected directly to a certified Dubai IT Solutions Architect within 15 minutes.</p>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Full Name *" class="w-full bg-corp-dark/80 border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-corp-accent transition" required>
+                        <input type="text" placeholder="Company Name *" class="w-full bg-corp-dark/80 border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-corp-accent transition" required>
+                        <input type="tel" placeholder="Phone Number *" class="w-full bg-corp-dark/80 border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-corp-accent transition" value="050 876 0143" required>
+                        <select class="w-full bg-corp-dark/80 border border-slate-700 rounded-xl p-3.5 text-sm text-slate-300 focus:outline-none focus:border-corp-accent transition">
+                            <option>Select Required IT Solution</option>
+                            <option>Annual Maintenance Contract (IT AMC)</option>
+                            <option>Server Room Setup & Data Center Cleaning</option>
+                            <option>Structured Cabling & Office Relocation</option>
+                            <option>Network Security & Firewall Infrastructure</option>
+                            <option>IP PBX Telephony Systems</option>
+                            <option>Cloud / Microsoft 365 Migration</option>
+                            <option>CCTV & Biometric Access Control Setup</option>
+                            <option>Enterprise Hardware & Software Sales</option>
+                        </select>
+                        <button type="submit" class="w-full bg-corp-blue hover:bg-blue-600 text-white font-black py-4 rounded-xl uppercase tracking-wider text-xs transition shadow-lg shadow-corp-blue/30">Submit Inquiry</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Advantages Banner -->
-    <section class="bg-white py-8 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div class="p-4">
-                <p class="text-3xl font-black text-brand-blue">24/7 / 365</p>
-                <p class="text-xs font-semibold text-slate-600 uppercase mt-1">Helpdesk & SLA Support</p>
-            </div>
-            <div class="p-4">
-                <p class="text-3xl font-black text-brand-blue">&lt; 1 Hour</p>
-                <p class="text-xs font-semibold text-slate-600 uppercase mt-1">Emergency On-Site Response</p>
-            </div>
-            <div class="p-4">
-                <p class="text-3xl font-black text-brand-blue">100%</p>
-                <p class="text-xs font-semibold text-slate-600 uppercase mt-1">SIRA & TRA Compliant</p>
-            </div>
-            <div class="p-4">
-                <p class="text-3xl font-black text-brand-blue">Certified</p>
-                <p class="text-xs font-semibold text-slate-600 uppercase mt-1">Microsoft, Cisco, Fortinet Partner</p>
+    <!-- Global Technology Partners -->
+    <section class="py-8 bg-corp-dark border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs uppercase font-extrabold text-slate-500 tracking-widest mb-6">Authorized Partners & System Integrators</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-300 text-lg font-bold text-slate-300">
+                <span><i class="fab fa-microsoft text-xl mr-2 text-sky-400"></i> MICROSOFT</span>
+                <span><i class="fas fa-network-wired text-xl mr-2 text-cyan-400"></i> CISCO</span>
+                <span><i class="fas fa-server text-xl mr-2 text-blue-500"></i> DELL TECHNOLOGIES</span>
+                <span><i class="fas fa-shield-halved text-xl mr-2 text-red-500"></i> FORTINET</span>
+                <span><i class="fas fa-laptop text-xl mr-2 text-emerald-400"></i> HP ENTERPRISE</span>
             </div>
         </div>
     </section>
 
-    <!-- About SOZA IT SOLUTIONS -->
-    <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <!-- About Us Section -->
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="relative">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="SOZA IT Team" class="rounded-2xl shadow-xl">
-                <div class="absolute -bottom-6 -right-6 bg-brand-navy text-white p-6 rounded-xl hidden md:block shadow-lg border border-slate-700">
-                    <p class="text-2xl font-bold text-brand-accent">Trusted in UAE</p>
-                    <p class="text-xs text-slate-300">Complete Enterprise Technology Coverage</p>
+                <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80" alt="Server Room" class="w-full h-[450px] object-cover">
+                </div>
+                <div class="absolute -bottom-8 -right-6 glass-card p-6 rounded-2xl hidden md:block border border-slate-700/80 shadow-2xl max-w-xs">
+                    <p class="text-3xl font-black text-corp-accent">100% SLA</p>
+                    <p class="text-xs text-slate-300 mt-1">SIRA & TRA Compliant IT Infrastructure Solutions in Dubai</p>
                 </div>
             </div>
             <div>
-                <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">About SOZA IT SOLUTIONS</span>
-                <h2 class="text-3xl font-extrabold text-slate-900 mt-2 mb-6">Your Strategic Technology Partner in Dubai</h2>
-                <p class="text-slate-600 mb-4 leading-relaxed text-sm md:text-base">
-                    **SOZA IT SOLUTIONS** is a full-spectrum Managed IT Services Provider and IT Sales company headquartered in Dubai, UAE. We specialize in keeping business infrastructures reliable, highly secure, and continuously operational.
+                <span class="text-corp-accent font-extrabold text-xs uppercase tracking-widest">About SOZA IT SOLUTIONS</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6 leading-tight">Setting the Standard for Corporate Technology Excellence</h2>
+                <p class="text-slate-300 mb-4 leading-relaxed font-normal">
+                    **SOZA IT SOLUTIONS** is a trusted enterprise Managed IT Services Provider and Hardware Systems Integrator headquartered in Dubai, UAE. We specialize in engineering zero-downtime IT infrastructures for multinational corporations, SMEs, and government entities.
                 </p>
-                <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
-                    Modeled after top UAE technology companies, we handle everything from day-to-day desktop troubleshooting to server setups, high-grade structured fiber optic cabling, PABX telecommunications, and SIRA-approved security.
+                <p class="text-slate-300 mb-8 leading-relaxed font-normal">
+                    From 24/7 helpdesk management and custom structured cabling to advanced cybersecurity firewalls, server room setups, and anti-static cleaning, our team delivers seamless technology integration.
                 </p>
-                <div class="grid sm:grid-cols-2 gap-3 text-sm">
-                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> <span>24/7 SLA IT Maintenance</span></div>
-                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> <span>Data Center & Room Cleaning</span></div>
-                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> <span>Office IT Setup & Relocation</span></div>
-                    <div class="flex items-center gap-2"><i class="fas fa-check-circle text-brand-blue"></i> <span>Complete IT Health Audits</span></div>
+
+                <div class="grid sm:grid-cols-2 gap-4 text-sm font-semibold text-slate-200">
+                    <div class="flex items-center gap-3"><i class="fas fa-circle-check text-corp-accent"></i> 24/7 Engineer SLA Support</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-circle-check text-corp-accent"></i> Data Center Infrastructure</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-circle-check text-corp-accent"></i> Office IT Relocation</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-circle-check text-corp-accent"></i> Annual IT AMC Contracts</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Complete UAE IT Services Spectrum -->
-    <section id="services" class="bg-slate-100 py-20 px-6">
+    <!-- Services Grid Section -->
+    <section id="services" class="py-24 px-6 bg-corp-dark border-t border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Full Service Portfolio</span>
-                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">All Managed IT Services Under One Roof</h2>
-                <p class="text-slate-600 mt-2 text-sm">Everything your business needs for flawless technology operations in Dubai.</p>
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-corp-accent font-extrabold text-xs uppercase tracking-widest">End-To-End Portfolio</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Enterprise IT Services Spectrum</h2>
+                <p class="text-slate-400 mt-3 text-sm">Comprehensive IT management designed specifically for the high demands of the UAE market.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Service 1: Managed Support -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-headset"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Managed IT Support & Helpdesk</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">24/7 remote and on-site user support, desktop troubleshooting, printer setup, OS installation, and active system updates.</p>
+                <!-- Service Card 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-corp-blue/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Managed IT Support" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-corp-navy to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Managed Support & Helpdesk</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">24/7 desktop support, server monitoring, user onboarding, and rapid multi-channel technical support.</p>
+                        </div>
                     </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('Managed IT Support', 'Our Helpdesk services ensure immediate remote or on-site support for staff members. We handle software updates, network troubleshooting, workstation maintenance, and server monitoring under strict SLAs.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
-                    </div>
-                </div>
-
-                <!-- Service 2: IT AMC -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-file-contract"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">IT Annual Maintenance Contracts</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">SLA-backed IT AMC contracts covering servers, desktops, routers, switches, and backup storage across Dubai and the UAE.</p>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('IT AMC Support', 'Our IT Annual Maintenance Contracts provide fixed monthly rates for complete technical coverage. Includes regular preventive maintenance, emergency engineer visits, and continuous health reports.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Managed IT Support', 'Our Managed IT Support provides 24/7/365 helpdesk assistance. We actively resolve desktop errors, server performance bottlenecks, software patches, and system security vulnerabilities under guaranteed SLAs.')" class="text-corp-accent font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right text-xs"></i></button>
                     </div>
                 </div>
 
-                <!-- Service 3: Server Room Setup & Management -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-server"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Server Room Setup & Cleaning</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">End-to-end server rack installation, domain controller setup, RAID configurations, and anti-static server room cleaning services.</p>
+                <!-- Service Card 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-corp-blue/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Server Room Setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-corp-navy to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Server Room & Data Center Setup</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Server rack cabling, terminal setups, domain deployments, UPS backup redundancy, and anti-static server room cleaning.</p>
+                        </div>
                     </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('Server Setup & Cleaning', 'We design and install turn-key server room environments. Includes server rack management, UPS power redundancy setups, terminal servers, and professional data center cleaning services.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
-                    </div>
-                </div>
-
-                <!-- Service 4: Structured Cabling -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-network-wired"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Structured Cabling & Office Setup</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Cat6/Cat6A and Fiber Optic structured cabling, patch panel organizing, wireless AP placement, and complete office relocation IT setups.</p>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('Structured Cabling', 'From initial floor design to cable testing, labeling, and rack dress-up, we provide seamless cabling solutions for commercial offices, warehouses, and industrial facilities in Dubai.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Server Room & Data Center Services', 'We design, engineer, and clean enterprise server rooms. Our certified team installs server racks, domain controllers, RAID arrays, precision cooling, and specialized anti-static cleaning to prevent equipment overheating.')" class="text-corp-accent font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right text-xs"></i></button>
                     </div>
                 </div>
 
-                <!-- Service 5: Telephony & PABX -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-phone-office"></i><i class="fas fa-phone-volume"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">IP Telephony & PABX Systems</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Deployment of advanced IP PBX phone systems (3CX, Avaya, Grandstream) with mobile extensions, IVR auto-attendants, and VoIP integration.</p>
+                <!-- Service Card 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-corp-blue/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Structured Cabling" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-corp-navy to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Structured Cabling & Fiber Optics</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Cat6/Cat6A structured cabling, fiber backbone installation, Wi-Fi access point setups, and complete office IT relocation.</p>
+                        </div>
                     </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('IP PBX & Telephony', 'Modernize your office telecommunications with cloud or on-premises IP PBX systems. Enables remote extension calling, call logging, voice recording, and seamless integration with UAE telecom providers.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
-                    </div>
-                </div>
-
-                <!-- Service 6: Network Security & Firewall -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-shield-halved"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Network & Cybersecurity</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Enterprise firewall setup (Fortinet, Sophos, Cisco), SSL VPNs, anti-ransomware, anti-phishing, and end-user cybersecurity training.</p>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('Network Security', 'We build robust defense layers around your network. Services include firewall throughput configuration, intruder detection, VPN remote workforce access, and total email protection.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Structured Cabling & Office Relocation', 'We provide certified Cat6/Cat6A and Fiber Optic installation for offices, commercial towers, and industrial warehouses in Dubai. Includes patch panel dressing, testing, and labeling.')" class="text-corp-accent font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right text-xs"></i></button>
                     </div>
                 </div>
 
-                <!-- Service 7: Cloud & Microsoft 365 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-cloud"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Cloud & Microsoft 365 Migration</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Zero-downtime email migration to Microsoft 365, Azure virtual servers, cloud backup solutions, and SharePoint file systems.</p>
+                <!-- Service Card 4 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-corp-blue/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Network Cybersecurity" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-corp-navy to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Cybersecurity & Next-Gen Firewalls</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Fortinet, Sophos, and Cisco Next-Gen Firewall deployment, VPNs, malware protection, and vulnerability auditing.</p>
+                        </div>
                     </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('Cloud Services', 'Transition your company to scalable cloud infrastructure. We manage licensing, data migration, security protocols, user permissions, and remote access configuration.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
-                    </div>
-                </div>
-
-                <!-- Service 8: CCTV & Access Control -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-video"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">CCTV & Access Control Systems</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">SIRA-approved IP CCTV camera setups, biometric door access control, time & attendance system installations across Dubai.</p>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('CCTV & Access Control', 'Ensure strict security with high-definition surveillance and biometric access control integration. Fully compliant with SIRA rules and regulatory requirements in Dubai.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Cybersecurity Infrastructure', 'Protect your organization from ransomware and phishing attacks. We deploy enterprise firewalls, secure remote-work VPN access, multi-factor authentication (MFA), and real-time endpoint threat protection.')" class="text-corp-accent font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right text-xs"></i></button>
                     </div>
                 </div>
 
-                <!-- Service 9: IT Health Audit -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
-                    <div class="p-6">
-                        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center text-2xl mb-4"><i class="fas fa-clipboard-check"></i></div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Complete IT Health Check & Audit</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Comprehensive evaluation of network security, software licensing compliance, server performance, and data backup vulnerabilities.</p>
+                <!-- Service Card 5 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-corp-blue/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud & Microsoft 365" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-corp-navy to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Cloud & Microsoft 365 Migration</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Microsoft 365 tenant migration, Azure virtual server setups, cloud data backup, and hybrid cloud integration.</p>
+                        </div>
                     </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="openModal('IT Audit Services', 'Our exhaustive IT Health Audit exposes security holes, network bottlenecks, expired licenses, and hardware risks—delivering a roadmap for optimization.')" class="text-brand-blue font-bold text-xs uppercase hover:underline flex items-center gap-1">Learn Details <i class="fas fa-chevron-right text-[10px]"></i></button>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Cloud Solutions', 'Modernize your business operations with seamless cloud migration. We manage Microsoft 365 email migrations, SharePoint cloud file servers, Azure deployments, and automated cloud backup configurations.')" class="text-corp-accent font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right text-xs"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-corp-blue/60 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV Security" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-corp-navy to-transparent opacity-90"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">CCTV & Biometric Access Control</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">SIRA-compliant CCTV security systems, biometric door access setups, and automated time-attendance tracking.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('CCTV & Security Control', 'We install SIRA-approved IP CCTV surveillance cameras and biometric access control systems for corporate offices and industrial facilities in Dubai.')" class="text-corp-accent font-bold text-xs uppercase tracking-wider flex items-center gap-2 group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right text-xs"></i></button>
                     </div>
                 </div>
 
@@ -284,178 +304,178 @@
         </div>
     </section>
 
-    <!-- IT Hardware & Software Sales -->
-    <section id="sales" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Authorized Sales</span>
-            <h2 class="text-3xl font-extrabold text-slate-900 mt-2">IT Hardware & Software Procurement</h2>
-            <p class="text-slate-600 mt-2 text-sm">Supplying top enterprise hardware brands with local UAE warranty.</p>
+    <!-- IT Hardware & Licensing Procurement -->
+    <section id="sales" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-corp-accent font-extrabold text-xs uppercase tracking-widest">Hardware Distribution</span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Enterprise Hardware Procurement</h2>
+            <p class="text-slate-400 mt-2 text-sm">Official distributor and reseller of global IT hardware with local UAE warranty.</p>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-6 text-center">
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue transition">
-                <i class="fas fa-laptop text-4xl text-brand-blue mb-4"></i>
-                <h4 class="font-bold text-slate-900">Workstations & Laptops</h4>
-                <p class="text-xs text-slate-500 mt-2">HP EliteBook, Dell Latitude, Lenovo ThinkPad, Apple MacBooks</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-6 rounded-2xl text-center border border-slate-800 hover:border-corp-accent transition">
+                <i class="fas fa-laptop-code text-4xl text-corp-accent mb-4"></i>
+                <h4 class="font-bold text-white">Workstations & Laptops</h4>
+                <p class="text-xs text-slate-400 mt-2">HP EliteBook, Dell Latitude, Lenovo ThinkPad, Apple MacBook</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue transition">
-                <i class="fas fa-database text-4xl text-brand-blue mb-4"></i>
-                <h4 class="font-bold text-slate-900">Servers & NAS Storage</h4>
-                <p class="text-xs text-slate-500 mt-2">Dell PowerEdge, HPE ProLiant, Synology NAS, QNAP</p>
+            <div class="glass-card p-6 rounded-2xl text-center border border-slate-800 hover:border-corp-accent transition">
+                <i class="fas fa-server text-4xl text-corp-accent mb-4"></i>
+                <h4 class="font-bold text-white">Enterprise Servers & NAS</h4>
+                <p class="text-xs text-slate-400 mt-2">Dell PowerEdge, HPE ProLiant, Synology NAS, QNAP Storage</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue transition">
-                <i class="fas fa-wifi text-4xl text-brand-blue mb-4"></i>
-                <h4 class="font-bold text-slate-900">Networking Hardware</h4>
-                <p class="text-xs text-slate-500 mt-2">Cisco Switches, Fortinet Firewalls, Ubiquiti UniFi, Aruba APs</p>
+            <div class="glass-card p-6 rounded-2xl text-center border border-slate-800 hover:border-corp-accent transition">
+                <i class="fas fa-network-wired text-4xl text-corp-accent mb-4"></i>
+                <h4 class="font-bold text-white">Networking Equipment</h4>
+                <p class="text-xs text-slate-400 mt-2">Cisco Switches, Fortinet Firewalls, Ubiquiti UniFi, Aruba APs</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-brand-blue transition">
-                <i class="fas fa-key text-4xl text-brand-blue mb-4"></i>
-                <h4 class="font-bold text-slate-900">Software & Licensing</h4>
-                <p class="text-xs text-slate-500 mt-2">Microsoft 365, Windows Server, Sophos, Kaspersky, TrendMicro</p>
+            <div class="glass-card p-6 rounded-2xl text-center border border-slate-800 hover:border-corp-accent transition">
+                <i class="fas fa-certificate text-4xl text-corp-accent mb-4"></i>
+                <h4 class="font-bold text-white">Software & Licenses</h4>
+                <p class="text-xs text-slate-400 mt-2">Microsoft 365, Windows Server, Sophos, Kaspersky, ESET</p>
             </div>
         </div>
     </section>
 
     <!-- IT AMC Packages -->
-    <section id="amc" class="bg-brand-navy text-white py-20 px-6">
+    <section id="amc" class="py-24 px-6 bg-corp-dark border-t border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-lightBlue font-bold text-xs uppercase tracking-widest">Custom Contracts</span>
-                <h2 class="text-3xl font-extrabold mt-2">Annual Maintenance Contracts (AMC)</h2>
-                <p class="text-slate-300 mt-2 text-sm">Flexible support agreements for businesses of all sizes in Dubai.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-corp-accent font-extrabold text-xs uppercase tracking-widest">SLA Managed Maintenance</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Annual Maintenance Contracts (AMC)</h2>
+                <p class="text-slate-400 mt-2 text-sm">Flexible support agreements guaranteeing zero business downtime in Dubai.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Basic Plan -->
-                <div class="bg-slate-800 border border-slate-700 p-8 rounded-2xl flex flex-col justify-between">
+                <!-- Startup AMC -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Startup AMC</h3>
-                        <p class="text-slate-400 text-xs mb-6">Designed for offices with up to 10 users</p>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Unlimited Remote Helpdesk</li>
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> 1 Monthly Preventive On-site Visit</li>
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Antivirus & Firewall Updates</li>
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Next Business Day Response</li>
+                        <h3 class="text-2xl font-black text-white mb-2">Startup AMC</h3>
+                        <p class="text-slate-400 text-xs mb-6">Designed for companies with up to 10 users</p>
+                        <ul class="space-y-4 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Unlimited Remote Technical Helpdesk</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Monthly Preventive On-Site Audits</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Antivirus & Firewall Management</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Next-Business-Day On-site SLA</li>
                         </ul>
                     </div>
-                    <a href="tel:0508760143" class="w-full bg-slate-700 hover:bg-slate-600 text-center font-bold py-3 rounded-lg transition">Contact for Pricing</a>
+                    <a href="tel:0508760143" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-xl text-center text-xs uppercase tracking-wider transition">Request Contract Quote</a>
                 </div>
 
-                <!-- Business Plan -->
-                <div class="bg-brand-blue border-2 border-brand-lightBlue p-8 rounded-2xl flex flex-col justify-between relative shadow-2xl scale-105">
-                    <span class="absolute -top-3 right-6 bg-brand-accent text-brand-navy font-bold text-xs px-3 py-1 rounded-full uppercase">Most Popular</span>
+                <!-- Corporate AMC -->
+                <div class="glass-card p-8 rounded-3xl border-2 border-corp-blue flex flex-col justify-between relative shadow-2xl scale-105">
+                    <span class="absolute -top-3 right-6 bg-corp-accent text-corp-midnight font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Corporate AMC</h3>
-                        <p class="text-blue-100 text-xs mb-6">Designed for growing companies (10 - 45 users)</p>
-                        <ul class="space-y-3 text-sm text-blue-50 mb-8">
-                            <li><i class="fas fa-check text-white mr-2"></i> 24/7 Unlimited Remote & On-site Support</li>
-                            <li><i class="fas fa-check text-white mr-2"></i> Weekly On-Site System Audit</li>
-                            <li><i class="fas fa-check text-white mr-2"></i> 1 to 2 Hours Emergency Response SLA</li>
-                            <li><i class="fas fa-check text-white mr-2"></i> Server, Network & Backup Management</li>
+                        <h3 class="text-2xl font-black text-white mb-2">Corporate AMC</h3>
+                        <p class="text-slate-400 text-xs mb-6">Designed for medium enterprises (10 - 45 users)</p>
+                        <ul class="space-y-4 text-sm text-slate-200 mb-8">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> 24/7 Unlimited Remote & On-site Support</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Weekly Engineer On-Site Health Checks</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> 1 to 2 Hour Critical Emergency SLA</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Complete Server & Cloud Management</li>
                         </ul>
                     </div>
-                    <a href="tel:0508760143" class="w-full bg-white text-brand-navy hover:bg-slate-100 text-center font-bold py-3 rounded-lg transition">Contact for Pricing</a>
+                    <a href="tel:0508760143" class="w-full bg-corp-blue hover:bg-blue-600 text-white font-bold py-3.5 rounded-xl text-center text-xs uppercase tracking-wider transition shadow-lg shadow-corp-blue/30">Request Contract Quote</a>
                 </div>
 
-                <!-- Enterprise Plan -->
-                <div class="bg-slate-800 border border-slate-700 p-8 rounded-2xl flex flex-col justify-between">
+                <!-- Enterprise AMC -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-800 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold mb-2">Enterprise AMC</h3>
-                        <p class="text-slate-400 text-xs mb-6">For large organizations (45+ users)</p>
-                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Resident On-Site IT Specialist Options</li>
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Dedicated Account Manager</li>
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Quarterly IT Security & Compliance Audit</li>
-                            <li><i class="fas fa-check text-brand-lightBlue mr-2"></i> Priority 15-Minute Response SLA</li>
+                        <h3 class="text-2xl font-black text-white mb-2">Enterprise AMC</h3>
+                        <p class="text-slate-400 text-xs mb-6">Dedicated coverage for large organizations (45+ users)</p>
+                        <ul class="space-y-4 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Resident On-Site Engineer Options</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Dedicated IT Director Account Manager</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> SIRA & Cyber Compliance Audits</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-corp-accent"></i> Priority 15-Minute Emergency Response</li>
                         </ul>
                     </div>
-                    <a href="tel:0508760143" class="w-full bg-slate-700 hover:bg-slate-600 text-center font-bold py-3 rounded-lg transition">Contact for Pricing</a>
+                    <a href="tel:0508760143" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 rounded-xl text-center text-xs uppercase tracking-wider transition">Request Contract Quote</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Accordion -->
-    <section id="faq" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
-            <p class="text-slate-600 text-sm mt-2">Answers to common queries about our IT services in Dubai.</p>
+    <section id="faq" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black text-white">Frequently Asked Questions</h2>
+            <p class="text-slate-400 text-sm mt-2">Everything you need to know about our IT service agreements in Dubai.</p>
         </div>
 
         <div class="space-y-4">
-            <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
-                <button class="w-full p-4 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                    <span>Why choose SOZA IT SOLUTIONS over an in-house IT team?</span>
-                    <i class="fas fa-chevron-down transition-transform text-slate-400"></i>
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                <button class="w-full p-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    <span>Why choose SOZA IT SOLUTIONS over hiring an in-house IT engineer?</span>
+                    <i class="fas fa-chevron-down transition-transform text-corp-accent"></i>
                 </button>
-                <div class="p-4 pt-0 text-slate-600 text-sm hidden border-t border-slate-100 mt-2">
-                    Outsourcing your IT to SOZA IT SOLUTIONS grants you access to an entire team of specialized certified engineers (network security, cloud experts, system admins) for a fraction of the cost of hiring a single full-time employee.
+                <div class="p-5 pt-0 text-slate-400 text-sm hidden border-t border-slate-800/60 mt-2">
+                    Hiring a single in-house engineer limits your company to one person's knowledge and availability. By partnering with SOZA IT SOLUTIONS, you gain 24/7/365 access to a whole team of certified experts across network security, cloud architecture, and server management for a fraction of the cost.
                 </div>
             </div>
 
-            <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
-                <button class="w-full p-4 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                    <span>What is the emergency response SLA time for on-site visits in Dubai?</span>
-                    <i class="fas fa-chevron-down transition-transform text-slate-400"></i>
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                <button class="w-full p-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    <span>How fast does your team respond to critical server or network outages in Dubai?</span>
+                    <i class="fas fa-chevron-down transition-transform text-corp-accent"></i>
                 </button>
-                <div class="p-4 pt-0 text-slate-600 text-sm hidden border-t border-slate-100 mt-2">
-                    Under our Corporate AMC agreements, emergency on-site engineer dispatch across Dubai (Business Bay, JLT, Sheikh Zayed Road, DIP, JAFZA) takes between 1 to 2 hours for critical server or network outages.
+                <div class="p-5 pt-0 text-slate-400 text-sm hidden border-t border-slate-800/60 mt-2">
+                    Under our Corporate AMC contracts, emergency engineer response for server crashes or total network downtime across Dubai (Business Bay, JLT, Sheikh Zayed Road, JAFZA, DIP) is guaranteed within 1 to 2 hours.
                 </div>
             </div>
 
-            <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
-                <button class="w-full p-4 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                    <span>Do you assist with new office IT setup and structured cabling in UAE?</span>
-                    <i class="fas fa-chevron-down transition-transform text-slate-400"></i>
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                <button class="w-full p-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    <span>Do you supply original IT hardware with local UAE warranty?</span>
+                    <i class="fas fa-chevron-down transition-transform text-corp-accent"></i>
                 </button>
-                <div class="p-4 pt-0 text-slate-600 text-sm hidden border-t border-slate-100 mt-2">
-                    Yes. We handle end-to-end office setup—including Cat6/Fiber cabling, server rack setup, WiFi access points, telephone systems, CCTV installation, and internet service provider (ISP) coordination.
+                <div class="p-5 pt-0 text-slate-400 text-sm hidden border-t border-slate-800/60 mt-2">
+                    Yes. All laptops, desktops, enterprise servers, Cisco switches, and Fortinet firewalls supplied by SOZA IT SOLUTIONS are 100% brand-new, genuine hardware with official local manufacturer warranty across the United Arab Emirates.
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-navy text-slate-400 py-12 px-6 border-t border-slate-800">
+    <footer class="bg-corp-dark text-slate-400 py-12 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
             <div>
                 <h3 class="text-white text-xl font-bold mb-4">SOZA IT SOLUTIONS</h3>
-                <p class="text-sm leading-relaxed">Enterprise IT support, Annual Maintenance Contracts, cybersecurity, server management, and hardware distribution in Dubai and the Northern Emirates.</p>
+                <p class="text-sm leading-relaxed">Enterprise IT support, Annual Maintenance Contracts, cybersecurity, server room management, and enterprise IT hardware distribution in Dubai, UAE.</p>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-4">Quick Navigation</h4>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#about" class="hover:text-white">About Us</a></li>
-                    <li><a href="#services" class="hover:text-white">Managed IT Services</a></li>
-                    <li><a href="#amc" class="hover:text-white">IT Support Contracts</a></li>
-                    <li><a href="#sales" class="hover:text-white">Hardware Sales</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#services" class="hover:text-white transition">Managed IT Services</a></li>
+                    <li><a href="#sales" class="hover:text-white transition">Hardware Procurement</a></li>
+                    <li><a href="#amc" class="hover:text-white transition">IT Support AMC</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-4">Dubai Contact Info</h4>
-                <p class="text-sm"><i class="fas fa-location-dot mr-2 text-brand-lightBlue"></i> Dubai, United Arab Emirates</p>
+                <h4 class="text-white font-semibold mb-4">Contact Dubai Office</h4>
+                <p class="text-sm"><i class="fas fa-location-dot mr-2 text-corp-accent"></i> Dubai, United Arab Emirates</p>
                 <p class="text-sm mt-2"><i class="fas fa-phone mr-2 text-emerald-400"></i> 050 876 0143</p>
-                <p class="text-sm mt-2"><i class="fas fa-envelope mr-2 text-brand-lightBlue"></i> sales@sozait.com</p>
+                <p class="text-sm mt-2"><i class="fas fa-envelope mr-2 text-corp-accent"></i> sales@sozait.com</p>
             </div>
         </div>
-        <div class="text-center text-xs mt-12 pt-6 border-t border-slate-800">
+        <div class="text-center text-xs mt-12 pt-6 border-t border-slate-800 text-slate-500">
             &copy; 2026 SOZA IT SOLUTIONS. All rights reserved.
         </div>
     </footer>
 
     <!-- Interactive Learn More Modal -->
-    <div id="modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-2xl">
-            <h3 id="modalTitle" class="text-2xl font-bold text-slate-900 mb-3"></h3>
-            <p id="modalBody" class="text-slate-600 text-sm leading-relaxed mb-6"></p>
-            <div class="flex justify-between items-center border-t border-slate-100 pt-4">
-                <a href="tel:0508760143" class="bg-brand-blue text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase"><i class="fas fa-phone mr-1"></i> Call 050 876 0143</a>
-                <button onclick="closeModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-4 py-2 rounded-lg text-xs font-bold">Close</button>
+    <div id="modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl max-w-lg w-full p-8 relative border border-slate-700 shadow-2xl">
+            <h3 id="modalTitle" class="text-2xl font-black text-white mb-4"></h3>
+            <p id="modalBody" class="text-slate-300 text-sm leading-relaxed mb-6"></p>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-4">
+                <a href="tel:0508760143" class="bg-corp-blue text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase"><i class="fas fa-phone mr-1.5"></i> Call 050 876 0143</a>
+                <button onclick="closeModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-5 py-2.5 rounded-xl text-xs font-bold">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- JavaScript Functions -->
     <script>
         function openModal(title, text) {
             document.getElementById('modalTitle').innerText = title;
