@@ -11,7 +11,7 @@
     <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -23,7 +23,7 @@
                     },
                     colors: {
                         SOZA: {
-                            deep: '#030712',
+                            deep: '#040711',
                             dark: '#0B132B',
                             card: '#111D38',
                             gold: '#D4AF37',
@@ -37,35 +37,73 @@
         }
     </script>
     <style>
+        /* Glassmorphic Cards */
         .glass-card {
-            background: rgba(17, 29, 56, 0.85);
+            background: rgba(17, 29, 56, 0.75);
             backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
+        
+        /* Metallic & Chrome Text Gradients */
         .chrome-text {
-            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 50%, #64748B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-text {
-            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
+            background: linear-gradient(180deg, #FFF1B0 0%, #D4AF37 60%, #9A7B1C 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gold-glow {
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
         }
-        /* Slider Overlay Gradient */
+
+        /* Slide Transition Overlay */
         .slide-bg {
             background-size: cover;
             background-position: center;
             transition: opacity 1s ease-in-out;
         }
+
+        /* Modern Dynamic Scroll Reveal Mechanics (TLS-IT Scroll Movement) */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Horizontal Movement Effect */
+        .reveal-slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-slide-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-slide-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
-<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-gold selection:text-SOZA-deep">
+<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-gold selection:text-SOZA-deep overflow-x-hidden">
 
-    <!-- Top Bar -->
+    <!-- Top Contact Bar -->
     <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6 text-slate-300">
@@ -84,19 +122,44 @@
     </div>
 
     <!-- Main Navigation Header -->
-    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/90 backdrop-blur-2xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex justify-between items-center">
             
-            <!-- SOZA IT Logo -->
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png" alt="SOZA IT" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('renderedLogo').style.display='flex';">
+            <!-- Exact Vector Graphic Recreation of SOZA IT Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="SOZA IT" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('vectorLogo').style.display='block';">
                 
-                <div id="renderedLogo" class="hidden flex-col">
-                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
-                        <span class="chrome-text">SOZA</span>
-                    </div>
-                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
-                    <span class="text-[7px] tracking-[0.25em] text-slate-400 font-semibold uppercase">DESIGNED TO INSPIRE</span>
+                <!-- Pure SVG Render of Original Logo Image -->
+                <div id="vectorLogo" class="hidden">
+                    <svg width="220" height="52" viewBox="0 0 440 104" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-10 w-auto">
+                        <defs>
+                            <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#FFFFFF"/>
+                                <stop offset="50%" stop-color="#C0C0C0"/>
+                                <stop offset="100%" stop-color="#707070"/>
+                            </linearGradient>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#FFE897"/>
+                                <stop offset="60%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#8C6D1F"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- S -->
+                        <path d="M 10,12 L 65,12 C 72,12 75,15 75,22 L 75,25 C 75,32 72,35 65,35 L 25,35 C 18,35 15,38 15,45 L 15,58 C 15,65 18,68 25,68 L 80,68" stroke="url(#silverGrad)" stroke-width="12" stroke-linecap="square" fill="none" />
+                        <path d="M 60,12 L 80,12" stroke="url(#goldGrad)" stroke-width="12" stroke-linecap="square" />
+                        <!-- O -->
+                        <path d="M 100,22 C 100,12 108,12 118,12 L 140,12 C 150,12 158,12 158,22 L 158,58 C 158,68 150,68 140,68 L 118,68 C 108,68 100,68 100,58 Z" stroke="url(#silverGrad)" stroke-width="11" stroke-linejoin="round" fill="none" />
+                        <path d="M 130,12 L 142,12 C 152,12 158,18 158,28 L 158,35" stroke="url(#goldGrad)" stroke-width="11" fill="none" />
+                        <!-- Z -->
+                        <path d="M 180,12 L 235,12 L 180,68 L 235,68" stroke="url(#silverGrad)" stroke-width="12" stroke-linecap="square" stroke-linejoin="round" fill="none" />
+                        <path d="M 180,12 L 235,12" stroke="url(#goldGrad)" stroke-width="12" stroke-linecap="square" />
+                        <!-- A -->
+                        <path d="M 245,68 L 275,12 L 305,68" stroke="url(#silverGrad)" stroke-width="12" stroke-linecap="square" stroke-linejoin="round" fill="none" />
+                        <polygon points="275,40 266,56 284,56" fill="url(#goldGrad)" />
+                        <!-- Subtitles -->
+                        <text x="12" y="86" fill="url(#goldGrad)" font-family="'Orbitron', sans-serif" font-weight="800" font-size="14" letter-spacing="8">IT SOLUTIONS</text>
+                        <text x="48" y="100" fill="#94A3B8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="8" letter-spacing="4">DESIGNED TO INSPIRE</text>
+                    </svg>
                 </div>
             </a>
 
@@ -105,7 +168,7 @@
                 <a href="index.html" class="text-SOZA-gold hover:text-SOZA-goldLight transition">Home</a>
                 <a href="#about" class="hover:text-SOZA-gold transition">About Us</a>
                 
-                <!-- Dropdown -->
+                <!-- Services Dropdown -->
                 <div class="relative group py-2">
                     <a href="#services" class="hover:text-SOZA-gold transition flex items-center gap-1.5 cursor-pointer">
                         Services <i class="fas fa-chevron-down text-[10px] text-SOZA-gold"></i>
@@ -145,29 +208,22 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Slides Carousel -->
+    <!-- Hero Section -->
     <section class="relative py-28 lg:py-36 px-6 border-b border-slate-800 overflow-hidden min-h-[700px] flex items-center">
-        <!-- Background Slider Container -->
+        <!-- Carousel Slides background -->
         <div id="hero-slider" class="absolute inset-0 z-0">
-            <!-- Slide 1 -->
-            <div class="slide-bg absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.6)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
-            <!-- Slide 2 -->
-            <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.6)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
-            <!-- Slide 3 -->
-            <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.6)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=90');"></div>
+            <div class="slide-bg absolute inset-0 opacity-100 bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(4, 7, 17, 0.95), rgba(4, 7, 17, 0.65)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
+            <div class="slide-bg absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(4, 7, 17, 0.95), rgba(4, 7, 17, 0.65)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
+            <div class="slide-bg absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(4, 7, 17, 0.95), rgba(4, 7, 17, 0.65)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=90');"></div>
         </div>
 
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
-            <div class="lg:col-span-7">
+            <div class="lg:col-span-7 reveal-slide-left">
                 <div class="inline-flex items-center gap-2 bg-SOZA-gold/10 border border-SOZA-gold/40 text-SOZA-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
                     <span class="w-2 h-2 rounded-full bg-SOZA-gold animate-ping"></span>
                     DESIGNED TO INSPIRE
                 </div>
                 
-                <!-- Dynamic Content Area -->
                 <div id="slide-text-content">
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 min-h-[120px]">
                         SOZA IT Solutions & <span class="gold-text">Infrastructure</span>
@@ -186,7 +242,6 @@
                     </a>
                 </div>
 
-                <!-- Slider Indicators / Controls -->
                 <div class="flex items-center gap-3">
                     <button onclick="setSlide(0)" class="slide-indicator w-8 h-2 rounded-full bg-SOZA-gold transition-all duration-300" aria-label="Slide 1"></button>
                     <button onclick="setSlide(1)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 2"></button>
@@ -195,13 +250,13 @@
             </div>
 
             <!-- Lead Form -->
-            <div id="contact" class="lg:col-span-5">
+            <div class="lg:col-span-5 reveal-slide-right">
                 <div class="glass-card p-8 rounded-3xl shadow-2xl gold-glow border border-SOZA-gold/30">
                     <h3 class="text-2xl font-black text-white mb-1">Get an Expert Consultation</h3>
                     <p class="text-xs text-slate-400 mb-6">Speak with a SOZA IT Specialist within 15 minutes.</p>
-                    <form class="space-y-4">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Inquiry submitted!');">
                         <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" required>
-                        <input type="email" placeholder="Company Email (sales@SOZA-it.com) *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" required>
                         <input type="tel" placeholder="Phone Number *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" value="+971 54 727 1603" required>
                         <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-slate-300 focus:outline-none focus:border-SOZA-gold transition">
                             <option>Select Required Service</option>
@@ -211,6 +266,8 @@
                             <option>Server Room Setup & Anti-Static Cleaning</option>
                             <option>Structured Fiber & Cat6 Cabling</option>
                             <option>Cybersecurity & Firewall Protection</option>
+                            <option>Cloud Migration & Azure Services</option>
+                            <option>Biometric & Door Access Control</option>
                         </select>
                         <button type="submit" class="w-full bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight text-SOZA-deep font-extrabold py-4 rounded-xl uppercase tracking-wider text-xs transition shadow-lg">
                             Submit Inquiry
@@ -221,19 +278,19 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Interactive Moving Services Grid -->
     <section id="services" class="py-24 px-6 bg-SOZA-dark border-t border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-SOZA-gold font-extrabold text-xs uppercase tracking-widest">Our Technical Solutions</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Services & Specialized Sub-Pages</h2>
-                <p class="text-slate-400 mt-3 text-sm">Explore our specialized IT solutions for enterprise clients in Dubai and across the UAE.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                <span class="text-SOZA-gold font-extrabold text-xs uppercase tracking-widest">Our Enterprise Technical Portfolio</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Services & Core Infrastructure</h2>
+                <p class="text-slate-400 mt-3 text-sm">Empowering enterprise environments with high-availability infrastructure, regulatory compliance, and cloud solutions.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Service 1: CCTV Camera Installation -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <!-- Service 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=90" alt="CCTV Installation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -242,40 +299,40 @@
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-video text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">SIRA Compliant</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">CCTV Camera Installation</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">SIRA-compliant 4K surveillance, NVR configuration, thermal motion detection, and remote mobile viewing.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">CCTV Security & Surveillance</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">SIRA-approved 4K IP security cameras, Video Management Systems (VMS), ANPR license plate recognition, and remote mobile telemetry.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="cctv-installation.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open CCTV Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="cctv-installation.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Service 2: IP Phone & PBX -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <!-- Service 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1200&q=90" alt="IP Phones" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1200&q=90" alt="IP Telephony" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-phone-office text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Unified Voice</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">IP Phone & PBX Solutions</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Grandstream, Yealink, and Avaya IP PBX setups, IVR auto-attendants, SIP trunking, and call recording.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">IP Phone & Telephony Systems</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Grandstream, Yealink, and Avaya Cloud/On-Premise IP PBX, multi-level IVR auto-attendants, SIP trunking, and call recording.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="ip-phone-telephony.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open IP Phone Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="ip-phone-telephony.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Service 3: Server Room Setup -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <!-- Service 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=90" alt="Server Setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -284,19 +341,19 @@
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-server text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Data Center</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Server Room Setup</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Turnkey server racks, Active Directory domains, SAN/NAS storage, precision cooling, and anti-static cleaning.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Server Room Infrastructure</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Turnkey data center installations, rack organization, active domain control, precision cooling, FM200 fire suppression, and anti-static cleaning.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="server-setup.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Server Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="server-setup.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Service 4: Structured Cabling -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <!-- Service 4 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Structured Cabling" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -305,19 +362,19 @@
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-network-wired text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">High-Speed Fiber</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Structured Cat6 & Fiber</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">High-speed Cat6, Cat6A, and single/multi-mode fiber optic cable management, patch panel dressing, and Fluke testing.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Structured Cat6 & Fiber Cabling</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Category 6/6A, 10GbE multi-mode, and single-mode optical fiber installations with Fluke DTX certification testing and cable dressing.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="structured-cabling.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Cabling Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="structured-cabling.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Service 5: Cybersecurity & Firewall -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <!-- Service 5 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=90" alt="Cybersecurity" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -326,56 +383,77 @@
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-shield-halved text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Perimeter Defense</span>
                             </div>
                             <h3 class="text-xl font-bold text-white mb-2">Firewall & Cybersecurity</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Fortinet and Sophos Next-Gen Firewalls, endpoint threat protection, VPN remote access, and network audit controls.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Fortinet, Sophos Next-Gen Firewalls, Endpoint Threat Detection & Response (EDR), site-to-site VPNs, and risk assessment audits.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="cybersecurity.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Security Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="cybersecurity.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Learn Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <!-- Service 6: Park Camera Installation -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+
+                <!-- Service 6 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1200&q=90" alt="Park Surveillance" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90" alt="Access Control" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-tree text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
+                                <i class="fas fa-fingerprint text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Access Control</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Park Camera Installation</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">SIRA-compliant 4K outdoor surveillance, long-range wireless backhaul, thermal motion detection, and remote monitoring.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Biometric & Door Access</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">RFID, facial recognition door controllers, time-attendance systems integration, barriers, and electronic magnetic lock setups.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="park-installation.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Park Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Inquire Access Control <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Service 7: Managed IT AMC Support -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <!-- Service 7 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
                     <div>
                         <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=90" alt="IT AMC Contracts" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=90" alt="Cloud Infrastructure" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-cloud text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Cloud Services</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Cloud & Virtualization</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Microsoft Azure & AWS enterprise migration, hybrid cloud topologies, Office 365 administration, and automated off-site backups.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Inquire Cloud <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal-on-scroll">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=90" alt="Managed AMC" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-2">
                                 <i class="fas fa-handshake text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Enterprise AMC</span>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">SLA Maintenance</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2">IT AMC Maintenance</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">24/7 SLA guaranteed response time, regular preventive maintenance, hardware repairs, and dedicated onsite engineers.</p>
+                            <h3 class="text-xl font-bold text-white mb-2">Annual IT AMC Support</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Guaranteed SLA response times, routine preventive hardware maintenance, unlimited onsite support, and emergency IT troubleshooting.</p>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Inquire AMC <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Inquire AMC Contracts <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -417,8 +495,9 @@
         </div>
     </footer>
 
-    <!-- Slider Logic Script -->
+    <!-- Carousel & Scroll Animation Logic -->
     <script>
+        // Hero Slider Logic
         const slides = [
             {
                 title: 'SOZA IT Solutions & <span class="gold-text">Infrastructure</span>',
@@ -473,6 +552,26 @@
             currentSlide = (currentSlide + 1) % slides.length;
             setSlide(currentSlide);
         }, 6000);
+
+        // Smooth Dynamic Page Revealing (Intersection Observer engine)
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -80px 0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            const animatableElements = document.querySelectorAll('.reveal-on-scroll, .reveal-slide-left, .reveal-slide-right');
+            animatableElements.forEach((el) => observer.observe(el));
+        });
     </script>
 </body>
 </html>
