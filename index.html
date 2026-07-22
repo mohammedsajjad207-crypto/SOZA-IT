@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airo AI | The Autonomous Operating System for Enterprise</title>
-    
-    <!-- Tailwind CSS CDN -->
+    <title>Airo AI | Operational Execution Platform</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+
+    <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -26,15 +27,14 @@
                     },
                     colors: {
                         airo: {
-                            bg: '#05070B',
-                            dark: '#0B0F17',
-                            card: '#111723',
-                            cardBorder: '#1E293B',
-                            accent: '#10B981',
-                            accentGlow: 'rgba(16, 185, 129, 0.15)',
+                            bg: '#04070D',
+                            surface: '#0B0F19',
+                            card: '#111827',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            emerald: '#10B981',
                             cyan: '#06B6D4',
                             purple: '#8B5CF6',
-                            textMuted: '#94A3B8'
+                            muted: '#94A3B8'
                         }
                     }
                 }
@@ -44,370 +44,360 @@
 
     <style>
         body {
-            background-color: #05070B;
+            background-color: #04070D;
             color: #F8FAFC;
         }
 
-        /* Glassmorphic Cards & Glowing Elements */
+        /* Glassmorphic Panes */
         .airo-glass {
-            background: rgba(17, 23, 35, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(11, 15, 25, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .airo-glass-glow {
-            background: rgba(17, 23, 35, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            box-shadow: 0 0 35px rgba(16, 185, 129, 0.1);
+        .airo-card-glow {
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.08);
         }
 
-        .gradient-text-emerald {
-            background: linear-gradient(135deg, #FFFFFF 0%, #10B981 60%, #06B6D4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Subtle Grid Pattern */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
         }
 
-        .gradient-text-purple {
-            background: linear-gradient(135deg, #FFFFFF 0%, #A78BFA 50%, #EC4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Custom Scrollbar for Terminals */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
         }
-
-        .grid-bg {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-            background-size: 32px 32px;
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
         }
-
-        /* Smooth Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
         }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10B981;
         }
     </style>
 </head>
-<body class="font-sans antialiased overflow-x-hidden selection:bg-emerald-500 selection:text-black">
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-emerald-500 selection:text-black">
 
-    <!-- Top Glow Grid Background -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] grid-bg pointer-events-none opacity-40"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <!-- Top Ambient Glow -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] bg-grid-pattern pointer-events-none opacity-30 z-0"></div>
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 airo-glass border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-400 p-[1px] shadow-lg shadow-emerald-500/20">
-                    <div class="w-full h-full bg-airo-bg rounded-[11px] flex items-center justify-center">
-                        <span class="font-mono font-black text-emerald-400 text-lg">A</span>
+    <!-- MAIN WRAPPER -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Header / App Navigation Bar -->
+        <header class="sticky top-0 z-50 airo-glass border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                
+                <!-- Brand & Status -->
+                <div class="flex items-center gap-6">
+                    <a href="#" class="flex items-center gap-2.5 group">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-cyan-400 p-[1px]">
+                            <div class="w-full h-full bg-airo-bg rounded-[7px] flex items-center justify-center">
+                                <span class="font-mono font-bold text-emerald-400 text-sm">A</span>
+                            </div>
+                        </div>
+                        <span class="font-extrabold text-lg text-white tracking-tight">Airo<span class="text-emerald-400">.ai</span></span>
+                    </a>
+
+                    <div class="hidden sm:flex items-center gap-2 text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Graph Connected (1.4M Nodes)</span>
                     </div>
                 </div>
-                <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition">Airo<span class="text-emerald-500">.ai</span></span>
-            </a>
 
-            <!-- Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                <a href="#architecture" class="hover:text-emerald-400 transition">Architecture</a>
-                <a href="#modules" class="hover:text-emerald-400 transition">Modules</a>
-                <a href="#interface" class="hover:text-emerald-400 transition">Interface</a>
-                <a href="#how-it-works" class="hover:text-emerald-400 transition">How it Works</a>
-                <a href="#pricing" class="hover:text-emerald-400 transition">Pricing</a>
-            </nav>
+                <!-- Center App Mode Tabs -->
+                <nav class="hidden lg:flex items-center gap-1 bg-slate-900/80 p-1 rounded-xl border border-white/10 text-xs font-mono">
+                    <button onclick="switchTab('terminal')" id="btn-terminal" class="tab-btn px-4 py-1.5 rounded-lg text-white bg-slate-800 border border-white/10 flex items-center gap-2">
+                        <i class="fas fa-terminal text-emerald-400"></i> Execution
+                    </button>
+                    <button onclick="switchTab('graph')" id="btn-graph" class="tab-btn px-4 py-1.5 rounded-lg text-slate-400 hover:text-white flex items-center gap-2">
+                        <i class="fas fa-network-wired text-cyan-400"></i> Business Graph
+                    </button>
+                    <button onclick="switchTab('modules')" id="btn-modules" class="tab-btn px-4 py-1.5 rounded-lg text-slate-400 hover:text-white flex items-center gap-2">
+                        <i class="fas fa-cubes text-purple-400"></i> Modules
+                    </button>
+                </nav>
 
-            <!-- Actions -->
-            <div class="flex items-center gap-4">
-                <a href="#sign-in" class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white transition">Sign In</a>
-                <a href="#demo" class="bg-gradient-to-r from-emerald-500 to-emerald-400 hover:opacity-90 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/20">
-                    Book a Demo
-                </a>
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <button class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition">
+                        Run Agent
+                    </button>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-24 pb-20 px-6 max-w-7xl mx-auto text-center">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full airo-glass text-xs font-mono text-emerald-400 mb-8 border border-emerald-500/30 shadow-lg">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>The way it should be.</span>
-        </div>
+        <!-- MAIN INTERACTIVE WORKSPACE -->
+        <main class="max-w-7xl mx-auto w-full px-6 py-8 flex-1">
 
-        <!-- Main Headline -->
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-8">
-            One graph, no silos. <br/>
-            <span class="gradient-text-emerald">Run your operations on agents.</span>
-        </h1>
+            <!-- TAB 1: TERMINAL & EXECUTION LAYER -->
+            <div id="tab-terminal" class="tab-content space-y-6">
+                
+                <!-- Hero Bar -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl airo-glass border border-white/10">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 mb-2">
+                            <i class="fas fa-shield-halved"></i> Governance Mode: Active Enforcement
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl font-black text-white">Autonomous Operational Execution</h1>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs font-mono">
+                        <div class="p-3 rounded-xl bg-slate-900 border border-white/10">
+                            <span class="text-slate-400">Active Agents:</span> <span class="text-emerald-400 font-bold">14 Online</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900 border border-white/10">
+                            <span class="text-slate-400">Latency:</span> <span class="text-cyan-400 font-bold">12ms</span>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Subtitle -->
-        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed mb-10">
-            Every system, every entity, unified into a single model your agents reason on. Plan, act, decide, and escalate with governed enterprise AI execution.
-        </p>
+                <!-- Split Workspace -->
+                <div class="grid lg:grid-cols-12 gap-6">
+                    
+                    <!-- Left: Interactive Console Terminal -->
+                    <div class="lg:col-span-8 rounded-2xl airo-glass p-5 border border-white/10 font-mono text-xs flex flex-col h-[520px]">
+                        <!-- Window Bar -->
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800 text-slate-400">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                <span class="ml-2 text-slate-400">airo-execution-runtime.v2.4</span>
+                            </div>
+                            <span class="text-emerald-400 flex items-center gap-1.5"><i class="fas fa-circle-notch fa-spin"></i> Live Stream</span>
+                        </div>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="#demo" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-8 py-4 rounded-2xl text-xs uppercase tracking-widest transition shadow-xl shadow-emerald-500/20">
-                Book a Demo
-            </a>
-            <a href="#architecture" class="w-full sm:w-auto airo-glass hover:bg-slate-800/50 text-white font-bold px-8 py-4 rounded-2xl text-xs uppercase tracking-widest transition border border-slate-700">
-                Explore Architecture
-            </a>
-        </div>
+                        <!-- Logs Body -->
+                        <div id="console-logs" class="flex-1 overflow-y-auto space-y-3 pr-2 text-slate-300">
+                            <div class="text-slate-500">// System initialized. Graph model sync complete.</div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-emerald-400">[02:14:02]</span>
+                                <span class="text-slate-400">[FinanceAgent]</span>
+                                <span>Reconciled 1,420 ERP entries against Stripe webhooks. Matching score: <span class="text-emerald-400">99.8%</span></span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-emerald-400">[02:14:10]</span>
+                                <span class="text-cyan-400">[HRAgent]</span>
+                                <span>Processed offer letter generation for 3 candidates. Passed governance check.</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="text-emerald-400">[02:14:18]</span>
+                                <span class="text-purple-400">[SalesAgent]</span>
+                                <span>Updated deal stage for ACME Corp based on contract signatures.</span>
+                            </div>
+                        </div>
 
-        <!-- Live Agent Operational Execution Preview Mockup -->
-        <div class="max-w-4xl mx-auto rounded-3xl airo-glass-glow p-6 sm:p-8 text-left font-mono relative overflow-hidden">
-            <div class="flex items-center justify-between pb-6 border-b border-slate-800 text-xs text-slate-400">
+                        <!-- Terminal Command Prompt -->
+                        <form onsubmit="executeCommand(event)" class="mt-4 pt-4 border-t border-slate-800 flex items-center gap-3">
+                            <span class="text-emerald-400 font-bold">&gt;</span>
+                            <input type="text" id="command-input" placeholder="Ask Airo to execute a multi-agent workflow (e.g. reconcile Q3 accounts)..." class="w-full bg-transparent border-none text-white focus:outline-none text-xs font-mono placeholder:text-slate-600">
+                            <button type="submit" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700">
+                                Send
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right: Active Tasks / Queue -->
+                    <div class="lg:col-span-4 rounded-2xl airo-glass p-5 border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
+                                <i class="fas fa-list-check text-emerald-400"></i> Execution Queue
+                            </h3>
+
+                            <div class="space-y-3 font-mono text-xs">
+                                <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/30 flex items-center justify-between">
+                                    <div>
+                                        <div class="text-emerald-400 font-bold">close.month.q3</div>
+                                        <div class="text-slate-500 text-[10px]">Financial Graph</div>
+                                    </div>
+                                    <span class="text-emerald-400 text-[10px] px-2 py-0.5 rounded bg-emerald-500/10">Active</span>
+                                </div>
+
+                                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                                    <div>
+                                        <div class="text-white font-bold">renew.contract.acme</div>
+                                        <div class="text-slate-500 text-[10px]">Legal & Sales</div>
+                                    </div>
+                                    <span class="text-slate-400 text-[10px] px-2 py-0.5 rounded bg-slate-800">Queued</span>
+                                </div>
+
+                                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                                    <div>
+                                        <div class="text-white font-bold">sync.payroll.global</div>
+                                        <div class="text-slate-500 text-[10px]">HR & Tax</div>
+                                    </div>
+                                    <span class="text-slate-400 text-[10px] px-2 py-0.5 rounded bg-slate-800">Queued</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 font-mono mt-6">
+                            <i class="fas fa-lightbulb mr-1"></i> Airo agents reason across unified graph data without requiring manual CSV export/import.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TAB 2: BUSINESS GRAPH VISUALIZER -->
+            <div id="tab-graph" class="tab-content hidden space-y-6">
+                <div class="p-6 rounded-2xl airo-glass border border-white/10">
+                    <h2 class="text-2xl font-black text-white mb-2">The Unified Business Graph</h2>
+                    <p class="text-slate-400 text-sm mb-6">A real-time semantic model connecting entities across HR, Finance, ERP, and CRM.</p>
+
+                    <!-- Interactive Node Diagram Mockup -->
+                    <div class="h-96 rounded-2xl bg-slate-950/80 border border-slate-800 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+
+                        <!-- Central Node -->
+                        <div class="relative z-10 w-28 h-28 rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex flex-col items-center justify-center text-center p-2 shadow-2xl shadow-emerald-500/20">
+                            <i class="fas fa-database text-emerald-400 text-xl mb-1"></i>
+                            <span class="text-[10px] font-mono font-bold text-white">GRAPH CORE</span>
+                        </div>
+
+                        <!-- Satellite Nodes -->
+                        <div class="absolute top-12 left-1/4 p-3 rounded-xl bg-slate-900 border border-cyan-400/50 text-xs font-mono text-cyan-300">
+                            <i class="fas fa-building mr-1"></i> Finance (ERP)
+                        </div>
+
+                        <div class="absolute bottom-12 left-1/3 p-3 rounded-xl bg-slate-900 border border-purple-400/50 text-xs font-mono text-purple-300">
+                            <i class="fas fa-users mr-1"></i> HR & Payroll
+                        </div>
+
+                        <div class="absolute top-16 right-1/4 p-3 rounded-xl bg-slate-900 border border-emerald-400/50 text-xs font-mono text-emerald-300">
+                            <i class="fas fa-handshake mr-1"></i> CRM & Sales
+                        </div>
+
+                        <div class="absolute bottom-16 right-1/3 p-3 rounded-xl bg-slate-900 border border-yellow-400/50 text-xs font-mono text-yellow-300">
+                            <i class="fas fa-truck mr-1"></i> Operations
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: MODULES -->
+            <div id="tab-modules" class="tab-content hidden space-y-6">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl airo-glass border border-white/10">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+                            <i class="fas fa-calculator text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Finance Module</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">Continuous audit trails, revenue recognition, and instant ledger reconciliation.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl airo-glass border border-white/10">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+                            <i class="fas fa-user-check text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">People & HR</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">Global payroll routing, contractor onboarding, and automated talent management.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl airo-glass border border-white/10">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Revenue Ops</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">Contract generation, billing trigger automation, and churn prevention intelligence.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-white/10 airo-glass py-6 px-6 font-mono text-xs text-slate-500">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                    <span class="ml-2 text-slate-500">airo-agent-execution-layer.v2.4</span>
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span class="text-slate-300">Airo AI Operational Engine v2.4</span>
                 </div>
-                <div class="flex items-center gap-2 text-emerald-400">
-                    <i class="fas fa-shield-halved"></i> Governance Active
-                </div>
-            </div>
-
-            <div class="space-y-4 pt-6 text-xs sm:text-sm">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 gap-2">
-                    <div class="flex items-center gap-3">
-                        <span class="text-emerald-400 font-bold">close.month</span>
-                        <span class="text-slate-500">02:14</span>
-                    </div>
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1.5"><i class="fas fa-circle-check"></i> Completed</span>
-                </div>
-
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 gap-2">
-                    <div class="flex items-center gap-3">
-                        <span class="text-emerald-400 font-bold">renew.contract.acme</span>
-                        <span class="text-slate-500">06:02</span>
-                    </div>
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1.5"><i class="fas fa-circle-check"></i> Executed</span>
-                </div>
-
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 gap-2">
-                    <div class="flex items-center gap-3">
-                        <span class="text-cyan-400 font-bold">qualify.lead.q3.batch</span>
-                        <span class="text-slate-500">running...</span>
-                    </div>
-                    <span class="text-cyan-400 font-semibold flex items-center gap-1.5 animate-pulse"><i class="fas fa-spinner fa-spin"></i> Active Agent</span>
-                </div>
-
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 gap-2">
-                    <div class="flex items-center gap-3">
-                        <span class="text-emerald-400 font-bold">approve.po.4192</span>
-                        <span class="text-slate-500">11:48</span>
-                    </div>
-                    <span class="text-emerald-400 font-semibold flex items-center gap-1.5"><i class="fas fa-circle-check"></i> Approved</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: The Problem vs Solution -->
-    <section class="py-24 px-6 border-t border-slate-800/80 bg-airo-dark">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl mb-16">
-                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">01 / TODAY</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Your business runs on disconnected systems.</h2>
-                <p class="text-slate-400 mt-4 text-base">Tools that don't talk. Finance, HR, Sales, Ops—each in its own silo. People become the manual integration layer.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800">
-                    <div class="w-12 h-12 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-link-slash"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Siloed Data Models</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Finance doesn't see sales telemetry. HR doesn't see operational capacity. Information lives in fragmented databases.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800">
-                    <div class="w-12 h-12 rounded-2xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-hand-pointer"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Manual Handoffs</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Employees spend hours copying CSVs, chasing approvals, and manually bridging gaps between rigid SaaS platforms.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800">
-                    <div class="w-12 h-12 rounded-2xl bg-slate-800 text-slate-400 flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Bolted-On Copilots</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Copilots that summarize emails while the actual execution remains manual. They summarize work instead of doing it.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: 3-Layer Architecture -->
-    <section id="architecture" class="py-24 px-6 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">ARCHITECTURE</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">An AI-native execution layer for the entire company.</h2>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Layer 1 -->
-                <div class="airo-glass p-8 rounded-3xl relative overflow-hidden group hover:border-emerald-500/40 transition">
-                    <div class="text-xs font-mono text-slate-500 mb-4">L01 / GRAPH</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">One Unified Business Graph</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Customers, employees, transactions, contracts, and conversations folded into a single semantic model.</p>
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 font-mono text-xs text-slate-400">
-                        <span class="text-emerald-400">graph.nodes</span>: 1,420,891<br/>
-                        <span class="text-cyan-400">graph.edges</span>: 8,912,042
-                    </div>
-                </div>
-
-                <!-- Layer 2 -->
-                <div class="airo-glass p-8 rounded-3xl relative overflow-hidden group hover:border-emerald-500/40 transition">
-                    <div class="text-xs font-mono text-slate-500 mb-4">L02 / AGENTS</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Specialist Agent Engine</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Autonomous agents built with vertical domain intelligence that reason across the graph to execute complex workflows.</p>
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 font-mono text-xs text-slate-400">
-                        <span class="text-purple-400">agents.active</span>: 42<br/>
-                        <span class="text-emerald-400">mutation.safety</span>: Safe
-                    </div>
-                </div>
-
-                <!-- Layer 3 -->
-                <div class="airo-glass p-8 rounded-3xl relative overflow-hidden group hover:border-emerald-500/40 transition">
-                    <div class="text-xs font-mono text-slate-500 mb-4">L03 / INTERFACE</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Conversation as Dashboard</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Stop clicking through endless menus. Just describe what you need in plain language. Airo executes and audits.</p>
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 font-mono text-xs text-slate-400">
-                        <span class="text-yellow-400">query</span>: "Close Q3 accounts"<br/>
-                        <span class="text-emerald-400">status</span>: Executed
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Operational Modules -->
-    <section id="modules" class="py-24 px-6 border-t border-slate-800/80 bg-airo-dark">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
-                    <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">MODULES</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Every function. One platform.</h2>
-                </div>
-                <p class="text-slate-400 text-sm max-w-md">Each module is a specialist agent surface, purpose-built for the work, sharing the same graph and oversight.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Module 1 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800/80">
-                    <span class="text-xs font-mono text-emerald-400">M01 / FINANCE</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Finance & Reconciliation</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Continuous close, scenario modeling, automated AR/AP matching, and instant audit trail generation.</p>
-                </div>
-
-                <!-- Module 2 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800/80">
-                    <span class="text-xs font-mono text-emerald-400">M02 / HR</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">People & Payroll</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Hiring workflows, automated onboarding, performance tracking, and global compliance on one surface.</p>
-                </div>
-
-                <!-- Module 3 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800/80">
-                    <span class="text-xs font-mono text-emerald-400">M03 / SALES</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Autonomous Sales Ops</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Contract lifecycle management, deal velocity tracking, automated quote-to-cash execution.</p>
-                </div>
-
-                <!-- Module 4 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800/80">
-                    <span class="text-xs font-mono text-emerald-400">M04 / OPERATIONS</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Supply Chain & Ops</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Supplier renegotiation triggers, inventory threshold automation, vendor performance auditing.</p>
-                </div>
-
-                <!-- Module 5 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800/80">
-                    <span class="text-xs font-mono text-emerald-400">M05 / STRATEGY</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Corporate Strategy</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Real-time margin gap detection, cross-functional risk assessment, and executive decision graphs.</p>
-                </div>
-
-                <!-- Module 6 -->
-                <div class="airo-glass p-8 rounded-3xl border border-slate-800/80">
-                    <span class="text-xs font-mono text-emerald-400">M06 / MARKETING</span>
-                    <h3 class="text-xl font-bold text-white mt-2 mb-3">Growth Analytics</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Campaign ROI tracking, buyer intent modeling, and multi-channel attribution intelligence.</p>
+                    Unified Graph Execution • Zero Manual Silos
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Footer Call to Action -->
-    <section id="demo" class="py-24 px-6 border-t border-slate-800/80 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-emerald-500/5 blur-[100px] pointer-events-none"></div>
-        <div class="max-w-4xl mx-auto relative z-10">
-            <h2 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6">
-                Ready to run on agents?
-            </h2>
-            <p class="text-slate-400 text-base sm:text-lg mb-10 max-w-xl mx-auto">
-                Connect your business graph in minutes. Deploy governed agents across finance, HR, sales, and operations.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#book" class="bg-gradient-to-r from-emerald-500 to-emerald-400 text-slate-950 font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest transition shadow-2xl shadow-emerald-500/30">
-                    Book a Live Demo
-                </a>
-                <a href="#contact" class="airo-glass text-white font-bold px-10 py-5 rounded-2xl text-xs uppercase tracking-widest transition border border-slate-700">
-                    Contact Sales
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-slate-800/80 bg-airo-bg text-slate-500 text-xs font-mono">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <span class="text-white font-extrabold text-sm tracking-tight">Airo<span class="text-emerald-500">.ai</span></span>
-                <span>— The new operating system for how companies run.</span>
-            </div>
-            <div>
-                &copy; 2026 Airo AI Inc. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Scroll Animations -->
+    <!-- JS INTERACTIONS -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -50px 0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.airo-glass, h1, h2').forEach((el) => {
-                el.classList.add('reveal');
-                observer.observe(el);
+        // Tab Switcher
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-800', 'text-white', 'border', 'border-white/10');
+                btn.classList.add('text-slate-400');
             });
-        });
+
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabName);
+            activeBtn.classList.add('bg-slate-800', 'text-white', 'border', 'border-white/10');
+            activeBtn.classList.remove('text-slate-400');
+        }
+
+        // Live Command Injection Mock
+        function executeCommand(event) {
+            event.preventDefault();
+            const input = document.getElementById('command-input');
+            const logs = document.getElementById('console-logs');
+
+            if (!input.value.trim()) return;
+
+            const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+
+            // Add user command
+            const userMsg = document.createElement('div');
+            userMsg.className = 'flex items-start gap-2 text-emerald-400 font-bold';
+            userMsg.innerHTML = `<span>[${time}]</span> <span>[UserCommand]</span> <span>&gt; ${input.value}</span>`;
+            logs.appendChild(userMsg);
+
+            // Add simulated agent response
+            setTimeout(() => {
+                const agentMsg = document.createElement('div');
+                agentMsg.className = 'flex items-start gap-2';
+                agentMsg.innerHTML = `<span class="text-emerald-400">[${time}]</span> <span class="text-cyan-400">[OrchestratorAgent]</span> <span>Decomposing query across Business Graph. Initiating agents...</span>`;
+                logs.appendChild(agentMsg);
+                logs.scrollTop = logs.scrollHeight;
+            }, 500);
+
+            input.value = '';
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        // Auto Log Stream Simulator
+        setInterval(() => {
+            const logs = document.getElementById('console-logs');
+            const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+            const sampleLogs = [
+                `<span class="text-emerald-400">[${time}]</span> <span class="text-slate-400">[SecurityCheck]</span> <span>Governance policy verified for transaction #8942.</span>`,
+                `<span class="text-emerald-400">[${time}]</span> <span class="text-purple-400">[GraphIndex]</span> <span>Updated 42 entity relationships in continuous memory.</span>`,
+                `<span class="text-emerald-400">[${time}]</span> <span class="text-yellow-400">[OpsAgent]</span> <span>Inventory threshold trigger executed safely.</span>`
+            ];
+
+            const randomLog = sampleLogs[Math.floor(Math.random() * sampleLogs.length)];
+            const div = document.createElement('div');
+            div.className = 'flex items-start gap-2';
+            div.innerHTML = randomLog;
+            logs.appendChild(div);
+
+            // Keep log overflow under control
+            if (logs.children.length > 20) {
+                logs.removeChild(logs.children[0]);
+            }
+
+            logs.scrollTop = logs.scrollHeight;
+        }, 4000);
     </script>
 </body>
 </html>
