@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Phone & PBX Telephony Solutions | SOZA IT Dubai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], logo: ['Orbitron', 'sans-serif'] },
+                    colors: { SOZA: { deep: '#040711', dark: '#0B132B', card: '#111D38', gold: '#D4AF37', goldLight: '#F3E5AB' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card { background: rgba(17, 29, 56, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(212, 175, 55, 0.2); }
+        .gold-text { background: linear-gradient(180deg, #FFF1B0 0%, #D4AF37 60%, #9A7B1C 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-SOZA-deep text-slate-100 font-sans">
+
+    <div class="bg-SOZA-dark border-b border-slate-800 text-xs py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="text-slate-300"><i class="fas fa-location-dot text-SOZA-gold mr-2"></i> Dubai, UAE</span>
+            <a href="tel:+971547271603" class="font-bold text-white"><i class="fas fa-phone mr-1.5 text-emerald-400"></i> +971 54 727 1603</a>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/90 backdrop-blur-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="font-logo font-black text-xl text-white">SOZA <span class="text-SOZA-gold">IT</span></span>
+            </a>
+            <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-SOZA-gold transition flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Back to Main Site
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="mb-12">
+            <div class="inline-flex items-center gap-2 bg-SOZA-gold/10 border border-SOZA-gold/40 text-SOZA-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">
+                Unified Voice & PBX Solutions
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-black text-white">IP Telephony & <span class="gold-text">PBX Systems</span></h1>
+            <p class="text-slate-300 text-base max-w-3xl mt-4">Grandstream, Yealink, and Avaya Cloud/On-Premise IP telephony systems designed for seamless business calls in Dubai.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-8 space-y-8">
+                <div class="glass-card p-8 rounded-3xl">
+                    <h2 class="text-2xl font-bold text-white mb-4">Telephony Capabilities</h2>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-start gap-3"><i class="fas fa-phone-office text-SOZA-gold mt-1"></i> <span><strong>Multi-Level IVR Auto-Attendant:</strong> Professional welcome menus and call routing for departments.</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-phone-office text-SOZA-gold mt-1"></i> <span><strong>SIP Trunking Integration:</strong> DU & Etisalat enterprise SIP trunk connectivity.</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-phone-office text-SOZA-gold mt-1"></i> <span><strong>CRM Call Recording:</strong> Automated call recording and CRM integration for audit trails.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="glass-card p-6 rounded-3xl sticky top-28">
+                    <h3 class="text-xl font-bold text-white mb-2">Get Telephony Quote</h3>
+                    <p class="text-xs text-slate-400 mb-6">Speak with an IP PBX deployment specialist.</p>
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('PBX Quote request received!');">
+                        <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-gold" required>
+                        <input type="tel" placeholder="+971 Mobile Number *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-gold" required>
+                        <button type="submit" class="w-full bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight text-SOZA-deep font-extrabold py-3 rounded-xl uppercase text-xs">Request Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
