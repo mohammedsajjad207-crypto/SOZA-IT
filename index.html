@@ -89,15 +89,9 @@
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal-left {
-            transform: translateX(-40px);
-        }
-        .reveal-right {
-            transform: translateX(40px);
-        }
-        .reveal-up {
-            transform: translateY(40px);
-        }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-up { transform: translateY(40px); }
         .reveal.active {
             opacity: 1;
             transform: translate(0, 0);
@@ -173,7 +167,7 @@
                     </div>
                 </div>
 
-                <a href="#amc" class="hover:text-SOZA-emerald transition">AMC Contracts</a>
+                <a href="amc.html" class="hover:text-SOZA-emerald transition">AMC Contracts</a>
                 <a href="#contact" class="hover:text-SOZA-emerald transition">Contact</a>
             </div>
 
@@ -254,7 +248,7 @@
                     <p class="text-xs text-slate-400 mb-6">Speak with a SOZA IT Specialist within 15 minutes.</p>
                     <form class="space-y-4">
                         <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
-                        <input type="email" placeholder="Company Email (sales@SOZA-it.com) *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
                         <input type="tel" placeholder="Phone Number *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" value="+971 54 727 1603" required>
                         <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-slate-300 focus:outline-none focus:border-SOZA-emerald transition">
                             <option>Select Required Service</option>
@@ -275,8 +269,80 @@
         </div>
     </section>
 
+    <!-- NEW ABOUT US SECTION WITH YOUR CUSTOM CONTENT -->
+    <section id="about" class="py-24 px-6 bg-SOZA-deep border-b border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <!-- SOZA Pillars Badges -->
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-12 reveal reveal-up">
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-emerald/40 text-SOZA-emerald font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-brain"></i> Smart
+                </div>
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-gold/40 text-SOZA-gold font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-chart-line"></i> Optimum
+                </div>
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-cyanGlow/40 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-fire"></i> Zealous
+                </div>
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-emerald/40 text-SOZA-emerald font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-bullseye"></i> Accurate
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Left Column: About Description -->
+                <div class="reveal reveal-left">
+                    <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Bridging Business & Technology</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6 leading-tight">
+                        About <span class="chrome-text">SOZA IT Solutions</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        SOZA IT Solutions is a dynamic and innovative technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Founded with a vision to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises by providing tailored digital solutions that enhance operational efficiency, drive growth, and foster innovation. Our team of skilled professionals combines technical expertise with strategic insight, ensuring that every client receives solutions that are not only technically robust but also aligned with their business goals.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        At SOZA IT Solutions, we are driven by three core principles: <strong>innovation, integrity, and impact</strong>. Our company stands out for its agile approach, client-focused mindset, and deep industry knowledge. We don’t just deliver IT services — we build long-term partnerships that contribute to lasting success in a rapidly evolving digital world.
+                    </p>
+                </div>
+
+                <!-- Right Column: Vision & Mission Cards -->
+                <div class="space-y-6 reveal reveal-right">
+                    <!-- Vision Card -->
+                    <div class="glass-card p-8 rounded-3xl border border-SOZA-gold/30 hover:border-SOZA-gold transition">
+                        <div class="w-12 h-12 bg-SOZA-gold/20 text-SOZA-gold rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-wider">Our Vision</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            To be a trusted leader in IT solutions, empowering digital transformation for businesses across the UAE and beyond.
+                        </p>
+                    </div>
+
+                    <!-- Mission Card -->
+                    <div class="glass-card p-8 rounded-3xl border border-SOZA-emerald/30 hover:border-SOZA-emerald transition">
+                        <div class="w-12 h-12 bg-SOZA-emerald/20 text-SOZA-emerald rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 uppercase tracking-wider">Our Mission</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle-check text-SOZA-emerald mt-1"></i>
+                                <span>Deliver cutting-edge IT services with unmatched support</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle-check text-SOZA-emerald mt-1"></i>
+                                <span>Build long-term partnerships through commitment & innovation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
-    <section id="services" class="py-24 px-6 bg-SOZA-dark border-t border-b border-slate-800">
+    <section id="services" class="py-24 px-6 bg-SOZA-dark border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
                 <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Our Specialization</span>
@@ -286,7 +352,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Service 1: NEW Door Access Controls (Replaces Park CCTV) -->
+                <!-- Service 1: Door Access Control -->
                 <div class="glass-card rounded-3xl overflow-hidden border border-SOZA-emerald/40 hover:border-SOZA-emerald transition group flex flex-col justify-between reveal reveal-left">
                     <div>
                         <div class="h-56 overflow-hidden relative">
@@ -528,35 +594,3 @@
     </script>
 </body>
 </html>
-<!-- About Us Section -->
-<section id="about" class="py-24 px-6 bg-SOZA-deep border-t border-slate-800">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div class="reveal reveal-left">
-            <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Who We Are</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6">
-                Leading IT Infrastructure & Security Specialists in Dubai
-            </h2>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                At SOZA IT Solutions, we deliver end-to-end technology solutions designed to empower corporate enterprises across the UAE. From high-speed structured cabling to biometric door access controls and SIRA-certified surveillance, we ensure your business infrastructure is robust, secure, and future-proof.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                Our team of certified L2/L3 network and security engineers works around the clock to provide 24/7 SLA-backed support, ensuring zero downtime for critical business operations.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="glass-card p-4 rounded-xl border border-SOZA-emerald/20">
-                    <h4 class="text-2xl font-black text-SOZA-emerald">100%</h4>
-                    <p class="text-xs text-slate-400 font-semibold">SIRA Compliant</p>
-                </div>
-                <div class="glass-card p-4 rounded-xl border border-SOZA-gold/20">
-                    <h4 class="text-2xl font-black text-SOZA-gold">24/7</h4>
-                    <p class="text-xs text-slate-400 font-semibold">Dedicated IT Support</p>
-                </div>
-            </div>
-        </div>
-        <div class="reveal reveal-right relative">
-            <div class="glass-card p-2 rounded-3xl border border-SOZA-emerald/30 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=90" alt="SOZA IT Team" class="rounded-2xl w-full h-full object-cover">
-            </div>
-        </div>
-    </div>
-</section>
