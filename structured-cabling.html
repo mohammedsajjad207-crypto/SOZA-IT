@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structured Cabling & Optical Fiber Solutions Dubai | SOZA IT</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 Pro CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        logo: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        SOZA: {
+                            deep: '#030712',
+                            dark: '#0B132B',
+                            card: '#111D38',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            emerald: '#10B981',
+                            emeraldDark: '#059669',
+                            cyanGlow: '#06B6D4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(17, 29, 56, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+        .chrome-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-text {
+            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-text {
+            background: linear-gradient(180deg, #6EE7B7 0%, #10B981 60%, #047857 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-glow {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.2);
+        }
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-up { transform: translateY(40px); }
+        .reveal.active { opacity: 1; transform: translate(0, 0); }
+    </style>
+</head>
+<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-emerald selection:text-SOZA-deep overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6 text-slate-300">
+                <span><i class="fas fa-location-dot text-SOZA-emerald mr-2"></i> Dubai, United Arab Emirates</span>
+                <span><i class="fas fa-shield-check text-SOZA-gold mr-2"></i> TIA/EIA-568 Standards Compliant</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:+971547271603" class="hover:text-SOZA-emerald transition font-bold text-white flex items-center">
+                    <i class="fas fa-phone mr-1.5 text-SOZA-emerald"></i> +971 54 727 1603
+                </a>
+                <a href="mailto:sales@soza-it.com" class="hover:text-SOZA-gold transition text-slate-300">
+                    <i class="fas fa-envelope mr-1.5 text-SOZA-gold"></i> sales@soza-it.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
+                        <span class="chrome-text">SOZA</span>
+                    </div>
+                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
+                </div>
+            </a>
+
+            <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
+                <a href="index.html" class="hover:text-SOZA-emerald transition">Home</a>
+                <a href="door-access-control.html" class="hover:text-SOZA-emerald transition">Access Control</a>
+                <a href="cctv-installation.html" class="hover:text-SOZA-emerald transition">CCTV</a>
+                <a href="ip-phone-telephony.html" class="hover:text-SOZA-emerald transition">IP Phones</a>
+                <a href="server-setup.html" class="hover:text-SOZA-emerald transition">Server Room</a>
+                <a href="structured-cabling.html" class="text-SOZA-emerald border-b-2 border-SOZA-emerald pb-1">Structured Cabling</a>
+                <a href="cybersecurity.html" class="hover:text-SOZA-emerald transition">Cybersecurity</a>
+            </div>
+
+            <a href="https://wa.me/971547271603" target="_blank" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2">
+                <i class="fab fa-whatsapp text-sm"></i> WhatsApp Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero -->
+    <section class="relative py-24 px-6 border-b border-slate-800 bg-cover bg-center overflow-hidden" 
+             style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.75)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 reveal reveal-left">
+                <div class="inline-flex items-center gap-2 bg-SOZA-emerald/10 border border-SOZA-emerald/40 text-SOZA-emerald text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    <i class="fas fa-network-wired"></i> ENTERPRISE CABLING INFRASTRUCTURE
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    High-Bandwidth <span class="emerald-text">Structured Cabling</span> & Fiber Solutions
+                </h1>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-3xl">
+                    Build a resilient digital backbone with Fluke-certified Cat6, Cat6A, Cat7 copper wiring, and single/multi-mode optical fiber installations tailored for modern office spaces, industrial facilities, and data centers across Dubai.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#quote" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-xl">
+                        Request Cabling Audit
+                    </a>
+                    <a href="tel:+971547271603" class="bg-SOZA-card hover:bg-SOZA-card/80 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition flex items-center gap-2">
+                        <i class="fas fa-phone text-SOZA-emerald"></i> Speak to Cabling Engineer
+                    </a>
+                </div>
+            </div>
+            
+            <div id="quote" class="lg:col-span-4 reveal reveal-right">
+                <div class="glass-card p-6 rounded-3xl border border-SOZA-emerald/30 emerald-glow">
+                    <h3 class="text-xl font-bold text-white mb-2">Get Free Cabling Estimate</h3>
+                    <p class="text-xs text-slate-400 mb-4">Compliant with BICSI & TIA/EIA specifications.</p>
+                    <form class="space-y-3">
+                        <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <input type="tel" placeholder="Phone Number *" value="+971 54 727 1603" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-slate-300 focus:outline-none focus:border-SOZA-emerald">
+                            <option>Cat6 / Cat6A Data Wiring</option>
+                            <option>Fiber Optic Fusion Splicing</option>
+                            <option>Rack Dressing & Management</option>
+                            <option>Fluke Cable Certification Testing</option>
+                        </select>
+                        <button type="submit" class="w-full bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black py-3.5 rounded-xl text-xs uppercase tracking-wider transition">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Capabilities -->
+    <section class="py-20 px-6 bg-SOZA-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
+                <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Core Technical Capabilities</span>
+                <h2 class="text-3xl font-black text-white mt-2">Certified Cabling & Fiber Infrastructure</h2>
+                <p class="text-slate-400 text-sm mt-3">Delivering maximum throughput up to 10 Gbps per port to remove data bottlenecks.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl border border-slate-800 reveal reveal-left">
+                    <div class="w-12 h-12 rounded-xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-ethernet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Category 6 & 6A Cabling</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">High-density UTP/FTP copper cabling for gigabit networks, supporting high PoE+ loads for IP cameras, wireless access points, and VoIP phones.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-slate-800 reveal reveal-up">
+                    <div class="w-12 h-12 rounded-xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-bolt font-thin"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fiber Optic Fusion Splicing</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Single-mode (OS2) and multi-mode (OM3/OM4) fiber cabling for high-speed inter-building backbones, complete with precision fusion splicing and OTDR testing.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-slate-800 reveal reveal-right">
+                    <div class="w-12 h-12 rounded-xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Rack Dressing & Wire Trays</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Turn messy cable clutter into clean, labeled patch panels and organized network cabinets to improve server room airflow and speed up IT maintenance.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-slate-800 reveal reveal-left">
+                    <div class="w-12 h-12 rounded-xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-vial-circle-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fluke DTX/DSX Certification</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Every node is thoroughly tested with Fluke Versiv Cable Analyzers. We provide certified PDF test reports validating cross-talk, attenuation, and speed capability.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-slate-800 reveal reveal-up">
+                    <div class="w-12 h-12 rounded-xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Horizontal & Vertical Risers</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Structural conduit design, basket cable trays, and riser backbones connecting floor telecommunication closets seamlessly across multi-story buildings.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-slate-800 reveal reveal-right">
+                    <div class="w-12 h-12 rounded-xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cabling AMC & Upgrades</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Preventive maintenance, patch cord replacements, office relocation cabling, and legacy Cat5e infrastructure upgrades to modern standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards & Process -->
+    <section class="py-20 px-6 bg-SOZA-deep border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal reveal-left">
+                <span class="text-SOZA-emerald font-bold text-xs uppercase tracking-widest">Quality Assurance</span>
+                <h2 class="text-3xl font-black text-white mt-2 mb-6">Why SOZA IT Cabling Stands Out</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="text-SOZA-emerald text-lg mt-1"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">TIA/EIA-568-C & BICSI Standards</h4>
+                            <p class="text-slate-400 text-xs mt-1">Deployments engineered strictly to international structured wiring guidelines to protect long-term bandwidth investments.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-SOZA-emerald text-lg mt-1"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">24-Carat Gold-Plated RJ45 Connectors & Premium Copper</h4>
+                            <p class="text-slate-400 text-xs mt-1">Using 100% pure solid copper conductors (CCA free) to prevent line loss and ensure power delivery over Ethernet (PoE).</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-SOZA-emerald text-lg mt-1"><i class="fas fa-check-circle"></i></div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Clear Labeling & Documentation</h4>
+                            <p class="text-slate-400 text-xs mt-1">Every wall jack, patch panel port, and riser line receives systematic numerical labeling corresponding to a full network schematic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal reveal-right">
+                <div class="p-8 glass-card rounded-3xl border border-slate-800">
+                    <h3 class="text-xl font-bold text-white mb-4">Engineered Implementation Workflow</h3>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-SOZA-dark/60 rounded-xl flex items-center gap-4">
+                            <span class="text-SOZA-emerald font-black text-lg">01</span>
+                            <span class="text-xs text-slate-200">Site Survey, CAD Layout Analysis & Signal Design</span>
+                        </div>
+                        <div class="p-3 bg-SOZA-dark/60 rounded-xl flex items-center gap-4">
+                            <span class="text-SOZA-emerald font-black text-lg">02</span>
+                            <span class="text-xs text-slate-200">Conduit Laying, Cable Pulling & Basket Tray Installation</span>
+                        </div>
+                        <div class="p-3 bg-SOZA-dark/60 rounded-xl flex items-center gap-4">
+                            <span class="text-SOZA-emerald font-black text-lg">03</span>
+                            <span class="text-xs text-slate-200">Termination, Patch Panel Punch-Down & Fiber Splicing</span>
+                        </div>
+                        <div class="p-3 bg-SOZA-dark/60 rounded-xl flex items-center gap-4">
+                            <span class="text-SOZA-emerald font-black text-lg">04</span>
+                            <span class="text-xs text-slate-200">Fluke Analyzer Certification & PDF Handover Documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="chrome-text font-logo font-black text-xl">SOZA IT SOLUTIONS</span>
+                <p class="text-xs text-slate-500 mt-1">Enterprise Structured Cabling & Fiber Optic Engineering | Dubai, UAE</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs">
+                <a href="index.html" class="hover:text-SOZA-emerald">Home</a>
+                <a href="cybersecurity.html" class="hover:text-SOZA-emerald">Cybersecurity</a>
+                <a href="door-access-control.html" class="hover:text-SOZA-emerald">Door Access Control</a>
+                <a href="tel:+971547271603" class="text-SOZA-emerald font-bold">+971 54 727 1603</a>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-8 text-slate-600">
+            &copy; 2026 SOZA IT Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll(".reveal");
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("active");
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => revealOnScroll.observe(reveal));
+    </script>
+</body>
+</html>
