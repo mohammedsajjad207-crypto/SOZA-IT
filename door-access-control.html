@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door Access Control & Biometric Systems Dubai | SOZA IT Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 Pro CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        logo: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        SOZA: {
+                            deep: '#030712',
+                            dark: '#0B132B',
+                            card: '#111D38',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            emerald: '#10B981',
+                            emeraldDark: '#059669',
+                            cyanGlow: '#06B6D4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(17, 29, 56, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+        .chrome-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-text {
+            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-text {
+            background: linear-gradient(180deg, #6EE7B7 0%, #10B981 60%, #047857 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-glow {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.2);
+        }
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-up { transform: translateY(40px); }
+        .reveal.active { opacity: 1; transform: translate(0, 0); }
+    </style>
+</head>
+<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-emerald selection:text-SOZA-deep overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6 text-slate-300">
+                <span><i class="fas fa-location-dot text-SOZA-emerald mr-2"></i> Dubai, United Arab Emirates</span>
+                <span><i class="fas fa-shield-check text-SOZA-gold mr-2"></i> Biometric & Magnetic Security Integrator</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:+971547271603" class="hover:text-SOZA-emerald transition font-bold text-white flex items-center">
+                    <i class="fas fa-phone mr-1.5 text-SOZA-emerald"></i> +971 54 727 1603
+                </a>
+                <a href="mailto:sales@soza-it.com" class="hover:text-SOZA-gold transition text-slate-300">
+                    <i class="fas fa-envelope mr-1.5 text-SOZA-gold"></i> sales@soza-it.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
+                        <span class="chrome-text">SOZA</span>
+                    </div>
+                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
+                </div>
+            </a>
+
+            <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
+                <a href="index.html" class="hover:text-SOZA-emerald transition">Home</a>
+                <a href="about.html" class="hover:text-SOZA-emerald transition">About Us</a>
+                <a href="door-access-control.html" class="text-SOZA-emerald border-b-2 border-SOZA-emerald pb-1">Access Control</a>
+                <a href="cctv-installation.html" class="hover:text-SOZA-emerald transition">CCTV</a>
+                <a href="structured-cabling.html" class="hover:text-SOZA-emerald transition">Structured Cabling</a>
+                <a href="cybersecurity.html" class="hover:text-SOZA-emerald transition">Cybersecurity</a>
+                <a href="amc.html" class="hover:text-SOZA-emerald transition">AMC Contracts</a>
+            </div>
+
+            <a href="https://wa.me/971547271603" target="_blank" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2">
+                <i class="fab fa-whatsapp text-sm"></i> WhatsApp Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero -->
+    <section class="relative py-24 px-6 border-b border-slate-800 bg-cover bg-center overflow-hidden" 
+             style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.75)), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2000&q=90');">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 reveal reveal-left">
+                <div class="inline-flex items-center gap-2 bg-SOZA-emerald/10 border border-SOZA-emerald/40 text-SOZA-emerald text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    <i class="fas fa-fingerprint"></i> SMART PHYSICAL SECURITY & ENTRY
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    Door Access Control & <span class="emerald-text">Biometric Systems</span>
+                </h1>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-3xl">
+                    Secure your entry points, server rooms, and executive suites with advanced AI facial recognition, RFID card readers, magnetic locks, and cloud-synced time-attendance software across Dubai facilities.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="tel:+971547271603" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-xl">
+                        Schedule Site Audit
+                    </a>
+                    <a href="amc.html" class="bg-SOZA-card hover:bg-SOZA-card/80 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition">
+                        Door Maintenance AMC
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Inquiry Form -->
+            <div class="lg:col-span-4 reveal reveal-right">
+                <div class="glass-card p-6 rounded-3xl border border-SOZA-emerald/30 emerald-glow">
+                    <h3 class="text-xl font-bold text-white mb-2">Access Control Quote</h3>
+                    <p class="text-xs text-slate-400 mb-4">Single door setup to multi-floor high-rise deployments.</p>
+                    <form class="space-y-3">
+                        <input type="text" placeholder="Your Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <input type="tel" placeholder="Mobile Number *" value="+971 54 727 1603" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-slate-300 focus:outline-none focus:border-SOZA-emerald">
+                            <option>Biometric & AI Face Recognition</option>
+                            <option>RFID Card & PIN Access</option>
+                            <option>Magnetic Lock & Push Button Installation</option>
+                            <option>Time & Attendance Software Integration</option>
+                        </select>
+                        <button type="submit" class="w-full bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black py-3.5 rounded-xl text-xs uppercase tracking-wider transition">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Door Access Technologies -->
+    <section class="py-20 px-6 bg-SOZA-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
+                <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Advanced Entry Solutions</span>
+                <h2 class="text-3xl font-black text-white mt-2">Comprehensive Access Hardware & Integration</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl border border-slate-800 reveal reveal-left">
+                    <div class="w-12 h-12 rounded-2xl bg-SOZA-emerald/20 flex items-center justify-center text-SOZA-emerald text-xl mb-6">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Biometric & RFID Readers</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                        Multi-factor authenticators combining optical fingerprint scanning, encrypted RFID smart cards, and touchless keypad PIN entry.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li><i class="fas fa-check text-SOZA-emerald mr-2"></i> ZKTeco & Hikvision Controllers</li>
+                        <li><i class="fas fa-check text-SOZA-emerald mr-2"></i> Anti-passback Protection</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl border border-SOZA-emerald/40 emerald-glow reveal reveal-up">
+                    <div class="w-12 h-12 rounded-2xl bg-SOZA-gold/20 flex items-center justify-center text-SOZA-gold text-xl mb-6">
+                        <i class="fas fa-face-smile text-SOZA-gold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">AI Facial Recognition</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                        High-speed contactless terminal access with mask detection, liveness verification, and body thermal screening capabilities.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li><i class="fas fa-check text-SOZA-emerald mr-2"></i> Under 0.2s Recognition Speed</li>
+                        <li><i class="fas fa-check text-SOZA-emerald mr-2"></i> Cloud HR Portal Sync</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl border border-slate-800 reveal reveal-right">
+                    <div class="w-12 h-12 rounded-2xl bg-SOZA-cyanGlow/20 flex items-center justify-center text-SOZA-cyanGlow text-xl mb-6">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Heavy Duty Lock Kits</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                        Electromagnetic locks (600lbs/1200lbs holding force), electric drop bolts, break-glass override switches, and push-to-exit buttons.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li><i class="fas fa-check text-SOZA-emerald mr-2"></i> Glass Door U-Brackets</li>
+                        <li><i class="fas fa-check text-SOZA-emerald mr-2"></i> Emergency Fire Alarm Trip integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="chrome-text font-logo font-black text-xl">SOZA IT SOLUTIONS</span>
+                <p class="text-xs text-slate-500 mt-1">Biometric Access & Security Engineers | Dubai, UAE</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs">
+                <a href="index.html" class="hover:text-SOZA-emerald">Home</a>
+                <a href="about.html" class="hover:text-SOZA-emerald">About Us</a>
+                <a href="amc.html" class="hover:text-SOZA-emerald">AMC Contracts</a>
+                <a href="tel:+971547271603" class="text-SOZA-emerald font-bold">+971 54 727 1603</a>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-8 text-slate-600">
+            &copy; 2026 SOZA IT Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll(".reveal");
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("active");
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => revealOnScroll.observe(reveal));
+    </script>
+</body>
+</html>
