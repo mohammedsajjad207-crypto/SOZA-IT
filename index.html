@@ -31,6 +31,15 @@
                             chrome: '#E2E8F0',
                             blueAccent: '#1D4ED8'
                         }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
                     }
                 }
             }
@@ -55,15 +64,33 @@
         .gold-glow {
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
         }
-        /* Slider Overlay Gradient */
         .slide-bg {
             background-size: cover;
             background-position: center;
             transition: opacity 1s ease-in-out;
         }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transition: all 0.9s ease-out;
+        }
+        .reveal-left {
+            transform: translateX(-50px);
+        }
+        .reveal-right {
+            transform: translateX(50px);
+        }
+        .reveal-up {
+            transform: translateY(50px);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     </style>
 </head>
-<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-gold selection:text-SOZA-deep">
+<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-gold selection:text-SOZA-deep overflow-x-hidden">
 
     <!-- Top Bar -->
     <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
@@ -145,29 +172,41 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Slides Carousel -->
+    <!-- Infinite Scroll Marquee Section -->
+    <div class="bg-SOZA-gold/10 border-b border-SOZA-gold/20 overflow-hidden py-3 whitespace-nowrap">
+        <div class="inline-flex space-x-12 animate-marquee font-bold text-xs tracking-widest text-SOZA-gold uppercase">
+            <span><i class="fas fa-shield-halved mr-2"></i> SIRA Approved CCTV Solutions</span>
+            <span><i class="fas fa-server mr-2"></i> Enterprise Server Setup</span>
+            <span><i class="fas fa-network-wired mr-2"></i> Cat6 & Fiber Cabling</span>
+            <span><i class="fas fa-phone-office mr-2"></i> IP Telephony & PBX</span>
+            <span><i class="fas fa-lock mr-2"></i> Cybersecurity & Firewalls</span>
+            <span><i class="fas fa-shield-halved mr-2"></i> SIRA Approved CCTV Solutions</span>
+            <span><i class="fas fa-server mr-2"></i> Enterprise Server Setup</span>
+            <span><i class="fas fa-network-wired mr-2"></i> Cat6 & Fiber Cabling</span>
+            <span><i class="fas fa-phone-office mr-2"></i> IP Telephony & PBX</span>
+            <span><i class="fas fa-lock mr-2"></i> Cybersecurity & Firewalls</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="relative py-28 lg:py-36 px-6 border-b border-slate-800 overflow-hidden min-h-[700px] flex items-center">
         <!-- Background Slider Container -->
         <div id="hero-slider" class="absolute inset-0 z-0">
-            <!-- Slide 1 -->
             <div class="slide-bg absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" 
                  style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.6)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
-            <!-- Slide 2 -->
             <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
                  style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.6)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
-            <!-- Slide 3 -->
             <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
                  style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.6)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=90');"></div>
         </div>
 
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
-            <div class="lg:col-span-7">
+            <div class="lg:col-span-7 reveal reveal-left">
                 <div class="inline-flex items-center gap-2 bg-SOZA-gold/10 border border-SOZA-gold/40 text-SOZA-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
                     <span class="w-2 h-2 rounded-full bg-SOZA-gold animate-ping"></span>
                     DESIGNED TO INSPIRE
                 </div>
                 
-                <!-- Dynamic Content Area -->
                 <div id="slide-text-content">
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 min-h-[120px]">
                         SOZA IT Solutions & <span class="gold-text">Infrastructure</span>
@@ -186,7 +225,6 @@
                     </a>
                 </div>
 
-                <!-- Slider Indicators / Controls -->
                 <div class="flex items-center gap-3">
                     <button onclick="setSlide(0)" class="slide-indicator w-8 h-2 rounded-full bg-SOZA-gold transition-all duration-300" aria-label="Slide 1"></button>
                     <button onclick="setSlide(1)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 2"></button>
@@ -194,8 +232,8 @@
                 </div>
             </div>
 
-            <!-- Lead Form -->
-            <div id="contact" class="lg:col-span-5">
+            <!-- Lead Form with Reveal Right Animation -->
+            <div id="contact" class="lg:col-span-5 reveal reveal-right">
                 <div class="glass-card p-8 rounded-3xl shadow-2xl gold-glow border border-SOZA-gold/30">
                     <h3 class="text-2xl font-black text-white mb-1">Get an Expert Consultation</h3>
                     <p class="text-xs text-slate-400 mb-6">Speak with a SOZA IT Specialist within 15 minutes.</p>
@@ -224,7 +262,7 @@
     <!-- Services Section -->
     <section id="services" class="py-24 px-6 bg-SOZA-dark border-t border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
                 <span class="text-SOZA-gold font-extrabold text-xs uppercase tracking-widest">Our Technical Solutions</span>
                 <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Services & Specialized Sub-Pages</h2>
                 <p class="text-slate-400 mt-3 text-sm">Explore our specialized IT solutions for enterprise clients in Dubai and across the UAE.</p>
@@ -233,7 +271,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Service 1: CCTV Camera Installation -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-left">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=90" alt="CCTV Installation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -254,7 +292,7 @@
                 </div>
 
                 <!-- Service 2: IP Phone & PBX -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-up">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1200&q=90" alt="IP Phones" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -275,7 +313,7 @@
                 </div>
 
                 <!-- Service 3: Server Room Setup -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=90" alt="Server Setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -296,7 +334,7 @@
                 </div>
 
                 <!-- Service 4: Structured Cabling -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-left">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Structured Cabling" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -317,7 +355,7 @@
                 </div>
 
                 <!-- Service 5: Cybersecurity & Firewall -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-up">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=90" alt="Cybersecurity" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -338,7 +376,7 @@
                 </div>
                 
                 <!-- Service 6: Park Camera Installation -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
                     <div>
                         <div class="h-56 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1200&q=90" alt="Park Surveillance" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -358,34 +396,13 @@
                     </div>
                 </div>
 
-                <!-- Service 7: Managed IT AMC Support -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=90" alt="IT AMC Contracts" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-handshake text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Enterprise AMC</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">IT AMC Maintenance</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">24/7 SLA guaranteed response time, regular preventive maintenance, hardware repairs, and dedicated onsite engineers.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Inquire AMC <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 reveal reveal-up">
             <div>
                 <div class="font-logo font-black text-xl tracking-wider mb-2">
                     <span class="chrome-text">SOZA IT SOLUTIONS</span>
@@ -417,8 +434,9 @@
         </div>
     </footer>
 
-    <!-- Slider Logic Script -->
+    <!-- JavaScript Scripts -->
     <script>
+        /* Banner Hero Slider Script */
         const slides = [
             {
                 title: 'SOZA IT Solutions & <span class="gold-text">Infrastructure</span>',
@@ -473,6 +491,23 @@
             currentSlide = (currentSlide + 1) % slides.length;
             setSlide(currentSlide);
         }, 6000);
+
+        /* Intersection Observer for Scroll Animations */
+        const reveals = document.querySelectorAll(".reveal");
+
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        reveals.forEach(reveal => {
+            revealOnScroll.observe(reveal);
+        });
     </script>
 </body>
 </html>
