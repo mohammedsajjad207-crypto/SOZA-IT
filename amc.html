@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise IT AMC Contracts Dubai | SOZA IT Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 Pro CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        logo: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        SOZA: {
+                            deep: '#030712',
+                            dark: '#0B132B',
+                            card: '#111D38',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            emerald: '#10B981',
+                            emeraldDark: '#059669',
+                            cyanGlow: '#06B6D4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(17, 29, 56, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+        .chrome-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-text {
+            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-text {
+            background: linear-gradient(180deg, #6EE7B7 0%, #10B981 60%, #047857 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-glow {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.2);
+        }
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-up { transform: translateY(40px); }
+        .reveal.active { opacity: 1; transform: translate(0, 0); }
+    </style>
+</head>
+<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-emerald selection:text-SOZA-deep overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6 text-slate-300">
+                <span><i class="fas fa-location-dot text-SOZA-emerald mr-2"></i> Dubai, United Arab Emirates</span>
+                <span><i class="fas fa-clock-five text-SOZA-gold mr-2"></i> Guaranteed 2-Hour Response SLA</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:+971547271603" class="hover:text-SOZA-emerald transition font-bold text-white flex items-center">
+                    <i class="fas fa-phone mr-1.5 text-SOZA-emerald"></i> +971 54 727 1603
+                </a>
+                <a href="mailto:sales@soza-it.com" class="hover:text-SOZA-gold transition text-slate-300">
+                    <i class="fas fa-envelope mr-1.5 text-SOZA-gold"></i> sales@soza-it.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
+                        <span class="chrome-text">SOZA</span>
+                    </div>
+                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
+                </div>
+            </a>
+
+            <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
+                <a href="index.html" class="hover:text-SOZA-emerald transition">Home</a>
+                <a href="about.html" class="hover:text-SOZA-emerald transition">About Us</a>
+                <a href="door-access-control.html" class="hover:text-SOZA-emerald transition">Access Control</a>
+                <a href="cctv-installation.html" class="hover:text-SOZA-emerald transition">CCTV</a>
+                <a href="structured-cabling.html" class="hover:text-SOZA-emerald transition">Structured Cabling</a>
+                <a href="cybersecurity.html" class="hover:text-SOZA-emerald transition">Cybersecurity</a>
+                <a href="amc.html" class="text-SOZA-emerald border-b-2 border-SOZA-emerald pb-1">AMC Contracts</a>
+            </div>
+
+            <a href="https://wa.me/971547271603" target="_blank" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-2">
+                <i class="fab fa-whatsapp text-sm"></i> WhatsApp Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Subpage Hero -->
+    <section class="relative py-24 px-6 border-b border-slate-800 bg-cover bg-center overflow-hidden" 
+             style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.75)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=90');">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 reveal reveal-left">
+                <div class="inline-flex items-center gap-2 bg-SOZA-emerald/10 border border-SOZA-emerald/40 text-SOZA-emerald text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    <i class="fas fa-handshake"></i> PROACTIVE IT SUPPORT & SLA COVERAGE
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    Annual Maintenance <span class="emerald-text">Contracts (AMC)</span>
+                </h1>
+                <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-3xl">
+                    Eliminate unexpected IT downtime and safeguard your critical business assets with SOZA IT's comprehensive AMC agreements. From door access controllers to server racks, CCTV networks, and firewalls, we ensure 24/7 business continuity across Dubai.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#plans" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-xl">
+                        View AMC Packages
+                    </a>
+                    <a href="tel:+971547271603" class="bg-SOZA-card hover:bg-SOZA-card/80 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition flex items-center gap-2">
+                        <i class="fas fa-phone text-SOZA-emerald"></i> Call AMC Manager
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-4 reveal reveal-right">
+                <div class="glass-card p-6 rounded-3xl border border-SOZA-emerald/30 emerald-glow">
+                    <h3 class="text-xl font-bold text-white mb-2">Request Custom AMC Quote</h3>
+                    <p class="text-xs text-slate-400 mb-4">Tailored SLAs for corporate offices, warehouses & retail.</p>
+                    <form class="space-y-3">
+                        <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <input type="tel" placeholder="Phone Number *" value="+971 54 727 1603" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-SOZA-emerald" required>
+                        <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-xs text-slate-300 focus:outline-none focus:border-SOZA-emerald">
+                            <option>Standard Comprehensive AMC</option>
+                            <option>Non-Comprehensive Support AMC</option>
+                            <option>SIRA CCTV Maintenance Contract</option>
+                            <option>24/7 Emergency On-Site SLA</option>
+                        </select>
+                        <button type="submit" class="w-full bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black py-3.5 rounded-xl text-xs uppercase tracking-wider transition">
+                            Get Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMC Packages Table / Cards -->
+    <section id="plans" class="py-20 px-6 bg-SOZA-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
+                <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Flexible IT Maintenance Agreements</span>
+                <h2 class="text-3xl font-black text-white mt-2">Choose Your Service Level Agreement</h2>
+                <p class="text-slate-400 text-sm mt-3">All contracts include certified resident engineer options, preventive health checks, and priority dispatch.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Silver Plan -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-800 flex flex-col justify-between reveal reveal-left">
+                    <div>
+                        <div class="text-slate-400 text-xs font-extrabold uppercase tracking-widest mb-2">Standard Protection</div>
+                        <h3 class="text-2xl font-black text-white mb-4">Silver AMC</h3>
+                        <p class="text-slate-400 text-xs mb-6 leading-relaxed">Ideal for small-to-medium offices needing predictable baseline support and scheduled preventive maintenance.</p>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Quarterly Preventive Maintenance Visits</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> 4-Hour Emergency On-Site SLA</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Remote & Phone Helpdesk Support</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Router & Switch Configuration Backups</li>
+                            <li class="flex items-center gap-2 text-slate-500"><i class="fas fa-xmark"></i> Dedicated On-Site Resident Engineer</li>
+                        </ul>
+                    </div>
+                    <a href="tel:+971547271603" class="w-full bg-SOZA-card hover:bg-slate-800 text-white font-bold py-3 text-center rounded-xl text-xs uppercase tracking-wider transition border border-slate-700">
+                        Inquire Silver
+                    </a>
+                </div>
+
+                <!-- Gold Plan (Featured) -->
+                <div class="glass-card p-8 rounded-3xl border border-SOZA-emerald/50 emerald-glow relative flex flex-col justify-between reveal reveal-up">
+                    <span class="absolute -top-3 right-8 bg-SOZA-emerald text-SOZA-deep font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">MOST POPULAR</span>
+                    <div>
+                        <div class="text-SOZA-emerald text-xs font-extrabold uppercase tracking-widest mb-2">Enterprise Grade</div>
+                        <h3 class="text-2xl font-black text-white mb-4">Gold AMC</h3>
+                        <p class="text-slate-400 text-xs mb-6 leading-relaxed">Comprehensive coverage for growing organizations requiring strict uptime for CCTV, Servers, and Access Control.</p>
+                        
+                        <ul class="space-y-3 text-xs text-slate-200 mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Monthly Preventive Maintenance Visits</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Guaranteed 2-Hour Rapid Response SLA</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Unlimited Emergency Standby Calls</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> SIRA CCTV Audit Compliance Certificate</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Hardware Standby Replacement Units</li>
+                        </ul>
+                    </div>
+                    <a href="tel:+971547271603" class="w-full bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-black py-3.5 text-center rounded-xl text-xs uppercase tracking-wider transition shadow-lg">
+                        Inquire Gold
+                    </a>
+                </div>
+
+                <!-- Platinum / Custom Plan -->
+                <div class="glass-card p-8 rounded-3xl border border-SOZA-gold/30 flex flex-col justify-between reveal reveal-right">
+                    <div>
+                        <div class="text-SOZA-gold text-xs font-extrabold uppercase tracking-widest mb-2">24/7 Mission Critical</div>
+                        <h3 class="text-2xl font-black text-white mb-4">Platinum AMC</h3>
+                        <p class="text-slate-400 text-xs mb-6 leading-relaxed">Designed for data centers, multi-branch facilities, and high-security sites needing resident engineers and round-the-clock monitoring.</p>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> 24/7/365 On-Call & Remote Incident Desk</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> 1-Hour Critical Failure SLA Response</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Dedicated On-Site L2/L3 Resident Engineer</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Full Hardware Replacement Guarantee</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Disaster Recovery & Backup Simulation</li>
+                        </ul>
+                    </div>
+                    <a href="tel:+971547271603" class="w-full bg-SOZA-card hover:bg-slate-800 text-SOZA-gold font-bold py-3 text-center rounded-xl text-xs uppercase tracking-wider transition border border-SOZA-gold/30">
+                        Inquire Platinum
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Asset Scope -->
+    <section class="py-20 px-6 bg-SOZA-deep border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal reveal-up">
+                <span class="text-SOZA-emerald font-bold text-xs uppercase tracking-widest">Scope of Coverage</span>
+                <h2 class="text-3xl font-black text-white mt-2">What We Maintain Under AMC</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-SOZA-card/60 rounded-2xl border border-slate-800 reveal reveal-left">
+                    <i class="fas fa-door-closed text-SOZA-emerald text-2xl mb-3"></i>
+                    <h4 class="text-white font-bold text-sm mb-1">Access Control & Biometrics</h4>
+                    <p class="text-slate-400 text-xs">Magnetic lock testing, card reader calibration, time-attendance database backups, and emergency override verification.</p>
+                </div>
+                <div class="p-6 bg-SOZA-card/60 rounded-2xl border border-slate-800 reveal reveal-up">
+                    <i class="fas fa-video text-SOZA-gold text-2xl mb-3"></i>
+                    <h4 class="text-white font-bold text-sm mb-1">SIRA CCTV Surveillance</h4>
+                    <p class="text-slate-400 text-xs">Lens cleaning, NVR hard drive health monitoring, SIRA Video Guard connectivity, and retention log checks.</p>
+                </div>
+                <div class="p-6 bg-SOZA-card/60 rounded-2xl border border-slate-800 reveal reveal-up">
+                    <i class="fas fa-server text-SOZA-cyanGlow text-2xl mb-3"></i>
+                    <h4 class="text-white font-bold text-sm mb-1">Servers & Storage Networks</h4>
+                    <p class="text-slate-400 text-xs">Active Directory, SAN/NAS RAID array monitoring, thermal management, and anti-static dust removal.</p>
+                </div>
+                <div class="p-6 bg-SOZA-card/60 rounded-2xl border border-slate-800 reveal reveal-right">
+                    <i class="fas fa-shield-halved text-SOZA-emerald text-2xl mb-3"></i>
+                    <h4 class="text-white font-bold text-sm mb-1">Firewalls & Switches</h4>
+                    <p class="text-slate-400 text-xs">Fortinet/Sophos firmware patch management, VPN portal audits, VLAN routing, and PoE switch load tests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <span class="chrome-text font-logo font-black text-xl">SOZA IT SOLUTIONS</span>
+                <p class="text-xs text-slate-500 mt-1">Managed IT Support & Annual Maintenance Contracts | Dubai, UAE</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs">
+                <a href="index.html" class="hover:text-SOZA-emerald">Home</a>
+                <a href="about.html" class="hover:text-SOZA-emerald">About Us</a>
+                <a href="door-access-control.html" class="hover:text-SOZA-emerald">Door Access Control</a>
+                <a href="tel:+971547271603" class="text-SOZA-emerald font-bold">+971 54 727 1603</a>
+            </div>
+        </div>
+        <div class="text-center text-xs mt-8 text-slate-600">
+            &copy; 2026 SOZA IT Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll(".reveal");
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("active");
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(reveal => revealOnScroll.observe(reveal));
+    </script>
+</body>
+</html>
