@@ -1,596 +1,1959 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOZA IT | Enterprise IT Infrastructure & Access Control Dubai</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome 6 Pro CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leksa Lighting Technologies Pvt. Ltd.</title>
+<link rel="shortcut icon" href="https://leksalighting.com/wp-content/themes/leksa-child/images/favicon.png">
+<script type="text/javascript" src="https://leksalighting.com/wp-content/themes/leksa-child/js/jquery.min.js"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        logo: ['Orbitron', 'sans-serif'],
-                    },
-                    colors: {
-                        SOZA: {
-                            deep: '#030712',
-                            dark: '#0B132B',
-                            card: '#111D38',
-                            gold: '#D4AF37',
-                            goldLight: '#F3E5AB',
-                            emerald: '#10B981',
-                            emeraldDark: '#059669',
-                            cyanGlow: '#06B6D4',
-                            chrome: '#E2E8F0',
-                        }
-                    },
-                    animation: {
-                        'marquee': 'marquee 25s linear infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
-                    }
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap" rel="stylesheet">
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/fonts/font.css"/>
+<link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/css/animate.css"/>
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">	
+<script type="text/javascript" src="https://leksalighting.com/wp-content/themes/leksa-child/js/bootstrap.min.js"></script>
+<script src="https://leksalighting.com/wp-content/themes/leksa-child/js/script.js"></script>
+    
+   <link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/css/colorbox.css">
+        <script src="https://leksalighting.com/wp-content/themes/leksa-child/js/jquery.colorbox.js"></script>
+        
+        
+        <script type="text/javascript">
+    // Make ColorBox responsive
+    jQuery.colorbox.settings.maxWidth  = '95%';
+    jQuery.colorbox.settings.maxHeight = '95%';
+
+    // ColorBox resize function
+    var resizeTimer;
+    function resizeColorBox()
+    {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+                if (jQuery('#cboxOverlay').is(':visible')) {
+                        jQuery.colorbox.load(true);
                 }
-            }
-        }
-    </script>
-    <style>
-        .glass-card {
-            background: rgba(17, 29, 56, 0.75);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        .glass-card:hover {
-            border-color: rgba(16, 185, 129, 0.5);
-            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
-        }
-        .chrome-text {
-            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-text {
-            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .emerald-text {
-            background: linear-gradient(180deg, #6EE7B7 0%, #10B981 60%, #047857 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-glow {
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
-        }
-        .emerald-glow {
-            box-shadow: 0 0 35px rgba(16, 185, 129, 0.2);
-        }
-        .slide-bg {
-            background-size: cover;
-            background-position: center;
-            transition: opacity 1s ease-in-out;
-        }
+        }, 300);
+    }
 
-        /* Scroll Animation Classes */
-        .reveal {
-            opacity: 0;
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-left { transform: translateX(-40px); }
-        .reveal-right { transform: translateX(40px); }
-        .reveal-up { transform: translateY(40px); }
-        .reveal.active {
-            opacity: 1;
-            transform: translate(0, 0);
-        }
-    </style>
-</head>
-<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-emerald selection:text-SOZA-deep overflow-x-hidden">
+    // Resize ColorBox when resizing window or changing mobile device orientation
+    jQuery(window).resize(resizeColorBox);
+    window.addEventListener("orientationchange", resizeColorBox, false);
+</script>  
+<!-- <link rel="stylesheet" href="https://leksalighting.com/wp-content/themes/leksa-child/https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous"> -->
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+  // https://greensock.com/forums/topic/28551-locomotive-scroll-data-scroll-sticky-not-working/?tab=comments#comment-141472   
+const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".smooth-scroll"),
+        smooth: true
+    });
+</script>
 
-    <!-- Top Bar -->
-    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-6 text-slate-300">
-                <span><i class="fas fa-location-dot text-SOZA-emerald mr-2"></i> Dubai, United Arab Emirates</span>
-                <span><i class="fas fa-shield-check text-SOZA-gold mr-2"></i> 24/7 SLA IT Enterprise Support</span>
-            </div>
-            <div class="flex items-center space-x-6">
-                <a href="tel:+971547271603" class="hover:text-SOZA-emerald transition font-bold text-white flex items-center">
-                    <i class="fas fa-phone mr-1.5 text-SOZA-emerald"></i> +971 54 727 1603
-                </a>
-                <a href="mailto:sales@soza-it.com" class="hover:text-SOZA-gold transition text-slate-300">
-                    <i class="fas fa-envelope mr-1.5 text-SOZA-gold"></i> sales@soza-it.com
-                </a>
-            </div>
-        </div>
-    </div>
+<link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/themes/leksa-child/./slick/slick-theme.css">
 
-    <!-- Main Navigation Header -->
-    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+ <script>
+  $(window).scroll(function() {
+      if ($(this).scrollTop() > 1){ 
+    $('#hm').addClass("sticky");
+    $('#hmdiv1').addClass("stickydiv1");
+    $('#hmdiv2').addClass("stickydiv2");
+
+    $('#hmlogo').addClass("stickylogo");
+       
+      
             
-            <!-- SOZA IT Logo -->
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png" alt="SOZA IT" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('renderedLogo').style.display='flex';">
-                
-                <div id="renderedLogo" class="hidden flex-col">
-                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
-                        <span class="chrome-text">SOZA</span>
-                    </div>
-                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
-                    <span class="text-[7px] tracking-[0.25em] text-SOZA-emerald font-semibold uppercase">DESIGNED TO INSPIRE</span>
-                </div>
-            </a>
+      }
+      else{
+      $('#hm').removeClass("sticky")
+      $('#hmdiv1').removeClass("stickydiv1");
+      $('#hmdiv2').removeClass("stickydiv2");
+ 
+    $('#hmlogo').removeClass("stickylogo");
+      
+   
+           
+      }
+  });
+  </script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 
-            <!-- Navigation Links -->
-            <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
-                <a href="index.html" class="text-SOZA-emerald hover:text-SOZA-gold transition">Home</a>
-                <a href="#about" class="hover:text-SOZA-emerald transition">About Us</a>
-                
-                <!-- Dropdown -->
-                <div class="relative group py-2">
-                    <a href="#services" class="hover:text-SOZA-emerald transition flex items-center gap-1.5 cursor-pointer">
-                        Services <i class="fas fa-chevron-down text-[10px] text-SOZA-gold"></i>
-                    </a>
-                    <div class="absolute top-full left-0 hidden group-hover:block w-80 glass-card rounded-2xl shadow-2xl p-3 border border-SOZA-gold/30 z-50 space-y-1">
-                        <a href="door-access-control.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-door-closed text-SOZA-emerald w-4"></i> Door Access Control & Biometrics
-                        </a>
-                        <a href="cctv-installation.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-video text-SOZA-gold w-4"></i> CCTV Camera Installation
-                        </a>
-                        <a href="ip-phone-telephony.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-phone-office text-SOZA-gold w-4"></i> IP Phone & PBX Solutions
-                        </a>
-                        <a href="server-setup.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-server text-SOZA-gold w-4"></i> Server Room Setup
-                        </a>
-                        <a href="structured-cabling.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-network-wired text-SOZA-gold w-4"></i> Structured Cat6 & Fiber
-                        </a>
-                        <a href="cybersecurity.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-shield-halved text-SOZA-gold w-4"></i> Firewall & Cybersecurity
-                        </a>
-                    </div>
-                </div>
 
-                <a href="amc.html" class="hover:text-SOZA-emerald transition">AMC Contracts</a>
-                <a href="#contact" class="hover:text-SOZA-emerald transition">Contact</a>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="flex items-center gap-3">
-                <a href="https://wa.me/971547271603" target="_blank" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-extrabold px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-lg">
-                    <i class="fab fa-whatsapp text-sm"></i> WhatsApp
-                </a>
-                <a href="#contact" class="hidden sm:inline-block bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight text-SOZA-deep font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition gold-glow">
-                    Get Quote
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Moving Marquee Banner -->
-    <div class="bg-gradient-to-r from-SOZA-dark via-SOZA-card to-SOZA-dark border-b border-slate-800 overflow-hidden py-2.5 whitespace-nowrap">
-        <div class="inline-flex space-x-12 animate-marquee font-bold text-xs tracking-widest text-slate-300 uppercase">
-            <span class="flex items-center"><i class="fas fa-fingerprint text-SOZA-emerald mr-2"></i> Biometric Door Access Control</span>
-            <span class="flex items-center"><i class="fas fa-shield-halved text-SOZA-gold mr-2"></i> SIRA Approved CCTV Solutions</span>
-            <span class="flex items-center"><i class="fas fa-server text-SOZA-cyanGlow mr-2"></i> Enterprise Server Setup</span>
-            <span class="flex items-center"><i class="fas fa-network-wired text-SOZA-emerald mr-2"></i> Cat6 & Fiber Cabling</span>
-            <span class="flex items-center"><i class="fas fa-phone-office text-SOZA-gold mr-2"></i> IP Telephony & PBX</span>
-            <span class="flex items-center"><i class="fas fa-fingerprint text-SOZA-emerald mr-2"></i> Biometric Door Access Control</span>
-            <span class="flex items-center"><i class="fas fa-shield-halved text-SOZA-gold mr-2"></i> SIRA Approved CCTV Solutions</span>
-            <span class="flex items-center"><i class="fas fa-server text-SOZA-cyanGlow mr-2"></i> Enterprise Server Setup</span>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="relative py-28 lg:py-36 px-6 border-b border-slate-800 overflow-hidden min-h-[720px] flex items-center">
-        <!-- Background Slider Container -->
-        <div id="hero-slider" class="absolute inset-0 z-0">
-            <div class="slide-bg absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.65)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
-            <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.65)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
-            <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.65)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=90');"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
-            <div class="lg:col-span-7 reveal reveal-left">
-                <div class="inline-flex items-center gap-2 bg-SOZA-emerald/10 border border-SOZA-emerald/40 text-SOZA-emerald text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
-                    <span class="w-2 h-2 rounded-full bg-SOZA-emerald animate-ping"></span>
-                    NEXT-GEN ENTERPRISE IT & SECURITY
-                </div>
-                
-                <div id="slide-text-content">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 min-h-[120px]">
-                        SOZA IT Solutions & <span class="emerald-text">Door Access Control</span>
-                    </h1>
-                    <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal max-w-2xl min-h-[80px]">
-                        Empowering modern Dubai corporate environments with Biometric Access Control, SIRA-compliant CCTV security, IP Telephony Systems, structured cabling, and Managed IT Support.
-                    </p>
-                </div>
-
-                <div class="flex flex-wrap gap-4 items-center mb-8">
-                    <a href="#contact" class="bg-gradient-to-r from-SOZA-emerald to-SOZA-emeraldDark hover:opacity-90 text-SOZA-deep font-black px-8 py-4 rounded-xl transition shadow-xl text-xs uppercase tracking-wider">
-                        Request Site Survey
-                    </a>
-                    <a href="tel:+971547271603" class="bg-SOZA-card/90 hover:bg-SOZA-card text-white border border-slate-700 font-bold px-8 py-4 rounded-xl transition text-xs uppercase tracking-wider flex items-center gap-2">
-                        <i class="fas fa-phone text-SOZA-emerald"></i> Call 054 727 1603
-                    </a>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <button onclick="setSlide(0)" class="slide-indicator w-8 h-2 rounded-full bg-SOZA-emerald transition-all duration-300" aria-label="Slide 1"></button>
-                    <button onclick="setSlide(1)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 2"></button>
-                    <button onclick="setSlide(2)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 3"></button>
-                </div>
-            </div>
-
-            <!-- Lead Form -->
-            <div id="contact" class="lg:col-span-5 reveal reveal-right">
-                <div class="glass-card p-8 rounded-3xl shadow-2xl emerald-glow border border-SOZA-emerald/30">
-                    <h3 class="text-2xl font-black text-white mb-1">Get an Expert Consultation</h3>
-                    <p class="text-xs text-slate-400 mb-6">Speak with a SOZA IT Specialist within 15 minutes.</p>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
-                        <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
-                        <input type="tel" placeholder="Phone Number *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" value="+971 54 727 1603" required>
-                        <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-slate-300 focus:outline-none focus:border-SOZA-emerald transition">
-                            <option>Select Required Service</option>
-                            <option>Door Access Control & Biometrics System</option>
-                            <option>SIRA Approved CCTV Camera Installation</option>
-                            <option>IP Phone Telephony & PBX Systems</option>
-                            <option>Annual Maintenance Contract (IT AMC)</option>
-                            <option>Server Room Setup & Anti-Static Cleaning</option>
-                            <option>Structured Fiber & Cat6 Cabling</option>
-                            <option>Cybersecurity & Firewall Protection</option>
-                        </select>
-                        <button type="submit" class="w-full bg-gradient-to-r from-SOZA-emerald to-SOZA-emeraldDark text-SOZA-deep font-black py-4 rounded-xl uppercase tracking-wider text-xs transition shadow-lg">
-                            Submit Inquiry
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW ABOUT US SECTION WITH YOUR CUSTOM CONTENT -->
-    <section id="about" class="py-24 px-6 bg-SOZA-deep border-b border-slate-800 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <!-- SOZA Pillars Badges -->
-            <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-12 reveal reveal-up">
-                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-emerald/40 text-SOZA-emerald font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                    <i class="fas fa-brain"></i> Smart
-                </div>
-                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-gold/40 text-SOZA-gold font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                    <i class="fas fa-chart-line"></i> Optimum
-                </div>
-                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-cyanGlow/40 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                    <i class="fas fa-fire"></i> Zealous
-                </div>
-                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-emerald/40 text-SOZA-emerald font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                    <i class="fas fa-bullseye"></i> Accurate
-                </div>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                <!-- Left Column: About Description -->
-                <div class="reveal reveal-left">
-                    <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Bridging Business & Technology</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6 leading-tight">
-                        About <span class="chrome-text">SOZA IT Solutions</span>
-                    </h2>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        SOZA IT Solutions is a dynamic and innovative technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions.
-                    </p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Founded with a vision to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises by providing tailored digital solutions that enhance operational efficiency, drive growth, and foster innovation. Our team of skilled professionals combines technical expertise with strategic insight, ensuring that every client receives solutions that are not only technically robust but also aligned with their business goals.
-                    </p>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        At SOZA IT Solutions, we are driven by three core principles: <strong>innovation, integrity, and impact</strong>. Our company stands out for its agile approach, client-focused mindset, and deep industry knowledge. We don’t just deliver IT services — we build long-term partnerships that contribute to lasting success in a rapidly evolving digital world.
-                    </p>
-                </div>
-
-                <!-- Right Column: Vision & Mission Cards -->
-                <div class="space-y-6 reveal reveal-right">
-                    <!-- Vision Card -->
-                    <div class="glass-card p-8 rounded-3xl border border-SOZA-gold/30 hover:border-SOZA-gold transition">
-                        <div class="w-12 h-12 bg-SOZA-gold/20 text-SOZA-gold rounded-2xl flex items-center justify-center text-xl mb-4">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-wider">Our Vision</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            To be a trusted leader in IT solutions, empowering digital transformation for businesses across the UAE and beyond.
-                        </p>
-                    </div>
-
-                    <!-- Mission Card -->
-                    <div class="glass-card p-8 rounded-3xl border border-SOZA-emerald/30 hover:border-SOZA-emerald transition">
-                        <div class="w-12 h-12 bg-SOZA-emerald/20 text-SOZA-emerald rounded-2xl flex items-center justify-center text-xl mb-4">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 uppercase tracking-wider">Our Mission</h3>
-                        <ul class="space-y-3 text-sm text-slate-300">
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-circle-check text-SOZA-emerald mt-1"></i>
-                                <span>Deliver cutting-edge IT services with unmatched support</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i class="fas fa-circle-check text-SOZA-emerald mt-1"></i>
-                                <span>Build long-term partnerships through commitment & innovation</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6 bg-SOZA-dark border-b border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
-                <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Our Specialization</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Services & Core Capabilities</h2>
-                <p class="text-slate-400 mt-3 text-sm">Explore enterprise-grade infrastructure and security engineering tailored for UAE businesses.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Service 1: Door Access Control -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-SOZA-emerald/40 hover:border-SOZA-emerald transition group flex flex-col justify-between reveal reveal-left">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=90" alt="Door Access Control" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                            <span class="absolute top-4 right-4 bg-SOZA-emerald text-SOZA-deep font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">NEW SERVICE</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-fingerprint text-SOZA-emerald"></i>
-                                <span class="text-xs text-SOZA-emerald font-bold uppercase">Dedicated Sub-Page</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Door Access Control</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Biometric face recognition, RFID card readers, magnetic lock installation, keypad access, and time-attendance software integration.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="door-access-control.html" class="inline-flex items-center gap-2 text-SOZA-emerald font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Access Control Sub-Page <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 2: CCTV Camera Installation -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-up">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=90" alt="CCTV Installation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-video text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">CCTV Camera Installation</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">SIRA-compliant 4K surveillance, NVR configuration, thermal motion detection, and remote mobile viewing.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="cctv-installation.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open CCTV Sub-Page <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 3: IP Phone & PBX -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1200&q=90" alt="IP Phones" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-phone-office text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">IP Phone & PBX Solutions</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Grandstream, Yealink, and Avaya IP PBX setups, IVR auto-attendants, SIP trunking, and call recording.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="ip-phone-telephony.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open IP Phone Sub-Page <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 4: Server Room Setup -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-left">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=90" alt="Server Setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-server text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Server Room Setup</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Turnkey server racks, Active Directory domains, SAN/NAS storage, precision cooling, and anti-static cleaning.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="server-setup.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Server Sub-Page <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 5: Structured Cabling -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-up">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Structured Cabling" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-network-wired text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Structured Cat6 & Fiber</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">High-speed Cat6, Cat6A, and single/multi-mode fiber optic cable management, patch panel dressing, and Fluke testing.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="structured-cabling.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Cabling Sub-Page <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 6: Cybersecurity & Firewall -->
-                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
-                    <div>
-                        <div class="h-56 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=90" alt="Cybersecurity" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fas fa-shield-halved text-SOZA-gold"></i>
-                                <span class="text-xs text-SOZA-gold font-bold uppercase">Dedicated Sub-Page</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Firewall & Cybersecurity</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed">Fortinet and Sophos Next-Gen Firewalls, endpoint threat protection, VPN remote access, and network audit controls.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="cybersecurity.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Security Sub-Page <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 reveal reveal-up">
-            <div>
-                <div class="font-logo font-black text-xl tracking-wider mb-2">
-                    <span class="chrome-text">SOZA IT SOLUTIONS</span>
-                </div>
-                <p class="text-xs text-SOZA-emerald tracking-widest font-bold mb-4 uppercase">DESIGNED TO INSPIRE</p>
-                <p class="text-xs leading-relaxed text-slate-400">
-                    Enterprise IT Support, Biometric Door Access Controls, SIRA CCTV camera setups, IP PBX systems, and structured cabling across Dubai, UAE.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Sub-Pages Navigation</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="door-access-control.html" class="hover:text-SOZA-emerald transition">Door Access Control & Biometrics</a></li>
-                    <li><a href="cctv-installation.html" class="hover:text-SOZA-gold transition">CCTV Camera Installation</a></li>
-                    <li><a href="ip-phone-telephony.html" class="hover:text-SOZA-gold transition">IP Phone & PBX Solutions</a></li>
-                    <li><a href="server-setup.html" class="hover:text-SOZA-gold transition">Server Room Setup</a></li>
-                    <li><a href="structured-cabling.html" class="hover:text-SOZA-gold transition">Structured Cabling</a></li>
-                    <li><a href="cybersecurity.html" class="hover:text-SOZA-gold transition">Firewall & Cybersecurity</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact SOZA IT</h4>
-                <p class="text-xs text-slate-300"><i class="fas fa-location-dot mr-2 text-SOZA-emerald"></i> Dubai, United Arab Emirates</p>
-                <p class="text-xs text-slate-300 mt-2"><i class="fas fa-phone mr-2 text-SOZA-emerald"></i> +971 54 727 1603</p>
-                <p class="text-xs text-slate-300 mt-2"><i class="fas fa-envelope mr-2 text-SOZA-gold"></i> sales@soza-it.com</p>
-            </div>
-        </div>
-        <div class="text-center text-xs mt-12 pt-6 border-t border-slate-800 text-slate-500">
-            &copy; 2026 SOZA IT Solutions. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- JavaScript Logic -->
-    <script>
-        const slides = [
-            {
-                title: 'SOZA IT Solutions & <span class="emerald-text">Door Access Control</span>',
-                desc: 'Empowering modern Dubai corporate environments with Biometric Access Control, SIRA-compliant CCTV security, IP Telephony Systems, structured cabling, and Managed IT Support.'
-            },
-            {
-                title: 'High-Performance <span class="gold-text">Networking & Fiber</span>',
-                desc: 'Delivering end-to-end structured cabling, Cat6/Cat6A wiring, and high-density optical fiber setups designed for enterprise reliability.'
-            },
-            {
-                title: 'Next-Gen <span class="emerald-text">Cybersecurity & Defense</span>',
-                desc: 'Protecting corporate operations with robust firewall integrations, active threat defense, and 24/7 SLA maintenance support.'
-            }
-        ];
-
-        let currentSlide = 0;
-        const slideElements = document.querySelectorAll('.slide-bg');
-        const indicators = document.querySelectorAll('.slide-indicator');
-        const textContent = document.getElementById('slide-text-content');
-
-        function setSlide(index) {
-            currentSlide = index;
-            slideElements.forEach((bg, i) => {
-                if (i === index) {
-                    bg.classList.remove('opacity-0');
-                    bg.classList.add('opacity-100');
-                } else {
-                    bg.classList.remove('opacity-100');
-                    bg.classList.add('opacity-0');
-                }
-            });
-
-            indicators.forEach((ind, i) => {
-                if (i === index) {
-                    ind.className = "slide-indicator w-8 h-2 rounded-full bg-SOZA-emerald transition-all duration-300";
-                } else {
-                    ind.className = "slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300";
-                }
-            });
-
-            textContent.innerHTML = `
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 min-h-[120px]">
-                    ${slides[index].title}
-                </h1>
-                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal max-w-2xl min-h-[80px]">
-                    ${slides[index].desc}
-                </p>
-            `;
+  
+<style type="text/css">
+      .navbar .megamenu{ padding: 1rem; }
+      /* ============ desktop view ============ */
+      @media all and (min-width: 768px) {
+        
+        .navbar .has-megamenu{position:static!important;}
+        .navbar .megamenu{left:0; right:0; width:100%; margin-top:0;  }
+        
+      }	
+      /* ============ desktop view .end// ============ */
+      
+      
+      /* ============ mobile view ============ */
+      @media(max-width: 767px){
+        .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+          overflow-y: auto;
+            max-height: 90vh;
+            margin-top:10px;
         }
+      }
+      /* ============ mobile view .end// ============ */
+      </style>
 
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            setSlide(currentSlide);
-        }, 6000);
+<script>
+                    $(function(){
+                      // ADD SLIDEDOWN ANIMATION TO DROPDOWN //
+                      $('.dropdown').on('show.bs.dropdown', function(e){
+                          $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+                      });
+                  
+                      // ADD SLIDEUP ANIMATION TO DROPDOWN //
+                      $('.dropdown').on('hide.bs.dropdown', function(e){
+                          e.preventDefault();
+                          $(this).find('.dropdown-menu').first().stop(true, true).slideUp(400, function(){
+                              //On Complete, we reset all active dropdown classes and attributes
+                              //This fixes the visual bug associated with the open class being removed too fast
+                              $('.dropdown').removeClass('show');
+                              $('.dropdown-menu').removeClass('show');
+                              $('.dropdown').find('.dropdown-toggle').attr('aria-expanded','false');
+                          });
+                      });
+                  });
+                    </script>
 
-        /* Intersection Observer for Scroll Animations */
-        const reveals = document.querySelectorAll(".reveal");
 
-        const revealOnScroll = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
 
-        reveals.forEach(reveal => {
-            revealOnScroll.observe(reveal);
-        });
-    </script>
-</body>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.5 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Leksa Lighting -</title>
+	<link rel="canonical" href="https://leksalighting.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Leksa Lighting" />
+	<meta property="og:url" content="https://leksalighting.com/" />
+	<meta property="og:site_name" content="Leksa Lighting" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"CollectionPage","@id":"https:\/\/leksalighting.com\/","url":"https:\/\/leksalighting.com\/","name":"Leksa Lighting -","isPartOf":{"@id":"https:\/\/leksalighting.com\/#website"},"breadcrumb":{"@id":"https:\/\/leksalighting.com\/#breadcrumb"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https:\/\/leksalighting.com\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/leksalighting.com\/#website","url":"https:\/\/leksalighting.com\/","name":"Leksa Lighting","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/leksalighting.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel="alternate" type="application/rss+xml" title="Leksa Lighting &raquo; Feed" href="https://leksalighting.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Leksa Lighting &raquo; Comments Feed" href="https://leksalighting.com/comments/feed/" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://leksalighting.com/wp-includes/css/dist/block-library/style.min.css?ver=6.9.4' media='all' />
+
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #28303D;--wp--preset--color--gray: #39414D;--wp--preset--color--green: #D1E4DD;--wp--preset--color--blue: #D1DFE4;--wp--preset--color--purple: #D1D1E4;--wp--preset--color--red: #E4D1D1;--wp--preset--color--orange: #E4DAD1;--wp--preset--color--yellow: #EEEADD;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--purple-to-yellow: linear-gradient(160deg, #D1D1E4 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-purple: linear-gradient(160deg, #EEEADD 0%, #D1D1E4 100%);--wp--preset--gradient--green-to-yellow: linear-gradient(160deg, #D1E4DD 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-green: linear-gradient(160deg, #EEEADD 0%, #D1E4DD 100%);--wp--preset--gradient--red-to-yellow: linear-gradient(160deg, #E4D1D1 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-red: linear-gradient(160deg, #EEEADD 0%, #E4D1D1 100%);--wp--preset--gradient--purple-to-red: linear-gradient(160deg, #D1D1E4 0%, #E4D1D1 100%);--wp--preset--gradient--red-to-purple: linear-gradient(160deg, #E4D1D1 0%, #D1D1E4 100%);--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--extra-small: 16px;--wp--preset--font-size--normal: 20px;--wp--preset--font-size--extra-large: 40px;--wp--preset--font-size--huge: 96px;--wp--preset--font-size--gigantic: 144px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='categories-images-styles-css' href='https://leksalighting.com/wp-content/plugins/categories-images/assets/css/zci-styles.css?ver=3.3.3' media='all' />
+<link rel='stylesheet' id='sweetalert2-css' href='https://leksalighting.com/wp-content/plugins/cf7-popups//views/assets/css/sweetalert2.min.css?ver=1.2.1' media='all' />
+<link rel='stylesheet' id='cf7-popups-frontend-css' href='https://leksalighting.com/wp-content/plugins/cf7-popups//views/assets/css/frontend.css?ver=1.2.1' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://leksalighting.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.6' media='all' />
+<link rel='stylesheet' id='taxonomy-image-plugin-public-css' href='https://leksalighting.com/wp-content/plugins/taxonomy-images/css/style.css?ver=0.9.6' media='screen' />
+<link rel='stylesheet' id='smart-tabs-shared-fontawesome-css-css' href='https://leksalighting.com/wp-content/plugins/wp-expand-tabs-free/src/Shared/Assets//font-awesome.min.css?ver=3.1.4' media='all' />
+<link rel='stylesheet' id='megamenu-css' href='https://leksalighting.com/wp-content/uploads/maxmegamenu/style.css?ver=a0f504' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://leksalighting.com/wp-includes/css/dashicons.min.css?ver=6.9.4' media='all' />
+<link rel='stylesheet' id='parent-style-css' href='https://leksalighting.com/wp-content/themes/leksa/style.css?ver=1.8' media='all' />
+<link rel='stylesheet' id='child-style-css' href='https://leksalighting.com/wp-content/themes/leksa-child/style.css?ver=1.5' media='all' />
+<link rel='stylesheet' id='twenty-twenty-one-style-css' href='https://leksalighting.com/wp-content/themes/leksa/style.css?ver=1.5' media='all' />
+<style id='twenty-twenty-one-style-inline-css'>
+:root{--global--color-background: #d5e8e0;--global--color-primary: #000;--global--color-secondary: #000;--button--color-background: #000;--button--color-text-hover: #000;}
+/*# sourceURL=twenty-twenty-one-style-inline-css */
+</style>
+<link rel='stylesheet' id='twenty-twenty-one-print-style-css' href='https://leksalighting.com/wp-content/themes/leksa/assets/css/print.css?ver=1.5' media='print' />
+<link rel='stylesheet' id='newsletter-css' href='https://leksalighting.com/wp-content/plugins/newsletter/style.css?ver=9.2.7' media='all' />
+<link rel="stylesheet" type="text/css" href="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Application/Frontend/Assets/dist/smartslider.min.css?ver=d667a3aa" media="all">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?display=swap&amp;family=Raleway%3A300%2C400" media="all">
+<style data-related="n2-ss-5">div#n2-ss-5 .n2-ss-slider-1{display:grid;position:relative;}div#n2-ss-5 .n2-ss-slider-2{display:grid;position:relative;overflow:hidden;padding:0px 0px 0px 0px;border:0px solid RGBA(62,62,62,1);border-radius:0px;background-clip:padding-box;background-repeat:repeat;background-position:50% 50%;background-size:cover;background-attachment:scroll;z-index:1;}div#n2-ss-5:not(.n2-ss-loaded) .n2-ss-slider-2{background-image:none !important;}div#n2-ss-5 .n2-ss-slider-3{display:grid;grid-template-areas:'cover';position:relative;overflow:hidden;z-index:10;}div#n2-ss-5 .n2-ss-slider-3 > *{grid-area:cover;}div#n2-ss-5 .n2-ss-slide-backgrounds,div#n2-ss-5 .n2-ss-slider-3 > .n2-ss-divider{position:relative;}div#n2-ss-5 .n2-ss-slide-backgrounds{z-index:10;}div#n2-ss-5 .n2-ss-slide-backgrounds > *{overflow:hidden;}div#n2-ss-5 .n2-ss-slide-background{transform:translateX(-100000px);}div#n2-ss-5 .n2-ss-slider-4{place-self:center;position:relative;width:100%;height:100%;z-index:20;display:grid;grid-template-areas:'slide';}div#n2-ss-5 .n2-ss-slider-4 > *{grid-area:slide;}div#n2-ss-5.n2-ss-full-page--constrain-ratio .n2-ss-slider-4{height:auto;}div#n2-ss-5 .n2-ss-slide{display:grid;place-items:center;grid-auto-columns:100%;position:relative;z-index:20;-webkit-backface-visibility:hidden;transform:translateX(-100000px);}div#n2-ss-5 .n2-ss-slide{perspective:1500px;}div#n2-ss-5 .n2-ss-slide-active{z-index:21;}.n2-ss-background-animation{position:absolute;top:0;left:0;width:100%;height:100%;z-index:3;}div#n2-ss-5 .n2-ss-background-animation{position:absolute;top:0;left:0;width:100%;height:100%;z-index:3;}div#n2-ss-5 .n2-ss-background-animation .n2-ss-slide-background{z-index:auto;}div#n2-ss-5 .n2-bganim-side{position:absolute;left:0;top:0;overflow:hidden;background:RGBA(51,51,51,1);}div#n2-ss-5 .n2-bganim-tile-overlay-colored{z-index:100000;background:RGBA(51,51,51,1);}div#n2-ss-5 .nextend-arrow{cursor:pointer;overflow:hidden;line-height:0 !important;z-index:18;-webkit-user-select:none;}div#n2-ss-5 .nextend-arrow img{position:relative;display:block;}div#n2-ss-5 .nextend-arrow img.n2-arrow-hover-img{display:none;}div#n2-ss-5 .nextend-arrow:FOCUS img.n2-arrow-hover-img,div#n2-ss-5 .nextend-arrow:HOVER img.n2-arrow-hover-img{display:inline;}div#n2-ss-5 .nextend-arrow:FOCUS img.n2-arrow-normal-img,div#n2-ss-5 .nextend-arrow:HOVER img.n2-arrow-normal-img{display:none;}div#n2-ss-5 .nextend-arrow-animated{overflow:hidden;}div#n2-ss-5 .nextend-arrow-animated > div{position:relative;}div#n2-ss-5 .nextend-arrow-animated .n2-active{position:absolute;}div#n2-ss-5 .nextend-arrow-animated-fade{transition:background 0.3s, opacity 0.4s;}div#n2-ss-5 .nextend-arrow-animated-horizontal > div{transition:all 0.4s;transform:none;}div#n2-ss-5 .nextend-arrow-animated-horizontal .n2-active{top:0;}div#n2-ss-5 .nextend-arrow-previous.nextend-arrow-animated-horizontal .n2-active{left:100%;}div#n2-ss-5 .nextend-arrow-next.nextend-arrow-animated-horizontal .n2-active{right:100%;}div#n2-ss-5 .nextend-arrow-previous.nextend-arrow-animated-horizontal:HOVER > div,div#n2-ss-5 .nextend-arrow-previous.nextend-arrow-animated-horizontal:FOCUS > div{transform:translateX(-100%);}div#n2-ss-5 .nextend-arrow-next.nextend-arrow-animated-horizontal:HOVER > div,div#n2-ss-5 .nextend-arrow-next.nextend-arrow-animated-horizontal:FOCUS > div{transform:translateX(100%);}div#n2-ss-5 .nextend-arrow-animated-vertical > div{transition:all 0.4s;transform:none;}div#n2-ss-5 .nextend-arrow-animated-vertical .n2-active{left:0;}div#n2-ss-5 .nextend-arrow-previous.nextend-arrow-animated-vertical .n2-active{top:100%;}div#n2-ss-5 .nextend-arrow-next.nextend-arrow-animated-vertical .n2-active{bottom:100%;}div#n2-ss-5 .nextend-arrow-previous.nextend-arrow-animated-vertical:HOVER > div,div#n2-ss-5 .nextend-arrow-previous.nextend-arrow-animated-vertical:FOCUS > div{transform:translateY(-100%);}div#n2-ss-5 .nextend-arrow-next.nextend-arrow-animated-vertical:HOVER > div,div#n2-ss-5 .nextend-arrow-next.nextend-arrow-animated-vertical:FOCUS > div{transform:translateY(100%);}div#n2-ss-5 .n2-ss-control-bullet{visibility:hidden;text-align:center;justify-content:center;z-index:14;}div#n2-ss-5 .n2-ss-control-bullet--calculate-size{left:0 !important;}div#n2-ss-5 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize{width:100%;}div#n2-ss-5 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize{height:100%;flex-flow:column;}div#n2-ss-5 .nextend-bullet-bar{display:inline-flex;vertical-align:top;visibility:visible;align-items:center;flex-wrap:wrap;}div#n2-ss-5 .n2-bar-justify-content-left{justify-content:flex-start;}div#n2-ss-5 .n2-bar-justify-content-center{justify-content:center;}div#n2-ss-5 .n2-bar-justify-content-right{justify-content:flex-end;}div#n2-ss-5 .n2-ss-control-bullet-vertical > .nextend-bullet-bar{flex-flow:column;}div#n2-ss-5 .n2-ss-control-bullet-fullsize > .nextend-bullet-bar{display:flex;}div#n2-ss-5 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize > .nextend-bullet-bar{flex:1 1 auto;}div#n2-ss-5 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize > .nextend-bullet-bar{height:100%;}div#n2-ss-5 .nextend-bullet-bar .n2-bullet{cursor:pointer;transition:background-color 0.4s;}div#n2-ss-5 .nextend-bullet-bar .n2-bullet.n2-active{cursor:default;}div#n2-ss-5 div.n2-ss-bullet-thumbnail-container{position:absolute;z-index:10000000;}div#n2-ss-5 .n2-ss-bullet-thumbnail-container .n2-ss-bullet-thumbnail{background-size:cover;background-repeat:no-repeat;background-position:center;}div#n2-ss-5 .nextend-shadow{width:100%;z-index:0;}div#n2-ss-5 .nextend-shadow img{max-width:none;width:100%;}div#n2-ss-5 .n-uc-isDH2WNnFgR8-inner{--n2bgimage:URL("//leksalighting.com/wp-content/uploads/2025/04/Screenshot-2025-04-10-161919.png");background-position:50% 50%,50% 50%;}div#n2-ss-5 .n2-font-1a9ad0ed3eb3a11e080e78b12e8f97f5-hover{font-family: 'Raleway','Arial';color: #ffffff;font-size:287.5%;text-shadow: 5px 5px 1px RGBA(0,0,0,1);line-height: 1.5;font-weight: normal;font-style: normal;text-decoration: none;text-align: inherit;letter-spacing: normal;word-spacing: normal;text-transform: none;font-weight: 600;}div#n2-ss-5 .n2-style-f04cc1cbb7e5d123678bfad3a191fa78-heading{background: RGBA(16,27,34,0.73);opacity:1;padding:6px 15px 6px 15px ;box-shadow: none;border: 0px solid RGBA(255,255,255,0);border-radius:3px;}div#n2-ss-5 .n2-style-13586a9834f840c6e3b0e8ac4aa4b69c-dot{background: RGBA(255,255,255,0.5);opacity:1;padding:5px 5px 5px 5px ;box-shadow: none;border: 0px solid RGBA(0,0,0,1);border-radius:50px;margin:4px;}div#n2-ss-5 .n2-style-13586a9834f840c6e3b0e8ac4aa4b69c-dot.n2-active, div#n2-ss-5 .n2-style-13586a9834f840c6e3b0e8ac4aa4b69c-dot:HOVER, div#n2-ss-5 .n2-style-13586a9834f840c6e3b0e8ac4aa4b69c-dot:FOCUS{background: RGBA(255,255,255,0.8);}div#n2-ss-5 .n-uc-joHdwedt2Zx3{padding:0px 0px 0px 0px}div#n2-ss-5 .n-uc-isDH2WNnFgR8-inner{padding:10px 10px 50px 50px;text-align:left;--ssselfalign:var(--ss-fs);;justify-content:flex-end}div#n2-ss-5 .n-uc-RskBT1qstqEK{padding:0px 0px 0px 0px}div#n2-ss-5 .n-uc-MUSTa25z7532-inner{padding:10px 10px 50px 50px;text-align:left;--ssselfalign:var(--ss-fs);;justify-content:flex-end}div#n2-ss-5 .n-uc-dxKcmWbrs64A{padding:0px 0px 0px 0px}div#n2-ss-5 .n-uc-1beb93a18130d-inner{padding:10px 10px 50px 50px;text-align:left;--ssselfalign:var(--ss-fs);;justify-content:flex-end}div#n2-ss-5 .n-uc-KJHSttbYWAf5{padding:0px 0px 0px 0px}div#n2-ss-5 .n-uc-149c70d29868d-inner{padding:10px 10px 50px 50px;text-align:left;--ssselfalign:var(--ss-fs);;justify-content:flex-end}div#n2-ss-5 .nextend-arrow img{width: 32px}@media (min-width: 1200px){div#n2-ss-5 [data-hide-desktopportrait="1"]{display: none !important;}}@media (orientation: landscape) and (max-width: 1199px) and (min-width: 901px),(orientation: portrait) and (max-width: 1199px) and (min-width: 701px){div#n2-ss-5 .n-uc-isDH2WNnFgR8-inner{padding:10px 10px 30px 30px}div#n2-ss-5 .n-uc-MUSTa25z7532-inner{padding:10px 10px 30px 30px}div#n2-ss-5 .n-uc-1beb93a18130d-inner{padding:10px 10px 30px 30px}div#n2-ss-5 .n-uc-149c70d29868d-inner{padding:10px 10px 30px 30px}div#n2-ss-5 [data-hide-tabletportrait="1"]{display: none !important;}}@media (orientation: landscape) and (max-width: 900px),(orientation: portrait) and (max-width: 700px){div#n2-ss-5 .n-uc-isDH2WNnFgR8-inner{padding:120px 10px 40px 10px;text-align:center;--ssselfalign:center;}div#n2-ss-5 .n-uc-e87Nd4pIXrvM{--ssfont-scale:0.6}div#n2-ss-5 .n-uc-MUSTa25z7532-inner{padding:120px 10px 40px 10px;text-align:center;--ssselfalign:center;}div#n2-ss-5 .n-uc-aoX1A0SAlxKF{--ssfont-scale:0.6}div#n2-ss-5 .n-uc-1beb93a18130d-inner{padding:120px 10px 40px 10px;text-align:center;--ssselfalign:center;}div#n2-ss-5 .n-uc-45Pt5aDhhDoO{--ssfont-scale:0.6}div#n2-ss-5 .n-uc-149c70d29868d-inner{padding:120px 10px 40px 10px;text-align:center;--ssselfalign:center;}div#n2-ss-5 .n-uc-149c70d29868d{--ssfont-scale:0.6}div#n2-ss-5 [data-hide-mobileportrait="1"]{display: none !important;}div#n2-ss-5 .nextend-arrow img{width: 16px}}</style>
+<script>(function(){this._N2=this._N2||{_r:[],_d:[],r:function(){this._r.push(arguments)},d:function(){this._d.push(arguments)}}}).call(window);</script><script src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Application/Frontend/Assets/dist/n2.min.js?ver=d667a3aa" defer async></script>
+<script src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Application/Frontend/Assets/dist/smartslider-frontend.min.js?ver=d667a3aa" defer async></script>
+<script src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Slider/SliderType/Simple/Assets/dist/ss-simple.min.js?ver=d667a3aa" defer async></script>
+<script src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Slider/SliderType/Simple/Assets/dist/smartslider-backgroundanimation.min.js?ver=d667a3aa" defer async></script>
+<script src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Widget/Arrow/ArrowImage/Assets/dist/w-arrow-image.min.js?ver=d667a3aa" defer async></script>
+<script src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Widget/Bullet/Assets/dist/w-bullet.min.js?ver=d667a3aa" defer async></script>
+<script>_N2.r('documentReady',function(){n2const.prefersReducedMotion=false;_N2.r(["documentReady","smartslider-frontend","smartslider-backgroundanimation","SmartSliderWidgetArrowImage","SmartSliderWidgetBulletTransition","SmartSliderWidget","ss-simple"],function(){new _N2.SmartSliderSimple('n2-ss-5',{"admin":false,"background.video.mobile":1,"loadingTime":2000,"alias":{"id":0,"smoothScroll":0,"slideSwitch":0,"scroll":1},"align":"normal","isDelayed":0,"responsive":{"mediaQueries":{"all":false,"desktopportrait":["(min-width: 1200px)"],"tabletportrait":["(orientation: landscape) and (max-width: 1199px) and (min-width: 901px)","(orientation: portrait) and (max-width: 1199px) and (min-width: 701px)"],"mobileportrait":["(orientation: landscape) and (max-width: 900px)","(orientation: portrait) and (max-width: 700px)"]},"base":{"slideOuterWidth":1920,"slideOuterHeight":800,"sliderWidth":1920,"sliderHeight":800,"slideWidth":1920,"slideHeight":800},"hideOn":{"desktopLandscape":false,"desktopPortrait":false,"tabletLandscape":false,"tabletPortrait":false,"mobileLandscape":false,"mobilePortrait":false},"onResizeEnabled":true,"type":"fullwidth","sliderHeightBasedOn":"real","focusUser":1,"focusEdge":"auto","breakpoints":[{"device":"tabletPortrait","type":"max-screen-width","portraitWidth":1199,"landscapeWidth":1199},{"device":"mobilePortrait","type":"max-screen-width","portraitWidth":700,"landscapeWidth":900}],"enabledDevices":{"desktopLandscape":0,"desktopPortrait":1,"tabletLandscape":0,"tabletPortrait":1,"mobileLandscape":0,"mobilePortrait":1},"sizes":{"desktopPortrait":{"width":1920,"height":800,"max":3000,"min":1200},"tabletPortrait":{"width":701,"height":292,"customHeight":false,"max":1199,"min":701},"mobilePortrait":{"width":320,"height":133,"customHeight":false,"max":900,"min":320}},"overflowHiddenPage":0,"focus":{"offsetTop":"#wpadminbar","offsetBottom":""}},"controls":{"mousewheel":0,"touch":"horizontal","keyboard":1,"blockCarouselInteraction":1},"playWhenVisible":1,"playWhenVisibleAt":0.5,"lazyLoad":0,"lazyLoadNeighbor":0,"blockrightclick":0,"maintainSession":0,"autoplay":{"enabled":1,"start":1,"duration":3000,"autoplayLoop":1,"allowReStart":0,"reverse":0,"pause":{"click":1,"mouse":"0","mediaStarted":1},"resume":{"click":0,"mouse":"0","mediaEnded":1,"slidechanged":0},"interval":1,"intervalModifier":"loop","intervalSlide":"current"},"perspective":1500,"layerMode":{"playOnce":0,"playFirstLayer":1,"mode":"skippable","inAnimation":"mainInEnd"},"bgAnimations":{"global":0,"color":"RGBA(51,51,51,1)","speed":"normal","slides":[{"animation":[{"type":"Flat","tiles":{"crop":true,"delay":0,"sequence":"ForwardDiagonal"},"main":{"type":"both","duration":1,"current":{"ease":"easeOutCubic","scale":0.7},"next":{"ease":"easeOutCubic","xP":100}},"invert":{"zIndex":2,"current":{"xP":100,"scale":1},"next":{"scale":0.7,"xP":0}}}],"speed":"normal","color":"RGBA(51,51,51,1)"},{"animation":[{"type":"Flat","tiles":{"crop":true,"delay":0,"sequence":"ForwardDiagonal"},"main":{"type":"both","duration":1,"current":{"ease":"easeOutCubic","scale":0.7},"next":{"ease":"easeOutCubic","xP":100}},"invert":{"zIndex":2,"current":{"xP":100,"scale":1},"next":{"scale":0.7,"xP":0}}}],"speed":"normal","color":"RGBA(51,51,51,1)"},{"animation":[{"type":"GL","subType":"GLSL5","ease":"linear","tileDuration":0.6,"count":25,"delay":0.08,"invertX":0,"invertY":0,"allowedBackgroundModes":["fill"]}],"speed":"normal","color":"RGBA(51,51,51,1)"},{"animation":[{"type":"Flat","tiles":{"crop":false,"delay":0,"sequence":"ForwardDiagonal"},"main":{"type":"both","duration":0.75,"current":{"ease":"easeOutCubic","scale":0.5,"opacity":0},"next":{"ease":"easeOutCubic","opacity":0,"scale":1.5}},"invert":{"current":{"scale":1.5},"next":{"scale":0.5}}}],"speed":"normal","color":"RGBA(51,51,51,1)"}]},"mainanimation":{"type":"fade","duration":1200,"delay":0,"ease":"easeOutQuad","shiftedBackgroundAnimation":0},"carousel":1,"initCallbacks":function(){new _N2.SmartSliderWidgetArrowImage(this);new _N2.SmartSliderWidgetBulletTransition(this,{"area":10,"dotClasses":"n2-style-13586a9834f840c6e3b0e8ac4aa4b69c-dot ","mode":"","action":"click"});new _N2.SmartSliderWidget(this,'shadow','.nextend-shadow')}})})});</script><script src="https://leksalighting.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://leksalighting.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://leksalighting.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://leksalighting.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.4" />
+<meta name="generator" content="Site Kit by Google 1.180.0" /><style id="custom-background-css">
+body.custom-background { background-color: #d5e8e0; }
+</style>
+			<style id="wp-custom-css">
+			.mega-menu-link {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Product card container with border */
+.video-wall-product-card {
+    border: 1px solid #ccc;       /* visible border */
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s ease;
+}
+
+.video-wall-product-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Product image styling */
+.video-wall-product-image img {
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Product content */
+.video-wall-product-content {
+    text-align: center;
+    padding: 10px;
+}
+
+.video-wall-product-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* Details button */
+.video-wall-details-btn {
+    display: inline-block;
+}
+
+/* =============================
+   Strong centering rules for Features
+   Paste into Additional CSS or style.css
+   ============================= */
+
+/* Make sure the feature container takes full content width and centers items */
+.in-product1 .features,
+.features {
+  width: 100% !important;
+  max-width: 1200px !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;      /* remove any left push */
+  padding-right: 0 !important;
+  display: flex !important;
+  justify-content: center !important; /* center items horizontally */
+  align-items: flex-start !important;
+  gap: 40px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Per-item layout */
+.in-product1 .feature,
+.feature {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 120px !important;
+  text-align: center !important;
+}
+
+/* icons and text */
+.in-product1 .feature i,
+.feature i {
+  font-size: 32px !important;
+  color: #0078d7 !important;
+  margin-bottom: 10px !important;
+}
+.in-product1 .feature p,
+.feature p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+/* -----------------------------
+   Features heading centered + single underline
+   ----------------------------- */
+
+/* Scoped to #a4 to avoid breaking other headings */
+#a4 .ov-hd {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0 auto 24px !important;
+  padding: 0 !important;
+  border-bottom: none !important;
+  position: relative !important;
+}
+
+/* remove theme pseudo-lines (prevent duplicates) */
+#a4 .ov-hd::before,
+#a4 .ov-hd::after {
+  display: none !important;
+}
+
+/* add a single short centered underline (recreate it) */
+#a4 .ov-hd::after {
+  content: "" !important;
+  display: block !important;
+  width: 90px !important;        /* change width to taste */
+  height: 4px !important;
+  background: #0078d7 !important;
+  margin: 8px auto 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ==============================
+   Specific fallback for one stubborn post (LEKSPLAY)
+   ============================== */
+body.postid-9329 .in-product1 .features,
+body.postid-9329 .features {
+  padding-left: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+}
+
+/* If your theme uses a container/column that shifts content, force center there too */
+.in-product1,
+.in-products,
+.container .in-products,
+.col-md-10 {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* small helper: keep banner hidden */
+.banner-div11 { display: none !important; }
+
+
+
+
+
+
+/* Video Wall menu icon (background-image method) */
+.menu-item.icon-video-wall > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-top: 6px;
+}
+
+/* show the 50x50 icon */
+.menu-item.icon-video-wall > a::before {
+  content: "";
+  display: block;
+  width: 50px;   /* matches other icons */
+  height: 50px;
+  background-image: url("https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 4px;
+}
+
+
+/* target the builder content area and force the columns into a row */
+#et_builder_outer_content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;            /* space between cards */
+  align-items: flex-start;
+}
+
+/* make each col behave like a 4-column grid item */
+#et_builder_outer_content > .col-md-3 {
+  flex: 0 0 calc(25% - 21px);
+  max-width: calc(25% - 21px);
+  box-sizing: border-box;
+}
+
+/* smaller screens */
+@media (max-width: 1024px) {
+  #et_builder_outer_content > .col-md-3 {
+    flex: 0 0 calc(33.333% - 16px);
+    max-width: calc(33.333% - 16px);
+  }
+}
+@media (max-width: 768px) {
+  #et_builder_outer_content > .col-md-3 {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+}
+@media (max-width: 420px) {
+  #et_builder_outer_content > .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+		</style>
+		 
+<link rel='stylesheet' id='wpforms-modern-full-css' href='https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/css/frontend/modern/wpforms-full.min.css?ver=1.10.0.4' media='all' />
+<style id='wpforms-modern-full-inline-css'>
+:root {
+				--wpforms-field-border-radius: 3px;
+--wpforms-field-border-style: solid;
+--wpforms-field-border-size: 1px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-border-color-spare: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-field-menu-color: #ffffff;
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-border-style: none;
+--wpforms-button-border-size: 1px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-border-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-page-break-color: #066aab;
+--wpforms-background-image: none;
+--wpforms-background-position: center center;
+--wpforms-background-repeat: no-repeat;
+--wpforms-background-size: cover;
+--wpforms-background-width: 100px;
+--wpforms-background-height: 100px;
+--wpforms-background-color: rgba( 0, 0, 0, 0 );
+--wpforms-background-url: none;
+--wpforms-container-padding: 0px;
+--wpforms-container-border-style: none;
+--wpforms-container-border-width: 1px;
+--wpforms-container-border-color: #000000;
+--wpforms-container-border-radius: 3px;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+--wpforms-container-shadow-size-box-shadow: none;
+			}
+/*# sourceURL=wpforms-modern-full-inline-css */
+</style>
+
+</head>
+
+<body class="smooth-scroll">
+
+  <a id="back_to_top"></a>
+<script>
+var btn = $('#back_to_top');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+</script>
+<header id="hm">
+
+  <!-- <div class="top-div1 py-2 wow fadeInDown" data-wow-delay="600ms" id="hmdiv1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="top-left d-md-flex justify-content-md-end">
+            <div class="top-call"><i class="bi bi-telephone-fill"></i><a href="https://leksalighting.com/wp-content/themes/leksa-child/tel:+917899543210">+91- 78995 43210</a></div>
+            <div class="top-mail"><i class="bi bi-envelope-fill"></i><a href="https://leksalighting.com/wp-content/themes/leksa-child/mailto:biz@leksalighting.com">biz@leksalighting.com</a></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="top-div2 wow fadeInUp" data-wow-delay="400ms" id="hmdiv2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 justify-content-md-between">
+          <div class="logo-div align-self-center" id="hmlogo">
+            <a href="https://leksalighting.com/"><img src="https://leksalighting.com/wp-content/uploads/2023/08/leksa-logo.png" class="img-fluid" /></a>
+			  <div id="mega-menu-wrap-main-menu" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-0' id='mega-toggle-block-0'><button aria-controls="mega-menu-main-menu" aria-expanded="false" aria-haspopup="true" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
+                  <span class="mega-toggle-animated-box">
+                    <span class="mega-toggle-animated-inner"></span>
+                  </span>
+                </button></div></div></div><ul id="mega-menu-main-menu" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover" data-effect="disabled" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-mobile-direction="vertical"><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-menu-item-5" id="mega-menu-item-5"><a class="mega-menu-link" href="https://leksalighting.com/" aria-current="page">Home</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-19" id="mega-menu-item-19"><a class="mega-menu-link" href="https://leksalighting.com/company-profile/" aria-expanded="false" aria-controls="mega-sub-menu-19">About Us<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-19'>
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-18" id="mega-menu-item-18"><a class="mega-menu-link" href="https://leksalighting.com/company-profile/">Company Profile</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-34" id="mega-menu-item-34"><a class="mega-menu-link" href="https://leksalighting.com/why-leksa/">Why Leksa</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-103" id="mega-menu-item-103"><a class="mega-menu-link" href="https://leksalighting.com/our-team/">Our Team</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1297" id="mega-menu-item-1297"><a class="mega-menu-link" href="https://leksalighting.com/director-message/">Director Message</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-1846" id="mega-menu-item-1846"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/" aria-expanded="false" aria-controls="mega-sub-menu-1846">Our Expertise<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" id='mega-sub-menu-1846'>
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-136" id="mega-menu-item-136"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#arch">Exterior Facade</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-133" id="mega-menu-item-133"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#stage">Stage Lighting & Drapery</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-135" id="mega-menu-item-135"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#tv">TV Studio Lighting</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-134" id="mega-menu-item-134"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#film">Film & Fiction Lighting</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-140" id="mega-menu-item-140"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#pub">DJ & Pub Lighting</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-5172" id="mega-menu-item-5172"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#std">Stadium Light</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-138" id="mega-menu-item-138"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#vid">Video Conference Lighting</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-139" id="mega-menu-item-139"><a class="mega-menu-link" href="https://leksalighting.com/ourexpertise/#street">Street Lighting</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-has-children mega-menu-megamenu mega-menu-grid mega-align-bottom-left mega-menu-item-1847" id="mega-menu-item-1847"><a class="mega-menu-link" href="https://leksalighting.com/category/architectural-lighting/" aria-expanded="false" aria-controls="mega-sub-menu-1847">Products<span class="mega-indicator" aria-hidden="true"></span></a>
+<ul class="mega-sub-menu" role='presentation' id='mega-sub-menu-1847'>
+<li class="mega-menu-row" id="mega-menu-1847-0">
+	<ul class="mega-sub-menu" style='--columns:12' role='presentation'>
+<li class="mega-menu-column mega-menu-columns-2-of-12" style="--columns:12; --span:2" id="mega-menu-1847-0-0">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-13" id="mega-menu-item-media_image-13"><img width="300" height="300" src="https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-300x300.png" class="image wp-image-9352  attachment-medium size-medium" alt="" style="width:100%;height:100%;max-width:1600px;max-width: 100%; height: auto;" decoding="async" fetchpriority="high" srcset="https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-300x300.png 300w, https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-1024x1024.png 1024w, https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-150x150.png 150w, https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-768x768.png 768w, https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-1536x1536.png 1536w, https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1-1568x1568.png 1568w, https://leksalighting.com/wp-content/uploads/2026/06/IMG_5017-scaled-1.png 1600w" sizes="(max-width: 300px) 100vw, 300px" /></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-9353" id="mega-menu-item-9353"><a class="mega-menu-link" href="https://leksalighting.com/video-wall-2/">Video Wall</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-0-1">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-2" id="mega-menu-item-media_image-2"><a href="https://leksalighting.com/products/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/arch-1.png" class="image wp-image-4600  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4550" id="mega-menu-item-4550"><a class="mega-menu-link" href="https://leksalighting.com/products/">Architectural Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mega-hide-on-mobile mg" style="--columns:12; --span:2" id="mega-menu-1847-0-2">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-4" id="mega-menu-item-media_image-4"><a href="https://leksalighting.com/studio-light-page/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/studio-1.png" class="image wp-image-4601  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5910" id="mega-menu-item-5910"><a class="mega-menu-link" href="https://leksalighting.com/studio-light-page/">Studio Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-0-3">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-5" id="mega-menu-item-media_image-5"><a href="https://leksalighting.com/stage-lights/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/stage-1.png" class="image wp-image-4602  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4552" id="mega-menu-item-4552"><a class="mega-menu-link" href="https://leksalighting.com/stage-lights/">Stage Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-0-4">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-6" id="mega-menu-item-media_image-6"><a href="https://leksalighting.com/landscape-page/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/landscape-1.png" class="image wp-image-4603  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5911" id="mega-menu-item-5911"><a class="mega-menu-link" href="https://leksalighting.com/landscape-page/">Landscape Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-0-5">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-7" id="mega-menu-item-media_image-7"><a href="https://leksalighting.com/category/film-lighting/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/film-1.png" class="image wp-image-4604  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-4700" id="mega-menu-item-4700"><a class="mega-menu-link" href="https://leksalighting.com/category/film-lighting/">Film / Fiction Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-menu-columns-1-of-12" style="--columns:12; --span:1" id="mega-menu-1847-0-6"></li>	</ul>
+</li><li class="mega-menu-row" id="mega-menu-1847-1">
+	<ul class="mega-sub-menu" style='--columns:12' role='presentation'>
+<li class="mega-menu-column mega-menu-columns-1-of-12" style="--columns:12; --span:1" id="mega-menu-1847-1-0"></li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-1-1">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-3" id="mega-menu-item-media_image-3"><a href="https://leksalighting.com/category/video-conference-lighting/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/conference-1.png" class="image wp-image-4605  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-5122" id="mega-menu-item-5122"><a class="mega-menu-link" href="https://leksalighting.com/category/video-conference-lighting/">Video Conference Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-1-2">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-8" id="mega-menu-item-media_image-8"><a href="https://leksalighting.com/stadium-light-product/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/stadium-1.png" class="image wp-image-4606  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5173" id="mega-menu-item-5173"><a class="mega-menu-link" href="https://leksalighting.com/stadium-light-product/">Stadium Lighting</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-1-3">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-10" id="mega-menu-item-media_image-10"><a href="https://leksalighting.com/category/control-system/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/control-1.png" class="image wp-image-4608  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-5043" id="mega-menu-item-5043"><a class="mega-menu-link" href="https://leksalighting.com/category/control-system/">Control System</a></li>		</ul>
+</li><li class="mega-menu-column mega-mg mega-menu-columns-2-of-12 mg" style="--columns:12; --span:2" id="mega-menu-1847-1-4">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-11" id="mega-menu-item-media_image-11"><a href="https://leksalighting.com/category/drapery-and-stage-crafts/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/drapery-1.png" class="image wp-image-4609  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-5044" id="mega-menu-item-5044"><a class="mega-menu-link" href="https://leksalighting.com/category/drapery-and-stage-crafts/">Drapery and Stage Crafts</a></li>		</ul>
+</li><li class="mega-menu-column mega-menu-columns-2-of-12" style="--columns:12; --span:2" id="mega-menu-1847-1-5">
+		<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_media_image mega-menu-item-media_image-12" id="mega-menu-item-media_image-12"><a href="https://leksalighting.com/category/lighting-accessories/"><img width="50" height="50" src="https://leksalighting.com/wp-content/uploads/2023/12/lighting-acce-1.png" class="image wp-image-4610  attachment-full size-full" alt="" style="width:100%;height:100%;max-width:50px;max-width: 100%; height: auto;" decoding="async" /></a></li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-4972" id="mega-menu-item-4972"><a class="mega-menu-link" href="https://leksalighting.com/category/lighting-accessories/">Lighting Accessories</a></li>		</ul>
+</li><li class="mega-menu-column mega-menu-columns-1-of-12" style="--columns:12; --span:1" id="mega-menu-1847-1-6"></li>	</ul>
+</li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1966" id="mega-menu-item-1966"><a class="mega-menu-link" href="https://leksalighting.com/portfolio/">Portfolio</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-106" id="mega-menu-item-106"><a class="mega-menu-link" href="https://leksalighting.com/career/">Career</a></li><li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-item-28" id="mega-menu-item-28"><a class="mega-menu-link" href="https://leksalighting.com/category/news-and-events/">News</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-6683" id="mega-menu-item-6683"><a class="mega-menu-link" href="https://leksalighting.com/cnt/">Contact Us</a></li></ul></div>          </div>
+			
+          
+<!--           <div class="top-right1 align-self-center ">
+            <div class="menu-div">
+              <nav class="navbar navbar-expand-md navbar-light">
+                
+                
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button> -->
+              
+<!--                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav nav-fill w-100">
+                    <li class="nav-item active"><a class="nav-link" href="https://leksalighting.com/">Home</a></li>
+      
+					  
+	  <li class="nav-item dropdown">
+                      <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> About us  </a>
+                        <ul class="dropdown-menu d1 fade-up" aria-labelledby="navbarDropdown">
+                          
+                          <li><a class="dropdown-item" href="https://leksalighting.com/company-profile/">Comapny Profile</a></li>
+							          <li><a class="dropdown-item" href="https://leksalighting.com/why-leksa/">Why Leksa Lighting</a></li>
+							<li><a class="dropdown-item" href="https://leksalighting.com/our-team/">Our Team</a></li>
+		  </ul>
+					  </li>
+					  
+					  
+                   <li class="nav-item dropdown">
+                      <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  Verticals  </a>
+                        <ul class="dropdown-menu d1 fade-up" aria-labelledby="navbarDropdown">
+                          
+                          <li><a class="dropdown-item" href="https://leksalighting.com/verticals/#stage">Stage Lighting & Drapery</a></li>
+                          <li><a class="dropdown-item" href="https://leksalighting.com/verticals/#film">Film & Fiction Lighting</a></li>
+                          <li><a class="dropdown-item" href="https://leksalighting.com/verticals/#tv">TV Studio Lighting</a></li>
+                          <li><a class="dropdown-item" href="https://leksalighting.com/verticals/#arch">Architectural Lighting</a></li>
+                          <li><a class="dropdown-item" href="https://leksalighting.com/verticals/#std">Stadium Lighting</a></li>
+							<li><a class="dropdown-item" href="https://leksalighting.com/verticals/#vid">Video Conference Lighting</a></li>
+							<li><a class="dropdown-item" href="https://leksalighting.com/verticals/#street">Street Lighting</a></li>
+							<li><a class="dropdown-item" href="https://leksalighting.com/verticals/#pub">DJ & Pub Lighting</a></li>
+                      
+                        </ul>
+                </li>   
+                   <li class="nav-item dropdown">
+                  <a class="nav-link  dropdown-toggle" href="https://leksalighting.com/category/verticals/" data-toggle="dropdown" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  Products  </a>
+                    <ul class="dropdown-menu d1 fade-up" aria-labelledby="navbarDropdown">
+                      
+                      <li><a class="dropdown-item" href="https://leksalighting.com/category/verticals/">General Lights</a></li>
+                      <li><a class="dropdown-item" href="https://leksalighting.com/wp-content/themes/leksa-child/#">Combo Lights</a></li>
+                      <li><a class="dropdown-item" href="https://leksalighting.com/wp-content/themes/leksa-child/#">ARGIL Lights</a></li>
+                      <li><a class="dropdown-item" href="https://leksalighting.com/wp-content/themes/leksa-child/#">AUREA Lights</a></li>
+                      <li><a class="dropdown-item" href="https://leksalighting.com/wp-content/themes/leksa-child/#">Bollards and designer lights</a></li>
+                      <li><a class="dropdown-item" href="https://leksalighting.com/wp-content/themes/leksa-child/#">Other Specialized Lights</a></li>
+                  
+                    </ul>
+            </li>
+                   <li class="nav-item"><a class="nav-link" href="https://leksalighting.com/wp-content/themes/leksa-child/#">Portfolio</a></li>
+                   <li class="nav-item"><a class="nav-link" href="https://leksalighting.com/career/">Career </a></li>
+                   <li class="nav-item"><a class="nav-link" href="https://leksalighting.com/category/news-and-events/">News</a></li>
+                   <li class="nav-item"><a class="nav-link" href="https://leksalighting.com/contact-us/">Contact Us</a></li>
+                    
+                  </ul>
+               
+                </div>  -->
+				  
+		  
+				  
+<!--               </nav>
+    
+    
+    
+              
+              </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="page-wrapper chiller-theme">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#"></a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      
+      <!-- sidebar-header  -->
+      
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+       <ul>
+        <li><a href="https://leksalighting.com/">Home</a></li>   
+               <li class="sidebar-dropdown">
+                <a href="#">
+                 
+                  About Us
+                 
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li><a href="https://leksalighting.com/company-profile/">Company Profile</a></li>
+                    <li><a href="https://leksalighting.com/why-leksa/">Why Leksa</a></li>
+                    <li><a href="https://leksalighting.com/our-team/">Our Team</a></li>
+                    <li><a href="https://leksalighting.com/director-message/">Director Message</a></li>
+                 
+                    
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                 
+                  Our Expertise
+                 
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+					  <li><a href="https://leksalighting.com/ourexpertise/#arch">Exterior Facade</a></li>
+                    <li><a href="https://leksalighting.com/ourexpertise/#stage">Stage Lighting & Drapery</a></li>
+                      <li><a href="https://leksalighting.com/ourexpertise/#tv">TV Studio Lighting</a></li>
+					  <li><a href="https://leksalighting.com/ourexpertise/#film">Film & Fiction Lighting</a></li>
+					  <li><a href="https://leksalighting.com/ourexpertise/#pub">DJ & Pub Lighting</a></li>
+                   
+                    
+                    <li><a href="https://leksalighting.com/ourexpertise/#std">Stadium Lighting</a></li>
+					<li><a href="https://leksalighting.com/ourexpertise/#vid">Video Conference Lighting</a></li>
+                    <li><a href="https://leksalighting.com/ourexpertise/#street">Street Lighting</a></li>
+                   
+                    
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+				  <a href="#">Products</a>
+		    <div class="sidebar-submenu">
+                  <ul>
+					  <li><a href="https://leksalighting.com/products/">Architectural Lighting</a></li>
+                    <li><a href="https://leksalighting.com/studio-light-page/">Studio Lighting</a></li>
+                      <li><a href="https://leksalighting.com/stage-lights/">Stage Lighting</a></li>
+					  <li><a href="https://leksalighting.com/landscape-page/">Landscape Lighting</a></li>
+					  <li><a href="https://leksalighting.com/category/film-lighting/">Film / Fiction Lighting</a></li>
+                   
+                    
+                    <li><a href="https://leksalighting.com/category/video-conference-lighting/">Video Conference Lighting</a></li>
+					<li><a href="https://leksalighting.com/stadium-light-product/">Stadium Lighting</a></li>
+                    <li><a href="https://leksalighting.com/category/control-system/">Control System</a></li>
+					   <li><a href="https://leksalighting.com/category/drapery-and-stage-crafts/">Drapery And Stage Crafts</a></li>
+					   <li><a href="https://leksalighting.com/category/lighting-accessories/">Lighting Accessories</a></li>
+                   
+                    
+                  </ul>
+                </div>
+		   </li> 
+		   
+		   
+              <li><a href="https://leksalighting.com/category/portfolio/">Portfolio</a></li> 
+                  <li><a href="https://leksalighting.com/career/">Career</a></li> 
+                  <li><a href="https://leksalighting.com/category/news-and-events/">News</a></li> 
+                  <li><a href="https://leksalighting.com/cnt/">Contact Us</a></li>
+       </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    
+  </nav>
+  <!-- sidebar-wrapper  -->
+  
+  <!-- page-content" -->
+</div>
+
+<script>
+  jQuery(function ($) {
+
+$(".sidebar-dropdown > a").click(function() {
+$(".sidebar-submenu").slideUp(200);
+if (
+$(this)
+  .parent()
+  .hasClass("active")
+) {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .parent()
+  .removeClass("active");
+} else {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .next(".sidebar-submenu")
+  .slideDown(200);
+$(this)
+  .parent()
+  .addClass("active");
+}
+});
+	  
+	  
+	  
+	  $(".sidebar-dropdown1 > a").click(function() {
+$(".sidebar-submenu1").slideUp(200);
+if (
+$(this)
+  .parent()
+  .hasClass("active")
+) {
+$(".sidebar-dropdown1").removeClass("active");
+$(this)
+  .parent()
+  .removeClass("active");
+} else {
+$(".sidebar-dropdown1").removeClass("active");
+$(this)
+  .next(".sidebar-submenu1")
+  .slideDown(200);
+$(this)
+  .parent()
+  .addClass("active");
+}
+});
+	  
+	  
+
+$("#close-sidebar").click(function() {
+$(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+$(".page-wrapper").addClass("toggled");
+});
+
+
+
+
+});
+</script>
+
+<!-- <script src="https://leksalighting.com/wp-content/themes/leksa-child/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://leksalighting.com/wp-content/themes/leksa-child/https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script> -->
+
+<div class="call-div">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+Call Us Now: <a href="https://leksalighting.com/wp-content/themes/leksa-child/tel:+917899543210">+91 78995 43210</a>
+</div>
+</div>
+</div>
+</div>
+
+</header>
+
+
+<article>
+<!-- <div class="video-div1 wow fadeInUp" data-wow-delay="200ms">
+
+  <video loop="" muted="muted" autoplay="autoplay" poster="" class="fullscreen-bg__video" style="height: auto; top: initial; width: 100%; object-fit: cover; left: -51%;">
+                  
+    <source src="https://leksalighting.com/wp-content/themes/leksa-child/video/Leksa Lighting PPT VIDEO.mp4" type="video/mp4">
+</video>
+
+
+ 
+</div> -->
+	<div class="n2_clear"><ss3-force-full-width data-overflow-x="body" data-horizontal-selector="body"><div class="n2-section-smartslider fitvidsignore  n2_clear" data-ssid="5" tabindex="0" role="region" aria-label="Slider"><div id="n2-ss-5-align" class="n2-ss-align"><div class="n2-padding"><div id="n2-ss-5" data-creator="Smart Slider 3" data-responsive="fullwidth" class="n2-ss-slider n2-ow n2-has-hover n2notransition  ">
+
+
+
+<div class="n2-ss-slider-wrapper-outside" style="grid-template-rows:1fr auto"><div class="n2-ss-slider-wrapper-inside">
+        <div class="n2-ss-slider-1 n2_ss__touch_element n2-ow">
+            <div class="n2-ss-slider-2 n2-ow">
+                                                    <div class="n2-ss-background-animation n2-ow"></div>
+                                <div class="n2-ss-slider-3 n2-ow">
+
+                    <div class="n2-ss-slide-backgrounds n2-ow-all"><div class="n2-ss-slide-background" data-public-id="1" data-mode="fill"><div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div></div><div class="n2-ss-slide-background" data-public-id="2" data-mode="fill" aria-hidden="true"><div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="slide 1" data-title=""><picture class="skip-lazy" data-skip-lazy="1"><img src="//leksalighting.com/wp-content/uploads/slider/cache/81dce3583320db00865988deedaabd53/leksa-lighting-homepage-banner2.jpg" alt="slide 1" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1"></picture></div><div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div></div><div class="n2-ss-slide-background" data-public-id="3" data-mode="fill" aria-hidden="true"><div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="slide 1" data-title=""><picture class="skip-lazy" data-skip-lazy="1"><img src="//leksalighting.com/wp-content/uploads/slider/cache/ce500a0f94b8965eb71653e65e839a56/leksa-lighting-homepage-banner3.jpg" alt="slide 1" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1"></picture></div><div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div></div><div class="n2-ss-slide-background" data-public-id="4" data-mode="fill" aria-hidden="true"><div class="n2-ss-slide-background-image" data-blur="0" data-opacity="100" data-x="50" data-y="50" data-alt="" data-title=""><picture class="skip-lazy" data-skip-lazy="1"><img src="//leksalighting.com/wp-content/uploads/slider/cache/124967d6db1287edde8752bc59946065/leksa-lighting-homepage-banner4.jpg" alt="" title="" loading="lazy" class="skip-lazy" data-skip-lazy="1"></picture></div><div data-color="RGBA(255,255,255,0)" style="background-color: RGBA(255,255,255,0);" class="n2-ss-slide-background-color"></div></div></div>                    <div class="n2-ss-slider-4 n2-ow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800" data-related-device="desktopPortrait" class="n2-ow n2-ss-preserve-size n2-ss-preserve-size--slider n2-ss-slide-limiter"></svg><div data-first="1" data-slide-duration="0" data-id="24" data-slide-public-id="1" data-title="Image Slide 2" class="n2-ss-slide n2-ow  n2-ss-slide-24"><div role="note" class="n2-ss-slide--focus" tabindex="-1">Image Slide 2</div><div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow"><div class="n2-ss-layer n2-ow n-uc-joHdwedt2Zx3" data-sstype="slide" data-pm="default"><div class="n2-ss-layer n2-ow n-uc-isDH2WNnFgR8" data-pm="default" data-sstype="content" data-hasbackground="1"><div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-isDH2WNnFgR8-inner"><div class="n2-ss-layer n2-ow n-uc-e87Nd4pIXrvM n2-ss-layer--auto" data-pm="normal" data-sstype="layer"><div id="n2-ss-5item1" class="n2-font-1a9ad0ed3eb3a11e080e78b12e8f97f5-hover n2-style-f04cc1cbb7e5d123678bfad3a191fa78-heading   n2-ss-item-content n2-ss-text n2-ow" style="display:inline-block;">Architectural Lighting</div></div></div></div></div></div></div><div data-slide-duration="0" data-id="597" data-slide-public-id="2" aria-hidden="true" data-title="Image Slide 2" class="n2-ss-slide n2-ow  n2-ss-slide-597"><div role="note" class="n2-ss-slide--focus" tabindex="-1">Image Slide 2</div><div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow"><div class="n2-ss-layer n2-ow n-uc-RskBT1qstqEK" data-sstype="slide" data-pm="default"><div class="n2-ss-layer n2-ow n-uc-MUSTa25z7532" data-pm="default" data-sstype="content" data-hasbackground="0"><div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-MUSTa25z7532-inner"><div class="n2-ss-layer n2-ow n-uc-aoX1A0SAlxKF n2-ss-layer--auto" data-pm="normal" data-sstype="layer"><div id="n2-ss-5item2" class="n2-font-1a9ad0ed3eb3a11e080e78b12e8f97f5-hover n2-style-f04cc1cbb7e5d123678bfad3a191fa78-heading   n2-ss-item-content n2-ss-text n2-ow" style="display:inline-block;">Landscape Lighting</div></div></div></div></div></div></div><div data-slide-duration="0" data-id="21" data-slide-public-id="3" aria-hidden="true" data-title="Image Slide 2" class="n2-ss-slide n2-ow  n2-ss-slide-21"><div role="note" class="n2-ss-slide--focus" tabindex="-1">Image Slide 2</div><div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow"><div class="n2-ss-layer n2-ow n-uc-dxKcmWbrs64A" data-sstype="slide" data-pm="default"><div class="n2-ss-layer n2-ow n-uc-1beb93a18130d" data-pm="default" data-sstype="content" data-hasbackground="0"><div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-1beb93a18130d-inner"><div class="n2-ss-layer n2-ow n-uc-45Pt5aDhhDoO n2-ss-layer--auto" data-pm="normal" data-sstype="layer"><div id="n2-ss-5item3" class="n2-font-1a9ad0ed3eb3a11e080e78b12e8f97f5-hover n2-style-f04cc1cbb7e5d123678bfad3a191fa78-heading   n2-ss-item-content n2-ss-text n2-ow" style="display:inline-block;">Stage Lighting &amp; Drapery</div></div></div></div></div></div></div><div data-slide-duration="0" data-id="23" data-slide-public-id="4" aria-hidden="true" data-title="Image Slide 3" class="n2-ss-slide n2-ow  n2-ss-slide-23"><div role="note" class="n2-ss-slide--focus" tabindex="-1">Image Slide 3</div><div class="n2-ss-layers-container n2-ss-slide-limiter n2-ow"><div class="n2-ss-layer n2-ow n-uc-KJHSttbYWAf5" data-sstype="slide" data-pm="default"><div class="n2-ss-layer n2-ow n-uc-149c70d29868d" data-pm="default" data-sstype="content" data-hasbackground="0"><div class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-149c70d29868d-inner"><div class="n2-ss-layer n2-ow n-uc-bxXIvLMD5NcV n2-ss-layer--auto" data-pm="normal" data-sstype="layer"><div id="n2-ss-5item4" class="n2-font-1a9ad0ed3eb3a11e080e78b12e8f97f5-hover n2-style-f04cc1cbb7e5d123678bfad3a191fa78-heading   n2-ss-item-content n2-ss-text n2-ow" style="display:inline-block;">TV Studio Lighting</div></div></div></div></div></div></div>                    </div>
+
+                                    </div>
+            </div>
+        </div>
+        <div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-left-center"><div style="--widget-offset:15px;" class="n2-ss-widget nextend-arrow n2-ow-all nextend-arrow-previous  nextend-arrow-animated-fade" id="n2-ss-5-arrow-previous" role="button" aria-label="previous arrow" tabindex="0"><img width="32" height="32" class="n2-arrow-normal-img skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMS40MzMgMTUuOTkyTDIyLjY5IDUuNzEyYy4zOTMtLjM5LjM5My0xLjAzIDAtMS40Mi0uMzkzLS4zOS0xLjAzLS4zOS0xLjQyMyAwbC0xMS45OCAxMC45NGMtLjIxLjIxLS4zLjQ5LS4yODUuNzYtLjAxNS4yOC4wNzUuNTYuMjg0Ljc3bDExLjk4IDEwLjk0Yy4zOTMuMzkgMS4wMy4zOSAxLjQyNCAwIC4zOTMtLjQuMzkzLTEuMDMgMC0xLjQybC0xMS4yNTctMTAuMjkiCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjgiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=" alt="previous arrow"><img width="32" height="32" class="n2-arrow-hover-img skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMS40MzMgMTUuOTkyTDIyLjY5IDUuNzEyYy4zOTMtLjM5LjM5My0xLjAzIDAtMS40Mi0uMzkzLS4zOS0xLjAzLS4zOS0xLjQyMyAwbC0xMS45OCAxMC45NGMtLjIxLjIxLS4zLjQ5LS4yODUuNzYtLjAxNS4yOC4wNzUuNTYuMjg0Ljc3bDExLjk4IDEwLjk0Yy4zOTMuMzkgMS4wMy4zOSAxLjQyNCAwIC4zOTMtLjQuMzkzLTEuMDMgMC0xLjQybC0xMS4yNTctMTAuMjkiCiAgICAgICAgICBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+" alt="previous arrow"></div></div><div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-right-center"><div style="--widget-offset:15px;" class="n2-ss-widget nextend-arrow n2-ow-all nextend-arrow-next  nextend-arrow-animated-fade" id="n2-ss-5-arrow-next" role="button" aria-label="next arrow" tabindex="0"><img width="32" height="32" class="n2-arrow-normal-img skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMC43MjIgNC4yOTNjLS4zOTQtLjM5LTEuMDMyLS4zOS0xLjQyNyAwLS4zOTMuMzktLjM5MyAxLjAzIDAgMS40MmwxMS4yODMgMTAuMjgtMTEuMjgzIDEwLjI5Yy0uMzkzLjM5LS4zOTMgMS4wMiAwIDEuNDIuMzk1LjM5IDEuMDMzLjM5IDEuNDI3IDBsMTIuMDA3LTEwLjk0Yy4yMS0uMjEuMy0uNDkuMjg0LS43Ny4wMTQtLjI3LS4wNzYtLjU1LS4yODYtLjc2TDEwLjcyIDQuMjkzeiIKICAgICAgICAgIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOCIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPg==" alt="next arrow"><img width="32" height="32" class="n2-arrow-hover-img skip-lazy" data-skip-lazy="1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xMC43MjIgNC4yOTNjLS4zOTQtLjM5LTEuMDMyLS4zOS0xLjQyNyAwLS4zOTMuMzktLjM5MyAxLjAzIDAgMS40MmwxMS4yODMgMTAuMjgtMTEuMjgzIDEwLjI5Yy0uMzkzLjM5LS4zOTMgMS4wMiAwIDEuNDIuMzk1LjM5IDEuMDMzLjM5IDEuNDI3IDBsMTIuMDA3LTEwLjk0Yy4yMS0uMjEuMy0uNDkuMjg0LS43Ny4wMTQtLjI3LS4wNzYtLjU1LS4yODYtLjc2TDEwLjcyIDQuMjkzeiIKICAgICAgICAgIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=" alt="next arrow"></div></div><div class="n2-ss-slider-controls n2-ss-slider-controls-absolute-center-bottom"><div style="--widget-offset:10px;" class="n2-ss-widget n2-ss-control-bullet n2-ow-all n2-ss-control-bullet-horizontal"><div class=" nextend-bullet-bar n2-bar-justify-content-center" role="group" aria-label="Choose slide to display."><div class="n2-bullet n2-style-13586a9834f840c6e3b0e8ac4aa4b69c-dot " style="visibility:hidden;"></div></div></div></div></div><div class="n2-ss-slider-controls n2-ss-slider-controls-below"><div class="n2-ss-widget nextend-shadow n2-ow-all"><img width="1120" height="50" style="display: block; width:100%;max-width:none;" class="nextend-shadow-image skip-lazy" loading="lazy" data-skip-lazy="1" src="https://leksalighting.com/wp-content/plugins/smart-slider-3/Public/SmartSlider3/Widget/Shadow/ShadowImage/Assets/shadow/dark.png" alt="Shadow"></div></div></div></div><ss3-loader></ss3-loader></div></div><div class="n2_clear"></div></div></ss3-force-full-width></div>
+
+<div class="home-div1 pt-5 wow fadeInUp" data-wow-delay="800ms">
+  <div class="container-fluid">
+    <div class="about-ver  px-md-1 px-1">
+    <div class="row d-flex">
+      
+        <div class="col-md-4 align-self-center wow fadeInLeft">
+          <div class="home-about">
+            <h3>Leksa Lighting Company Introduction</h3>
+            <p>Situated among the scenic and tranquil Western Ghats, Leksa Lighting is a company founded in 2018, with the vision and the determination to deliver Lighting Excellence across India and the world. Our business portfolio caters to the lighting of both professional and consumer spaces. </p>
+            <div class="text-md-start text-center"><div class="read-more rectangle-out"><a href="https://leksalighting.com/company-profile/">Read More About Us</a></div></div>
+          </div>
+        </div>
+        <div class="col-md-8 wow fadeInRight">		
+					
+          <div class="home-vert">
+            <h1>Lighting Segments</h1>
+            <div class="row vert-img ">
+				
+				 <div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-exterior-facade.jpg" class="img-fluid" alt="" /><h6>Exterior Facade</h6></div></div> 
+				<div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-exterior-landscape.jpg" class="img-fluid" alt="" /><h6>Exterior Landscape</h6></div></div>
+				
+				 <div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-stage-lighting-segment.jpg " class="img-fluid" alt="" /><h6>Stage Lighting</h6></div></div>
+				
+				  <div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-studio-lighting-segment.jpg" class="img-fluid" alt="" /><h6>Studio Lighting</h6></div></div>
+				
+<!-- 			<div class="row vert-img v-img d-flex"> -->
+              <div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-film-lighting-segment.jpg" class="img-fluid" alt="" /><h6>⁠⁠Film Lighting</h6></div></div>	
+				
+				<div class="col-md-3 col-6"><div class="vert-img1"><a href="https://lexriseindia.com/product-category/general-lights/" target="_blank"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-general-lighting-segment.jpg" class="img-fluid" alt="" /><h6>⁠General Lighting</h6></a></div></div>
+				
+				<div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-dj-pub-segment.jpg" class="img-fluid" alt="" /><h6>DJ and PUB Lighting</h6></div></div>
+				
+				<div class="col-md-3 col-6"><div class="vert-img1"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-street-conference-stadium-segment.jpg" class="img-fluid" alt="" /><h6>Street/Conference/Stadium Lighting</h6></div></div>
+ 			 
+<!-- 				<div class="col-md-3 col-6"><div class="vert-img1"><a href="https://lexriseindia.com/product-category/general-lights/" target="_blank"><img src="https://leksalighting.com/wp-content/uploads/2023/12/arch-ligh2.jpg" class="img-fluid" alt="" /><h6>General Lightings</h6></a></div></div> -->
+               
+            
+              
+            </div>
+            
+             
+             <!--<div class="col-md-3 col-6"><div class="vert-img1"><img src="https://leksalighting.com/wp-content/uploads/2023/12/stage.jpg" class="img-fluid" alt="" /><h6>Stage</h6></div></div>-->
+<!-- 				<div class="col-md-3 col-6"><div class="vert-img1"><img src="https://leksalighting.com/wp-content/uploads/2023/12/dj.jpg" class="img-fluid" alt="" /><h6>DJ and Pub</h6></div></div> -->
+<!--               <div class="col-md-3 col-6"><div class="vert-img1"><img src="https://leksalighting.com/wp-content/uploads/2023/07/lg8.jpg" class="img-fluid" alt="" /><h6>General</h6></div></div> -->
+<!-- 				 
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="home-div2 wow fadeInUp" data-wow-delay="300ms">
+  <div class="container-fluid">
+    <div class="home-qty ">
+      <div class="row d-flex">
+		  <div class="col-md-12">
+			<div class="title">
+				<h5><span class="title-word title-word-1">Let's </span><span class="title-word title-word-2">Talk </span> <span class="title-word title-word-3">Numbers</span></h5></div>
+		  </div>
+        <div class="col-md-4">
+          <div class="home-pro wow swing">
+            <div class="d-flex justify-content-md-start justify-content-center">
+              <h1><span class="number">800</span> +</h1>
+              <h2>Projects work<br/>world wide</h2>
+
+            </div>
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make Lorem Ipsum has been the industry's standard dummy.</p>
+          </div>
+        </div>
+        <div class="col-md-8 align-self-center">
+          <div class="d-md-flex d-block justify-content-center">
+            
+              <div class="home-rec text-center text-md-start flex-even wow fadeInRight"  data-wow-delay="120ms">
+                <h1><span class="number">500</span> +</h1>
+                <h2>Products</h2>
+              </div>
+                          <div class="home-rec text-center flex-even wow fadeInRight"  data-wow-delay="1400ms">
+                <h1><span class="number">4250</span>+</h1>
+                <h2>Customers</h2>
+              </div>
+<!--               <div class="home-rec text-center flex-even wow fadeInRight"  data-wow-delay="1600ms">
+                <h1><span class="number">225</span>+</h1>
+                <h2>Team Members</h2>
+              </div> -->
+                      </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+
+    <div class="home-proj d-flex   justify-content-center flex-md-row-reverse flex-column-reverse">
+      <div class="home-proj1 hp6 wow fadeInLeft move-up" data-wow-delay="1700ms">
+                  
+       
+      
+     <a href="https://leksalighting.com/category/portfolio/"> <img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-shimmers-lounge.png" class="img-fluid" alt=""> 
+		 <h5>Shimmers Lounge</h5></a>
+    
+      </div>
+
+
+      <div class="home-proj1 hp5 wow fadeInLeft move-up" data-wow-delay="1500ms">
+                  
+        
+      
+    <a href="https://leksalighting.com/category/portfolio/">  <img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-aaj-tak.png" class="img-fluid" alt=""> 
+		<h5>Aajtak TV</h5></a>
+    
+      </div>
+        <div class="home-proj1 hp4 wow fadeInLeft move-up" data-wow-delay="1300ms">
+                  
+         
+        
+       <a href="https://leksalighting.com/category/portfolio/"> <img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-bangalore-international-convention-center.png" class="img-fluid" alt=""> 
+		   <h5>Bangalore International Convention Centre</h5></a>
+      
+        </div>
+
+          <div class="home-proj1 hp3 wow fadeInLeft move-up" data-wow-delay="1100ms">
+                  
+            
+          
+         <a href="https://leksalighting.com/category/portfolio/"> <img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-suvarna-vidhana-soudha.png" class="img-fluid" alt=""> 
+			 <h5>Suvarna Vidhana Soudha</h5></a>
+        
+          </div>
+
+            <div class="home-proj1 hp2 wow fadeInLeft move-up" data-wow-delay="900ms">
+                  
+              
+            
+            <a href="https://leksalighting.com/category/portfolio/"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-gateway-of-india.png" class="img-fluid" alt=""> 
+				<h5>Gateway of India </h5></a>
+          
+            </div>
+
+              <div class="home-proj1 hp1 wow fadeInLeft move-up" data-wow-delay="700ms">
+                  
+                 
+                
+             <a href="https://leksalighting.com/category/portfolio/"><img src="http://leksalighting.com/wp-content/uploads/2024/05/leksa-lighting-ayodhya-dham-railway-img.png" class="img-fluid" alt=""> 
+                <h5>Ayodhya Dham Railway</h5></a> 
+              
+                </div>
+
+
+
+    </div>
+  </div>
+</div>
+<!-- 
+<div class="home-div3 wow fadeInUp" data-wow-delay="1200ms">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Our Featured Products</h1>
+        <p class="hf-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec consequat tortor, vitae rhoncus libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec consequat tortor, vitae rhoncus libero.</p>
+        <div class="row home-feat">
+          <div class="col-md-3">
+            <ul class="nav nav-pills  flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#menu1"><i class="bi bi-check-lg"></i> HG Profiles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu2"><i class="bi bi-check-lg"></i> PAR Can</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu3"><i class="bi bi-check-lg"></i> HG Fresnel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu4"><i class="bi bi-check-lg"></i> PLANO Convex</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu5"><i class="bi bi-check-lg"></i> Multi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#menu6"><i class="bi bi-check-lg"></i> Flood</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-9">
+             
+        <div class="tab-content">
+          <div class="tab-pane container active" id="menu1">
+            <a href="#"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/hg-fresnel.jpg" class="img-fluid mx-auto" alt="" /></a>
+          </div>
+          <div class="tab-pane container fade" id="menu2">
+            <a href="#"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/hg-fresnel.jpg" class="img-fluid mx-auto" alt="" /></a>
+          </div>
+          <div class="tab-pane container fade" id="menu3">
+            <a href="#"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/hg-fresnel.jpg" class="img-fluid mx-auto" alt="" /></a>
+          </div>
+          <div class="tab-pane container fade" id="menu4">
+            <a href="#"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/hg-fresnel.jpg" class="img-fluid mx-auto" alt="" /></a>
+          </div>
+          <div class="tab-pane container fade" id="menu5">
+            <a href="#"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/hg-fresnel.jpg" class="img-fluid mx-auto" alt="" /></a>
+          </div>
+          <div class="tab-pane container fade" id="menu6">
+            <a href="#"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/hg-fresnel.jpg" class="img-fluid mx-auto" alt="" /></a>
+          </div>
+        </div>
+          </div>
+        </div>
+        
+        
+       
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="home-div4 wow fadeInDown" data-wow-delay="300ms">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h1>Awards and Recognitions</h1>
+        </div>
+
+        <div class="slider text-center center-block">
+			
+          <div class="aw-div">
+          <figure><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award1.png" class="img-fluid" alt="" /></figure>
+          <h5>Awarded Fastest Growing Indian Brand</h5>
+           </div>
+
+           <div class="aw-div">
+			   <figure><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award2.png" class="img-fluid" alt="" /></figure>
+            <h5>Awarded Excellence in Manufacturing and Customer Satisfaction </h5>
+             </div>
+
+             <div class="aw-div">
+				 <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award7.png" class="img-fluid" alt="" /></figure>
+              <h5>High Flyers 50 Global Indians Award</h5>
+               </div>
+
+
+             <div class="aw-div">
+				 <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award3.png" class="img-fluid" alt="" /></figure>
+              <h5>High Flyers 50 Global Indians Award</h5>
+               </div>
+
+               <div class="aw-div">
+				   <figure><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award4.png" class="img-fluid" alt="" /></figure>
+                <h5>High Flyers 50 Global Indians Award</h5>
+                 </div>
+
+                 <div class="aw-div">
+					 <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award5.png" class="img-fluid" alt="" /></figure>
+                  <h5>Nominated BEST 5000 MSME's Award</h5>
+                   </div>
+
+                   <div class="aw-div">
+					   <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-award6.png" class="img-fluid" alt="" /></figure>
+                    <h5>Most Trusted Company Award</h5>
+                     </div>
+
+                     <div class="aw-div">
+						 <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-electronics-startup-2023.png" class="img-fluid" alt="" /></figure>
+                      <h5>Awarded 10 Best Electronics Startups 2023 recognized by Siliconindia Magazine</h5>
+                       </div>
+
+
+                       <div class="aw-div">
+						   <figure><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-emerging-brand.png" class="img-fluid" alt="" /></figure>
+                        <h5>Awarded as the Emerging Brand in Lighting from Times Group - Economic Times of India</h5>
+                         </div>
+
+                         <div class="aw-div">
+							 <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/leksa-lighting-times-of-india-award.png" class="img-fluid" alt="" /></figure>
+                          <h5>Awarded as the Emerging Brand in Lighting from Times Group - Economic Times of India </h5>
+                           </div>
+
+<!--                            <div class="aw-div">
+							   <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/award11.png" class="img-fluid" alt="" /></figure>
+                            <h5>Iso Certificate For Management System</h5>
+                             </div> -->
+
+<!--                              <div class="aw-div">
+								 <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/award12.png" class="img-fluid" alt="" /></figure>
+                              <h5>Iso Certificate For Environmental Management System</h5>
+                               </div> -->
+
+<!--                                <div class="aw-div">
+								   <figure> <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/award13.png" class="img-fluid" alt="" /></figure>
+                                <h5>Iso Certificate For Occupational Health And Safety Management System</h5>
+                                 </div> -->
+
+                   
+                  
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+	
+	
+
+<div class="home-div5 wow fadeInUp" data-wow-delay="300ms">
+	  <div class="slider-ver text-center center-block">
+		<div class="aw-div">  
+  <div class="d-md-flex d-block justify-content-between">
+  
+  <div class="align-self-center ms-auto home-sleft">
+   
+    <div class="text-center">
+      
+<!--     <h3>Studio Lights</h3> -->
+	 <h3>Architectural Lights</h3>	
+    <h1>The Ultimate<br/>Light for creators</h1>
+    <p>Unique designs, vibrant exteriors, perfect fixtures, elegant ambiance, standout Facade</p>
+  </div>
+  
+  </div> 
+  <div class="home-sright">
+    <img src="http://leksalighting.com/wp-content/uploads/2024/05/architectural-ultimate-img.jpg  " class="img-fluid " alt="" />
+  </div>     
+    </div>
+		  </div>
+		  
+		  <div class="aw-div">  
+  <div class="d-md-flex d-block justify-content-between">
+  
+  <div class="align-self-center ms-auto home-sleft">
+   
+    <div class="text-center">
+      
+<!--     <h3>Architectural Lights</h3> -->
+		<h3>Auditorium Lights</h3>
+    <h1>The Ultimate<br/>Light for creators</h1>
+     <p>Designing and manufacturing required rigs, power system, dimming controls along with lights and drapes for the Stage performances,<br>Leksa captures the audience’s attention and enhance a stage production in a number of ways</p>
+  </div>
+  
+  </div> 
+  <div class="home-sright">
+    <img src="http://leksalighting.com/wp-content/uploads/2024/05/auditorium-segment.jpg" class="img-fluid " alt="" />
+  </div>     
+    </div>
+		  </div>
+		  
+		  <div class="aw-div">  
+  <div class="d-md-flex d-block justify-content-between">
+  
+  <div class="align-self-center ms-auto home-sleft">
+   
+    <div class="text-center">
+      
+    <h3>Studio Lights</h3>
+    <h1>The Ultimate<br/>Light for creators</h1>
+    <p>Elevating TV broadcasts with professional-grade luminaires. Shadow-free illumination, high purity indexes, and flicker-free output,<br>Complete studio solutions including rigs, power, dimming, and lights</p>
+  </div>
+  
+  </div> 
+  <div class="home-sright">
+    <img src="http://leksalighting.com/wp-content/uploads/2024/05/studio-ultimate-img.jpg" class="img-fluid " alt="" />
+  </div>     
+    </div>
+		  </div>
+		  
+		  <div class="aw-div">  
+  <div class="d-md-flex d-block justify-content-between">
+  
+  <div class="align-self-center ms-auto home-sleft">
+   
+    <div class="text-center">
+      
+    <h3>DJ & Pub Lights</h3>
+    <h1>The Ultimate<br/>Light for creators</h1>
+     <p>Specialized lighting solutions for every need. From Video Conferencing to DJ & PUB Lighting, Stadium Lighting by providing high-end design,<br>expert guidance, perfect solutions.</p>
+  </div>
+  
+  </div> 
+  <div class="home-sright">
+    <img src="http://leksalighting.com/wp-content/uploads/2024/05/dj-and-pub-ultimate-img.jpg  " class="img-fluid " alt="" />
+  </div>     
+    </div>
+		  </div>
+	</div>
+  </div>
+
+  <div class="home-div6 wow fadeInDown" data-wow-delay="300ms">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>News and events</h1>
+          <div class="row">
+			  
+			                    
+            <div class="col-md-4 wow fadeInLeft">
+            <div class="home-news">
+              <a href="#">
+                <div class="home-news1"><img width="650" height="450" src="https://leksalighting.com/wp-content/uploads/2023/07/2-26.jpg" class="img-fluid cmp wp-post-image" alt="" decoding="async" srcset="https://leksalighting.com/wp-content/uploads/2023/07/2-26.jpg 650w, https://leksalighting.com/wp-content/uploads/2023/07/2-26-300x208.jpg 300w" sizes="(max-width: 650px) 100vw, 650px" style="width:100%;height:69.23%;max-width:650px;" /></div>
+                <h5>Industry Visit</h5>
+<!--                 <p></p> -->
+              </a>
+              <div class="text-md-start text-center"><div class="read-more1"><a href="https://leksalighting.com/training-students/">Read More</a></div></div>
+            </div>
+          </div>
+		           
+            <div class="col-md-4 wow fadeInLeft">
+            <div class="home-news">
+              <a href="#">
+                <div class="home-news1"><img width="650" height="450" src="https://leksalighting.com/wp-content/uploads/2023/07/1-30.jpg" class="img-fluid cmp wp-post-image" alt="" decoding="async" srcset="https://leksalighting.com/wp-content/uploads/2023/07/1-30.jpg 650w, https://leksalighting.com/wp-content/uploads/2023/07/1-30-300x208.jpg 300w" sizes="(max-width: 650px) 100vw, 650px" style="width:100%;height:69.23%;max-width:650px;" /></div>
+                <h5>Annual Sports Day</h5>
+<!--                 <p></p> -->
+              </a>
+              <div class="text-md-start text-center"><div class="read-more1"><a href="https://leksalighting.com/annual-sports-day/">Read More</a></div></div>
+            </div>
+          </div>
+		           
+            <div class="col-md-4 wow fadeInLeft">
+            <div class="home-news">
+              <a href="#">
+                <div class="home-news1"><img width="650" height="450" src="https://leksalighting.com/wp-content/uploads/2023/07/1-28.jpg" class="img-fluid cmp wp-post-image" alt="" decoding="async" srcset="https://leksalighting.com/wp-content/uploads/2023/07/1-28.jpg 650w, https://leksalighting.com/wp-content/uploads/2023/07/1-28-300x208.jpg 300w" sizes="(max-width: 650px) 100vw, 650px" style="width:100%;height:69.23%;max-width:650px;" /></div>
+                <h5>Spoorthi Special School Training Center</h5>
+<!--                 <p></p> -->
+              </a>
+              <div class="text-md-start text-center"><div class="read-more1"><a href="https://leksalighting.com/spoorthi-special-school-training-center/">Read More</a></div></div>
+            </div>
+          </div>
+			  
+			  
+<!--           <div class="col-md-4 wow fadeInUp">
+            <div class="home-news">
+              <a href="#">
+                <div class="home-news1"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/news2.jpg" class="img-fluid" alt=""></div>
+                <h5>Lexrise Booklet Launch</h5>
+                <p>Lorem Ipsum has been the industry's standard dummy text </p>
+              </a>
+              <div class="text-md-start text-center"><div class="read-more1"><a href="#">Read More</a></div></div>
+            </div>
+          </div> 
+          <div class="col-md-4 wow fadeInRight">
+            <div class="home-news">
+              <a href="#">
+                <div class="home-news1"><img src="https://leksalighting.com/wp-content/themes/leksa-child/images/news3.jpg" class="img-fluid" alt=""></div>
+                <h5>Spraytech Junction Lighting</h5>
+                <p>Lorem Ipsum has been the industry's standard dummy text </p>
+              </a>
+              <div class="text-md-start text-center"><div class="read-more1"><a href="#">Read More</a></div></div>
+            </div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	
+		<div class="home-div3 wow fadeInUp" data-wow-delay="1200ms">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Our Happy Customers</h1>
+   <div class="wrapper">
+  <div class="photobanner">
+	  
+	  <img class="first" src="https://leksalighting.com/wp-content/uploads/2023/09/reliance-jio.png" class="img-fluid"  alt="" /> 
+	  
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/adani.png" class="img-fluid"  alt="" /> 
+	  
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/infosys.png" class="img-fluid"  alt="" /> 
+	  
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/pcmc.png" class="img-fluid"  alt="" /> 
+	  
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/delhi.png" class="img-fluid"  alt="" /> 
+	  
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/aurangabad.png" class="img-fluid"  alt="" /> 
+	  
+	   <img src="https://leksalighting.com/wp-content/uploads/2023/09/chennai.png" class="img-fluid"  alt="" /> 
+	  
+	   <img src="https://leksalighting.com/wp-content/uploads/2023/09/nagpur-img.png" class="img-fluid"  alt="" /> 
+	  
+	   <img src="https://leksalighting.com/wp-content/uploads/2023/09/sbi-india.png" class="img-fluid"  alt="" /> 
+	  
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/aditya.png" class="img-fluid"  alt="" /> 
+            
+	  <img src="https://leksalighting.com/wp-content/uploads/2023/09/s1.jpg" class="img-fluid"  alt="" /> 
+          
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s2.jpg" class="img-fluid" alt="" /> 
+          
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s3.jpg" class="img-fluid" alt="" /> 
+          
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s4.jpg" class="img-fluid" alt="" /> 
+          
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s5.jpg" class="img-fluid" alt="" /> 
+         
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s6.jpg" alt="" /> 
+         
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s7.jpg" class="img-fluid" alt="" /> 
+          
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s8.jpg" class="img-fluid" alt="" /> 
+          
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s9.jpg" alt="" /> 
+         
+            <img src="https://leksalighting.com/wp-content/uploads/2023/09/s10.jpg" class="img-fluid" alt="" /> 
+       
+        </div>      
+    
+      </div>
+<!-- 		   <div class="text-center"><div class="read-more2"><a href="https://leksalighting.com/happy-customers/">See More</a></div></div> -->
+		   <div class="text-md-start1 text-center"><div class="read-more2 rectangle-out"><a href="https://leksalighting.com/happy-customers/">See More</a></div></div>
+		 
+    </div>
+  </div>
+</div>
+</div>
+	
+
+	
+<!-- <div class="testimonials">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Testimonials</h2>
+				<div class="tes1">
+					<div class="row">
+						                  						<div class="col-md-4">
+							<div class="ts1">
+								 								<p></p>
+
+								<div class="row">
+									<div class="col-md-4">
+										<img src="/images/user.png" class="img-fluid" align="leksa">
+									</div>
+									<div class="col-md-8">
+										<h4></h4>
+										<h5>Head Developer</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+	
+	
+</article>
+
+
+
+<footer>
+
+<div class="footer-div">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="home-div7">
+         
+            <div class="row d-flex">
+              <div class="col-md-5 align-self-center">
+                <div class="home-pdf">
+                  <h6>Enter your mail id and download our PDF</h6>
+<!--                   <form id="subscribe" novalidate="true">
+                    <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Your email" spellcheck="false" type="text">
+                    <button type="submit" id="subscribe-button" class="subscribe-button ">Submit</button>
+                    <label for="subscribe-email" class="subscribe-message"></label>
+                </form> -->
+					<style id="wpforms-css-vars-7606">
+				#wpforms-7606 {
+				
+			}
+			</style><div class="wpforms-container wpforms-container-full wpforms-render-modern" id="wpforms-7606"><form id="wpforms-form-7606" class="wpforms-validate wpforms-form wpforms-ajax-form" data-formid="7606" method="post" enctype="multipart/form-data" action="/" data-token="7ab6feb8fe13a970e081c42339b6dc3b" data-token-time="1784282645"><noscript class="wpforms-error-noscript">Please enable JavaScript in your browser to complete this form.</noscript><div id="wpforms-error-noscript" style="display: none;">Please enable JavaScript in your browser to complete this form.</div><div class="wpforms-field-container"><div id="wpforms-7606-field_4-container" class="wpforms-field wpforms-field-text" data-field-id="4"><label class="wpforms-field-label" for="wpforms-7606-field_4">Name <span class="wpforms-required-label" aria-hidden="true">*</span></label><input type="text" id="wpforms-7606-field_4" class="wpforms-field-large wpforms-field-required" name="wpforms[fields][4]" aria-errormessage="wpforms-7606-field_4-error" required></div><div id="wpforms-7606-field_2-container" class="wpforms-field wpforms-field-email" data-field-id="2"><label class="wpforms-field-label" for="wpforms-7606-field_2">Email <span class="wpforms-required-label" aria-hidden="true">*</span></label><input type="email" id="wpforms-7606-field_2" class="wpforms-field-large wpforms-field-required" name="wpforms[fields][2]" spellcheck="false" aria-errormessage="wpforms-7606-field_2-error" required></div></div><!-- .wpforms-field-container --><div class="wpforms-submit-container" ><input type="hidden" name="wpforms[id]" value="7606"><input type="hidden" name="page_title" value="Leksa Lighting"><input type="hidden" name="page_url" value="https://leksalighting.com/"><input type="hidden" name="url_referer" value=""><button type="submit" name="wpforms[submit]" id="wpforms-submit-7606" class="wpforms-submit" data-alt-text="Sending..." data-submit-text="Download" aria-live="assertive" value="wpforms-submit">Download</button><img src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/images/submit-spin.svg" class="wpforms-submit-spinner" style="display: none;" width="26" height="26" alt="Loading"></div></form></div>  <!-- .wpforms-container -->   
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="bot-call d-flex flex-md-row flex-column-reverse ">
+                  <div class="bot-img">
+                    <img src="https://leksalighting.com/wp-content/themes/leksa-child/images/call-img1.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="align-self-center">
+                    <h6>Call for support</h6>
+                    <div class="bot-num"><a href="tel:+917899543210">+91- 78995 43210</a></div>
+                    <div class="leave"><a href="#">Leave a Message</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="footer-last">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h5>Contact</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="ft-det">
+            <div class="ft-ad">
+              <span style="color:var(--gold);"><b>Leksa Lighting Technologies Pvt. Ltd.</b></span><br/>
+Ashwathpura Road, Moodbidri<br/>
+Mangaluru, Karnataka, India – 574227<br/>
+<!-- Contact: Mr Royal Peter<br/> -->
+<!-- E-mail: <a href="mailto:biz@leksalighting.com">biz@leksalighting.com</a> -->
+</div>
+            </div> 
+          </div>
+          <div class="col-md-6">
+            <div class="ft-det">
+               
+          
+       
+        
+        <div class="ft-mail">
+          E-mail: <a href="mailto:info@leksalighting.com">info@leksalighting.com</a>
+        </div>
+       
+              <div class="ft-call">
+                
+                
+                <a href="tel:+917899543210">+91- 78995 43210</a><br/>
+              
+             </div>
+
+             <div class="top-link d-flex justify-content-md-start justify-content-center">
+        
+              <a href="https://www.facebook.com/leksalighting/" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fleksalighting" target="_blank"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.youtube.com/channel/UCVq2wiRYLdtTftYj2Ivtx9Q" target="_blank"><i class="bi bi-youtube"></i></a>
+<!--               <a href="#" target="_blank"><i class="bi bi-google"></i></a>
+              <a href="#" target="_blank"><i class="bi bi-pinterest"></i></a> -->
+			  <a href="https://www.instagram.com/leksalighting/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i class="bi bi-instagram"></i></a>
+			  <a href="https://www.linkedin.com/company/leksa-lighting/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            
+            
+          </div>  
+              
+             
+              
+              
+              </div>
+          </div>
+        </div>
+       
+     
+       
+      </div>
+
+      <div class="col-md-5">
+        <h5>Navigation</h5>
+        <div class="row">
+          <div class="col-md-6">
+           
+            <!-- <ul class="f-link">
+                  
+              <li><a href="index.html">Home</a></li>   
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="#">Our Expertise</a></li> 
+              <li><a href="products.html">Products</a></li> 
+                          </ul> -->
+                          <div class="menu-footermenu1-container"><ul id="menu-footermenu1" class="f-link"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-7 nav-item"><a title="Home" href="https://leksalighting.com/" class="nav-link" aria-current="page">Home</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1077" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1077 nav-item"><a title="About Us" href="https://leksalighting.com/company-profile/" class="nav-link">About Us</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1845 nav-item"><a title="Our Expertise" href="https://leksalighting.com/ourexpertise/" class="nav-link">Our Expertise</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-5047" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5047 nav-item"><a title="Products" href="https://leksalighting.com/category/architectural-lighting/" class="nav-link">Products</a></li>
+</ul></div>            </div>
+    
+    
+          <div class="col-md-6  ">
+          <div class="menu-footermenu2-container"><ul id="menu-footermenu2" class="f-link"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1967 nav-item"><a title="Portfolio" href="https://leksalighting.com/portfolio/" class="nav-link">Portfolio</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1081 nav-item"><a title="Career" href="https://leksalighting.com/career/" class="nav-link">Career</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1082" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1082 nav-item"><a title="News" href="https://leksalighting.com/category/news-and-events/" class="nav-link">News</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-6684" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6684 nav-item"><a title="Contact Us" href="https://leksalighting.com/cnt/" class="nav-link">Contact Us</a></li>
+</ul></div>       
+                <!-- <ul class="f-link">
+                     
+                  <li><a href="#">Partner</a></li> 
+                  <li><a href="#">Career</a></li> 
+                  <li><a href="news.html">News</a></li> 
+                  <li><a href="contact-us.html">Contact Us</a></li>
+                     
+                </ul> -->
+         
+          </div>
+        </div>
+      </div>
+
+     
+     
+     
+      
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+   
+
+
+     <div class="copy-div">
+    <div class="container">
+     
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+          ©<script>document.write(new Date().getFullYear())</script> <a href="#">Leksalightings.com</a> | All Rights Reserved. Powered by <a href="https://www.bluelinecomputers.com/" target="_blank">Blueline Computers</a>
+        </div>
+        </div>
+      </div>
+    
+    </div>
+    
+    
+  </div>
+ 
+ 
+	
+	  <div class="call-div">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-12">
+    Call Us Now: <a href="tel:+917899543210">+91 78995 43210</a>
+    </div>
+    </div>
+    </div>
+    </div>
+ 
+ <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/leksa-child/*","/wp-content/themes/leksa/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>document.body.classList.remove("no-js");</script>	<script>
+	if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
+		document.body.classList.add( 'is-IE' );
+	}
+	</script>
+			<script>
+		/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1);
+		</script>
+		<script src="https://leksalighting.com/wp-content/plugins/cf7-popups//views/assets/js/sweetalert2.min.js?ver=1.2.1" id="sweetalert2-js"></script>
+<script id="cf7-popups-frontend-js-extra">
+var cf7_popups_val = {"msg1":"Validation Error","msg2":"One or more field validation error","msg3":"Error","msg4":"Failed to send email because possible spam activity has been detected.","msg5":"Failed to send email.","msg6":"Email Sent","msg7":"Thank you for your message. It has been sent."};
+//# sourceURL=cf7-popups-frontend-js-extra
+</script>
+<script src="https://leksalighting.com/wp-content/plugins/cf7-popups//views/assets/js/cf7-popups.js?ver=1.2.1" id="cf7-popups-frontend-js"></script>
+<script src="https://leksalighting.com/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script src="https://leksalighting.com/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script src="https://leksalighting.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.6" id="swv-js"></script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/leksalighting.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script src="https://leksalighting.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.6" id="contact-form-7-js"></script>
+<script id="twenty-twenty-one-ie11-polyfills-js-after">
+( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script src="https://leksalighting.com/wp-content/themes/leksa/assets/js/polyfills.js?ver=1.5"></scr' + 'ipt>' );
+//# sourceURL=twenty-twenty-one-ie11-polyfills-js-after
+</script>
+<script src="https://leksalighting.com/wp-content/themes/leksa/assets/js/primary-navigation.js?ver=1.5" id="twenty-twenty-one-primary-navigation-script-js"></script>
+<script src="https://leksalighting.com/wp-content/themes/leksa/assets/js/responsive-embeds.js?ver=1.5" id="twenty-twenty-one-responsive-embeds-script-js"></script>
+<script id="newsletter-js-extra">
+var newsletter_data = {"action_url":"https://leksalighting.com/wp-admin/admin-ajax.php"};
+//# sourceURL=newsletter-js-extra
+</script>
+<script src="https://leksalighting.com/wp-content/plugins/newsletter/main.js?ver=9.2.7" id="newsletter-js"></script>
+<script src="https://leksalighting.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=3.10.5" id="megamenu-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/lib/jquery.validate.min.js?ver=1.21.0" id="wpforms-validation-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/lib/mailcheck.min.js?ver=1.1.2" id="wpforms-mailcheck-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/lib/punycode.min.js?ver=1.0.0" id="wpforms-punycode-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/js/share/utils.min.js?ver=1.10.0.4" id="wpforms-generic-utils-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/js/frontend/wpforms.min.js?ver=1.10.0.4" id="wpforms-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/js/frontend/wpforms-modern.min.js?ver=1.10.0.4" id="wpforms-modern-js"></script>
+<script src="https://leksalighting.com/wp-content/plugins/wpforms-lite/assets/js/frontend/fields/address.min.js?ver=1.10.0.4" id="wpforms-address-field-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://leksalighting.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://leksalighting.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpforms_settings = {"val_required":"This field is required.","val_email":"Please enter a valid email address.","val_email_suggestion":"Did you mean {suggestion}?","val_email_suggestion_title":"Click to accept this suggestion.","val_email_restricted":"This email address is not allowed.","val_number":"Please enter a valid number.","val_number_positive":"Please enter a valid positive number.","val_minimum_price":"Amount entered is less than the required minimum.","val_confirm":"Field values do not match.","val_checklimit":"You have exceeded the number of allowed selections: {#}.","val_limit_characters":"{count} of {limit} max characters.","val_limit_words":"{count} of {limit} max words.","val_min":"Please enter a value greater than or equal to {0}.","val_max":"Please enter a value less than or equal to {0}.","val_recaptcha_fail_msg":"Google reCAPTCHA verification failed, please try again later.","val_turnstile_fail_msg":"Cloudflare Turnstile verification failed, please try again later.","val_inputmask_incomplete":"Please fill out the field in required format.","uuid_cookie":"","locale":"en","country":"","country_list_label":"Country list","wpforms_plugin_url":"https:\/\/leksalighting.com\/wp-content\/plugins\/wpforms-lite\/","gdpr":"","ajaxurl":"https:\/\/leksalighting.com\/wp-admin\/admin-ajax.php","mailcheck_enabled":"1","mailcheck_domains":[],"mailcheck_toplevel_domains":["dev"],"is_ssl":"1","currency_code":"USD","currency_thousands":",","currency_decimals":"2","currency_decimal":".","currency_symbol":"$","currency_symbol_pos":"left","val_requiredpayment":"Payment is required.","val_creditcard":"Please enter a valid credit card number.","css_vars":["field-border-radius","field-border-style","field-border-size","field-background-color","field-border-color","field-text-color","field-menu-color","label-color","label-sublabel-color","label-error-color","button-border-radius","button-border-style","button-border-size","button-background-color","button-border-color","button-text-color","page-break-color","background-image","background-position","background-repeat","background-size","background-width","background-height","background-color","background-url","container-padding","container-border-style","container-border-width","container-border-color","container-border-radius","field-size-input-height","field-size-input-spacing","field-size-font-size","field-size-line-height","field-size-padding-h","field-size-checkbox-size","field-size-sublabel-spacing","field-size-icon-size","label-size-font-size","label-size-line-height","label-size-sublabel-font-size","label-size-sublabel-line-height","button-size-font-size","button-size-height","button-size-padding-h","button-size-margin-top","container-shadow-size-box-shadow"],"isModernMarkupEnabled":"1","formErrorMessagePrefix":"Form error message","errorMessagePrefix":"Error message","submitBtnDisabled":"Submit button is disabled during form submission.","readOnlyDisallowedFields":["captcha","map","content","divider","hidden","html","entry-preview","pagebreak","payment-total"],"error_updating_token":"Error updating token. Please try again or contact support if the issue persists.","network_error":"Network error or server is unreachable. Check your connection or try again later.","token_cache_lifetime":"86400","hn_data":[],"address_field":{"list_countries_without_states":["GB","DE","CH","NL"]}}
+/* ]]> */
+</script>
+ 
+</footer>
+<script>
+  function Counter(obj){
+
+// get the number
+var number = obj.text();
+obj.attr('data-number',number);
+
+// clear the HTML element
+obj.empty();
+
+// create an array from the text, prepare to identify which characters in the string are numbers
+var numChars = number.split("")
+var numArray = [];
+var setOfNumbers = [0,1,2,3,4,5,6,7,8,9];
+
+// for each number, create the animation elements
+for(var i=0; i<numChars.length; i++) { 
+if ($.inArray(parseInt(numChars[i], 10),setOfNumbers) != -1) {
+obj.append('<span class="digit-con"><span class="digit'+numArray.length+'">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></span></span>');
+numArray[numArray.length] = parseInt(numChars[i], 10);
+}
+else {
+obj.append('<span>'+numChars[i]+'</span>');
+}	
+}
+
+// determine the height of each number for the animation
+var increment = obj.find('.digit-con').outerHeight();
+var speed = 3000;
+
+// animate each number
+for(var i=0; i<numArray.length; i++) {
+obj.find('.digit'+i).animate({top: -(increment * numArray[i])}, Math.round(speed / (1 + (i * 0.333))));
+}
+}
+
+$(document).ready(function(){
+$('.number').each(function(){
+Counter($(this));
+});
+});
+
+$("#animate").click(function(){
+$('.number').eq(0).text($('.number').attr('data-number'));
+Counter($('.number').eq(0));
+});
+</script>
+
+<script src="https://leksalighting.com/wp-content/themes/leksa-child/js/jquery-2.2.0.min.js" type="text/javascript"></script>
+  
+<script src="https://leksalighting.com/wp-content/themes/leksa-child/./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script>
+  $('.slider').slick({
+   slidesToShow: 5,
+   slidesToScroll: 1,
+   arrows: true,
+   infinite: true,
+   fade: false,
+   // asNavFor: '.slider-nav-thumbnails',
+   autoplay: true,
+   autoplaySpeed: 2000,
+   speed:1000,
+   centerPadding: '100px',
+   responsive: [{
+         breakpoint: 1321,
+         settings: {
+          slidesToShow: 4,
+   slidesToScroll: 1,
+         }
+       },{
+         breakpoint: 980,
+         settings: {
+          slidesToShow: 3,
+   slidesToScroll: 1,
+         }
+       }, {
+
+          breakpoint: 768,
+          settings: {
+           slidesToShow: 1,
+    slidesToScroll: 1,
+    
+       }
+        }]
+ });
+
+
+ $('.slider-cust').slick({
+   slidesToShow: 6,
+   slidesToScroll: 1,
+   arrows: true,
+   infinite: true,
+   fade: false,
+   // asNavFor: '.slider-nav-thumbnails',
+   autoplay: true,
+   autoplaySpeed: 1000,
+   speed:1000,
+   centerPadding: '100px',
+   responsive: [{
+         breakpoint: 1321,
+         settings: {
+          slidesToShow: 4,
+   slidesToScroll: 1,
+         }
+       },{
+         breakpoint: 980,
+         settings: {
+          slidesToShow: 3,
+   slidesToScroll: 1,
+         }
+       }, {
+
+          breakpoint: 768,
+          settings: {
+           slidesToShow: 1,
+    slidesToScroll: 1,
+    
+       }
+        }]
+ });
+	
+	
+	 $('.slider-ver').slick({
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   arrows: true,
+   infinite: true,
+   fade: false,
+   // asNavFor: '.slider-nav-thumbnails',
+   autoplay: true,
+   autoplaySpeed: 2000,
+   speed:2000,
+   centerPadding: '100px',
+   responsive: [{
+         breakpoint: 1321,
+         settings: {
+          slidesToShow: 1,
+   slidesToScroll: 1,
+         }
+       },{
+         breakpoint: 980,
+         settings: {
+          slidesToShow: 1,
+   slidesToScroll: 1,
+         }
+       }, {
+
+          breakpoint: 768,
+          settings: {
+           slidesToShow: 1,
+    slidesToScroll: 1,
+    
+       }
+        }]
+ });
+ 
+ 
+
+  $('.slider-for').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ arrows: false,
+ autoplay: true,
+autoplaySpeed: 2000,
+speed: 1000,
+infinite: true,
+centerMode: false,
+ asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+ slidesToShow: 3,
+ slidesToScroll: 1,
+ asNavFor: '.slider-for',
+//  dots: true,
+ /*centerMode: true,*/
+ focusOnSelect: true,
+
+ responsive: [{
+       breakpoint: 1024,
+       settings: {
+        slidesToShow: 5,
+ slidesToScroll: 1,
+       }
+     }, {
+       breakpoint: 640,
+       settings: {
+        slidesToShow: 3,
+ slidesToScroll: 1,
+      }
+     }, {
+       breakpoint: 420,
+       settings: {
+        slidesToShow: 2,
+ slidesToScroll: 1,
+    }
+     }]
+
+
+
+});
+
+$('a[data-slide]').click(function(e) {
+ e.preventDefault();
+ var slideno = $(this).data('slide');
+ $('.slider-nav').slick('slickGoTo', slideno - 1);
+});
+</script>
+
+<script src="https://leksalighting.com/wp-content/themes/leksa-child/dist/wow.js"></script>
+<script>
+  wow = new WOW(
+    {
+      animateClass: 'animated',
+      offset:       100,
+      callback:     function(box) {
+        console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+      }
+    }
+  );
+  wow.init();
+  document.getElementById('moar').onclick = function() {
+    var section = document.createElement('section');
+    section.className = 'section--purple wow fadeInDown';
+    this.parentNode.insertBefore(section, this);
+  };
+</script>
+
+
+   <script>
+          /* it seems javascript..*/
+var topLimit = $('#bar-fixed').offset().top;
+$(window).scroll(function() {
+  //console.log(topLimit <= $(window).scrollTop())
+  if (topLimit <= $(window).scrollTop()) {
+    $('#bar-fixed').addClass('stickIt')
+  } else {
+    $('#bar-fixed').removeClass('stickIt')
+  }
+})
+        </script>
+
+<script>
+  $(document).ready(function () {
+$(".scrollTo").on('click', function (e) {
+console.log('clicked');
+  e.preventDefault();
+  var target = $(this).attr('href');
+  $('html, body').animate({
+      scrollTop: ($(target).offset().top - 80)
+  }, 200);
+});
+
+});
+</script>
+
+
+
+
+
+
+
+</body>     
 </html>
+
+
+
+
+
+
+			
+
+<!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-07-17 10:04:05 -->
