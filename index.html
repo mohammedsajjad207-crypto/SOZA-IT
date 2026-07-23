@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOZA IT SOLUTIONS | IT Networking Solutions for Business Growth</title>
+    <title>SOZA IT | Enterprise IT Infrastructure & Access Control Dubai</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons CDN -->
+    <!-- FontAwesome 6 Pro CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                         logo: ['Orbitron', 'sans-serif'],
                     },
                     colors: {
-                        soza: {
-                            black: '#080C14',
-                            dark: '#0F172A',
-                            card: '#1E293B',
-                            accent: '#059669', // Emerald accent
-                            gold: '#D4AF37',   // Gold accent
-                            cyan: '#0284C7',
+                        SOZA: {
+                            deep: '#030712',
+                            dark: '#0B132B',
+                            card: '#111D38',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            emerald: '#10B981',
+                            emeraldDark: '#059669',
+                            cyanGlow: '#06B6D4',
+                            chrome: '#E2E8F0',
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
                         }
                     }
                 }
@@ -36,276 +48,698 @@
         }
     </script>
     <style>
-        .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(5, 150, 105, 0.3);
+        .glass-card {
+            background: rgba(17, 29, 56, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
         }
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
         }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            border-color: #059669;
-            box-shadow: 0 20px 40px -15px rgba(5, 150, 105, 0.25);
+        .chrome-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .gradient-overlay {
-            background: linear-gradient(180deg, rgba(8,12,20,0.4) 0%, rgba(8,12,20,0.95) 100%);
+        .gold-text {
+            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emerald-text {
+            background: linear-gradient(180deg, #6EE7B7 0%, #10B981 60%, #047857 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-glow {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+        }
+        .emerald-glow {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.2);
+        }
+        .slide-bg {
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
+        .reveal-up { transform: translateY(40px); }
+        .reveal.active {
+            opacity: 1;
+            transform: translate(0, 0);
         }
     </style>
 </head>
-<body class="bg-soza-black text-slate-100 font-sans selection:bg-soza-accent selection:text-white">
+<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-emerald selection:text-SOZA-deep overflow-x-hidden">
 
-    <!-- Top Info Bar -->
-    <div class="bg-soza-dark border-b border-slate-800 text-xs py-2 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-slate-400">
-            <div class="flex items-center space-x-6">
-                <span><i class="fas fa-location-dot text-soza-accent mr-2"></i> Dubai, United Arab Emirates</span>
-                <span><i class="fas fa-shield-halved text-soza-gold mr-2"></i> 24/7 Enterprise IT Support</span>
+    <!-- Top Bar -->
+    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6 text-slate-300">
+                <span><i class="fas fa-location-dot text-SOZA-emerald mr-2"></i> Dubai, United Arab Emirates</span>
+                <span><i class="fas fa-shield-check text-SOZA-gold mr-2"></i> 24/7 SLA IT Enterprise Support</span>
             </div>
             <div class="flex items-center space-x-6">
-                <a href="tel:+971547271603" class="hover:text-soza-accent transition text-white font-semibold">
-                    <i class="fas fa-phone mr-1 text-soza-accent"></i> +971 54 727 1603
+                <a href="tel:+971547271603" class="hover:text-SOZA-emerald transition font-bold text-white flex items-center">
+                    <i class="fas fa-phone mr-1.5 text-SOZA-emerald"></i> +971 54 727 1603
                 </a>
-                <a href="mailto:sales@soza-it.com" class="hover:text-soza-gold transition">
-                    <i class="fas fa-envelope mr-1 text-soza-gold"></i> sales@soza-it.com
+                <a href="mailto:sales@soza-it.com" class="hover:text-SOZA-gold transition text-slate-300">
+                    <i class="fas fa-envelope mr-1.5 text-SOZA-gold"></i> sales@soza-it.com
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Header Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-soza-black/90 backdrop-blur-md border-b border-slate-800">
+    <!-- Main Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3">
-                <div class="font-logo font-black text-2xl tracking-wider text-white">
-                    SOZA <span class="text-soza-accent">IT</span>
+            
+            <!-- SOZA IT Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="SOZA IT" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('renderedLogo').style.display='flex';">
+                
+                <div id="renderedLogo" class="hidden flex-col">
+                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
+                        <span class="chrome-text">SOZA</span>
+                    </div>
+                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
+                    <span class="text-[7px] tracking-[0.25em] text-SOZA-emerald font-semibold uppercase">DESIGNED TO INSPIRE</span>
                 </div>
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300">
-                <a href="#home" class="text-soza-accent">Home</a>
-                <a href="#about" class="hover:text-soza-accent transition">About Us</a>
-                <a href="#services" class="hover:text-soza-accent transition">IT Services</a>
-                <a href="#solutions" class="hover:text-soza-accent transition">Solutions</a>
-                <a href="#contact" class="hover:text-soza-accent transition">Contact</a>
-            </nav>
+            <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
+                <a href="index.html" class="text-SOZA-emerald hover:text-SOZA-gold transition">Home</a>
+                <a href="#about" class="hover:text-SOZA-emerald transition">About Us</a>
+                
+                <!-- Dropdown -->
+                <div class="relative group py-2">
+                    <a href="#services" class="hover:text-SOZA-emerald transition flex items-center gap-1.5 cursor-pointer">
+                        Services <i class="fas fa-chevron-down text-[10px] text-SOZA-gold"></i>
+                    </a>
+                    <div class="absolute top-full left-0 hidden group-hover:block w-80 glass-card rounded-2xl shadow-2xl p-3 border border-SOZA-gold/30 z-50 space-y-1">
+                        <a href="door-access-control.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-door-closed text-SOZA-emerald w-4"></i> Door Access Control & Biometrics
+                        </a>
+                        <a href="cctv-installation.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-video text-SOZA-gold w-4"></i> CCTV Camera Installation
+                        </a>
+                        <a href="ip-phone-telephony.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-phone-office text-SOZA-gold w-4"></i> IP Phone & PBX Solutions
+                        </a>
+                        <a href="server-setup.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-server text-SOZA-gold w-4"></i> Server Room Setup
+                        </a>
+                        <a href="structured-cabling.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-network-wired text-SOZA-gold w-4"></i> Structured Cat6 & Fiber
+                        </a>
+                        <a href="cybersecurity.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-shield-halved text-SOZA-gold w-4"></i> Firewall & Cybersecurity
+                        </a>
+                        <!-- Added dropdown links for new services -->
+                        <a href="#services" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-id-badge text-SOZA-emerald w-4"></i> Visitor Management Systems
+                        </a>
+                        <a href="#services" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-building text-SOZA-gold w-4"></i> Office IT Setup
+                        </a>
+                        <a href="#services" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-cyanGlow/20 text-slate-200 hover:text-SOZA-cyanGlow transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-clipboard-check text-SOZA-cyanGlow w-4"></i> IT Audit & Security
+                        </a>
+                        <a href="#services" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-wifi text-SOZA-emerald w-4"></i> Network Services & Wi-Fi
+                        </a>
+                        <a href="#services" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-database text-SOZA-gold w-4"></i> Data Backup & Recovery
+                        </a>
+                    </div>
+                </div>
 
-            <!-- CTA Button -->
-            <div>
-                <a href="#contact" class="bg-soza-accent hover:bg-emerald-600 text-white font-extrabold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition shadow-lg glow-effect">
-                    Get Free Quote
+                <a href="amc.html" class="hover:text-SOZA-emerald transition">AMC Contracts</a>
+                <a href="#contact" class="hover:text-SOZA-emerald transition">Contact</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/971547271603" target="_blank" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-extrabold px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-lg">
+                    <i class="fab fa-whatsapp text-sm"></i> WhatsApp
+                </a>
+                <a href="#contact" class="hidden sm:inline-block bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight text-SOZA-deep font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition gold-glow">
+                    Get Quote
                 </a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Hero Banner Section -->
-    <section id="home" class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center overflow-hidden" 
-             style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');">
-        
-        <div class="absolute inset-0 gradient-overlay"></div>
+    <!-- Moving Marquee Banner -->
+    <div class="bg-gradient-to-r from-SOZA-dark via-SOZA-card to-SOZA-dark border-b border-slate-800 overflow-hidden py-2.5 whitespace-nowrap">
+        <div class="inline-flex space-x-12 animate-marquee font-bold text-xs tracking-widest text-slate-300 uppercase">
+            <span class="flex items-center"><i class="fas fa-fingerprint text-SOZA-emerald mr-2"></i> Biometric Door Access Control</span>
+            <span class="flex items-center"><i class="fas fa-shield-halved text-SOZA-gold mr-2"></i> SIRA Approved CCTV Solutions</span>
+            <span class="flex items-center"><i class="fas fa-id-badge text-SOZA-cyanGlow mr-2"></i> Visitor Management Systems</span>
+            <span class="flex items-center"><i class="fas fa-building text-SOZA-emerald mr-2"></i> Turnkey Office IT Setup</span>
+            <span class="flex items-center"><i class="fas fa-wifi text-SOZA-gold mr-2"></i> High-Speed Wi-Fi & Switching</span>
+            <span class="flex items-center"><i class="fas fa-database text-SOZA-cyanGlow mr-2"></i> Cloud & Local Data Backup</span>
+            <span class="flex items-center"><i class="fas fa-clipboard-check text-SOZA-emerald mr-2"></i> Comprehensive IT Audit</span>
+            <span class="flex items-center"><i class="fas fa-headset text-SOZA-gold mr-2"></i> 24/7 Fully Managed IT AMC</span>
+        </div>
+    </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center py-20">
-            <!-- Top Tagline -->
-            <div class="inline-flex items-center gap-2 bg-soza-accent/20 border border-soza-accent/40 text-soza-accent text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest mb-6">
-                <span class="w-2 h-2 rounded-full bg-soza-accent animate-pulse"></span>
-                SOZA IT SOLUTIONS
+    <!-- Hero Section -->
+    <section class="relative py-28 lg:py-36 px-6 border-b border-slate-800 overflow-hidden min-h-[720px] flex items-center">
+        <!-- Background Slider Container -->
+        <div id="hero-slider" class="absolute inset-0 z-0">
+            <div class="slide-bg absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" 
+                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.65)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
+            <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
+                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.65)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
+            <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
+                 style="background-image: linear-gradient(to right, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.65)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=90');"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+            <div class="lg:col-span-7 reveal reveal-left">
+                <div class="inline-flex items-center gap-2 bg-SOZA-emerald/10 border border-SOZA-emerald/40 text-SOZA-emerald text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-SOZA-emerald animate-ping"></span>
+                    NEXT-GEN ENTERPRISE IT & SECURITY
+                </div>
+                
+                <div id="slide-text-content">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 min-h-[120px]">
+                        SOZA IT Solutions & <span class="emerald-text">Door Access Control</span>
+                    </h1>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal max-w-2xl min-h-[80px]">
+                        Empowering modern Dubai corporate environments with Biometric Access Control, SIRA-compliant CCTV security, IP Telephony Systems, structured cabling, and Managed IT Support.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 items-center mb-8">
+                    <a href="#contact" class="bg-gradient-to-r from-SOZA-emerald to-SOZA-emeraldDark hover:opacity-90 text-SOZA-deep font-black px-8 py-4 rounded-xl transition shadow-xl text-xs uppercase tracking-wider">
+                        Request Site Survey
+                    </a>
+                    <a href="tel:+971547271603" class="bg-SOZA-card/90 hover:bg-SOZA-card text-white border border-slate-700 font-bold px-8 py-4 rounded-xl transition text-xs uppercase tracking-wider flex items-center gap-2">
+                        <i class="fas fa-phone text-SOZA-emerald"></i> Call 054 727 1603
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button onclick="setSlide(0)" class="slide-indicator w-8 h-2 rounded-full bg-SOZA-emerald transition-all duration-300" aria-label="Slide 1"></button>
+                    <button onclick="setSlide(1)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 2"></button>
+                    <button onclick="setSlide(2)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 3"></button>
+                </div>
             </div>
-            
-            <!-- Opening Headline Requirement -->
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-tight mb-6">
-                IT Networking Solutions <br><span class="text-soza-accent">for Business Growth</span>
-            </h1>
 
-            <!-- Opening Slogan Requirement -->
-            <p class="text-slate-300 text-base sm:text-xl font-normal max-w-3xl mx-auto leading-relaxed mb-10">
-                Empowering UAE businesses with reliable IT sales and services, including managed IT solutions and expert networking solutions.
-            </p>
-
-            <!-- Call to Actions -->
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#services" class="bg-soza-accent hover:bg-emerald-600 text-white font-extrabold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-xl">
-                    Explore All Services
-                </a>
-                <a href="#contact" class="bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-600 font-extrabold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition">
-                    Schedule Technical Survey
-                </a>
+            <!-- Lead Form -->
+            <div id="contact" class="lg:col-span-5 reveal reveal-right">
+                <div class="glass-card p-8 rounded-3xl shadow-2xl emerald-glow border border-SOZA-emerald/30">
+                    <h3 class="text-2xl font-black text-white mb-1">Get an Expert Consultation</h3>
+                    <p class="text-xs text-slate-400 mb-6">Speak with a SOZA IT Specialist within 15 minutes.</p>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" required>
+                        <input type="tel" placeholder="Phone Number *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-emerald transition" value="+971 54 727 1603" required>
+                        <select class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-slate-300 focus:outline-none focus:border-SOZA-emerald transition">
+                            <option>Select Required Service</option>
+                            <option>Door Access Control & Biometrics System</option>
+                            <option>SIRA Approved CCTV Camera Installation</option>
+                            <option>Visitor Management System & Kiosks</option>
+                            <option>Turnkey Office IT Setup & Hardware</option>
+                            <option>IT Audit & Security Risk Assessment</option>
+                            <option>Networking (Wi-Fi 6, Switches & Firewalls)</option>
+                            <option>Data Backup & Disaster Recovery</option>
+                            <option>Fully Managed IT Support (AMC)</option>
+                            <option>IP Phone Telephony & PBX Systems</option>
+                            <option>Server Room Setup & Anti-Static Cleaning</option>
+                            <option>Structured Fiber & Cat6 Cabling</option>
+                        </select>
+                        <button type="submit" class="w-full bg-gradient-to-r from-SOZA-emerald to-SOZA-emeraldDark text-SOZA-deep font-black py-4 rounded-xl uppercase tracking-wider text-xs transition shadow-lg">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-soza-dark border-b border-slate-800">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-soza-accent font-extrabold text-xs uppercase tracking-widest">Who We Are</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6 uppercase tracking-wide">
-                    Reliable IT & Security Infrastructure Partner
-                </h2>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    SOZA IT SOLUTIONS is dedicated to powering businesses across the UAE with next-generation network architecture, security integrations, and fully managed IT services. 
-                </p>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                    Whether you are opening a new office, upgrading enterprise networks, or securing your premises with visitor management and surveillance systems, we provide turnkey technology execution tailored to your precise growth objectives.
-                </p>
-                <div class="grid grid-cols-2 gap-4 border-t border-slate-800 pt-6">
-                    <div>
-                        <h4 class="text-2xl font-black text-soza-accent">24/7</h4>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">SLA Technical Support</p>
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-24 px-6 bg-SOZA-deep border-b border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <!-- SOZA Pillars Badges -->
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-12 reveal reveal-up">
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-emerald/40 text-SOZA-emerald font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-brain"></i> Smart
+                </div>
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-gold/40 text-SOZA-gold font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-chart-line"></i> Optimum
+                </div>
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-cyanGlow/40 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-fire"></i> Zealous
+                </div>
+                <div class="glass-card px-5 py-2.5 rounded-full border border-SOZA-emerald/40 text-SOZA-emerald font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i class="fas fa-bullseye"></i> Accurate
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Left Column: About Description -->
+                <div class="reveal reveal-left">
+                    <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Bridging Business & Technology</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6 leading-tight">
+                        About <span class="chrome-text">SOZA IT Solutions</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        SOZA IT Solutions is a dynamic and innovative technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Founded with a vision to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises by providing tailored digital solutions that enhance operational efficiency, drive growth, and foster innovation. Our team of skilled professionals combines technical expertise with strategic insight, ensuring that every client receives solutions that are not only technically robust but also aligned with their business goals.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        At SOZA IT Solutions, we are driven by three core principles: <strong>innovation, integrity, and impact</strong>. Our company stands out for its agile approach, client-focused mindset, and deep industry knowledge. We don’t just deliver IT services — we build long-term partnerships that contribute to lasting success in a rapidly evolving digital world.
+                    </p>
+                </div>
+
+                <!-- Right Column: Vision & Mission Cards -->
+                <div class="space-y-6 reveal reveal-right">
+                    <!-- Vision Card -->
+                    <div class="glass-card p-8 rounded-3xl border border-SOZA-gold/30 hover:border-SOZA-gold transition">
+                        <div class="w-12 h-12 bg-SOZA-gold/20 text-SOZA-gold rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-wider">Our Vision</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            To be a trusted leader in IT solutions, empowering digital transformation for businesses across the UAE and beyond.
+                        </p>
                     </div>
-                    <div>
-                        <h4 class="text-2xl font-black text-soza-gold">100%</h4>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">SIRA & Regulatory Compliance</p>
+
+                    <!-- Mission Card -->
+                    <div class="glass-card p-8 rounded-3xl border border-SOZA-emerald/30 hover:border-SOZA-emerald transition">
+                        <div class="w-12 h-12 bg-SOZA-emerald/20 text-SOZA-emerald rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 uppercase tracking-wider">Our Mission</h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle-check text-SOZA-emerald mt-1"></i>
+                                <span>Deliver cutting-edge IT services with unmatched support</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle-check text-SOZA-emerald mt-1"></i>
+                                <span>Build long-term partnerships through commitment & innovation</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Networking Server Room" class="rounded-2xl border border-slate-700 shadow-2xl">
-            </div>
         </div>
     </section>
 
-    <!-- Comprehensive IT Services Grid Section -->
-    <section id="services" class="py-24 px-6 bg-soza-black">
+    <!-- EXPANDED SERVICES SECTION -->
+    <section id="services" class="py-24 px-6 bg-SOZA-dark border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-soza-accent font-extrabold text-xs uppercase tracking-widest">Our Capabilities</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2 uppercase tracking-wide">Enterprise IT Sales & Services</h2>
-                <p class="text-slate-400 mt-3 text-sm">Full-scale IT infrastructure, cybersecurity, networking, and managed systems built for seamless corporate operations.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
+                <span class="text-SOZA-emerald font-extrabold text-xs uppercase tracking-widest">Our Specialization</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Comprehensive IT & Security Services</h2>
+                <p class="text-slate-400 mt-3 text-sm">Explore enterprise-grade infrastructure, networking, cybersecurity, and fully managed IT engineering tailored for UAE businesses.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Service 1: Office IT Setup -->
-                <div class="bg-soza-card p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Service 1: Door Access Control -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-SOZA-emerald/40 hover:border-SOZA-emerald transition group flex flex-col justify-between reveal reveal-left">
                     <div>
-                        <div class="w-14 h-14 bg-emerald-500/10 text-soza-accent rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-building"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=90" alt="Door Access Control" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                            <span class="absolute top-4 right-4 bg-SOZA-emerald text-SOZA-deep font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">FEATURED</span>
                         </div>
-                        <h3 class="text-xl font-black text-white uppercase mb-3">Turnkey Office IT Setup</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Complete hardware procurement, server racks, network cabling, user workstations, wireless access, and ISP integration for new office setups or relocations.</p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-fingerprint text-SOZA-emerald"></i>
+                                <span class="text-xs text-SOZA-emerald font-bold uppercase">Biometric Security</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Door Access Control</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Biometric face recognition, RFID card readers, magnetic lock installation, keypad access, and time-attendance software integration.</p>
+                        </div>
                     </div>
-                    <a href="#contact" class="text-soza-accent font-bold text-xs uppercase tracking-wider hover:underline flex items-center gap-2">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="p-6 pt-0">
+                        <a href="door-access-control.html" class="inline-flex items-center gap-2 text-SOZA-emerald font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Access Control Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Service 2: Visitor Management Systems -->
-                <div class="bg-soza-card p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Service 2: CCTV Camera Installation -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-up">
                     <div>
-                        <div class="w-14 h-14 bg-amber-500/10 text-soza-gold rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-id-badge"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=90" alt="CCTV Installation" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-xl font-black text-white uppercase mb-3">Visitor Management Systems</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Touchless guest registration kiosks, Emirates ID/Passport scanning, QR code access passes, automated host notifications, and digital visitor audit logs.</p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-video text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">SIRA Compliant</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">CCTV Camera Installation</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">SIRA-compliant 4K surveillance, NVR configuration, thermal motion detection, and remote mobile viewing.</p>
+                        </div>
                     </div>
-                    <a href="#contact" class="text-soza-gold font-bold text-xs uppercase tracking-wider hover:underline flex items-center gap-2">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="p-6 pt-0">
+                        <a href="cctv-installation.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open CCTV Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Service 3: IT Audit & Assessment -->
-                <div class="bg-soza-card p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Service 3: Visitor Management Systems -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-emerald/50 transition group flex flex-col justify-between reveal reveal-right">
                     <div>
-                        <div class="w-14 h-14 bg-sky-500/10 text-soza-cyan rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-clipboard-check"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=90" alt="Visitor Management Systems" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                            <span class="absolute top-4 right-4 bg-SOZA-gold text-SOZA-deep font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">NEW SERVICE</span>
                         </div>
-                        <h3 class="text-xl font-black text-white uppercase mb-3">IT Audit & Risk Assessment</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">In-depth vulnerability scanning, infrastructure security checks, network bottleneck analysis, and executive risk & compliance reporting.</p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-id-badge text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Smart Reception</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Visitor Management Systems</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Self-service registration kiosks, Emirates ID & Passport scanning, instant host SMS/Email alerts, QR-based digital access passes, and compliance logging.</p>
+                        </div>
                     </div>
-                    <a href="#contact" class="text-soza-cyan font-bold text-xs uppercase tracking-wider hover:underline flex items-center gap-2">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Inquire About VMS <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Service 4: Networking (Wi-Fi, Switches, Firewalls) -->
-                <div class="bg-soza-card p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Service 4: Turnkey Office IT Setup -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-emerald/50 transition group flex flex-col justify-between reveal reveal-left">
                     <div>
-                        <div class="w-14 h-14 bg-emerald-500/10 text-soza-accent rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-network-wired"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=90" alt="Turnkey Office IT Setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-xl font-black text-white uppercase mb-3">Enterprise Networking</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">High-speed Wi-Fi 6 deployments, managed Cisco/Aruba PoE switches, Fortinet/Sophos next-gen firewalls, VLAN structuring, and secure VPNs.</p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-building text-SOZA-emerald"></i>
+                                <span class="text-xs text-SOZA-emerald font-bold uppercase">Turnkey Execution</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Turnkey Office IT Setup</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">End-to-end office tech setups: workstation procurement, rack mounting, server configuration, printer networking, and ISP connection coordination for new offices.</p>
+                        </div>
                     </div>
-                    <a href="#contact" class="text-soza-accent font-bold text-xs uppercase tracking-wider hover:underline flex items-center gap-2">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-emerald font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Plan Office Setup <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Service 5: Data Backup & Recovery -->
-                <div class="bg-soza-card p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Service 5: IT Audit & Security Assessment -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-cyanGlow/50 transition group flex flex-col justify-between reveal reveal-up">
                     <div>
-                        <div class="w-14 h-14 bg-amber-500/10 text-soza-gold rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-database"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=90" alt="IT Audit" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-xl font-black text-white uppercase mb-3">Data Backup & Disaster Recovery</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Automated local NAS and cloud backup, ransomware-proof immutable snapshots, disaster recovery planning, and Microsoft 365 cloud retention.</p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-clipboard-check text-SOZA-cyanGlow"></i>
+                                <span class="text-xs text-SOZA-cyanGlow font-bold uppercase">Compliance & Risks</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">IT Audit & Risk Assessment</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Comprehensive network security audits, vulnerability scanning, active infrastructure health diagnostics, and executive risk mitigation roadmaps.</p>
+                        </div>
                     </div>
-                    <a href="#contact" class="text-soza-gold font-bold text-xs uppercase tracking-wider hover:underline flex items-center gap-2">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Request IT Audit <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Service 6: Fully Managed IT Services -->
-                <div class="bg-soza-card p-8 rounded-2xl border border-slate-800 card-hover flex flex-col justify-between">
+                <!-- Service 6: Managed Network Services (Wi-Fi, Switches & Firewalls) -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-emerald/50 transition group flex flex-col justify-between reveal reveal-right">
                     <div>
-                        <div class="w-14 h-14 bg-sky-500/10 text-soza-cyan rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fas fa-headset"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Network Services" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-xl font-black text-white uppercase mb-3">Fully Managed IT Support (AMC)</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Your outsourced IT department: unlimited remote helpdesk support, dedicated on-site engineers, continuous server monitoring, and guaranteed SLAs.</p>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-wifi text-SOZA-emerald"></i>
+                                <span class="text-xs text-SOZA-emerald font-bold uppercase">High-Speed Connectivity</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Wi-Fi, Switches & Firewalls</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Enterprise Wi-Fi 6 heat mapping, managed L2/L3 PoE switches (Cisco, Aruba), VLAN network segregation, and Fortinet/Sophos Next-Gen firewalls.</p>
+                        </div>
                     </div>
-                    <a href="#contact" class="text-soza-cyan font-bold text-xs uppercase tracking-wider hover:underline flex items-center gap-2">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-emerald font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Optimize Network <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 7: Data Backup & Disaster Recovery -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-left">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=1200&q=90" alt="Data Backup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-database text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Business Continuity</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Data Backup & Recovery</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Automated local NAS storage, offsite encrypted cloud backups, ransomware protection with immutable snapshots, and rapid system disaster recovery.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Secure Your Data <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 8: Fully Managed IT Services (AMC) -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-cyanGlow/50 transition group flex flex-col justify-between reveal reveal-up">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=90" alt="Fully Managed IT Support" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-headset text-SOZA-cyanGlow"></i>
+                                <span class="text-xs text-SOZA-cyanGlow font-bold uppercase">Outsourced IT</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Fully Managed IT Support (AMC)</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Complete outsourced IT department: 24/7 helpdesk support, dedicated on-site technical engineers, proactive monitoring, and guaranteed SLA response times.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="amc.html" class="inline-flex items-center gap-2 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Explore AMC Plans <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 9: IP Phone & PBX -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1200&q=90" alt="IP Phones" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-phone-office text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">IP Telephony</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">IP Phone & PBX Solutions</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Grandstream, Yealink, and Avaya IP PBX setups, IVR auto-attendants, SIP trunking, and call recording.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="ip-phone-telephony.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open IP Phone Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 10: Server Room Setup -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-left">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=90" alt="Server Setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-server text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Infrastructure</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Server Room Setup</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Turnkey server racks, Active Directory domains, SAN/NAS storage, precision cooling, and anti-static cleaning.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="server-setup.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Server Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 11: Structured Cabling -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-up">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Structured Cabling" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-network-wired text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Network Backbone</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Structured Cat6 & Fiber</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">High-speed Cat6, Cat6A, and single/multi-mode fiber optic cable management, patch panel dressing, and Fluke testing.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="structured-cabling.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Cabling Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 12: Cybersecurity & Firewall -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
+                    <div>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=90" alt="Cybersecurity" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-shield-halved text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Threat Defense</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Firewall & Cybersecurity</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Fortinet and Sophos Next-Gen Firewalls, endpoint threat protection, VPN remote access, and network audit controls.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="cybersecurity.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Security Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Form & Inquiry Section -->
-    <section id="contact" class="py-24 px-6 bg-soza-dark border-t border-slate-800">
-        <div class="max-w-4xl mx-auto bg-soza-black p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl">
-            <div class="text-center mb-10">
-                <span class="text-soza-accent font-extrabold text-xs uppercase tracking-widest">Connect With Our Engineers</span>
-                <h2 class="text-3xl font-black text-white mt-2 uppercase tracking-wide">Get a Customized Proposal</h2>
-                <p class="text-slate-400 text-sm mt-2">Fill out the details below and an IT Specialist will contact you within 15 minutes.</p>
-            </div>
-
-            <form class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="Full Name *" class="bg-soza-card border border-slate-700 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-soza-accent transition" required>
-                    <input type="email" placeholder="Company Email *" class="bg-soza-card border border-slate-700 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-soza-accent transition" required>
-                </div>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="tel" placeholder="Phone Number *" value="+971 54 727 1603" class="bg-soza-card border border-slate-700 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-soza-accent transition" required>
-                    <select class="bg-soza-card border border-slate-700 rounded-xl p-4 text-sm text-slate-300 focus:outline-none focus:border-soza-accent transition">
-                        <option>Select Required IT Service</option>
-                        <option>Turnkey Office IT Setup</option>
-                        <option>Visitor Management System</option>
-                        <option>IT Audit & Security Assessment</option>
-                        <option>Networking (Wi-Fi, Switches, Firewalls)</option>
-                        <option>Data Backup & Disaster Recovery</option>
-                        <option>Fully Managed IT Services (AMC)</option>
-                    </select>
-                </div>
-                <textarea rows="4" placeholder="Briefly describe your project requirements..." class="w-full bg-soza-card border border-slate-700 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-soza-accent transition"></textarea>
-                
-                <button type="submit" class="w-full bg-soza-accent hover:bg-emerald-600 text-white font-black py-4 rounded-xl uppercase tracking-wider text-xs transition shadow-lg glow-effect">
-                    Submit Project Inquiry
-                </button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-soza-black border-t border-slate-800 py-12 px-6 text-slate-400 text-xs">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 reveal reveal-up">
             <div>
-                <div class="font-logo font-black text-lg text-white mb-1">
-                    SOZA <span class="text-soza-accent">IT SOLUTIONS</span>
+                <div class="font-logo font-black text-xl tracking-wider mb-2">
+                    <span class="chrome-text">SOZA IT SOLUTIONS</span>
                 </div>
-                <p class="text-slate-500">IT Networking Solutions for Business Growth across the UAE.</p>
+                <p class="text-xs text-SOZA-emerald tracking-widest font-bold mb-4 uppercase">DESIGNED TO INSPIRE</p>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Enterprise IT Support, Biometric Door Access Controls, SIRA CCTV camera setups, Visitor Management Systems, IT Audits, Managed Networking, and Cloud Backups across Dubai, UAE.
+                </p>
             </div>
-            <div class="flex space-x-6 text-slate-300">
-                <a href="tel:+971547271603" class="hover:text-soza-accent transition"><i class="fas fa-phone mr-1"></i> +971 54 727 1603</a>
-                <a href="mailto:sales@soza-it.com" class="hover:text-soza-gold transition"><i class="fas fa-envelope mr-1"></i> sales@soza-it.com</a>
+            <div>
+                <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Services Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="door-access-control.html" class="hover:text-SOZA-emerald transition">Door Access Control & Biometrics</a></li>
+                    <li><a href="cctv-installation.html" class="hover:text-SOZA-gold transition">CCTV Camera Installation</a></li>
+                    <li><a href="#services" class="hover:text-SOZA-emerald transition">Visitor Management Systems</a></li>
+                    <li><a href="#services" class="hover:text-SOZA-gold transition">Turnkey Office IT Setup</a></li>
+                    <li><a href="#services" class="hover:text-SOZA-cyanGlow transition">IT Audit & Security Assessments</a></li>
+                    <li><a href="#services" class="hover:text-SOZA-emerald transition">Managed Networking (Wi-Fi & Switches)</a></li>
+                    <li><a href="#services" class="hover:text-SOZA-gold transition">Data Backup & Recovery</a></li>
+                    <li><a href="amc.html" class="hover:text-SOZA-cyanGlow transition">Fully Managed IT AMC</a></li>
+                </ul>
             </div>
-            <div class="text-slate-500">
-                &copy; 2026 SOZA IT SOLUTIONS. All rights reserved.
+            <div>
+                <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact SOZA IT</h4>
+                <p class="text-xs text-slate-300"><i class="fas fa-location-dot mr-2 text-SOZA-emerald"></i> Dubai, United Arab Emirates</p>
+                <p class="text-xs text-slate-300 mt-2"><i class="fas fa-phone mr-2 text-SOZA-emerald"></i> +971 54 727 1603</p>
+                <p class="text-xs text-slate-300 mt-2"><i class="fas fa-envelope mr-2 text-SOZA-gold"></i> sales@soza-it.com</p>
             </div>
+        </div>
+        <div class="text-center text-xs mt-12 pt-6 border-t border-slate-800 text-slate-500">
+            &copy; 2026 SOZA IT Solutions. All rights reserved.
         </div>
     </footer>
 
+    <!-- JavaScript Logic -->
+    <script>
+        const slides = [
+            {
+                title: 'SOZA IT Solutions & <span class="emerald-text">Door Access Control</span>',
+                desc: 'Empowering modern Dubai corporate environments with Biometric Access Control, SIRA-compliant CCTV security, IP Telephony Systems, structured cabling, and Managed IT Support.'
+            },
+            {
+                title: 'High-Performance <span class="gold-text">Networking & Fiber</span>',
+                desc: 'Delivering end-to-end structured cabling, Cat6/Cat6A wiring, and high-density optical fiber setups designed for enterprise reliability.'
+            },
+            {
+                title: 'Next-Gen <span class="emerald-text">Cybersecurity & Defense</span>',
+                desc: 'Protecting corporate operations with robust firewall integrations, active threat defense, and 24/7 SLA maintenance support.'
+            }
+        ];
+
+        let currentSlide = 0;
+        const slideElements = document.querySelectorAll('.slide-bg');
+        const indicators = document.querySelectorAll('.slide-indicator');
+        const textContent = document.getElementById('slide-text-content');
+
+        function setSlide(index) {
+            currentSlide = index;
+            slideElements.forEach((bg, i) => {
+                if (i === index) {
+                    bg.classList.remove('opacity-0');
+                    bg.classList.add('opacity-100');
+                } else {
+                    bg.classList.remove('opacity-100');
+                    bg.classList.add('opacity-0');
+                }
+            });
+
+            indicators.forEach((ind, i) => {
+                if (i === index) {
+                    ind.className = "slide-indicator w-8 h-2 rounded-full bg-SOZA-emerald transition-all duration-300";
+                } else {
+                    ind.className = "slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300";
+                }
+            });
+
+            textContent.innerHTML = `
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 min-h-[120px]">
+                    ${slides[index].title}
+                </h1>
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal max-w-2xl min-h-[80px]">
+                    ${slides[index].desc}
+                </p>
+            `;
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            setSlide(currentSlide);
+        }, 6000);
+
+        /* Intersection Observer for Scroll Animations */
+        const reveals = document.querySelectorAll(".reveal");
+
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        reveals.forEach(reveal => {
+            revealOnScroll.observe(reveal);
+        });
+    </script>
 </body>
 </html>
