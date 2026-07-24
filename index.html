@@ -142,9 +142,35 @@
             <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
                 <a href="index.html" class="text-SOZA-cyanGlow hover:text-white transition">Home</a>
                 <a href="#about" class="hover:text-SOZA-cyanGlow transition">About Us</a>
-                <a href="#managed-it" class="hover:text-SOZA-cyanGlow transition text-SOZA-emerald">Managed IT Services</a>
                 
-                <!-- Dropdown -->
+                <!-- Managed IT Dropdown -->
+                <div class="relative group py-2">
+                    <a href="#managed-it" class="hover:text-SOZA-cyanGlow transition text-SOZA-emerald flex items-center gap-1.5 cursor-pointer">
+                        Managed IT Services <i class="fas fa-chevron-down text-[10px] text-SOZA-emerald"></i>
+                    </a>
+                    <div class="absolute top-full left-0 hidden group-hover:block w-80 glass-card rounded-2xl shadow-2xl p-3 border border-SOZA-emerald/40 z-50 space-y-1">
+                        <a href="web-management.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-cyanGlow/20 text-slate-200 hover:text-SOZA-cyanGlow transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-globe text-SOZA-cyanGlow w-4"></i> Web Management
+                        </a>
+                        <a href="application-management.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-cubes text-SOZA-emerald w-4"></i> Application Management
+                        </a>
+                        <a href="it-security-management.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-user-shield text-SOZA-gold w-4"></i> IT Security Management
+                        </a>
+                        <a href="backup-storage-management.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-cyanGlow/20 text-slate-200 hover:text-SOZA-cyanGlow transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-database text-SOZA-cyanGlow w-4"></i> Backup Storage Management
+                        </a>
+                        <a href="cloud-infrastructure-management.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-cloud text-SOZA-emerald w-4"></i> Cloud Infrastructure Management
+                        </a>
+                        <a href="network-infrastructure-management.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
+                            <i class="fas fa-network-wired text-SOZA-gold w-4"></i> Network Infrastructure Management
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hardware & Infrastructure Dropdown -->
                 <div class="relative group py-2">
                     <a href="#services" class="hover:text-SOZA-cyanGlow transition flex items-center gap-1.5 cursor-pointer">
                         Services <i class="fas fa-chevron-down text-[10px] text-SOZA-cyanGlow"></i>
@@ -155,12 +181,6 @@
                         </a>
                         <a href="cctv-installation.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
                             <i class="fas fa-video text-SOZA-gold w-4"></i> CCTV Camera Installation
-                        </a>
-                        <a href="#managed-it" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-emerald/20 text-slate-200 hover:text-SOZA-emerald transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-globe text-SOZA-emerald w-4"></i> Web & App Management
-                        </a>
-                        <a href="#managed-it" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-cyanGlow/20 text-slate-200 hover:text-SOZA-cyanGlow transition font-medium text-xs normal-case flex items-center gap-2">
-                            <i class="fas fa-database text-SOZA-cyanGlow w-4"></i> Backup & Storage Management
                         </a>
                         <a href="ip-phone-telephony.html" class="block px-4 py-2.5 rounded-xl hover:bg-SOZA-gold/20 text-slate-200 hover:text-SOZA-gold transition font-medium text-xs normal-case flex items-center gap-2">
                             <i class="fas fa-phone-office text-SOZA-gold w-4"></i> IP Phone & PBX Solutions
@@ -197,11 +217,12 @@
     <div class="bg-gradient-to-r from-SOZA-dark via-SOZA-card to-SOZA-dark border-b border-slate-800 overflow-hidden py-2.5 whitespace-nowrap">
         <div class="inline-flex space-x-12 animate-marquee font-bold text-xs tracking-widest text-slate-300 uppercase">
             <span class="flex items-center"><i class="fas fa-globe text-SOZA-cyanGlow mr-2"></i> Managed Web Management</span>
-            <span class="flex items-center"><i class="fas fa-layer-group text-SOZA-emerald mr-2"></i> Application Management</span>
-            <span class="flex items-center"><i class="fas fa-shield-halved text-SOZA-gold mr-2"></i> IT Security Management</span>
-            <span class="flex items-center"><i class="fas fa-database text-SOZA-cyanGlow mr-2"></i> Cloud Backup & Storage Management</span>
-            <span class="flex items-center"><i class="fas fa-fingerprint text-SOZA-emerald mr-2"></i> Biometric Door Access Control</span>
-            <span class="flex items-center"><i class="fas fa-headset text-SOZA-gold mr-2"></i> 24/7 Fully Managed IT AMC</span>
+            <span class="flex items-center"><i class="fas fa-cubes text-SOZA-emerald mr-2"></i> Application Management</span>
+            <span class="flex items-center"><i class="fas fa-user-shield text-SOZA-gold mr-2"></i> IT Security Management</span>
+            <span class="flex items-center"><i class="fas fa-database text-SOZA-cyanGlow mr-2"></i> Backup Storage Management</span>
+            <span class="flex items-center"><i class="fas fa-cloud text-SOZA-emerald mr-2"></i> Cloud Infrastructure Management</span>
+            <span class="flex items-center"><i class="fas fa-fingerprint text-SOZA-gold mr-2"></i> Biometric Access Control</span>
+            <span class="flex items-center"><i class="fas fa-headset text-SOZA-cyanGlow mr-2"></i> 24/7 Fully Managed IT AMC</span>
         </div>
     </div>
 
@@ -216,7 +237,6 @@
                 TRUSTED UAE IT & NETWORKING PARTNER
             </div>
             
-            <!-- SPECIFIED MANDATORY COMPANY TITLE[cite: 1] -->
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-6">
                 IT Networking Solutions for <span class="cyan-text">Business Growth</span>
             </h1>
@@ -236,110 +256,141 @@
         </div>
     </section>
 
-    <!-- NEW DEDICATED MANAGED IT SERVICES SECTION -->
+    <!-- MANAGED IT SERVICES SECTION (WITH SUB-PAGE CARDS & LINKS) -->
     <section id="managed-it" class="py-24 px-6 bg-SOZA-dark border-b border-slate-800 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
                 <span class="text-SOZA-cyanGlow font-black text-xs uppercase tracking-widest">Enterprise Operations</span>
                 <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Managed IT Services</h2>
-                <p class="text-slate-400 mt-4 text-base">Proactive, end-to-end management of your critical digital assets, web properties, security systems, and infrastructure.</p>
+                <p class="text-slate-400 mt-4 text-base">Proactive, end-to-end management of your critical digital assets, web properties, application environments, and infrastructure.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Managed IT 1: Web Management -->
-                <div class="glass-card rounded-3xl p-8 border border-SOZA-cyanGlow/30 hover:border-SOZA-cyanGlow transition flex flex-col justify-between reveal reveal-left">
+                <!-- Managed IT Card 1: Web Management -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-SOZA-cyanGlow/40 hover:border-SOZA-cyanGlow transition group flex flex-col justify-between reveal reveal-left">
                     <div>
-                        <div class="w-14 h-14 bg-SOZA-cyanGlow/10 border border-SOZA-cyanGlow/40 rounded-2xl flex items-center justify-center text-SOZA-cyanGlow text-2xl mb-6">
-                            <i class="fas fa-globe"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=90" alt="Web Management" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
+                            <span class="absolute top-4 right-4 bg-SOZA-cyanGlow text-SOZA-deep font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">MANAGED SERVICE</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Web Management</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Complete web maintenance, speed optimization, CMS security patching, hosting environment monitoring, and domain/SSL renewals.</p>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-cyanGlow"></i> 24/7 Uptime & Performance Monitoring</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-cyanGlow"></i> Core Web Vitals & SEO Optimization</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-cyanGlow"></i> Malware Scanning & Firewall Rules</li>
-                        </ul>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-globe text-SOZA-cyanGlow"></i>
+                                <span class="text-xs text-SOZA-cyanGlow font-bold uppercase">Website & Digital</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Web Management</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Complete web maintenance, speed optimization, CMS security patching, hosting environment monitoring, and domain/SSL renewals.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="web-management.html" class="inline-flex items-center gap-2 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Web Management Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Managed IT 2: Application Management -->
-                <div class="glass-card rounded-3xl p-8 border border-SOZA-emerald/30 hover:border-SOZA-emerald transition flex flex-col justify-between reveal reveal-up">
+                <!-- Managed IT Card 2: Application Management -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-emerald/50 transition group flex flex-col justify-between reveal reveal-up">
                     <div>
-                        <div class="w-14 h-14 bg-SOZA-emerald/10 border border-SOZA-emerald/40 rounded-2xl flex items-center justify-center text-SOZA-emerald text-2xl mb-6">
-                            <i class="fas fa-cubes"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=90" alt="Application Management" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Application Management</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Proactive management of corporate enterprise software, SaaS integration, ERP maintenance, patch releases, and end-user app support.</p>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Automated Patching & Bug Fixes</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> ERP & CRM Maintenance Support</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Third-party API & Middleware Sync</li>
-                        </ul>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-cubes text-SOZA-emerald"></i>
+                                <span class="text-xs text-SOZA-emerald font-bold uppercase">SaaS & Enterprise Apps</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Application Management</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Proactive management of corporate enterprise software, SaaS integration, ERP maintenance, patch releases, and end-user app support.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="application-management.html" class="inline-flex items-center gap-2 text-SOZA-emerald font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open App Management Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Managed IT 3: IT Security Management -->
-                <div class="glass-card rounded-3xl p-8 border border-SOZA-gold/30 hover:border-SOZA-gold transition flex flex-col justify-between reveal reveal-right">
+                <!-- Managed IT Card 3: IT Security Management -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
                     <div>
-                        <div class="w-14 h-14 bg-SOZA-gold/10 border border-SOZA-gold/40 rounded-2xl flex items-center justify-center text-SOZA-gold text-2xl mb-6">
-                            <i class="fas fa-user-shield"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=90" alt="IT Security Management" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">IT Security Management</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Continuous threat detection, endpoint defense (EDR), vulnerability assessments, firewall management, and zero-trust security architecture.</p>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Next-Gen Firewall Configuration</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> SOC Operations & Incident Response</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Phishing & Ransomware Mitigation</li>
-                        </ul>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-user-shield text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Zero-Trust & SOC</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">IT Security Management</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Continuous threat detection, endpoint defense (EDR), vulnerability assessments, firewall management, and zero-trust security architecture.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="it-security-management.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Security Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Managed IT 4: Backup Storage Management -->
-                <div class="glass-card rounded-3xl p-8 border border-SOZA-cyanGlow/30 hover:border-SOZA-cyanGlow transition flex flex-col justify-between reveal reveal-left">
+                <!-- Managed IT Card 4: Backup Storage Management -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-cyanGlow/50 transition group flex flex-col justify-between reveal reveal-left">
                     <div>
-                        <div class="w-14 h-14 bg-SOZA-cyanGlow/10 border border-SOZA-cyanGlow/40 rounded-2xl flex items-center justify-center text-SOZA-cyanGlow text-2xl mb-6">
-                            <i class="fas fa-database"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=1200&q=90" alt="Backup Storage Management" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Backup Storage Management</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Automated hybrid backup systems, cloud/NAS synchronization, immutable data snapshots, and fail-safe disaster recovery protocols.</p>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-cyanGlow"></i> Cloud & On-Premises Redundancy</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-cyanGlow"></i> 15-Minute Recovery Point Objectives (RPO)</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-cyanGlow"></i> AES 256-Bit Encrypted Data Repositories</li>
-                        </ul>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-database text-SOZA-cyanGlow"></i>
+                                <span class="text-xs text-SOZA-cyanGlow font-bold uppercase">Disaster Recovery</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Backup Storage Management</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Automated hybrid backup systems, cloud/NAS synchronization, immutable data snapshots, and fail-safe disaster recovery protocols.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="backup-storage-management.html" class="inline-flex items-center gap-2 text-SOZA-cyanGlow font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Backup Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Managed IT 5: Cloud Infrastructure Management -->
-                <div class="glass-card rounded-3xl p-8 border border-SOZA-emerald/30 hover:border-SOZA-emerald transition flex flex-col justify-between reveal reveal-up">
+                <!-- Managed IT Card 5: Cloud Infrastructure Management -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-emerald/50 transition group flex flex-col justify-between reveal reveal-up">
                     <div>
-                        <div class="w-14 h-14 bg-SOZA-emerald/10 border border-SOZA-emerald/40 rounded-2xl flex items-center justify-center text-SOZA-emerald text-2xl mb-6">
-                            <i class="fas fa-cloud-gear"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=90" alt="Cloud Infrastructure Management" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Cloud Infrastructure</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Full management of Microsoft Azure, AWS, and local UAE cloud servers including compute scaling, cost optimization, and IAM security.</p>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Azure / AWS Architecture & Admin</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Active Directory & Cloud Sync</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-emerald"></i> Monthly Billing & Resource Optimization</li>
-                        </ul>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-cloud text-SOZA-emerald"></i>
+                                <span class="text-xs text-SOZA-emerald font-bold uppercase">Azure & AWS</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Cloud Infrastructure</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Full management of Microsoft Azure, AWS, and local UAE cloud servers including compute scaling, cost optimization, and IAM security.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="cloud-infrastructure-management.html" class="inline-flex items-center gap-2 text-SOZA-emerald font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Cloud Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Managed IT 6: Network Infrastructure Management -->
-                <div class="glass-card rounded-3xl p-8 border border-SOZA-gold/30 hover:border-SOZA-gold transition flex flex-col justify-between reveal reveal-right">
+                <!-- Managed IT Card 6: Network Infrastructure Management -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-SOZA-gold/50 transition group flex flex-col justify-between reveal reveal-right">
                     <div>
-                        <div class="w-14 h-14 bg-SOZA-gold/10 border border-SOZA-gold/40 rounded-2xl flex items-center justify-center text-SOZA-gold text-2xl mb-6">
-                            <i class="fas fa-network-wired"></i>
+                        <div class="h-56 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=90" alt="Network Infrastructure Management" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-SOZA-card via-transparent opacity-80"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Network Infrastructure</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Proactive monitoring of switches, Wi-Fi 6 access points, routing protocols, and multi-office WAN/VPN tunnel connections.</p>
-                        <ul class="space-y-2 text-xs text-slate-400">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Managed L2/L3 Switches & Routers</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Site-to-Site Encrypted VPN Tunnels</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-SOZA-gold"></i> Bandwidth & QoS Priority Control</li>
-                        </ul>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fas fa-network-wired text-SOZA-gold"></i>
+                                <span class="text-xs text-SOZA-gold font-bold uppercase">Proactive Monitoring</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Network Infrastructure</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Proactive monitoring of switches, Wi-Fi 6 access points, routing protocols, and multi-office WAN/VPN tunnel connections.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="network-infrastructure-management.html" class="inline-flex items-center gap-2 text-SOZA-gold font-bold text-xs uppercase tracking-wider group-hover:translate-x-1 transition">Open Network Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -479,7 +530,7 @@
         </div>
     </section>
 
-    <!-- EXPANDED HARDWARE & INFRASTRUCTURE SERVICES SECTION -->
+    <!-- HARDWARE & INFRASTRUCTURE SERVICES SECTION -->
     <section id="services" class="py-24 px-6 bg-SOZA-dark border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal reveal-up">
@@ -636,10 +687,10 @@
             <div>
                 <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Services Navigation</h4>
                 <ul class="space-y-2 text-xs">
-                    <li><a href="#managed-it" class="hover:text-SOZA-cyanGlow transition">Web Management</a></li>
-                    <li><a href="#managed-it" class="hover:text-SOZA-cyanGlow transition">Application Management</a></li>
-                    <li><a href="#managed-it" class="hover:text-SOZA-gold transition">IT Security Management</a></li>
-                    <li><a href="#managed-it" class="hover:text-SOZA-cyanGlow transition">Backup Storage Management</a></li>
+                    <li><a href="web-management.html" class="hover:text-SOZA-cyanGlow transition">Web Management</a></li>
+                    <li><a href="application-management.html" class="hover:text-SOZA-cyanGlow transition">Application Management</a></li>
+                    <li><a href="it-security-management.html" class="hover:text-SOZA-gold transition">IT Security Management</a></li>
+                    <li><a href="backup-storage-management.html" class="hover:text-SOZA-cyanGlow transition">Backup Storage Management</a></li>
                     <li><a href="door-access-control.html" class="hover:text-SOZA-emerald transition">Door Access Control & Biometrics</a></li>
                     <li><a href="cctv-installation.html" class="hover:text-SOZA-gold transition">CCTV Camera Installation</a></li>
                     <li><a href="amc.html" class="hover:text-SOZA-cyanGlow transition">Fully Managed IT AMC</a></li>
