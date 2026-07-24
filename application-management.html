@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Management | SOZA IT Dubai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], logo: ['Orbitron', 'sans-serif'] },
+                    colors: { SOZA: { deep: '#030712', dark: '#0A0F1D', card: '#0F172A', emerald: '#10B981', cyanGlow: '#00F2FE' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(16, 185, 129, 0.25); }
+        .emerald-text { background: linear-gradient(180deg, #A7F3D0 0%, #10B981 60%, #047857 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .chrome-text { background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 60%, #64748B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-SOZA-deep text-slate-100 font-sans">
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 border-b border-slate-800 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-logo text-xl font-black chrome-text">SOZA IT</a>
+            <a href="index.html" class="text-xs font-bold uppercase text-SOZA-emerald"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="py-20 px-6 bg-gradient-to-b from-SOZA-dark to-SOZA-deep border-b border-slate-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-SOZA-emerald font-black text-xs uppercase tracking-widest">Managed IT Sub-Service</span>
+            <h1 class="text-4xl sm:text-6xl font-black text-white mt-2 mb-6">Application <span class="emerald-text">Management</span></h1>
+            <p class="text-slate-300 text-lg max-w-3xl mx-auto">End-to-end administration for corporate enterprise applications, SaaS platforms, ERP systems, and internal API middleware integrations.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-3xl">
+            <i class="fas fa-cubes text-3xl text-SOZA-emerald mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">ERP & CRM Operations</h3>
+            <p class="text-slate-400 text-sm">Managing user roles, system stability, database sync, and vendor patch schedules for enterprise platforms.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl">
+            <i class="fas fa-network-wired text-3xl text-SOZA-emerald mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">API & Webhook Monitoring</h3>
+            <p class="text-slate-400 text-sm">Active logging and uptime checks for critical third-party integrations, payment gateways, and data pipelines.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl">
+            <i class="fas fa-headset text-3xl text-SOZA-emerald mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">L2/L3 User Support</h3>
+            <p class="text-slate-400 text-sm">Dedicated SLA helpdesk support for employee application troubleshooting, permissions, and training.</p>
+        </div>
+    </section>
+</body>
+</html>
