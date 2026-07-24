@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Storage Management | SOZA IT Dubai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], logo: ['Orbitron', 'sans-serif'] }, colors: { SOZA: { deep: '#030712', dark: '#0A0F1D', cyanGlow: '#00F2FE' } } } } }
+    </script>
+    <style>
+        .glass-card { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(0, 242, 254, 0.25); }
+        .cyan-text { background: linear-gradient(180deg, #E0F2FE 0%, #00F2FE 60%, #0284C7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .chrome-text { background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 60%, #64748B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-SOZA-deep text-slate-100 font-sans">
+    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 border-b border-slate-800 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-logo text-xl font-black chrome-text">SOZA IT</a>
+            <a href="index.html" class="text-xs font-bold uppercase text-SOZA-cyanGlow"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="py-20 px-6 bg-gradient-to-b from-SOZA-dark to-SOZA-deep border-b border-slate-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-SOZA-cyanGlow font-black text-xs uppercase tracking-widest">Managed IT Sub-Service</span>
+            <h1 class="text-4xl sm:text-6xl font-black text-white mt-2 mb-6">Backup Storage <span class="cyan-text">Management</span></h1>
+            <p class="text-slate-300 text-lg max-w-3xl mx-auto">Automated hybrid backup architecture, immutable cloud snapshots, and high-availability disaster recovery execution.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-3xl">
+            <i class="fas fa-database text-3xl text-SOZA-cyanGlow mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Immutable Snapshots</h3>
+            <p class="text-slate-400 text-sm">Ransomware-proof storage vaults that prevent modification or unauthorized deletion of business records.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl">
+            <i class="fas fa-cloud text-3xl text-SOZA-cyanGlow mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Hybrid Cloud/NAS Sync</h3>
+            <p class="text-slate-400 text-sm">Local high-speed NAS recovery paired with offsite encrypted cloud replication (Azure / AWS).</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl">
+            <i class="fas fa-rotate-left text-3xl text-SOZA-cyanGlow mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Disaster Recovery Drills</h3>
+            <p class="text-slate-400 text-sm">Quarterly simulated failover drills guaranteeing minimal Recovery Time Objective (RTO).</p>
+        </div>
+    </section>
+</body>
+</html>
