@@ -36,11 +36,16 @@
                     },
                     animation: {
                         'marquee': 'marquee 25s linear infinite',
+                        'pulse-glow': 'pulseGlow 4s infinite ease-in-out',
                     },
                     keyframes: {
                         marquee: {
                             '0%': { transform: 'translateX(0%)' },
                             '100%': { transform: 'translateX(-50%)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.4 },
+                            '50%': { opacity: 0.8 },
                         }
                     }
                 }
@@ -74,6 +79,14 @@
             background-size: cover;
             background-position: center;
             transition: opacity 1s ease-in-out;
+        }
+
+        /* Cyber Tech Grid Background Overlay */
+        .tech-grid-pattern {
+            background-image: 
+                linear-gradient(to right, rgba(221, 168, 53, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(221, 168, 53, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
         /* Scroll Animation Classes */
@@ -161,41 +174,53 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="relative py-28 lg:py-36 px-6 border-b border-slate-800 overflow-hidden min-h-[620px] flex items-center">
+    <!-- Enhanced High-Tech IT Hero Section -->
+    <section class="relative py-28 lg:py-36 px-6 border-b border-slate-800 overflow-hidden min-h-[680px] flex items-center">
+        
+        <!-- Tech Background Image Slider -->
         <div id="hero-slider" class="absolute inset-0 z-0">
+            <!-- Slide 1: Enterprise Data Center & High-Tech Server Rack -->
             <div class="slide-bg absolute inset-0 opacity-100 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(11, 17, 30, 0.95), rgba(11, 17, 30, 0.7)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
+                 style="background-image: linear-gradient(to right, rgba(11, 17, 30, 0.95) 0%, rgba(11, 17, 30, 0.82) 50%, rgba(11, 17, 30, 0.65) 100%), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
+            
+            <!-- Slide 2: High-Speed Fiber Optic & Network Switch Infrastructure -->
             <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(11, 17, 30, 0.95), rgba(11, 17, 30, 0.7)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
+                 style="background-image: linear-gradient(to right, rgba(11, 17, 30, 0.95) 0%, rgba(11, 17, 30, 0.82) 50%, rgba(11, 17, 30, 0.65) 100%), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=90');"></div>
+            
+            <!-- Slide 3: Cybersecurity Operations & Network Monitoring Center -->
             <div class="slide-bg absolute inset-0 opacity-0 transition-opacity duration-1000 bg-cover bg-center" 
-                 style="background-image: linear-gradient(to right, rgba(11, 17, 30, 0.95), rgba(11, 17, 30, 0.7)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=90');"></div>
+                 style="background-image: linear-gradient(to right, rgba(11, 17, 30, 0.95) 0%, rgba(11, 17, 30, 0.82) 50%, rgba(11, 17, 30, 0.65) 100%), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000&q=90');"></div>
         </div>
 
+        <!-- Tech Grid Overlay Pattern & Glow Accent -->
+        <div class="absolute inset-0 z-1 tech-grid-pattern pointer-events-none"></div>
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-SOZA-gold/15 rounded-full blur-3xl animate-pulse-glow z-1 pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto flex flex-col items-start justify-center relative z-10 w-full reveal reveal-left">
-            <div class="inline-flex items-center gap-2 bg-SOZA-gold/10 border border-SOZA-gold/40 text-SOZA-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+            <div class="inline-flex items-center gap-2 bg-SOZA-card/90 border border-SOZA-gold/40 text-SOZA-gold text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest mb-6 backdrop-blur-md shadow-lg">
                 <span class="w-2 h-2 rounded-full bg-SOZA-gold animate-ping"></span>
-                DESIGNED TO INSPIRE
+                DESIGNED TO INSPIRE | ENTERPRISE IT SOLUTIONS
             </div>
             
             <div id="slide-text-content" class="max-w-3xl">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 drop-shadow-md">
                     SOZA IT Solutions & <span class="gold-text">Enterprise Physical Security</span>
                 </h1>
-                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal">
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal drop-shadow">
                     Empowering modern Dubai corporate environments with Biometric Access Control, SIRA-compliant CCTV, Structured Cabling, Server Rooms, and Complete Managed Support.
                 </p>
             </div>
 
             <div class="flex flex-wrap gap-4 items-center mb-8">
-                <a href="#physical-solutions" class="bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight hover:opacity-90 text-SOZA-deep font-black px-8 py-4 rounded-xl transition shadow-xl text-xs uppercase tracking-wider gold-glow">
-                    Explore Solutions
+                <a href="#physical-solutions" class="bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight hover:opacity-90 text-SOZA-deep font-black px-8 py-4 rounded-xl transition shadow-xl text-xs uppercase tracking-wider gold-glow flex items-center gap-2">
+                    <i class="fas fa-server"></i> Explore Solutions
                 </a>
-                <a href="tel:+971547271603" class="bg-SOZA-card/90 hover:bg-SOZA-card text-white border border-slate-700 font-bold px-8 py-4 rounded-xl transition text-xs uppercase tracking-wider flex items-center gap-2">
+                <a href="tel:+971547271603" class="bg-SOZA-card/90 hover:bg-SOZA-card text-white border border-slate-700 font-bold px-8 py-4 rounded-xl transition text-xs uppercase tracking-wider flex items-center gap-2 backdrop-blur-sm">
                     <i class="fas fa-phone text-SOZA-gold"></i> Call 054 727 1603
                 </a>
             </div>
 
+            <!-- Slide Indicators -->
             <div class="flex items-center gap-3">
                 <button onclick="setSlide(0)" class="slide-indicator w-8 h-2 rounded-full bg-SOZA-gold transition-all duration-300" aria-label="Slide 1"></button>
                 <button onclick="setSlide(1)" class="slide-indicator w-3 h-2 rounded-full bg-slate-600 transition-all duration-300" aria-label="Slide 2"></button>
@@ -694,10 +719,10 @@
             });
 
             textContent.innerHTML = `
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 drop-shadow-md">
                     ${slides[index].title}
                 </h1>
-                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal max-w-2xl">
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed font-normal max-w-2xl drop-shadow">
                     ${slides[index].desc}
                 </p>
             `;
