@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOZA IT | Enterprise IT & Networking Solutions Dubai</title>
+    <title>SOZA IT Solutions</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome 6 Free CDN -->
@@ -20,8 +20,6 @@
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
-                        sozaDark: '#0C101D',
-                        sozaCard: '#141A29',
                         sozaGold: '#D4AF37',
                     }
                 }
@@ -34,9 +32,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+        /* Medium Grey Page Background */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0C101D;
+            background-color: #4B5563;
             color: #FFFFFF;
             overflow-x: hidden;
         }
@@ -48,13 +47,13 @@
         }
 
         .card-dark {
-            background: #141A29;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: #111827;
+            border: 1px solid rgba(212, 175, 55, 0.25);
             transition: all 0.35s ease;
         }
         .card-dark:hover {
             border-color: #D4AF37;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transform: translateY(-3px);
         }
 
@@ -71,10 +70,10 @@
         }
     </style>
 </head>
-<body class="bg-[#0C101D] text-white">
+<body class="bg-[#4B5563] text-white">
 
     <!-- TOP BAR -->
-    <div class="bg-[#080B14] border-b border-gray-800/60 text-xs py-2 px-6 text-gray-300">
+    <div class="bg-[#1F2937] border-b border-gray-600 text-xs py-2 px-6 text-gray-200">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-5">
                 <span><i class="fas fa-location-dot text-[#D4AF37] mr-1"></i> Dubai, UAE</span>
@@ -87,13 +86,13 @@
         </div>
     </div>
 
-    <!-- MAIN NAVIGATION WITH EXACT LOGO IMAGE -->
-    <nav class="sticky top-0 z-50 bg-[#0C101D] border-b border-gray-800 shadow-xl">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <!-- MAIN NAVIGATION WITH EXACT UPLOADED LOGO IMAGE -->
+    <nav class="sticky top-0 z-50 bg-[#111827] border-b border-gray-700 shadow-xl">
+        <div class="max-w-7xl mx-auto px-6 py-2.5 flex justify-between items-center">
 
-            <!-- EXACT LOGO IMAGE -->
+            <!-- EXACT LOGO IMAGE WITH ORIGINAL BACKGROUND -->
             <a href="index.html" class="flex items-center">
-                <img src="logo.png" alt="SOZA IT Solutions" class="h-14 sm:h-16 w-auto object-contain" />
+                <img src="logo.png" alt="SOZA IT Solutions Logo" class="h-16 w-auto object-contain rounded-md" />
             </a>
 
             <!-- NAV LINKS -->
@@ -118,26 +117,28 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="bg-[#0C101D] py-20 px-6 border-b border-gray-800/80 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+    <!-- BEGINNING HERO SECTION -->
+    <section class="bg-[#4B5563] py-20 px-6 border-b border-gray-500 relative">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center gap-2 bg-[#111827] border border-[#D4AF37] text-[#D4AF37] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
                     <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping"></span>
                     UAE's Premier IT Partner
                 </div>
 
+                <!-- BEGINNING HEADLINE -->
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
                     IT Networking Solutions <br><span class="gold-text">for Business Growth</span>
                 </h1>
 
-                <p class="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl mb-8 font-light">
+                <!-- BEGINNING DESCRIPTION -->
+                <p class="text-gray-100 text-lg sm:text-xl leading-relaxed max-w-2xl mb-8 font-normal">
                     Empowering UAE businesses with reliable IT sales and services, including managed IT solutions and expert networking solutions.
                 </p>
 
                 <div class="flex flex-wrap gap-4 items-center">
                     <a href="#contact" class="btn-gold px-8 py-4 rounded-xl text-xs uppercase tracking-wider">Get Started Today</a>
-                    <a href="#services" class="border border-gray-700 hover:border-[#D4AF37] px-8 py-4 rounded-xl text-xs uppercase tracking-wider font-bold transition text-white">
+                    <a href="#services" class="bg-[#111827] border border-gray-600 hover:border-[#D4AF37] px-8 py-4 rounded-xl text-xs uppercase tracking-wider font-bold transition text-white">
                         Explore Solutions <i class="fas fa-arrow-right ml-2 text-[#D4AF37]"></i>
                     </a>
                 </div>
@@ -149,9 +150,9 @@
                     <h3 class="text-2xl font-black text-white mb-2">Request Consultation</h3>
                     <p class="text-xs text-gray-400 mb-6">Connect directly with a SOZA IT Solutions engineer.</p>
                     <form class="space-y-4">
-                        <input type="text" placeholder="Full Name *" class="w-full bg-[#080B14] border border-gray-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required>
-                        <input type="email" placeholder="Company Email *" class="w-full bg-[#080B14] border border-gray-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required>
-                        <input type="tel" placeholder="Phone Number *" class="w-full bg-[#080B14] border border-gray-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]" value="+971 54 727 1603" required>
+                        <input type="text" placeholder="Full Name *" class="w-full bg-[#1F2937] border border-gray-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-[#1F2937] border border-gray-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]" required>
+                        <input type="tel" placeholder="Phone Number *" class="w-full bg-[#1F2937] border border-gray-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]" value="+971 54 727 1603" required>
                         <button type="submit" class="w-full btn-gold py-4 rounded-xl uppercase tracking-wider text-xs">Submit Request</button>
                     </form>
                 </div>
@@ -159,8 +160,8 @@
         </div>
     </section>
 
-    <!-- SERVICES GRID -->
-    <section id="services" class="py-20 px-6 bg-[#080B14]">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 px-6 bg-[#374151]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-[#D4AF37] font-black text-xs uppercase tracking-widest">Our Capabilities</span>
@@ -202,7 +203,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-[#05070D] text-gray-400 py-10 px-6 border-t border-gray-800 text-center text-xs">
+    <footer class="bg-[#111827] text-gray-400 py-10 px-6 border-t border-gray-700 text-center text-xs">
         <p>&copy; 2026 SOZA IT Solutions. All rights reserved.</p>
     </footer>
 
