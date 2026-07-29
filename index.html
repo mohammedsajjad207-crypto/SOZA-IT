@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOZA IT | Enterprise IT Infrastructure & Access Control Dubai</title>
+    <title>SOZA IT Solutions | Enterprise IT Infrastructure & Access Control Dubai</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- FontAwesome 6 Pro CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
     <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,8 +99,8 @@
 </head>
 <body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-cyanGlow selection:text-SOZA-deep overflow-x-hidden">
 
-    <!-- Top Bar -->
-    <div class="bg-SOZA-dark border-b border-slate-800 text-xs py-2.5 px-6">
+    <!-- TOP INFORMATIONAL BAR -->
+    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6 text-slate-300">
                 <span><i class="fas fa-location-dot text-SOZA-cyanGlow mr-2"></i> Dubai, United Arab Emirates</span>
@@ -114,11 +117,11 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
+    <!-- MAIN NAVIGATION HEADER -->
     <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             
-            <!-- SOZA IT Logo -->
+            <!-- SOZA IT LOGO -->
             <a href="index.html" class="flex items-center gap-3">
                 <img src="logo.png" alt="SOZA IT" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('renderedLogo').style.display='flex';">
                 
@@ -131,7 +134,7 @@
                 </div>
             </a>
 
-            <!-- Navigation Links -->
+            <!-- DESKTOP NAVIGATION LINKS -->
             <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
                 <a href="index.html" class="text-SOZA-cyanGlow hover:text-white transition">Home</a>
                 <a href="#about" class="hover:text-SOZA-cyanGlow transition">About Us</a>
@@ -194,7 +197,7 @@
                 <a href="#contact" class="hover:text-SOZA-cyanGlow transition">Contact</a>
             </div>
 
-            <!-- Action Buttons -->
+            <!-- ACTION BUTTONS & MOBILE TOGGLE -->
             <div class="flex items-center gap-3">
                 <a href="https://wa.me/971547271603" target="_blank" class="bg-SOZA-emerald hover:bg-SOZA-emeraldDark text-SOZA-deep font-extrabold px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 transition shadow-lg">
                     <i class="fab fa-whatsapp text-sm"></i> WhatsApp
@@ -202,11 +205,24 @@
                 <a href="#contact" class="hidden sm:inline-block bg-gradient-to-r from-SOZA-cyanGlow to-SOZA-blueGlow text-SOZA-deep font-black px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition cyan-glow">
                     Get Quote
                 </a>
+                <button id="mobile-menu-btn" class="xl:hidden text-white p-2 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
+        </div>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-SOZA-dark border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="index.html" class="block text-SOZA-cyanGlow font-bold text-sm">Home</a>
+            <a href="#about" class="block text-slate-300 font-bold text-sm">About Us</a>
+            <a href="#managed-it" class="block text-SOZA-emerald font-bold text-sm">Managed IT Services</a>
+            <a href="#it-services" class="block text-SOZA-cyanGlow font-bold text-sm">IT Hardware & Solutions</a>
+            <a href="amc.html" class="block text-slate-300 font-bold text-sm">AMC Contracts</a>
+            <a href="#contact" class="block text-slate-300 font-bold text-sm">Contact Us</a>
         </div>
     </nav>
 
-    <!-- Moving Marquee Banner -->
+    <!-- MARQUEE RUNNING BANNER -->
     <div class="bg-gradient-to-r from-SOZA-dark via-SOZA-card to-SOZA-dark border-b border-slate-800 overflow-hidden py-2.5 whitespace-nowrap">
         <div class="inline-flex space-x-12 animate-marquee font-bold text-xs tracking-widest text-slate-300 uppercase">
             <span class="flex items-center"><i class="fas fa-globe text-SOZA-cyanGlow mr-2"></i> Managed Web Management</span>
@@ -848,8 +864,9 @@
         </div>
     </footer>
 
-    <!-- Scroll Reveal Script -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
+        // Scroll Reveal Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -859,6 +876,21 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Auto-close menu when clicking mobile links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>
