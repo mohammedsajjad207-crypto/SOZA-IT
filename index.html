@@ -44,14 +44,14 @@
             scroll-snap-type: y mandatory;
         }
 
-        /* Full-Screen Slideshow Background Wrapper */
+        /* Full-Screen Stable Background Wrapper */
         .master-bg-wrapper {
             position: relative;
             width: 100%;
             overflow: hidden;
         }
 
-        /* Slideshow Background Container & Images */
+        /* Single Stable Background Container & Image */
         .slideshow-container {
             position: fixed;
             top: 0;
@@ -69,30 +69,8 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0;
-            transform: scale(1);
-            animation: kenBurnsFade 24s infinite;
-        }
-
-        .slide-bg:nth-child(1) {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.2) 0%, rgba(5, 13, 36, 0.35) 50%, rgba(5, 13, 36, 0.75) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
-            animation-delay: 0s;
-        }
-        .slide-bg:nth-child(2) {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.2) 0%, rgba(5, 13, 36, 0.35) 50%, rgba(5, 13, 36, 0.75) 100%), url('https://images.unsplash.com/photo-1546412414-8035e1676d5a?auto=format&fit=crop&w=2000&q=95');
-            animation-delay: 8s;
-        }
-        .slide-bg:nth-child(3) {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.2) 0%, rgba(5, 13, 36, 0.35) 50%, rgba(5, 13, 36, 0.75) 100%), url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=95');
-            animation-delay: 16s;
-        }
-
-        @keyframes kenBurnsFade {
-            0% { opacity: 0; transform: scale(1); }
-            8% { opacity: 1; transform: scale(1.04); }
-            33% { opacity: 1; transform: scale(1.08); }
-            41% { opacity: 0; transform: scale(1.1); }
-            100% { opacity: 0; transform: scale(1); }
+            opacity: 1;
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.25) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.8) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
         }
 
         /* Slide Sections with Scroll Snap & Entrance Animation */
@@ -136,13 +114,6 @@
         }
 
         /* High Transparency Glassmorphism for Maximum Background Visibility */
-        .transparent-header-bar {
-            background: rgba(5, 13, 36, 0.12);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
         .transparent-nav {
             background: rgba(5, 13, 36, 0.15);
             backdrop-filter: blur(10px);
@@ -203,32 +174,15 @@
 </head>
 <body class="bg-[#050D24] text-[#F8FAFC]">
 
-    <!-- = MASTER FULL-PAGE BACKGROUND WITH SLIDESHOW = -->
+    <!-- = MASTER FULL-PAGE BACKGROUND WITH STABLE IMAGE = -->
     <div class="master-bg-wrapper">
-        <!-- Background Slideshow Layer -->
+        <!-- Stable Background Layer -->
         <div class="slideshow-container">
             <div class="slide-bg"></div>
-            <div class="slide-bg"></div>
-            <div class="slide-bg"></div>
         </div>
 
-        <!-- = TOP BAR (Transparent Logo/Home Top Section) = -->
-        <div class="transparent-header-bar text-xs py-2 px-6 fixed top-0 w-full z-50">
-            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-                <div class="flex items-center gap-6 text-[#CBD5E1]">
-                    <span><i class="fas fa-location-dot text-[#D4AF37] mr-1.5"></i> Dubai, UAE</span>
-                    <span><i class="fas fa-shield-alt text-[#D4AF37] mr-1.5"></i> 24/7 SLA Enterprise Support</span>
-                    <span class="hidden md:inline-block"><i class="fas fa-certificate text-[#D4AF37] mr-1.5"></i> SIRA Approved</span>
-                </div>
-                <div class="flex items-center gap-6">
-                    <a href="tel:+971547271603" class="hover:text-[#D4AF37] transition font-semibold text-white"><i class="fas fa-phone mr-1.5 text-[#D4AF37]"></i> +971 54 727 1603</a>
-                    <a href="mailto:sales@soza-it.com" class="hover:text-[#D4AF37] transition text-[#CBD5E1]"><i class="fas fa-envelope mr-1.5 text-[#D4AF37]"></i> sales@soza-it.com</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- = NAVIGATION (Transparent Home & Logo Header) = -->
-        <nav class="fixed top-[33px] left-0 w-full z-40 transparent-nav">
+        <!-- = NAVIGATION (Transparent Home & Logo Header - Top Positioned) = -->
+        <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
             <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
                 <!-- Transparent Logo Area -->
                 <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
@@ -655,7 +609,7 @@
         </section>
 
         <!-- = FOOTER (Slide 7) = -->
-        <footer class="slide-section transparent-header-bar text-[#CBD5E1] py-16 px-6">
+        <footer class="slide-section transparent-glass-box text-[#CBD5E1] py-16 px-6">
             <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="font-display font-black text-xl tracking-wider text-white mb-1 moving-title">SOZA <span class="text-[#D4AF37]">IT</span></div>
