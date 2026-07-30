@@ -41,9 +41,9 @@
             color: #F8FAFC;
             overflow-x: hidden;
         }
-        /* Master Full-Page Background replicating the exact lighting, blue tones, and digital city aesthetic from your image */
+        /* Master Full-Page Background: Starts from the very top (logo/navigation area) down through the entire home page with a brighter light-blue UAE skyline aesthetic */
         .master-bg-wrapper {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.65) 0%, rgba(11, 28, 66, 0.75) 40%, rgba(5, 13, 36, 0.90) 80%, #050D24 100%), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=90');
+            background-image: linear-gradient(to bottom, rgba(14, 45, 105, 0.4) 0%, rgba(10, 32, 79, 0.5) 30%, rgba(5, 13, 36, 0.85) 75%, #050D24 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
@@ -96,11 +96,11 @@
 </head>
 <body class="bg-[#050D24] text-[#F8FAFC]">
 
-    <!-- = MASTER FULL-PAGE BACKGROUND WRAPPER = -->
+    <!-- = MASTER FULL-PAGE BACKGROUND WRAPPER (Starts from top logo area downward) = -->
     <div class="master-bg-wrapper min-h-screen w-full">
 
         <!-- = TOP BAR = -->
-        <div class="bg-[#030712]/90 border-b border-white/10 text-xs py-2 px-6 backdrop-blur-md">
+        <div class="bg-[#030712]/70 border-b border-white/10 text-xs py-2 px-6 backdrop-blur-md">
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
                 <div class="flex items-center gap-6 text-[#CBD5E1]">
                     <span><i class="fas fa-location-dot text-[#D4AF37] mr-1.5"></i> Dubai, UAE</span>
@@ -115,7 +115,7 @@
         </div>
 
         <!-- = NAVIGATION = -->
-        <nav class="sticky top-0 z-50 bg-[#050D24]/85 backdrop-blur-xl border-b border-white/10">
+        <nav class="sticky top-0 z-50 bg-[#050D24]/75 backdrop-blur-xl border-b border-white/10">
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="flex flex-col leading-none">
@@ -173,7 +173,7 @@
             </div>
         </nav>
 
-        <!-- = EXACT MATCHING REFERENCE HERO SECTION = -->
+        <!-- = HERO SECTION = -->
         <header class="relative min-h-[90vh] flex flex-col justify-between px-6 pt-12 pb-16 max-w-7xl mx-auto">
             <div>
                 <!-- Top Tag -->
@@ -182,7 +182,7 @@
                     <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.25em]">Welcome to SOZA IT Solutions</span>
                 </div>
 
-                <!-- Main Headline matching user reference image layout -->
+                <!-- Main Headline -->
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight leading-[1.1] mb-6 text-white drop-shadow-md">
                     Designed to <span class="gold-gradient-text">Inspire.</span><br>
                     Empowered to <span class="gold-gradient-text">Deliver.</span>
@@ -192,7 +192,7 @@
                     Delivering innovative IT solutions that help businesses grow, stay secure, and lead in a digital world.
                 </p>
 
-                <!-- Action Buttons matching reference -->
+                <!-- Action Buttons -->
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact" class="btn-strata-gold px-8 py-4 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg">
                         Get a Free Consultation <i class="fas fa-arrow-right text-[10px]"></i>
@@ -203,8 +203,8 @@
                 </div>
             </div>
 
-            <!-- Bottom Mini Feature Row matching reference card icons -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-16 pt-8 border-t border-white/20">
+            <!-- Bottom Mini Feature Row -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-16 pt-8 border-t border-white/25">
                 <div class="strata-card p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-server text-[#D4AF37] text-lg mb-2"></i>
                     <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Infrastructure & Hardware</h5>
@@ -233,7 +233,7 @@
         </header>
 
         <!-- = CORE PILLARS BAR = -->
-        <section class="py-12 px-6 border-t border-white/15">
+        <section class="py-12 px-6 border-t border-white/20">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="strata-card p-6 rounded-2xl shadow-xl">
                     <i class="fas fa-brain text-[#D4AF37] text-xl mb-2"></i>
@@ -259,7 +259,7 @@
         </section>
 
         <!-- = MANAGED IT SERVICES (6 Cards) = -->
-        <section id="managed-it" class="py-24 px-6 border-t border-white/15">
+        <section id="managed-it" class="py-24 px-6 border-t border-white/20">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Enterprise Operations</span>
@@ -369,7 +369,7 @@
         </section>
 
         <!-- = HARDWARE & INFRASTRUCTURE SERVICES (12 Cards) = -->
-        <section id="services" class="py-24 px-6 border-t border-white/15">
+        <section id="services" class="py-24 px-6 border-t border-white/20">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Hardware & Access Systems</span>
@@ -575,7 +575,7 @@
         </section>
 
         <!-- = ABOUT SECTION = -->
-        <section id="about" class="py-24 px-6 border-t border-white/15">
+        <section id="about" class="py-24 px-6 border-t border-white/20">
             <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Bridging Business & Technology</span>
@@ -603,7 +603,7 @@
         </section>
 
         <!-- = STATS SECTION = -->
-        <section class="py-16 px-6 border-t border-white/15">
+        <section class="py-16 px-6 border-t border-white/20">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                     <div class="text-4xl sm:text-5xl font-black text-white font-display">150+</div>
@@ -625,7 +625,7 @@
         </section>
 
         <!-- = CONTACT FORM SECTION = -->
-        <section id="contact" class="py-24 px-6 border-t border-white/15">
+        <section id="contact" class="py-24 px-6 border-t border-white/20">
             <div class="max-w-4xl mx-auto">
                 <div class="strata-card p-8 sm:p-12 rounded-3xl shadow-2xl">
                     <div class="text-center mb-10">
@@ -665,7 +665,7 @@
         </section>
 
         <!-- = FOOTER = -->
-        <footer class="bg-[#030712]/95 text-[#CBD5E1] py-16 px-6 border-t border-white/15 backdrop-blur-md">
+        <footer class="bg-[#030712]/95 text-[#CBD5E1] py-16 px-6 border-t border-white/20 backdrop-blur-md">
             <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
                 <div>
                     <div class="font-display font-black text-xl tracking-wider text-white mb-1">SOZA <span class="text-[#D4AF37]">IT</span></div>
@@ -708,7 +708,7 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-white/15">
+            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-white/20">
                 &copy; 2026 SOZA IT Solutions. All rights reserved.
             </div>
         </footer>
