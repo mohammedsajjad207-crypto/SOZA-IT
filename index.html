@@ -40,12 +40,13 @@
             background-color: #050D24;
             color: #F8FAFC;
             overflow-x: hidden;
+            /* Page snap scrolling like slides across all sections */
+            scroll-snap-type: y mandatory;
         }
 
         /* Full-Screen Slideshow Background Wrapper */
         .master-bg-wrapper {
             position: relative;
-            min-height: 100vh;
             width: 100%;
             overflow: hidden;
         }
@@ -74,15 +75,15 @@
         }
 
         .slide-bg:nth-child(1) {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.3) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.85) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.2) 0%, rgba(5, 13, 36, 0.35) 50%, rgba(5, 13, 36, 0.75) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
             animation-delay: 0s;
         }
         .slide-bg:nth-child(2) {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.3) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.85) 100%), url('https://images.unsplash.com/photo-1546412414-8035e1676d5a?auto=format&fit=crop&w=2000&q=95');
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.2) 0%, rgba(5, 13, 36, 0.35) 50%, rgba(5, 13, 36, 0.75) 100%), url('https://images.unsplash.com/photo-1546412414-8035e1676d5a?auto=format&fit=crop&w=2000&q=95');
             animation-delay: 8s;
         }
         .slide-bg:nth-child(3) {
-            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.3) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.85) 100%), url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=95');
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.2) 0%, rgba(5, 13, 36, 0.35) 50%, rgba(5, 13, 36, 0.75) 100%), url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=95');
             animation-delay: 16s;
         }
 
@@ -94,45 +95,74 @@
             100% { opacity: 0; transform: scale(1); }
         }
 
-        /* Floating / Moving Text Animation for Headings */
-        @keyframes floatText {
+        /* Slide Sections with Scroll Snap & Entrance Animation */
+        .slide-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide-section.active-slide {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Continuous Sliding / Moving Font Animation */
+        @keyframes slideFontX {
+            0% { transform: translateX(-15px); }
+            50% { transform: translateX(15px); }
+            100% { transform: translateX(-15px); }
+        }
+
+        .moving-title {
+            animation: slideFontX 6s ease-in-out infinite;
+        }
+
+        @keyframes floatTextY {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
 
         .floating-heading {
-            animation: floatText 4s ease-in-out infinite;
+            animation: floatTextY 4s ease-in-out infinite;
         }
 
-        /* High Transparency Glassmorphism for Navigation, Logo area, and Headings */
+        /* High Transparency Glassmorphism for Maximum Background Visibility */
         .transparent-header-bar {
-            background: rgba(5, 13, 36, 0.25);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(5, 13, 36, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .transparent-nav {
-            background: rgba(5, 13, 36, 0.3);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(5, 13, 36, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Fully Transparent / Glassmorphic Headings & Cards revealing background */
+        /* Highly Transparent Glass Boxes revealing background images completely */
         .transparent-glass-box {
-            background: rgba(5, 13, 36, 0.35);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(5, 13, 36, 0.22);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .transparent-glass-box:hover {
-            border-color: #3B82F6;
+            border-color: rgba(212, 175, 55, 0.6);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.3);
-            background: rgba(5, 13, 36, 0.55);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.2);
+            background: rgba(5, 13, 36, 0.38);
         }
 
         .gold-gradient-text {
@@ -142,7 +172,7 @@
         }
 
         .btn-strata-gold {
-            background: rgba(212, 175, 55, 0.85);
+            background: rgba(212, 175, 55, 0.75);
             backdrop-filter: blur(6px);
             color: #050D24;
             font-weight: 700;
@@ -153,21 +183,21 @@
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
         }
         .btn-strata-outline {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(6px);
             color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             transition: all 0.3s ease;
         }
         .btn-strata-outline:hover {
             border-color: #D4AF37;
             color: #D4AF37;
-            background: rgba(212, 175, 55, 0.15);
+            background: rgba(212, 175, 55, 0.1);
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: rgba(5,13,36,0.8); }
-        ::-webkit-scrollbar-thumb { background: #16366B; border-radius: 3px; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: rgba(5,13,36,0.4); }
+        ::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.4); border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
     </style>
 </head>
@@ -183,7 +213,7 @@
         </div>
 
         <!-- = TOP BAR (Transparent Logo/Home Top Section) = -->
-        <div class="transparent-header-bar text-xs py-2 px-6">
+        <div class="transparent-header-bar text-xs py-2 px-6 fixed top-0 w-full z-50">
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
                 <div class="flex items-center gap-6 text-[#CBD5E1]">
                     <span><i class="fas fa-location-dot text-[#D4AF37] mr-1.5"></i> Dubai, UAE</span>
@@ -198,18 +228,18 @@
         </div>
 
         <!-- = NAVIGATION (Transparent Home & Logo Header) = -->
-        <nav class="sticky top-0 z-50 transparent-nav">
-            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="fixed top-[33px] left-0 w-full z-40 transparent-nav">
+            <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
                 <!-- Transparent Logo Area -->
                 <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
-                    <div class="flex flex-col leading-none">
+                    <div class="flex flex-col leading-none moving-title">
                         <span class="font-display font-black text-2xl tracking-wider text-white drop-shadow">SOZA <span class="text-[#D4AF37]">IT</span></span>
                         <span class="text-[7px] tracking-[0.4em] font-bold text-[#CBD5E1] uppercase mt-1">Solutions Designed to Inspire</span>
                     </div>
                 </a>
 
                 <div class="hidden xl:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-[#CBD5E1]">
-                    <a href="index.html" class="text-[#D4AF37] hover:text-white transition drop-shadow">Home</a>
+                    <a href="#hero" class="text-[#D4AF37] hover:text-white transition drop-shadow">Home</a>
                     <a href="#about" class="hover:text-white transition">About Us</a>
                     
                     <!-- Services Dropdown -->
@@ -247,7 +277,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366]/85 backdrop-blur-md hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
+                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366]/75 backdrop-blur-md hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
                         <i class="fab fa-whatsapp text-sm"></i> WhatsApp
                     </a>
                     <a href="#contact" class="hidden sm:inline-block btn-strata-gold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider">
@@ -257,11 +287,11 @@
             </div>
         </nav>
 
-        <!-- = HERO SECTION = -->
-        <header class="relative min-h-[90vh] flex flex-col justify-between px-6 pt-12 pb-16 max-w-7xl mx-auto">
+        <!-- = HERO SECTION (Slide 1) = -->
+        <section id="hero" class="slide-section pt-32 pb-16 px-6 max-w-7xl mx-auto active-slide">
             <div>
-                <!-- Top Tag with Floating Effect -->
-                <div class="flex items-center gap-3 mb-6 floating-heading">
+                <!-- Top Tag with Sliding Effect -->
+                <div class="flex items-center gap-3 mb-6 moving-title">
                     <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
                     <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.255em] drop-shadow">Welcome to SOZA IT Solutions Dubai</span>
                 </div>
@@ -289,7 +319,7 @@
             </div>
 
             <!-- Bottom Mini Feature Row -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-16 pt-8 border-t border-white/20">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-12 pt-6 border-t border-white/10">
                 <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-server text-[#D4AF37] text-lg mb-2"></i>
                     <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Infrastructure</h5>
@@ -315,489 +345,381 @@
                     <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Audits</h5>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- = CORE PILLARS BAR = -->
-        <section class="py-12 px-6 border-t border-white/15">
-            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <i class="fas fa-brain text-[#D4AF37] text-xl mb-2"></i>
+        <!-- = CORE PILLARS BAR (Slide 2) = -->
+        <section class="slide-section py-16 px-6 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 transparent-glass-box p-6 rounded-3xl moving-title shadow-2xl">
+                <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Our Operating Principles</span>
+                <h2 class="text-3xl font-extrabold font-display text-white mt-1">Core Pillars of Excellence</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl floating-heading">
+                    <i class="fas fa-brain text-[#D4AF37] text-2xl mb-3"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Smart</h4>
                     <p class="text-xs text-[#CBD5E1] mt-1">Intelligence ecosystems</p>
                 </div>
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <i class="fas fa-chart-line text-[#D4AF37] text-xl mb-2"></i>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl floating-heading" style="animation-delay: 0.5s;">
+                    <i class="fas fa-chart-line text-[#D4AF37] text-2xl mb-3"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Optimum</h4>
                     <p class="text-xs text-[#CBD5E1] mt-1">Maximum performance</p>
                 </div>
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <i class="fas fa-bolt text-[#D4AF37] text-xl mb-2"></i>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl floating-heading" style="animation-delay: 1s;">
+                    <i class="fas fa-bolt text-[#D4AF37] text-2xl mb-3"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Zealous</h4>
                     <p class="text-xs text-[#CBD5E1] mt-1">Passionate 24/7 support</p>
                 </div>
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <i class="fas fa-bullseye text-[#D4AF37] text-xl mb-2"></i>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl floating-heading" style="animation-delay: 1.5s;">
+                    <i class="fas fa-bullseye text-[#D4AF37] text-2xl mb-3"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Accurate</h4>
                     <p class="text-xs text-[#CBD5E1] mt-1">Precision execution</p>
                 </div>
             </div>
         </section>
 
-        <!-- = MANAGED IT SERVICES = -->
-        <section id="managed-it" class="py-24 px-6 border-t border-white/15">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16 transparent-glass-box p-8 rounded-3xl floating-heading shadow-2xl">
-                    <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Enterprise Operations</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white mt-2">Managed IT Services</h2>
-                    <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-4"></div>
-                    <p class="text-[#CBD5E1] mt-4 text-base">Proactive, end-to-end management of your digital assets, web properties, applications, and infrastructure.</p>
+        <!-- = MANAGED IT SERVICES (Slide 3) = -->
+        <section id="managed-it" class="slide-section py-20 px-6 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 transparent-glass-box p-8 rounded-3xl moving-title shadow-2xl">
+                <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Enterprise Operations</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mt-2">Managed IT Services</h2>
+                <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-3"></div>
+                <p class="text-[#CBD5E1] mt-3 text-sm">Proactive, end-to-end management of your digital assets, web properties, applications, and infrastructure.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. Web Management -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-36 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-globe mr-1.5"></i> Website & Digital</span>
+                            <h3 class="text-lg font-bold text-white mb-1">Web Management</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Complete web maintenance, speed optimization, CMS security patching, hosting monitoring, and domain/SSL renewals.</p>
+                        </div>
+                        <a href="web-management.html" class="mt-4 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 1. Web Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-globe mr-1.5"></i> Website & Digital</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Web Management</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Complete web maintenance, speed optimization, CMS security patching, hosting monitoring, and domain/SSL renewals.</p>
-                            </div>
-                            <a href="web-management.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 2. Application Management -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-36 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="App" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 2. Application Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="App" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-cubes mr-1.5"></i> SaaS & Enterprise</span>
+                            <h3 class="text-lg font-bold text-white mb-1">Application Management</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Proactive management of enterprise software, SaaS integration, ERP maintenance, patch releases, and end-user support.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-cubes mr-1.5"></i> SaaS & Enterprise</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Application Management</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Proactive management of enterprise software, SaaS integration, ERP maintenance, patch releases, and end-user support.</p>
-                            </div>
-                            <a href="application-management.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="application-management.html" class="mt-4 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- 3. IT Security Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-user-shield mr-1.5"></i> Zero-Trust & SOC</span>
-                                <h3 class="text-xl font-bold text-white mb-2">IT Security Management</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Continuous threat detection, endpoint defense (EDR), vulnerability assessments, firewall management, and zero-trust architecture.</p>
-                            </div>
-                            <a href="it-security-management.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 3. IT Security Management -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-36 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 4. Backup Storage Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Backup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-user-shield mr-1.5"></i> Zero-Trust & SOC</span>
+                            <h3 class="text-lg font-bold text-white mb-1">IT Security Management</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Continuous threat detection, endpoint defense (EDR), vulnerability assessments, firewall management, and zero-trust architecture.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-database mr-1.5"></i> Disaster Recovery</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Backup Storage Management</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Automated hybrid backup, cloud/NAS synchronization, immutable snapshots, and fail-safe disaster recovery protocols.</p>
-                            </div>
-                            <a href="backup-storage-management.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="it-security-management.html" class="mt-4 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- 5. Cloud Infrastructure Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-cloud mr-1.5"></i> Azure & AWS</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Cloud Infrastructure</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Full management of Azure, AWS, and local UAE cloud servers including compute scaling, cost optimization, and IAM security.</p>
-                            </div>
-                            <a href="cloud-infrastructure-management.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 4. Backup Storage Management -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-36 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Backup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-database mr-1.5"></i> Disaster Recovery</span>
+                            <h3 class="text-lg font-bold text-white mb-1">Backup Storage Management</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Automated hybrid backup, cloud/NAS synchronization, immutable snapshots, and fail-safe disaster recovery protocols.</p>
+                        </div>
+                        <a href="backup-storage-management.html" class="mt-4 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
 
-                    <!-- 6. Network Infrastructure Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Network" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                <!-- 5. Cloud Infrastructure Management -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-36 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-cloud mr-1.5"></i> Azure & AWS</span>
+                            <h3 class="text-lg font-bold text-white mb-1">Cloud Infrastructure</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Full management of Azure, AWS, and local UAE cloud servers including compute scaling, cost optimization, and IAM security.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-project-diagram mr-1.5"></i> Proactive Monitoring</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Network Infrastructure</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Proactive monitoring of switches, Wi-Fi 6 access points, routing protocols, and multi-office WAN/VPN tunnel connections.</p>
-                            </div>
-                            <a href="network-infrastructure-management.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
+                        <a href="cloud-infrastructure-management.html" class="mt-4 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- 6. Network Infrastructure Management -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-36 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Network" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-project-diagram mr-1.5"></i> Proactive Monitoring</span>
+                            <h3 class="text-lg font-bold text-white mb-1">Network Infrastructure</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Proactive monitoring of switches, Wi-Fi 6 access points, routing protocols, and multi-office WAN/VPN tunnel connections.</p>
                         </div>
+                        <a href="network-infrastructure-management.html" class="mt-4 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- = HARDWARE & INFRASTRUCTURE SERVICES = -->
-        <section id="services" class="py-24 px-6 border-t border-white/15">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16 transparent-glass-box p-8 rounded-3xl floating-heading shadow-2xl">
-                    <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Hardware & Access Systems</span>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white mt-2">Physical IT & Security Solutions</h2>
-                    <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-4"></div>
-                    <p class="text-[#CBD5E1] mt-4 text-base">Enterprise-grade infrastructure, access control, and cabling engineering tailored for UAE installations.</p>
+        <!-- = HARDWARE & INFRASTRUCTURE SERVICES (Slide 4) = -->
+        <section id="services" class="slide-section py-20 px-6 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12 transparent-glass-box p-8 rounded-3xl moving-title shadow-2xl">
+                <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Hardware & Access Systems</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mt-2">Physical IT & Security Solutions</h2>
+                <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-3"></div>
+                <p class="text-[#CBD5E1] mt-3 text-sm">Enterprise-grade infrastructure, access control, and cabling engineering tailored for UAE installations.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. Door Access Control -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-32 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Access" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-fingerprint mr-1.5"></i> Biometric Security</span>
+                            <h3 class="text-base font-bold text-white mb-1">Door Access Control</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Biometric face recognition, RFID card readers, magnetic locks, keypad access, and time-attendance software integration.</p>
+                        </div>
+                        <a href="door-access-control.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 1. Door Access Control -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Access" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-fingerprint mr-1.5"></i> Biometric Security</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Door Access Control</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Biometric face recognition, RFID card readers, magnetic locks, keypad access, and time-attendance software integration.</p>
-                            </div>
-                            <a href="door-access-control.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 2. CCTV Installation -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-32 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 2. CCTV Installation -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-video mr-1.5"></i> SIRA Compliant</span>
+                            <h3 class="text-base font-bold text-white mb-1">CCTV Camera Installation</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">SIRA-compliant 4K surveillance, NVR configuration, thermal motion detection, and remote mobile viewing.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-video mr-1.5"></i> SIRA Compliant</span>
-                                <h3 class="text-xl font-bold text-white mb-2">CCTV Camera Installation</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">SIRA-compliant 4K surveillance, NVR configuration, thermal motion detection, and remote mobile viewing.</p>
-                            </div>
-                            <a href="cctv-installation.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="cctv-installation.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- 3. Visitor Management -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Visitor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-id-badge mr-1.5"></i> Smart Reception</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Visitor Management Systems</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Self-service kiosks, Emirates ID & Passport scanning, instant host alerts, QR-based passes, and compliance logging.</p>
-                            </div>
-                            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Inquire <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 3. Server Room Setup -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-32 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Server" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 4. Turnkey Office IT Setup -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Office" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-server mr-1.5"></i> Infrastructure</span>
+                            <h3 class="text-base font-bold text-white mb-1">Server Room Setup</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Turnkey server racks, Active Directory, SAN/NAS storage, precision cooling, and anti-static cleaning.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-building mr-1.5"></i> Turnkey Execution</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Turnkey Office IT Setup</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">End-to-end office tech: workstation procurement, rack mounting, server config, printer networking, and ISP coordination.</p>
-                            </div>
-                            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Plan Setup <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="server-setup.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- 5. Server Room Setup -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Server" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-server mr-1.5"></i> Infrastructure</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Server Room Setup</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Turnkey server racks, Active Directory, SAN/NAS storage, precision cooling, and anti-static cleaning.</p>
-                            </div>
-                            <a href="server-setup.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 4. Structured Cabling -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-32 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Cabling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 6. Structured Cabling -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Cabling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-network-wired mr-1.5"></i> Network Backbone</span>
+                            <h3 class="text-base font-bold text-white mb-1">Structured Cat6 & Fiber</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">High-speed Cat6, Cat6A, and fiber optic cabling, patch panel dressing, and Fluke testing.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-network-wired mr-1.5"></i> Network Backbone</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Structured Cat6 & Fiber</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">High-speed Cat6, Cat6A, and single/multi-mode fiber optic cabling, patch panel dressing, and Fluke testing.</p>
-                            </div>
-                            <a href="structured-cabling.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="structured-cabling.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- 7. Cybersecurity & Firewall -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cyber" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-shield-alt mr-1.5"></i> Threat Defense</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Firewall & Cybersecurity</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Fortinet & Sophos Next-Gen Firewalls, endpoint protection, VPN remote access, and network audit controls.</p>
-                            </div>
-                            <a href="cybersecurity.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 5. Cybersecurity & Firewall -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-32 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cyber" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 8. IP Phone & PBX -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Phone" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-shield-alt mr-1.5"></i> Threat Defense</span>
+                            <h3 class="text-base font-bold text-white mb-1">Firewall & Cybersecurity</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Fortinet & Sophos Next-Gen Firewalls, endpoint protection, VPN remote access, and network audit controls.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-phone-alt mr-1.5"></i> IP Telephony</span>
-                                <h3 class="text-xl font-bold text-white mb-2">IP Phone & PBX Solutions</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Grandstream, Yealink, Avaya IP PBX setups, IVR auto-attendants, SIP trunking, and call recording.</p>
-                            </div>
-                            <a href="ip-phone-telephony.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="cybersecurity.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- 9. IT Audit & Risk Assessment -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Audit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-clipboard-check mr-1.5"></i> Compliance & Risks</span>
-                                <h3 class="text-xl font-bold text-white mb-2">IT Audit & Risk Assessment</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Network security audits, vulnerability scanning, infrastructure diagnostics, and executive risk mitigation roadmaps.</p>
-                            </div>
-                            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Request Audit <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                <!-- 6. IP Phone & PBX -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-32 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Phone" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                     </div>
-
-                    <!-- 10. Managed Network -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Wifi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-phone-alt mr-1.5"></i> IP Telephony</span>
+                            <h3 class="text-base font-bold text-white mb-1">IP Phone & PBX Solutions</h3>
+                            <p class="text-[#CBD5E1] text-xs leading-relaxed">Grandstream, Yealink, Avaya IP PBX setups, IVR auto-attendants, SIP trunking, and call recording.</p>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-wifi mr-1.5"></i> Connectivity</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Wi-Fi, Switches & Firewalls</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Enterprise Wi-Fi 6 heat mapping, managed L2/L3 PoE switches, VLAN segmentation, and Fortinet/Sophos firewalls.</p>
-                            </div>
-                            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Optimize Network <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- 11. Data Backup & Recovery -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Recovery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-database mr-1.5"></i> Business Continuity</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Data Backup & Recovery</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Automated NAS storage, offsite encrypted cloud backups, immutable snapshots, and rapid disaster recovery.</p>
-                            </div>
-                            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Secure Data <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- 12. Fully Managed IT (AMC) -->
-                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="AMC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-2"><i class="fas fa-headset mr-1.5"></i> Outsourced IT</span>
-                                <h3 class="text-xl font-bold text-white mb-2">Fully Managed IT Support (AMC)</h3>
-                                <p class="text-[#CBD5E1] text-sm leading-relaxed">Complete outsourced IT department: 24/7 helpdesk, on-site engineers, proactive monitoring, and guaranteed SLA response.</p>
-                            </div>
-                            <a href="amc.html" class="mt-6 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Explore AMC <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="ip-phone-telephony.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-semibold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Open Sub-Page <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- = ABOUT US SECTION = -->
-        <section id="about" class="py-24 px-6 border-t border-white/15">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-                <div class="transparent-glass-box p-8 sm:p-12 rounded-3xl shadow-2xl floating-heading">
-                    <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Bridging Business & Technology</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-2 mb-6 leading-tight">About Us - <span class="gold-gradient-text">SOZA IT Solutions</span></h2>
-                    <p class="text-[#CBD5E1] text-sm leading-relaxed mb-4">SOZA IT Solutions is a dynamic technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions across Dubai and the UAE.</p>
-                    <p class="text-[#CBD5E1] text-sm leading-relaxed mb-4">Founded to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises with tailored digital solutions that enhance operational efficiency and drive innovation.</p>
-                    <p class="text-[#CBD5E1] text-sm leading-relaxed">We are driven by <strong class="text-[#D4AF37]">innovation, integrity, and impact</strong>. Our agile, client-focused approach builds long-term partnerships for lasting success in a rapidly evolving digital world.</p>
+        <!-- = ABOUT US SECTION (Slide 5) = -->
+        <section id="about" class="slide-section py-20 px-6 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="transparent-glass-box p-8 sm:p-10 rounded-3xl shadow-2xl floating-heading">
+                    <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em] moving-title">Bridging Business & Technology</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-2 mb-4 leading-tight">About Us - <span class="gold-gradient-text">SOZA IT Solutions</span></h2>
+                    <p class="text-[#CBD5E1] text-sm leading-relaxed mb-3">SOZA IT Solutions is a dynamic technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions across Dubai and the UAE.</p>
+                    <p class="text-[#CBD5E1] text-sm leading-relaxed mb-3">Founded to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises with tailored digital solutions.</p>
+                    <p class="text-[#CBD5E1] text-sm leading-relaxed">We are driven by <strong class="text-[#D4AF37]">innovation, integrity, and impact</strong>, building long-term partnerships for lasting digital success.</p>
                 </div>
-                <div class="space-y-6">
-                    <div class="transparent-glass-box p-8 rounded-3xl shadow-2xl">
-                        <div class="w-10 h-10 bg-[#D4AF37]/15 text-[#D4AF37] rounded-xl flex items-center justify-center text-lg mb-4"><i class="fas fa-eye"></i></div>
-                        <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wider">Our Vision</h3>
-                        <p class="text-[#CBD5E1] text-sm leading-relaxed">To be a trusted leader in IT solutions, empowering digital transformation for businesses across the UAE and beyond.</p>
+                <div class="space-y-4">
+                    <div class="transparent-glass-box p-6 rounded-3xl shadow-2xl floating-heading">
+                        <div class="w-8 h-8 bg-[#D4AF37]/15 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-eye"></i></div>
+                        <h3 class="text-base font-bold text-white mb-1 uppercase tracking-wider">Our Vision</h3>
+                        <p class="text-[#CBD5E1] text-xs leading-relaxed">To be a trusted leader in IT solutions, empowering digital transformation for businesses across the UAE and beyond.</p>
                     </div>
-                    <div class="transparent-glass-box p-8 rounded-3xl shadow-2xl">
-                        <div class="w-10 h-10 bg-[#D4AF37]/15 text-[#D4AF37] rounded-xl flex items-center justify-center text-lg mb-4"><i class="fas fa-bullseye"></i></div>
-                        <h3 class="text-lg font-bold text-white mb-3 uppercase tracking-wider">Our Mission</h3>
-                        <ul class="space-y-2 text-sm text-[#CBD5E1]">
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i><span>Deliver cutting-edge IT services with unmatched support</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check text-[#D4AF37] mt-1"></i><span>Build long-term partnerships through commitment & innovation</span></li>
+                    <div class="transparent-glass-box p-6 rounded-3xl shadow-2xl floating-heading" style="animation-delay: 0.5s;">
+                        <div class="w-8 h-8 bg-[#D4AF37]/15 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="text-base font-bold text-white mb-2 uppercase tracking-wider">Our Mission</h3>
+                        <ul class="space-y-1.5 text-xs text-[#CBD5E1]">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-[#D4AF37] mt-0.5"></i><span>Deliver cutting-edge IT services with unmatched support</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-[#D4AF37] mt-0.5"></i><span>Build long-term partnerships through commitment & innovation</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- = STATS SECTION = -->
-        <section class="py-16 px-6 border-t border-white/15">
-            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <div class="text-4xl sm:text-5xl font-black text-white font-display">150+</div>
-                    <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Enterprise Clients</p>
+        <!-- = CONTACT FORM SECTION (Slide 6) = -->
+        <section id="contact" class="slide-section py-20 px-6 max-w-4xl mx-auto">
+            <div class="transparent-glass-box p-8 sm:p-10 rounded-3xl shadow-2xl">
+                <div class="text-center mb-6 moving-title">
+                    <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Get In Touch</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white mt-1">Request an Expert Consultation</h2>
+                    <div class="w-12 h-1 bg-[#D4AF37] mx-auto mt-2"></div>
+                    <p class="text-xs text-[#CBD5E1] mt-2">Speak with a SOZA IT Specialist within 15 minutes to discuss your project requirements.</p>
                 </div>
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <div class="text-4xl sm:text-5xl font-black text-white font-display">98%</div>
-                    <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Satisfaction Rate</p>
-                </div>
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <div class="text-4xl sm:text-5xl font-black text-white font-display">24/7</div>
-                    <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Support Availability</p>
-                </div>
-                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <div class="text-4xl sm:text-5xl font-black text-white font-display">12+</div>
-                    <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Years of Expertise</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- = CONTACT FORM SECTION = -->
-        <section id="contact" class="py-24 px-6 border-t border-white/15">
-            <div class="max-w-4xl mx-auto">
-                <div class="transparent-glass-box p-8 sm:p-12 rounded-3xl shadow-2xl">
-                    <div class="text-center mb-10">
-                        <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Get In Touch</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-2">Request an Expert Consultation</h2>
-                        <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-4"></div>
-                        <p class="text-sm text-[#CBD5E1] mt-2">Speak with a SOZA IT Specialist within 15 minutes to discuss your project requirements.</p>
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Full Name *" class="w-full bg-[#050D24]/30 border border-white/20 rounded-xl p-3 text-xs text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" required>
+                        <input type="email" placeholder="Company Email *" class="w-full bg-[#050D24]/30 border border-white/20 rounded-xl p-3 text-xs text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" required>
                     </div>
-
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name *" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" required>
-                            <input type="email" placeholder="Company Email *" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" required>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="tel" placeholder="Phone Number *" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" value="+971 54 727 1603" required>
-                            <select class="w-full bg-[#050D24]/60 border border-white/25 rounded-xl p-4 text-sm text-[#CBD5E1] focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md">
-                                <option>Select Required Service</option>
-                                <option>Door Access Control & Biometrics</option>
-                                <option>SIRA Approved CCTV Installation</option>
-                                <option>Visitor Management System</option>
-                                <option>Turnkey Office IT Setup</option>
-                                <option>IT Audit & Risk Assessment</option>
-                                <option>Networking (Wi-Fi, Switches, Firewalls)</option>
-                                <option>Data Backup & Disaster Recovery</option>
-                                <option>Fully Managed IT Support (AMC)</option>
-                                <option>IP Phone & PBX Systems</option>
-                                <option>Server Room Setup</option>
-                                <option>Structured Cat6 & Fiber Cabling</option>
-                            </select>
-                        </div>
-                        <textarea placeholder="Describe your requirement or project details..." rows="4" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md"></textarea>
-                        <button type="submit" class="w-full btn-strata-gold py-4 rounded-xl uppercase tracking-widest text-xs shadow-lg">Submit Inquiry</button>
-                    </form>
-                </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="tel" placeholder="Phone Number *" class="w-full bg-[#050D24]/30 border border-white/20 rounded-xl p-3 text-xs text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" value="+971 54 727 1603" required>
+                        <select class="w-full bg-[#050D24]/50 border border-white/20 rounded-xl p-3 text-xs text-[#CBD5E1] focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md">
+                            <option>Select Required Service</option>
+                            <option>Door Access Control & Biometrics</option>
+                            <option>SIRA Approved CCTV Installation</option>
+                            <option>Turnkey Office IT Setup</option>
+                            <option>IT Audit & Risk Assessment</option>
+                            <option>Fully Managed IT Support (AMC)</option>
+                            <option>IP Phone & PBX Systems</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Describe your requirement or project details..." rows="3" class="w-full bg-[#050D24]/30 border border-white/20 rounded-xl p-3 text-xs text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md"></textarea>
+                    <button type="submit" class="w-full btn-strata-gold py-3 rounded-xl uppercase tracking-widest text-xs shadow-lg">Submit Inquiry</button>
+                </form>
             </div>
         </section>
 
-        <!-- = FOOTER = -->
-        <footer class="transparent-header-bar text-[#CBD5E1] py-16 px-6 border-t border-white/15">
-            <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+        <!-- = FOOTER (Slide 7) = -->
+        <footer class="slide-section transparent-header-bar text-[#CBD5E1] py-16 px-6">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
                 <div>
-                    <div class="font-display font-black text-xl tracking-wider text-white mb-1">SOZA <span class="text-[#D4AF37]">IT</span></div>
-                    <p class="text-[9px] text-[#CBD5E1] tracking-[0.3em] font-bold uppercase mb-4">Solutions Designed to Inspire</p>
-                    <p class="text-xs leading-relaxed">Enterprise IT Support, Biometric Access Controls, CCTV, Visitor Management, IT Audits, Managed Networking, and Cloud Backups across Dubai, UAE.</p>
+                    <div class="font-display font-black text-xl tracking-wider text-white mb-1 moving-title">SOZA <span class="text-[#D4AF37]">IT</span></div>
+                    <p class="text-[8px] text-[#CBD5E1] tracking-[0.3em] font-bold uppercase mb-3">Solutions Designed to Inspire</p>
+                    <p class="text-xs leading-relaxed">Enterprise IT Support, Biometric Access Controls, CCTV, Managed Networking, and Cloud Backups across Dubai, UAE.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Managed IT</h4>
-                    <ul class="space-y-2 text-xs">
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Managed IT</h4>
+                    <ul class="space-y-1.5 text-xs">
                         <li><a href="web-management.html" class="hover:text-white transition">Web Management</a></li>
                         <li><a href="application-management.html" class="hover:text-white transition">Application Management</a></li>
                         <li><a href="it-security-management.html" class="hover:text-white transition">IT Security Management</a></li>
                         <li><a href="backup-storage-management.html" class="hover:text-white transition">Backup Storage</a></li>
-                        <li><a href="cloud-infrastructure-management.html" class="hover:text-white transition">Cloud Infrastructure</a></li>
-                        <li><a href="network-infrastructure-management.html" class="hover:text-white transition">Network Infrastructure</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Services</h4>
-                    <ul class="space-y-2 text-xs">
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-1.5 text-xs">
                         <li><a href="door-access-control.html" class="hover:text-white transition">Door Access & Biometrics</a></li>
                         <li><a href="cctv-installation.html" class="hover:text-white transition">CCTV Installation</a></li>
-                        <li><a href="ip-phone-telephony.html" class="hover:text-white transition">IP Phone & PBX</a></li>
                         <li><a href="server-setup.html" class="hover:text-white transition">Server Room Setup</a></li>
-                        <li><a href="structured-cabling.html" class="hover:text-white transition">Structured Cabling</a></li>
-                        <li><a href="cybersecurity.html" class="hover:text-white transition">Cybersecurity</a></li>
                         <li><a href="amc.html" class="hover:text-white transition">Fully Managed AMC</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 text-xs uppercase tracking-wider">Contact</h4>
-                    <p class="text-xs mb-2"><i class="fas fa-location-dot mr-2 text-[#D4AF37]"></i> Dubai, UAE</p>
-                    <p class="text-xs mb-2"><i class="fas fa-phone mr-2 text-[#D4AF37]"></i> +971 54 727 1603</p>
-                    <p class="text-xs mb-4"><i class="fas fa-envelope mr-2 text-[#D4AF37]"></i> sales@soza-it.com</p>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Contact</h4>
+                    <p class="text-xs mb-1.5"><i class="fas fa-location-dot mr-2 text-[#D4AF37]"></i> Dubai, UAE</p>
+                    <p class="text-xs mb-1.5"><i class="fas fa-phone mr-2 text-[#D4AF37]"></i> +971 54 727 1603</p>
+                    <p class="text-xs mb-3"><i class="fas fa-envelope mr-2 text-[#D4AF37]"></i> sales@soza-it.com</p>
                     <div class="flex gap-4 text-sm">
                         <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="hover:text-white transition"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-white transition"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-white/15">
+            <div class="max-w-7xl mx-auto text-center text-xs mt-12 pt-4 border-t border-white/10">
                 &copy; 2026 SOZA IT Solutions. All rights reserved.
             </div>
         </footer>
 
     </div>
+
+    <!-- Intersection Observer Script for Smooth Slide Transitions on Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.25
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-slide');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.slide-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
