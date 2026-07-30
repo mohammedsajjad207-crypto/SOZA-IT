@@ -38,29 +38,29 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0A0A0C;
+            background-color: #070B19;
             color: #F8FAFC;
             overflow-x: hidden;
         }
-        /* Master Background Wrapper that covers the full page */
+        /* Master Background Wrapper that covers the absolute full page matching your reference image style */
         .master-bg-wrapper {
-            background-image: linear-gradient(to bottom, rgba(10, 10, 12, 0.92), rgba(10, 10, 12, 0.95), rgba(10, 10, 12, 0.98)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=90');
+            background-image: linear-gradient(to bottom, rgba(7, 11, 25, 0.85), rgba(7, 11, 25, 0.92), rgba(7, 11, 25, 0.98), #070B19), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=90');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
         }
-        /* Strata Global Glassmorphism Card Style with semi-transparency for background integration */
+        /* Glassmorphism Cards with deep dark blue-tinted transparency to match reference aesthetic */
         .strata-card {
-            background: rgba(18, 18, 22, 0.85);
+            background: rgba(11, 18, 38, 0.75);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(34, 34, 44, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .strata-card:hover {
             border-color: #D4AF37;
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.2);
-            background: rgba(18, 18, 22, 0.95);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.25);
+            background: rgba(11, 18, 38, 0.9);
         }
         .gold-gradient-text {
             background: linear-gradient(135deg, #FFF 0%, #D4AF37 100%);
@@ -69,7 +69,7 @@
         }
         .btn-strata-gold {
             background: #D4AF37;
-            color: #0A0A0C;
+            color: #070B19;
             font-weight: 700;
             transition: all 0.3s ease;
         }
@@ -80,7 +80,7 @@
         .btn-strata-outline {
             background: transparent;
             color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
         .btn-strata-outline:hover {
@@ -88,30 +88,19 @@
             color: #D4AF37;
             background: rgba(212, 175, 55, 0.05);
         }
-        .hero-slide {
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            pointer-events: none;
-            position: absolute;
-            inset: 0;
-        }
-        .hero-slide.active-slide {
-            opacity: 1;
-            pointer-events: auto;
-        }
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0A0A0C; }
-        ::-webkit-scrollbar-thumb { background: #22222C; border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #070B19; }
+        ::-webkit-scrollbar-thumb { background: #1B2A4A; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
     </style>
 </head>
-<body class="bg-[#0A0A0C] text-[#F8FAFC]">
+<body class="bg-[#070B19] text-[#F8FAFC]">
 
     <!-- = MASTER FULL-PAGE BACKGROUND WRAPPER = -->
     <div class="master-bg-wrapper min-h-screen w-full">
 
         <!-- = TOP BAR = -->
-        <div class="bg-[#070709]/90 border-b border-[#22222C] text-xs py-2 px-6 backdrop-blur-md">
+        <div class="bg-[#050814]/90 border-b border-white/10 text-xs py-2 px-6 backdrop-blur-md">
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
                 <div class="flex items-center gap-6 text-[#94A3B8]">
                     <span><i class="fas fa-location-dot text-[#D4AF37] mr-1.5"></i> Dubai, UAE</span>
@@ -126,7 +115,7 @@
         </div>
 
         <!-- = NAVIGATION = -->
-        <nav class="sticky top-0 z-50 bg-[#0A0A0C]/80 backdrop-blur-xl border-b border-[#22222C]">
+        <nav class="sticky top-0 z-50 bg-[#070B19]/80 backdrop-blur-xl border-b border-white/10">
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="flex flex-col leading-none">
@@ -184,65 +173,67 @@
             </div>
         </nav>
 
-        <!-- = IMMERSIVE HERO SLIDER = -->
-        <header class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-[#22222C]/40">
-            <!-- Slide 1 -->
-            <div class="hero-slide active-slide inset-0">
-                <div class="absolute inset-0 bg-cover bg-center opacity-25 scale-105 transition-transform duration-[10000ms]" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=90');"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-transparent"></div>
-                <div class="max-w-5xl mx-auto px-6 text-center relative z-10 pt-16">
-                    <span class="inline-block py-1.5 px-4 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-6">
-                        Enterprise Digital Ecosystems
-                    </span>
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight leading-none mb-6">
-                        Architecting the Future <br><span class="gold-gradient-text">of Business Technology</span>
-                    </h1>
-                    <p class="text-[#94A3B8] text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-10">
-                        Empowering UAE enterprises with advanced networking, secure cloud architectures, and intelligence-driven IT solutions designed to scale.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#contact" class="btn-strata-gold px-8 py-4 rounded-xl text-xs uppercase tracking-widest">Schedule Consultation</a>
-                        <a href="#managed-it" class="btn-strata-outline px-8 py-4 rounded-xl text-xs uppercase tracking-widest">Explore Capabilities</a>
-                    </div>
+        <!-- = MATCHING REFERENCE HERO SECTION = -->
+        <header class="relative min-h-[90vh] flex flex-col justify-between px-6 pt-12 pb-16 max-w-7xl mx-auto">
+            <div>
+                <!-- Top Tag -->
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
+                    <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.25em]">Welcome to SOZA IT Solutions</span>
+                </div>
+
+                <!-- Main Headline matching user reference image -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight leading-[1.1] mb-6">
+                    Designed to <span class="gold-gradient-text">Inspire.</span><br>
+                    Empowered to <span class="gold-gradient-text">Deliver.</span>
+                </h1>
+
+                <p class="text-[#94A3B8] text-base sm:text-lg max-w-xl font-light leading-relaxed mb-10">
+                    Delivering innovative IT solutions that help businesses grow, stay secure, and lead in a digital world.
+                </p>
+
+                <!-- Action Buttons matching reference -->
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="btn-strata-gold px-8 py-4 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2">
+                        Get a Free Consultation <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                    <a href="#services" class="btn-strata-outline px-8 py-4 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2">
+                        Explore Our Services <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="hero-slide inset-0">
-                <div class="absolute inset-0 bg-cover bg-center opacity-25 scale-105 transition-transform duration-[10000ms]" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=90');"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-transparent"></div>
-                <div class="max-w-5xl mx-auto px-6 text-center relative z-10 pt-16">
-                    <span class="inline-block py-1.5 px-4 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-6">
-                        SIRA Approved Security & Hardware
-                    </span>
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight leading-none mb-6">
-                        Robust Infrastructure <br><span class="gold-gradient-text">For Mission-Critical Operations</span>
-                    </h1>
-                    <p class="text-[#94A3B8] text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-10">
-                        From enterprise biometrics and SIRA CCTV to custom server rooms and structured fiber cabling built for absolute reliability.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#services" class="btn-strata-gold px-8 py-4 rounded-xl text-xs uppercase tracking-widest">View Hardware Solutions</a>
-                        <a href="#contact" class="btn-strata-outline px-8 py-4 rounded-xl text-xs uppercase tracking-widest">Contact Engineering</a>
-                    </div>
+            <!-- Bottom Mini Feature Row matching reference card icons -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-16 pt-8 border-t border-white/10">
+                <div class="strata-card p-4 rounded-xl text-center">
+                    <i class="fas fa-server text-[#D4AF37] text-lg mb-2"></i>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Infrastructure & Hardware</h5>
                 </div>
-            </div>
-
-            <!-- Controls -->
-            <button onclick="changeSlide(-1)" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-[#121216]/80 hover:bg-[#D4AF37] hover:text-[#0A0A0C] text-white p-3 rounded-full border border-[#22222C] transition">
-                <i class="fas fa-chevron-left text-xs"></i>
-            </button>
-            <button onclick="changeSlide(1)" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-[#121216]/80 hover:bg-[#D4AF37] hover:text-[#0A0A0C] text-white p-3 rounded-full border border-[#22222C] transition">
-                <i class="fas fa-chevron-right text-xs"></i>
-            </button>
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-                <button onclick="goToSlide(0)" class="slide-dot w-8 h-1.5 rounded-full bg-[#D4AF37] transition-all"></button>
-                <button onclick="goToSlide(1)" class="slide-dot w-8 h-1.5 rounded-full bg-white/20 transition-all"></button>
+                <div class="strata-card p-4 rounded-xl text-center">
+                    <i class="fas fa-cloud text-[#D4AF37] text-lg mb-2"></i>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Cloud Solutions</h5>
+                </div>
+                <div class="strata-card p-4 rounded-xl text-center">
+                    <i class="fas fa-shield-alt text-[#D4AF37] text-lg mb-2"></i>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Cybersecurity & Data Protection</h5>
+                </div>
+                <div class="strata-card p-4 rounded-xl text-center">
+                    <i class="fas fa-desktop text-[#D4AF37] text-lg mb-2"></i>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Managed IT Services</h5>
+                </div>
+                <div class="strata-card p-4 rounded-xl text-center">
+                    <i class="fas fa-video text-[#D4AF37] text-lg mb-2"></i>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">CCTV & Access Control</h5>
+                </div>
+                <div class="strata-card p-4 rounded-xl text-center">
+                    <i class="fas fa-headset text-[#D4AF37] text-lg mb-2"></i>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Consultation & Audits</h5>
+                </div>
             </div>
         </header>
 
         <!-- = CORE PILLARS BAR = -->
-        <section class="py-12 px-6 border-b border-[#22222C]/40">
+        <section class="py-12 px-6 border-t border-white/10">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="strata-card p-6 rounded-2xl">
                     <i class="fas fa-brain text-[#D4AF37] text-xl mb-2"></i>
@@ -268,7 +259,7 @@
         </section>
 
         <!-- = MANAGED IT SERVICES (6 Cards) = -->
-        <section id="managed-it" class="py-24 px-6 border-b border-[#22222C]/40">
+        <section id="managed-it" class="py-24 px-6 border-t border-white/10">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Enterprise Operations</span>
@@ -282,7 +273,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -298,7 +289,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="App" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -314,7 +305,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -330,7 +321,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Backup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -346,7 +337,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -362,7 +353,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Network" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -378,7 +369,7 @@
         </section>
 
         <!-- = HARDWARE & INFRASTRUCTURE SERVICES (12 Cards) = -->
-        <section id="services" class="py-24 px-6 border-b border-[#22222C]/40">
+        <section id="services" class="py-24 px-6 border-t border-white/10">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Hardware & Access Systems</span>
@@ -392,7 +383,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Access" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -408,7 +399,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -424,7 +415,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Visitor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -440,7 +431,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Office" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -456,7 +447,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Server" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -472,7 +463,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Cabling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -488,7 +479,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cyber" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -504,7 +495,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Phone" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -520,7 +511,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Audit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -536,7 +527,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Wifi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -552,7 +543,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Recovery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -568,7 +559,7 @@
                     <div class="strata-card rounded-2xl overflow-hidden flex flex-col group">
                         <div class="h-48 overflow-hidden relative">
                             <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="AMC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#121216] to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1226] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div>
@@ -584,7 +575,7 @@
         </section>
 
         <!-- = ABOUT SECTION = -->
-        <section id="about" class="py-24 px-6 border-b border-[#22222C]/40">
+        <section id="about" class="py-24 px-6 border-t border-white/10">
             <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Bridging Business & Technology</span>
@@ -612,7 +603,7 @@
         </section>
 
         <!-- = STATS SECTION = -->
-        <section class="py-16 px-6 border-b border-[#22222C]/40">
+        <section class="py-16 px-6 border-t border-white/10">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                     <div class="text-4xl sm:text-5xl font-black text-white font-display">150+</div>
@@ -634,7 +625,7 @@
         </section>
 
         <!-- = CONTACT FORM SECTION = -->
-        <section id="contact" class="py-24 px-6 border-b border-[#22222C]/40">
+        <section id="contact" class="py-24 px-6 border-t border-white/10">
             <div class="max-w-4xl mx-auto">
                 <div class="strata-card p-8 sm:p-12 rounded-3xl">
                     <div class="text-center mb-10">
@@ -646,12 +637,12 @@
 
                     <form class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name *" class="w-full bg-[#070709]/80 border border-[#22222C] rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition" required>
-                            <input type="email" placeholder="Company Email *" class="w-full bg-[#070709]/80 border border-[#22222C] rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition" required>
+                            <input type="text" placeholder="Full Name *" class="w-full bg-[#050814]/80 border border-white/10 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition" required>
+                            <input type="email" placeholder="Company Email *" class="w-full bg-[#050814]/80 border border-white/10 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="tel" placeholder="Phone Number *" class="w-full bg-[#070709]/80 border border-[#22222C] rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition" value="+971 54 727 1603" required>
-                            <select class="w-full bg-[#070709]/80 border border-[#22222C] rounded-xl p-4 text-sm text-[#94A3B8] focus:border-[#D4AF37] focus:outline-none transition">
+                            <input type="tel" placeholder="Phone Number *" class="w-full bg-[#050814]/80 border border-white/10 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition" value="+971 54 727 1603" required>
+                            <select class="w-full bg-[#050814]/80 border border-white/10 rounded-xl p-4 text-sm text-[#94A3B8] focus:border-[#D4AF37] focus:outline-none transition">
                                 <option>Select Required Service</option>
                                 <option>Door Access Control & Biometrics</option>
                                 <option>SIRA Approved CCTV Installation</option>
@@ -666,7 +657,7 @@
                                 <option>Structured Cat6 & Fiber Cabling</option>
                             </select>
                         </div>
-                        <textarea placeholder="Describe your requirement or project details..." rows="4" class="w-full bg-[#070709]/80 border border-[#22222C] rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition"></textarea>
+                        <textarea placeholder="Describe your requirement or project details..." rows="4" class="w-full bg-[#050814]/80 border border-white/10 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition"></textarea>
                         <button type="submit" class="w-full btn-strata-gold py-4 rounded-xl uppercase tracking-widest text-xs">Submit Inquiry</button>
                     </form>
                 </div>
@@ -674,7 +665,7 @@
         </section>
 
         <!-- = FOOTER = -->
-        <footer class="bg-[#070709]/90 text-[#94A3B8] py-16 px-6 border-t border-[#22222C] backdrop-blur-md">
+        <footer class="bg-[#050814]/90 text-[#94A3B8] py-16 px-6 border-t border-white/10 backdrop-blur-md">
             <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
                 <div>
                     <div class="font-display font-black text-xl tracking-wider text-white mb-1">SOZA <span class="text-[#D4AF37]">IT</span></div>
@@ -717,47 +708,11 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-[#22222C]">
+            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-white/10">
                 &copy; 2026 SOZA IT Solutions. All rights reserved.
             </div>
         </footer>
 
     </div>
-
-    <!-- = SCRIPT = -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.slide-dot');
-        let slideInterval = setInterval(nextSlide, 6000);
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active-slide', i === index);
-            });
-            dots.forEach((dot, i) => {
-                dot.style.backgroundColor = (i === index) ? '#D4AF37' : 'rgba(255,255,255,0.2)';
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function changeSlide(direction) {
-            clearInterval(slideInterval);
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            showSlide(currentSlide);
-            slideInterval = setInterval(nextSlide, 6000);
-        }
-
-        function goToSlide(index) {
-            clearInterval(slideInterval);
-            currentSlide = index;
-            showSlide(currentSlide);
-            slideInterval = setInterval(nextSlide, 6000);
-        }
-    </script>
 </body>
 </html>
