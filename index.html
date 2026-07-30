@@ -41,66 +41,149 @@
             color: #F8FAFC;
             overflow-x: hidden;
         }
-        /* Master Full-Page Background: Starts from the very top (logo/navigation area) down through the entire home page with a brighter light-blue UAE skyline aesthetic */
+
+        /* Full-Screen Slideshow Background Wrapper */
         .master-bg-wrapper {
-            background-image: linear-gradient(to bottom, rgba(14, 45, 105, 0.4) 0%, rgba(10, 32, 79, 0.5) 30%, rgba(5, 13, 36, 0.85) 75%, #050D24 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
-            background-attachment: fixed;
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Slideshow Background Container & Images */
+        .slideshow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
+            opacity: 0;
+            transform: scale(1);
+            animation: kenBurnsFade 24s infinite;
         }
-        /* Glassmorphism Cards with high-visibility bright blue/cyan accents and crystal clear text */
-        .strata-card {
-            background: rgba(14, 32, 71, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(59, 130, 246, 0.35);
+
+        .slide-bg:nth-child(1) {
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.3) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.85) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
+            animation-delay: 0s;
+        }
+        .slide-bg:nth-child(2) {
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.3) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.85) 100%), url('https://images.unsplash.com/photo-1546412414-8035e1676d5a?auto=format&fit=crop&w=2000&q=95');
+            animation-delay: 8s;
+        }
+        .slide-bg:nth-child(3) {
+            background-image: linear-gradient(to bottom, rgba(5, 13, 36, 0.3) 0%, rgba(5, 13, 36, 0.45) 50%, rgba(5, 13, 36, 0.85) 100%), url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=95');
+            animation-delay: 16s;
+        }
+
+        @keyframes kenBurnsFade {
+            0% { opacity: 0; transform: scale(1); }
+            8% { opacity: 1; transform: scale(1.04); }
+            33% { opacity: 1; transform: scale(1.08); }
+            41% { opacity: 0; transform: scale(1.1); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+
+        /* Floating / Moving Text Animation for Headings */
+        @keyframes floatText {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-heading {
+            animation: floatText 4s ease-in-out infinite;
+        }
+
+        /* High Transparency Glassmorphism for Navigation, Logo area, and Headings */
+        .transparent-header-bar {
+            background: rgba(5, 13, 36, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .transparent-nav {
+            background: rgba(5, 13, 36, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Fully Transparent / Glassmorphic Headings & Cards revealing background */
+        .transparent-glass-box {
+            background: rgba(5, 13, 36, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .strata-card:hover {
+        .transparent-glass-box:hover {
             border-color: #3B82F6;
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.4);
-            background: rgba(18, 41, 92, 0.85);
+            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.3);
+            background: rgba(5, 13, 36, 0.55);
         }
+
         .gold-gradient-text {
             background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .btn-strata-gold {
-            background: #D4AF37;
+            background: rgba(212, 175, 55, 0.85);
+            backdrop-filter: blur(6px);
             color: #050D24;
             font-weight: 700;
             transition: all 0.3s ease;
         }
         .btn-strata-gold:hover {
-            background: #E5C158;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+            background: #D4AF37;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
         }
         .btn-strata-outline {
             background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
             color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.35);
             transition: all 0.3s ease;
         }
         .btn-strata-outline:hover {
             border-color: #D4AF37;
             color: #D4AF37;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.15);
         }
+
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #050D24; }
+        ::-webkit-scrollbar-track { background: rgba(5,13,36,0.8); }
         ::-webkit-scrollbar-thumb { background: #16366B; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
     </style>
 </head>
 <body class="bg-[#050D24] text-[#F8FAFC]">
 
-    <!-- = MASTER FULL-PAGE BACKGROUND WRAPPER (Starts from top logo area downward) = -->
-    <div class="master-bg-wrapper min-h-screen w-full">
+    <!-- = MASTER FULL-PAGE BACKGROUND WITH SLIDESHOW = -->
+    <div class="master-bg-wrapper">
+        <!-- Background Slideshow Layer -->
+        <div class="slideshow-container">
+            <div class="slide-bg"></div>
+            <div class="slide-bg"></div>
+            <div class="slide-bg"></div>
+        </div>
 
-        <!-- = TOP BAR = -->
-        <div class="bg-[#030712]/70 border-b border-white/10 text-xs py-2 px-6 backdrop-blur-md">
+        <!-- = TOP BAR (Transparent Logo/Home Top Section) = -->
+        <div class="transparent-header-bar text-xs py-2 px-6">
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
                 <div class="flex items-center gap-6 text-[#CBD5E1]">
                     <span><i class="fas fa-location-dot text-[#D4AF37] mr-1.5"></i> Dubai, UAE</span>
@@ -114,26 +197,27 @@
             </div>
         </div>
 
-        <!-- = NAVIGATION = -->
-        <nav class="sticky top-0 z-50 bg-[#050D24]/75 backdrop-blur-xl border-b border-white/10">
+        <!-- = NAVIGATION (Transparent Home & Logo Header) = -->
+        <nav class="sticky top-0 z-50 transparent-nav">
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="index.html" class="flex items-center gap-3 group">
+                <!-- Transparent Logo Area -->
+                <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
                     <div class="flex flex-col leading-none">
-                        <span class="font-display font-black text-2xl tracking-wider text-white">SOZA <span class="text-[#D4AF37]">IT</span></span>
+                        <span class="font-display font-black text-2xl tracking-wider text-white drop-shadow">SOZA <span class="text-[#D4AF37]">IT</span></span>
                         <span class="text-[7px] tracking-[0.4em] font-bold text-[#CBD5E1] uppercase mt-1">Solutions Designed to Inspire</span>
                     </div>
                 </a>
 
                 <div class="hidden xl:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-[#CBD5E1]">
-                    <a href="index.html" class="text-[#D4AF37] hover:text-white transition">Home</a>
-                    <a href="#about" class="hover:text-white transition">About</a>
+                    <a href="index.html" class="text-[#D4AF37] hover:text-white transition drop-shadow">Home</a>
+                    <a href="#about" class="hover:text-white transition">About Us</a>
                     
                     <!-- Services Dropdown -->
                     <div class="relative group py-2">
                         <a href="#services" class="hover:text-white transition flex items-center gap-1.5 cursor-pointer">
                             Services <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
                         </a>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-72 strata-card rounded-2xl p-3 shadow-2xl z-50 space-y-1">
+                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
                             <a href="door-access-control.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#CBD5E1] hover:text-white transition flex items-center gap-2"><i class="fas fa-door-closed text-[#D4AF37] w-4"></i> Door Access & Biometrics</a>
                             <a href="cctv-installation.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#CBD5E1] hover:text-white transition flex items-center gap-2"><i class="fas fa-video text-[#D4AF37] w-4"></i> CCTV Installation</a>
                             <a href="ip-phone-telephony.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#CBD5E1] hover:text-white transition flex items-center gap-2"><i class="fas fa-phone-alt text-[#D4AF37] w-4"></i> IP Phone & PBX</a>
@@ -148,7 +232,7 @@
                         <a href="#managed-it" class="hover:text-white transition flex items-center gap-1.5 cursor-pointer">
                             Managed IT <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
                         </a>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-72 strata-card rounded-2xl p-3 shadow-2xl z-50 space-y-1">
+                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
                             <a href="web-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#CBD5E1] hover:text-white transition flex items-center gap-2"><i class="fas fa-globe text-[#D4AF37] w-4"></i> Web Management</a>
                             <a href="application-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#CBD5E1] hover:text-white transition flex items-center gap-2"><i class="fas fa-cubes text-[#D4AF37] w-4"></i> Application Management</a>
                             <a href="it-security-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#CBD5E1] hover:text-white transition flex items-center gap-2"><i class="fas fa-user-shield text-[#D4AF37] w-4"></i> IT Security Management</a>
@@ -163,7 +247,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
+                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366]/85 backdrop-blur-md hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
                         <i class="fab fa-whatsapp text-sm"></i> WhatsApp
                     </a>
                     <a href="#contact" class="hidden sm:inline-block btn-strata-gold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider">
@@ -176,21 +260,22 @@
         <!-- = HERO SECTION = -->
         <header class="relative min-h-[90vh] flex flex-col justify-between px-6 pt-12 pb-16 max-w-7xl mx-auto">
             <div>
-                <!-- Top Tag -->
-                <div class="flex items-center gap-3 mb-6">
+                <!-- Top Tag with Floating Effect -->
+                <div class="flex items-center gap-3 mb-6 floating-heading">
                     <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
-                    <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.25em]">Welcome to SOZA IT Solutions</span>
+                    <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.255em] drop-shadow">Welcome to SOZA IT Solutions Dubai</span>
                 </div>
 
-                <!-- Main Headline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight leading-[1.1] mb-6 text-white drop-shadow-md">
-                    Designed to <span class="gold-gradient-text">Inspire.</span><br>
-                    Empowered to <span class="gold-gradient-text">Deliver.</span>
-                </h1>
-
-                <p class="text-[#E2E8F0] text-base sm:text-lg max-w-xl font-normal leading-relaxed mb-10 drop-shadow">
-                    Delivering innovative IT solutions that help businesses grow, stay secure, and lead in a digital world.
-                </p>
+                <!-- Main Headline with Floating Animation & Transparent Glass Card feel -->
+                <div class="transparent-glass-box p-8 sm:p-10 rounded-3xl max-w-3xl mb-8 floating-heading shadow-2xl">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight leading-[1.1] mb-4 text-white drop-shadow-lg">
+                        Designed to <span class="gold-gradient-text">Inspire.</span><br>
+                        Empowered to <span class="gold-gradient-text">Deliver.</span>
+                    </h1>
+                    <p class="text-[#E2E8F0] text-sm sm:text-base font-normal leading-relaxed drop-shadow">
+                        Delivering innovative IT solutions that help businesses grow, stay secure, and lead in a digital world across the United Arab Emirates.
+                    </p>
+                </div>
 
                 <!-- Action Buttons -->
                 <div class="flex flex-wrap gap-4">
@@ -204,64 +289,64 @@
             </div>
 
             <!-- Bottom Mini Feature Row -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-16 pt-8 border-t border-white/25">
-                <div class="strata-card p-4 rounded-xl text-center shadow-lg">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-16 pt-8 border-t border-white/20">
+                <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-server text-[#D4AF37] text-lg mb-2"></i>
-                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Infrastructure & Hardware</h5>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Infrastructure</h5>
                 </div>
-                <div class="strata-card p-4 rounded-xl text-center shadow-lg">
+                <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-cloud text-[#D4AF37] text-lg mb-2"></i>
                     <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Cloud Solutions</h5>
                 </div>
-                <div class="strata-card p-4 rounded-xl text-center shadow-lg">
+                <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-shield-alt text-[#D4AF37] text-lg mb-2"></i>
-                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Cybersecurity & Data Protection</h5>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Cybersecurity</h5>
                 </div>
-                <div class="strata-card p-4 rounded-xl text-center shadow-lg">
+                <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-desktop text-[#D4AF37] text-lg mb-2"></i>
                     <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">Managed IT Services</h5>
                 </div>
-                <div class="strata-card p-4 rounded-xl text-center shadow-lg">
+                <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-video text-[#D4AF37] text-lg mb-2"></i>
-                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">CCTV & Access Control</h5>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">CCTV & Access</h5>
                 </div>
-                <div class="strata-card p-4 rounded-xl text-center shadow-lg">
+                <div class="transparent-glass-box p-4 rounded-xl text-center shadow-lg">
                     <i class="fas fa-headset text-[#D4AF37] text-lg mb-2"></i>
-                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Consultation & Audits</h5>
+                    <h5 class="text-[11px] font-bold uppercase tracking-wider text-white">IT Audits</h5>
                 </div>
             </div>
         </header>
 
         <!-- = CORE PILLARS BAR = -->
-        <section class="py-12 px-6 border-t border-white/20">
+        <section class="py-12 px-6 border-t border-white/15">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="strata-card p-6 rounded-2xl shadow-xl">
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <i class="fas fa-brain text-[#D4AF37] text-xl mb-2"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Smart</h4>
-                    <p class="text-xs text-[#CBD5E1] mt-1">Intelligence-driven ecosystems</p>
+                    <p class="text-xs text-[#CBD5E1] mt-1">Intelligence ecosystems</p>
                 </div>
-                <div class="strata-card p-6 rounded-2xl shadow-xl">
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <i class="fas fa-chart-line text-[#D4AF37] text-xl mb-2"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Optimum</h4>
-                    <p class="text-xs text-[#CBD5E1] mt-1">Maximum performance output</p>
+                    <p class="text-xs text-[#CBD5E1] mt-1">Maximum performance</p>
                 </div>
-                <div class="strata-card p-6 rounded-2xl shadow-xl">
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <i class="fas fa-bolt text-[#D4AF37] text-xl mb-2"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Zealous</h4>
-                    <p class="text-xs text-[#CBD5E1] mt-1">Passionate 24/7 dedication</p>
+                    <p class="text-xs text-[#CBD5E1] mt-1">Passionate 24/7 support</p>
                 </div>
-                <div class="strata-card p-6 rounded-2xl shadow-xl">
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <i class="fas fa-bullseye text-[#D4AF37] text-xl mb-2"></i>
                     <h4 class="font-bold text-sm tracking-widest uppercase text-white">Accurate</h4>
-                    <p class="text-xs text-[#CBD5E1] mt-1">Precision technical execution</p>
+                    <p class="text-xs text-[#CBD5E1] mt-1">Precision execution</p>
                 </div>
             </div>
         </section>
 
-        <!-- = MANAGED IT SERVICES (6 Cards) = -->
-        <section id="managed-it" class="py-24 px-6 border-t border-white/20">
+        <!-- = MANAGED IT SERVICES = -->
+        <section id="managed-it" class="py-24 px-6 border-t border-white/15">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-center max-w-3xl mx-auto mb-16 transparent-glass-box p-8 rounded-3xl floating-heading shadow-2xl">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Enterprise Operations</span>
                     <h2 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white mt-2">Managed IT Services</h2>
                     <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-4"></div>
@@ -270,9 +355,9 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- 1. Web Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Web" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -286,9 +371,9 @@
                     </div>
 
                     <!-- 2. Application Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="App" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="App" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -302,9 +387,9 @@
                     </div>
 
                     <!-- 3. IT Security Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Security" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -318,9 +403,9 @@
                     </div>
 
                     <!-- 4. Backup Storage Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Backup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Backup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -334,9 +419,9 @@
                     </div>
 
                     <!-- 5. Cloud Infrastructure Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Cloud" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -350,9 +435,9 @@
                     </div>
 
                     <!-- 6. Network Infrastructure Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Network" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Network" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -368,10 +453,10 @@
             </div>
         </section>
 
-        <!-- = HARDWARE & INFRASTRUCTURE SERVICES (12 Cards) = -->
-        <section id="services" class="py-24 px-6 border-t border-white/20">
+        <!-- = HARDWARE & INFRASTRUCTURE SERVICES = -->
+        <section id="services" class="py-24 px-6 border-t border-white/15">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-center max-w-3xl mx-auto mb-16 transparent-glass-box p-8 rounded-3xl floating-heading shadow-2xl">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Hardware & Access Systems</span>
                     <h2 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white mt-2">Physical IT & Security Solutions</h2>
                     <div class="w-16 h-1 bg-[#D4AF37] mx-auto mt-4"></div>
@@ -380,9 +465,9 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- 1. Door Access Control -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Access" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Access" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -396,9 +481,9 @@
                     </div>
 
                     <!-- 2. CCTV Installation -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="CCTV" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -412,9 +497,9 @@
                     </div>
 
                     <!-- 3. Visitor Management -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Visitor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Visitor" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -428,9 +513,9 @@
                     </div>
 
                     <!-- 4. Turnkey Office IT Setup -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Office" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Office" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -444,9 +529,9 @@
                     </div>
 
                     <!-- 5. Server Room Setup -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Server" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Server" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -460,9 +545,9 @@
                     </div>
 
                     <!-- 6. Structured Cabling -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Cabling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Cabling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -476,9 +561,9 @@
                     </div>
 
                     <!-- 7. Cybersecurity & Firewall -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cyber" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cyber" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -492,9 +577,9 @@
                     </div>
 
                     <!-- 8. IP Phone & PBX -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Phone" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Phone" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -508,9 +593,9 @@
                     </div>
 
                     <!-- 9. IT Audit & Risk Assessment -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Audit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Audit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -524,9 +609,9 @@
                     </div>
 
                     <!-- 10. Managed Network -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Wifi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Wifi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -540,9 +625,9 @@
                     </div>
 
                     <!-- 11. Data Backup & Recovery -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Recovery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=800&q=80" alt="Recovery" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -556,9 +641,9 @@
                     </div>
 
                     <!-- 12. Fully Managed IT (AMC) -->
-                    <div class="strata-card rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="AMC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="AMC" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#050D24] to-transparent"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between">
@@ -574,23 +659,23 @@
             </div>
         </section>
 
-        <!-- = ABOUT SECTION = -->
-        <section id="about" class="py-24 px-6 border-t border-white/20">
+        <!-- = ABOUT US SECTION = -->
+        <section id="about" class="py-24 px-6 border-t border-white/15">
             <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-                <div>
+                <div class="transparent-glass-box p-8 sm:p-12 rounded-3xl shadow-2xl floating-heading">
                     <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Bridging Business & Technology</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-2 mb-6 leading-tight">About <span class="gold-gradient-text">SOZA IT Solutions</span></h2>
-                    <p class="text-[#CBD5E1] text-sm leading-relaxed mb-4">SOZA IT Solutions is a dynamic technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions.</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-2 mb-6 leading-tight">About Us - <span class="gold-gradient-text">SOZA IT Solutions</span></h2>
+                    <p class="text-[#CBD5E1] text-sm leading-relaxed mb-4">SOZA IT Solutions is a dynamic technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions across Dubai and the UAE.</p>
                     <p class="text-[#CBD5E1] text-sm leading-relaxed mb-4">Founded to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises with tailored digital solutions that enhance operational efficiency and drive innovation.</p>
                     <p class="text-[#CBD5E1] text-sm leading-relaxed">We are driven by <strong class="text-[#D4AF37]">innovation, integrity, and impact</strong>. Our agile, client-focused approach builds long-term partnerships for lasting success in a rapidly evolving digital world.</p>
                 </div>
                 <div class="space-y-6">
-                    <div class="strata-card p-8 rounded-2xl shadow-2xl">
+                    <div class="transparent-glass-box p-8 rounded-3xl shadow-2xl">
                         <div class="w-10 h-10 bg-[#D4AF37]/15 text-[#D4AF37] rounded-xl flex items-center justify-center text-lg mb-4"><i class="fas fa-eye"></i></div>
                         <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-wider">Our Vision</h3>
                         <p class="text-[#CBD5E1] text-sm leading-relaxed">To be a trusted leader in IT solutions, empowering digital transformation for businesses across the UAE and beyond.</p>
                     </div>
-                    <div class="strata-card p-8 rounded-2xl shadow-2xl">
+                    <div class="transparent-glass-box p-8 rounded-3xl shadow-2xl">
                         <div class="w-10 h-10 bg-[#D4AF37]/15 text-[#D4AF37] rounded-xl flex items-center justify-center text-lg mb-4"><i class="fas fa-bullseye"></i></div>
                         <h3 class="text-lg font-bold text-white mb-3 uppercase tracking-wider">Our Mission</h3>
                         <ul class="space-y-2 text-sm text-[#CBD5E1]">
@@ -603,21 +688,21 @@
         </section>
 
         <!-- = STATS SECTION = -->
-        <section class="py-16 px-6 border-t border-white/20">
+        <section class="py-16 px-6 border-t border-white/15">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <div class="text-4xl sm:text-5xl font-black text-white font-display">150+</div>
                     <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Enterprise Clients</p>
                 </div>
-                <div>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <div class="text-4xl sm:text-5xl font-black text-white font-display">98%</div>
                     <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Satisfaction Rate</p>
                 </div>
-                <div>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <div class="text-4xl sm:text-5xl font-black text-white font-display">24/7</div>
                     <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Support Availability</p>
                 </div>
-                <div>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <div class="text-4xl sm:text-5xl font-black text-white font-display">12+</div>
                     <p class="text-[#CBD5E1] text-xs uppercase tracking-widest mt-2">Years of Expertise</p>
                 </div>
@@ -625,9 +710,9 @@
         </section>
 
         <!-- = CONTACT FORM SECTION = -->
-        <section id="contact" class="py-24 px-6 border-t border-white/20">
+        <section id="contact" class="py-24 px-6 border-t border-white/15">
             <div class="max-w-4xl mx-auto">
-                <div class="strata-card p-8 sm:p-12 rounded-3xl shadow-2xl">
+                <div class="transparent-glass-box p-8 sm:p-12 rounded-3xl shadow-2xl">
                     <div class="text-center mb-10">
                         <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Get In Touch</span>
                         <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-2">Request an Expert Consultation</h2>
@@ -637,12 +722,12 @@
 
                     <form class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name *" class="w-full bg-[#030712]/90 border border-white/20 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner" required>
-                            <input type="email" placeholder="Company Email *" class="w-full bg-[#030712]/90 border border-white/20 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner" required>
+                            <input type="text" placeholder="Full Name *" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" required>
+                            <input type="email" placeholder="Company Email *" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-6">
-                            <input type="tel" placeholder="Phone Number *" class="w-full bg-[#030712]/90 border border-white/20 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner" value="+971 54 727 1603" required>
-                            <select class="w-full bg-[#030712]/90 border border-white/20 rounded-xl p-4 text-sm text-[#CBD5E1] focus:border-[#D4AF37] focus:outline-none transition shadow-inner">
+                            <input type="tel" placeholder="Phone Number *" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md" value="+971 54 727 1603" required>
+                            <select class="w-full bg-[#050D24]/60 border border-white/25 rounded-xl p-4 text-sm text-[#CBD5E1] focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md">
                                 <option>Select Required Service</option>
                                 <option>Door Access Control & Biometrics</option>
                                 <option>SIRA Approved CCTV Installation</option>
@@ -657,7 +742,7 @@
                                 <option>Structured Cat6 & Fiber Cabling</option>
                             </select>
                         </div>
-                        <textarea placeholder="Describe your requirement or project details..." rows="4" class="w-full bg-[#030712]/90 border border-white/20 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner"></textarea>
+                        <textarea placeholder="Describe your requirement or project details..." rows="4" class="w-full bg-[#050D24]/40 border border-white/25 rounded-xl p-4 text-sm text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md"></textarea>
                         <button type="submit" class="w-full btn-strata-gold py-4 rounded-xl uppercase tracking-widest text-xs shadow-lg">Submit Inquiry</button>
                     </form>
                 </div>
@@ -665,7 +750,7 @@
         </section>
 
         <!-- = FOOTER = -->
-        <footer class="bg-[#030712]/95 text-[#CBD5E1] py-16 px-6 border-t border-white/20 backdrop-blur-md">
+        <footer class="transparent-header-bar text-[#CBD5E1] py-16 px-6 border-t border-white/15">
             <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
                 <div>
                     <div class="font-display font-black text-xl tracking-wider text-white mb-1">SOZA <span class="text-[#D4AF37]">IT</span></div>
@@ -708,7 +793,7 @@
                     </div>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-white/20">
+            <div class="max-w-7xl mx-auto text-center text-xs mt-16 pt-6 border-t border-white/15">
                 &copy; 2026 SOZA IT Solutions. All rights reserved.
             </div>
         </footer>
