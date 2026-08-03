@@ -1,76 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Managed Web Management | SOZA IT Dubai</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Management | SOZA IT Dubai</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], logo: ['Orbitron', 'sans-serif'] },
-                    colors: { SOZA: { deep: '#030712', dark: '#0A0F1D', card: '#0F172A', gold: '#F59E0B', emerald: '#10B981', cyanGlow: '#00F2FE', blueGlow: '#0072FF' } }
-                }
-            }
-        }
-    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Inter:wght@700&display=swap" rel="stylesheet">
     <style>
-        .glass-card { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(0, 242, 254, 0.25); }
-        .cyan-text { background: linear-gradient(180deg, #E0F2FE 0%, #00F2FE 60%, #0284C7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .chrome-text { background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 60%, #64748B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #000; color: #fff; }
+        .transparent-glass-box { background: rgba(0,0,0,0.4); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.2); }
+        .gold-gradient-text { background: linear-gradient(135deg, #FFF 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-strata-gold { background: #D4AF37; color: #000; font-weight: 700; transition: 0.3s; }
     </style>
 </head>
-<body class="bg-SOZA-deep text-slate-100 font-sans">
-    <!-- Header -->
-    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 border-b border-slate-800 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-logo text-xl font-black chrome-text">SOZA IT</a>
-            <a href="index.html" class="text-xs font-bold uppercase text-SOZA-cyanGlow"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
-        </div>
+<body class="bg-black text-white">
+    <nav class="fixed top-0 left-0 w-full z-40 bg-black/40 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-white font-extrabold text-lg">SOZA <span class="text-[#D4AF37]">IT</span></a>
+        <a href="index.html#managed-it" class="text-xs uppercase tracking-widest text-[#D4AF37] hover:underline"><i class="fas fa-arrow-left mr-1"></i> Back to Managed IT</a>
     </nav>
-
-    <!-- Subpage Hero -->
-    <section class="py-20 px-6 bg-gradient-to-b from-SOZA-dark to-SOZA-deep border-b border-slate-800">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="text-SOZA-cyanGlow font-black text-xs uppercase tracking-widest">Managed IT Sub-Service</span>
-            <h1 class="text-4xl sm:text-6xl font-black text-white mt-2 mb-6">Web <span class="cyan-text">Management</span></h1>
-            <p class="text-slate-300 text-lg max-w-3xl mx-auto">Complete 24/7 web hosting administration, CMS security updates, speed optimization, and SSL/domain security for corporate platforms.</p>
+    <header class="pt-32 pb-16 px-6 max-w-5xl mx-auto">
+        <div class="relative rounded-3xl overflow-hidden mb-8 h-72 border border-white/20">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Web Management" class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8">
+                <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-2"><i class="fas fa-globe mr-2"></i> Managed IT</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Website & Digital <span class="gold-gradient-text">Management</span></h1>
+            </div>
         </div>
-    </section>
-
-    <!-- Details Section -->
-    <section class="py-16 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="glass-card p-8 rounded-3xl">
-            <i class="fas fa-gauge-high text-3xl text-SOZA-cyanGlow mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Performance & Speed</h3>
-            <p class="text-slate-400 text-sm">CDNs, image caching, database cleanup, and core web vitals tuning for ultra-fast load times.</p>
+        <div class="transparent-glass-box p-8 rounded-3xl space-y-6 text-sm leading-relaxed text-white/90">
+            <h2 class="text-xl font-bold text-white">Proactive Web Maintenance & Security</h2>
+            <p>Ensure your digital presence remains fast, secure, and always online with comprehensive web maintenance, CMS updates, daily cloud backups, SSL renewals, and speed optimization.</p>
+            <h3 class="text-lg font-bold text-[#D4AF37] pt-2">What's Included</h3>
+            <ul class="grid sm:grid-cols-2 gap-3 text-xs">
+                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> WordPress & CMS Security Patching</li>
+                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Uptime Monitoring & Speed Optimization</li>
+                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Domain & SSL Certificate Renewals</li>
+                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Content Updates & Technical Support</li>
+            </ul>
+            <div class="pt-4 flex gap-4">
+                <a href="index.html#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-wider">Inquire About Web Management</a>
+                <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] text-white px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            </div>
         </div>
-        <div class="glass-card p-8 rounded-3xl">
-            <i class="fas fa-shield-virus text-3xl text-SOZA-cyanGlow mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Security & Patching</h3>
-            <p class="text-slate-400 text-sm">Automated malware scanning, WAF firewall setup, and regular core plugin updates to avoid breaches.</p>
-        </div>
-        <div class="glass-card p-8 rounded-3xl">
-            <i class="fas fa-cloud-arrow-up text-3xl text-SOZA-cyanGlow mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Daily Cloud Backups</h3>
-            <p class="text-slate-400 text-sm">Off-site automated snapshots with instant 1-click restore functionality in case of server failure.</p>
-        </div>
-    </section>
-
-    <!-- Contact Form CTA -->
-    <section class="py-16 px-6 max-w-3xl mx-auto">
-        <div class="glass-card p-8 rounded-3xl border border-SOZA-cyanGlow/40">
-            <h3 class="text-2xl font-bold text-white mb-2 text-center">Request Web Management Plan</h3>
-            <form class="space-y-4 mt-6">
-                <input type="text" placeholder="Your Name" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-sm text-white" required>
-                <input type="email" placeholder="Work Email" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-sm text-white" required>
-                <input type="url" placeholder="Website URL" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3 text-sm text-white" required>
-                <button type="submit" class="w-full bg-gradient-to-r from-SOZA-cyanGlow to-SOZA-blueGlow text-SOZA-deep font-black py-3 rounded-xl uppercase text-xs">Get Custom Proposal</button>
-            </form>
-        </div>
-    </section>
+    </header>
 </body>
 </html>
