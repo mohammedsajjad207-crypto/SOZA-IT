@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Door Access Control & Biometrics | SOZA IT Dubai</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Inter:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], display: ['Inter', 'sans-serif'] },
+                    colors: { soza: { darkBlue: '#030712', gold: '#D4AF37', goldHover: '#E5C158' } }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #000; color: #fff; }
-        .transparent-glass-box { background: rgba(0,0,0,0.4); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.2); }
-        .gold-gradient-text { background: linear-gradient(135deg, #FFF 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-strata-gold { background: #D4AF37; color: #000; font-weight: 700; transition: 0.3s; }
-        .btn-strata-gold:hover { box-shadow: 0 0 25px rgba(212,175,55,0.7); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000000; color: #FFFFFF; overflow-x: hidden; }
+        .master-bg-wrapper {
+            position: relative; width: 100%; overflow: hidden; background-size: cover; background-position: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=95');
+            background-attachment: fixed; min-height: 100vh;
+        }
+        @keyframes slideFontX { 0% { transform: translateX(-15px); } 50% { transform: translateX(15px); } 100% { transform: translateX(-15px); } }
+        .moving-title { animation: slideFontX 6s ease-in-out infinite; }
+        .transparent-nav { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+        .transparent-glass-box { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); transition: all 0.4s ease; }
+        .transparent-glass-box:hover { border-color: rgba(212, 175, 55, 0.8); background: rgba(0, 0, 0, 0.65); }
+        .gold-gradient-text { background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-strata-gold { background: rgba(212, 175, 55, 0.9); color: #000000; font-weight: 700; transition: all 0.3s ease; }
+        .btn-strata-gold:hover { background: #D4AF37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+        .btn-strata-outline { background: rgba(0, 0, 0, 0.3); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease; }
+        .btn-strata-outline:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(212, 175, 55, 0.15); }
+        .logo-transparent-filter { mix-blend-mode: screen; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)); }
     </style>
 </head>
-<body class="bg-black text-white">
-    <nav class="fixed top-0 left-0 w-full z-40 bg-black/40 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="text-white font-extrabold text-lg">SOZA <span class="text-[#D4AF37]">IT</span></a>
-        <a href="index.html#services" class="text-xs uppercase tracking-widest text-[#D4AF37] hover:underline"><i class="fas fa-arrow-left mr-1"></i> Back to Home</a>
-    </nav>
-    <header class="pt-32 pb-16 px-6 max-w-5xl mx-auto">
-        <div class="relative rounded-3xl overflow-hidden mb-8 h-72 border border-white/20">
-            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80" alt="Access Control" class="w-full h-full object-cover opacity-50">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8">
-                <span class="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-2"><i class="fas fa-fingerprint mr-2"></i> Security Solutions</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold font-display">Door Access Control & <span class="gold-gradient-text">Biometrics</span></h1>
+<body class="bg-[#000000] text-[#FFFFFF]">
+    <div class="master-bg-wrapper">
+        <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
+            <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3"><img src="log22.png" alt="Logo" class="h-16 w-auto moving-title logo-transparent-filter"></a>
+                <div class="hidden xl:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="index.html#about" class="hover:text-[#D4AF37] transition">About Us</a>
+                    <a href="cctv-installation.html" class="hover:text-[#D4AF37] transition">CCTV</a>
+                    <a href="door-access-control.html" class="text-[#D4AF37] transition">Door Access</a>
+                    <a href="cybersecurity.html" class="hover:text-[#D4AF37] transition">Cybersecurity</a>
+                    <a href="amc.html" class="hover:text-[#D4AF37] transition">AMC</a>
+                </div>
+                <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
-        </div>
-        <div class="transparent-glass-box p-8 rounded-3xl space-y-6 text-sm leading-relaxed text-white/90">
-            <h2 class="text-xl font-bold text-white">Advanced Physical Access Systems in Dubai</h2>
-            <p>SOZA IT Solutions provides enterprise-grade biometric face recognition, fingerprint terminals, and RFID smart card solutions designed for secure office environments across the UAE.</p>
-            <h3 class="text-lg font-bold text-[#D4AF37] pt-2">Key Features & Capabilities</h3>
-            <ul class="grid sm:grid-cols-2 gap-3 text-xs">
-                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Multi-factor Authentication & Face ID</li>
-                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Time & Attendance Software Integration</li>
-                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Magnetic Locks & Exit Push Buttons</li>
-                <li class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fas fa-check text-[#D4AF37]"></i> Centralized IP Door Controller Panels</li>
-            </ul>
-            <div class="pt-4 flex gap-4">
-                <a href="index.html#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-wider">Request Installation Quote</a>
-                <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] text-white px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        </nav>
+
+        <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 moving-title">
+                        <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
+                        <span class="text-[#FFFFFF] text-[11px] font-extrabold uppercase tracking-[0.3em]">SOZA IT Security Infrastructure</span>
+                    </div>
+                    <div class="transparent-glass-box p-6 sm:p-8 rounded-3xl mb-6 shadow-2xl">
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display mb-3">Door Access Control & <span class="gold-gradient-text">Biometric Systems</span></h1>
+                        <p class="text-xs sm:text-sm font-medium opacity-90 leading-relaxed">Secure your corporate entry points with facial recognition, RFID card readers, biometric scanners, and centralized visitor management software in Dubai.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="index.html#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest font-bold">Request Quote <i class="fas fa-arrow-right"></i></a>
+                        <a href="index.html" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest font-bold">Home</a>
+                    </div>
+                </div>
+                <div class="transparent-glass-box p-3 rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85" alt="Access Control" class="w-full h-72 sm:h-96 object-cover rounded-2xl">
+                </div>
             </div>
-        </div>
-    </header>
+        </section>
+
+        <footer class="transparent-glass-box text-white py-12 px-6 mt-12 text-center text-xs">
+            <p>&copy; 2026 SOZA IT Solutions. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
