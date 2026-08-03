@@ -1,256 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Phone & PBX Telephony Solutions Dubai | SOZA IT</title>
-    <!-- Tailwind CSS CDN -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Phone & PBX Solutions | SOZA IT Dubai</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome 6 Pro CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts: Orbitron & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        logo: ['Orbitron', 'sans-serif'],
-                    },
-                    colors: {
-                        SOZA: {
-                            deep: '#030712',
-                            dark: '#0B132B',
-                            card: '#111D38',
-                            gold: '#D4AF37',
-                            goldLight: '#F3E5AB',
-                            goldDark: '#AA820A',
-                            white: '#FFFFFF',
-                            chrome: '#E2E8F0',
-                        }
-                    }
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], display: ['Inter', 'sans-serif'] },
+                    colors: { soza: { darkBlue: '#030712', gold: '#D4AF37', goldHover: '#E5C158' } }
                 }
             }
         }
     </script>
     <style>
-        .glass-card {
-            background: rgba(17, 29, 56, 0.75);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000000; color: #FFFFFF; overflow-x: hidden; }
+        .master-bg-wrapper {
+            position: relative; width: 100%; overflow: hidden; background-size: cover; background-position: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%), url('https://images.unsplash.com/photo-1525182008055-f88295ff597b?auto=format&fit=crop&w=2000&q=95');
+            background-attachment: fixed; min-height: 100vh;
         }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
-        }
-        .chrome-text {
-            background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 60%, #52525B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-text {
-            background: linear-gradient(180deg, #FFE897 0%, #D4AF37 60%, #8C6D1F 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-glow {
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.25);
-        }
+        @keyframes slideFontX { 0% { transform: translateX(-15px); } 50% { transform: translateX(15px); } 100% { transform: translateX(-15px); } }
+        .moving-title { animation: slideFontX 6s ease-in-out infinite; }
+        .transparent-nav { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+        .transparent-glass-box { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); transition: all 0.4s ease; }
+        .transparent-glass-box:hover { border-color: rgba(212, 175, 55, 0.8); background: rgba(0, 0, 0, 0.65); }
+        .gold-gradient-text { background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-strata-gold { background: rgba(212, 175, 55, 0.9); color: #000000; font-weight: 700; transition: all 0.3s ease; }
+        .btn-strata-gold:hover { background: #D4AF37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+        .btn-strata-outline { background: rgba(0, 0, 0, 0.3); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease; }
+        .btn-strata-outline:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(212, 175, 55, 0.15); }
+        .logo-transparent-filter { mix-blend-mode: screen; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)); }
     </style>
 </head>
-<body class="bg-SOZA-deep text-slate-100 font-sans selection:bg-SOZA-gold selection:text-SOZA-deep overflow-x-hidden">
+<body class="bg-[#000000] text-[#FFFFFF]">
+    <div class="master-bg-wrapper">
+        <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
+            <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3"><img src="log22.png" alt="Logo" class="h-16 w-auto moving-title logo-transparent-filter"></a>
+                <div class="hidden xl:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="ip-phone-telephony.html" class="text-[#D4AF37] transition">IP Phones</a>
+                    <a href="server-setup.html" class="hover:text-[#D4AF37] transition">Server Setup</a>
+                    <a href="amc.html" class="hover:text-[#D4AF37] transition">AMC</a>
+                </div>
+                <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </nav>
 
-    <!-- Top Bar -->
-    <div class="bg-SOZA-dark border-b border-slate-800/80 text-xs py-2.5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex items-center space-x-6 text-slate-300">
-                <span><i class="fas fa-location-dot text-SOZA-gold mr-2"></i> Dubai, United Arab Emirates</span>
-                <span><i class="fas fa-phone-office text-SOZA-gold mr-2"></i> Enterprise VoIP & IP PBX Systems</span>
+        <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 moving-title">
+                        <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
+                        <span class="text-[#FFFFFF] text-[11px] font-extrabold uppercase tracking-[0.3em]">SOZA IT Unified Communications</span>
+                    </div>
+                    <div class="transparent-glass-box p-6 sm:p-8 rounded-3xl mb-6 shadow-2xl">
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display mb-3">Enterprise IP Phone & <span class="gold-gradient-text">PBX Telephony</span></h1>
+                        <p class="text-xs sm:text-sm font-medium opacity-90 leading-relaxed">Crystal-clear cloud PBX systems, VoIP configuration, softphone integration, and seamless office extensions customized for businesses in Dubai.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="index.html#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest font-bold">Get Started <i class="fas fa-arrow-right"></i></a>
+                        <a href="index.html" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest font-bold">Home</a>
+                    </div>
+                </div>
+                <div class="transparent-glass-box p-3 rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1525182008055-f88295ff597b?auto=format&fit=crop&w=1000&q=85" alt="IP Phones" class="w-full h-72 sm:h-96 object-cover rounded-2xl">
+                </div>
             </div>
-            <div class="flex items-center space-x-6">
-                <a href="tel:+971547271603" class="hover:text-SOZA-gold transition font-bold text-white flex items-center">
-                    <i class="fas fa-phone mr-1.5 text-SOZA-gold"></i> +971 54 727 1603
-                </a>
-                <a href="mailto:sales@soza-it.com" class="hover:text-SOZA-gold transition text-slate-300">
-                    <i class="fas fa-envelope mr-1.5 text-SOZA-gold"></i> sales@soza-it.com
-                </a>
-            </div>
-        </div>
+        </section>
+
+        <footer class="transparent-glass-box text-white py-12 px-6 mt-12 text-center text-xs">
+            <p>&copy; 2026 SOZA IT Solutions. All rights reserved.</p>
+        </footer>
     </div>
-
-    <!-- Main Navigation Header -->
-    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 backdrop-blur-2xl border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            
-            <!-- SOZA IT Logo -->
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="logo.png" alt="SOZA IT" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('renderedLogo').style.display='flex';">
-                
-                <div id="renderedLogo" class="hidden flex-col">
-                    <div class="font-logo font-black text-2xl tracking-wider flex items-center gap-1">
-                        <span class="chrome-text">SOZA</span>
-                    </div>
-                    <span class="font-logo text-[9px] tracking-[0.35em] font-extrabold gold-text uppercase -mt-1">IT SOLUTIONS</span>
-                    <span class="text-[7px] tracking-[0.25em] text-slate-300 font-semibold uppercase">DESIGNED TO INSPIRE</span>
-                </div>
-            </a>
-
-            <!-- Navigation Links -->
-            <div class="hidden xl:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-300 items-center">
-                <a href="index.html" class="hover:text-SOZA-gold transition">Home</a>
-                <a href="index.html#about" class="hover:text-SOZA-gold transition">About Us</a>
-                <a href="index.html#services" class="text-SOZA-gold hover:text-white transition">Services</a>
-                <a href="amc.html" class="hover:text-SOZA-gold transition">AMC Contracts</a>
-                <a href="#contact" class="hover:text-SOZA-gold transition">Contact</a>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="flex items-center gap-3">
-                <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-2.5 rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 transition">
-                    <i class="fas fa-arrow-left text-SOZA-gold"></i> Back to Main Site
-                </a>
-                <a href="#contact" class="hidden sm:inline-block bg-gradient-to-r from-SOZA-gold to-SOZA-goldLight text-SOZA-deep font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition gold-glow">
-                    Get Quote
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Banner / Header -->
-    <section class="relative py-20 px-6 bg-SOZA-dark border-b border-slate-800 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
-            <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 bg-SOZA-gold/10 border border-SOZA-gold/40 text-SOZA-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
-                    <i class="fas fa-phone-office"></i> ENTERPRISE VOIP & TELEPHONY
-                </div>
-                <h1 class="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
-                    IP Phone & <span class="gold-text">PBX Telephony Solutions</span>
-                </h1>
-                <p class="text-slate-300 text-base leading-relaxed mb-8">
-                    Upgrade your corporate communication in Dubai with seamless IP PBX systems, SIP trunking, IVR interactive voice menus, multi-line desk phones, and hybrid remote extension mobility.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="bg-gradient-to-r from-SOZA-gold to-SOZA-goldDark text-SOZA-deep font-black px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-lg">
-                        Schedule Installation Survey
-                    </a>
-                    <a href="tel:+971547271603" class="bg-SOZA-card border border-slate-700 hover:border-SOZA-gold text-white font-bold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition flex items-center gap-2">
-                        <i class="fas fa-headset text-SOZA-gold"></i> Talk to Specialist
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Quick Feature Box -->
-            <div class="lg:col-span-5">
-                <div class="glass-card p-8 rounded-3xl border border-SOZA-gold/30">
-                    <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-wider border-b border-slate-800 pb-4">
-                        Supported PBX Brands
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4 text-xs font-semibold text-slate-300">
-                        <div class="flex items-center gap-2 bg-SOZA-dark p-3 rounded-xl border border-slate-800">
-                            <i class="fas fa-check text-SOZA-gold"></i> Grandstream
-                        </div>
-                        <div class="flex items-center gap-2 bg-SOZA-dark p-3 rounded-xl border border-slate-800">
-                            <i class="fas fa-check text-SOZA-gold"></i> Yealink
-                        </div>
-                        <div class="flex items-center gap-2 bg-SOZA-dark p-3 rounded-xl border border-slate-800">
-                            <i class="fas fa-check text-SOZA-gold"></i> Avaya IP Office
-                        </div>
-                        <div class="flex items-center gap-2 bg-SOZA-dark p-3 rounded-xl border border-slate-800">
-                            <i class="fas fa-check text-SOZA-gold"></i> Cisco Unified
-                        </div>
-                        <div class="flex items-center gap-2 bg-SOZA-dark p-3 rounded-xl border border-slate-800">
-                            <i class="fas fa-check text-SOZA-gold"></i> 3CX Softphone
-                        </div>
-                        <div class="flex items-center gap-2 bg-SOZA-dark p-3 rounded-xl border border-slate-800">
-                            <i class="fas fa-check text-SOZA-gold"></i> Sangoma / Asterisk
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detailed Solutions Breakdown -->
-    <section class="py-20 px-6 bg-SOZA-deep border-b border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-SOZA-gold font-extrabold text-xs uppercase tracking-widest">Key Features</span>
-                <h2 class="text-3xl font-black text-white mt-2">Complete Telephony Engineering</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 bg-SOZA-gold/20 text-SOZA-gold rounded-2xl flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">On-Premise & Cloud PBX</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Flexible deployment options whether you prefer local physical PBX hardware appliances or secure cloud-hosted VoIP setups.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 bg-SOZA-gold/20 text-SOZA-gold rounded-2xl flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-tty"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Interactive IVR & Call Queues</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Professional automated greetings, multi-language auto-attendant menus, department routing, and call queuing during peak hours.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 rounded-3xl">
-                    <div class="w-12 h-12 bg-SOZA-gold/20 text-SOZA-gold rounded-2xl flex items-center justify-center text-xl mb-6">
-                        <i class="fas fa-mobile-screen"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Mobile & Desktop Extensions</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Allow team members to make and receive business landline calls directly from their smartphones or laptops anywhere in the world.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lead Form Section -->
-    <section id="contact" class="py-20 px-6 bg-SOZA-dark">
-        <div class="max-w-3xl mx-auto glass-card p-10 rounded-3xl border border-SOZA-gold/30 shadow-2xl gold-glow">
-            <h3 class="text-3xl font-black text-white mb-2 text-center">Get IP PBX Quotation</h3>
-            <p class="text-xs text-slate-400 mb-8 text-center">Fill out the form below for site surveys and tailored pricing.</p>
-            <form class="space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Full Name *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" required>
-                    <input type="email" placeholder="Company Email *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" required>
-                </div>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="tel" placeholder="Phone Number *" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition" value="+971 " required>
-                    <input type="number" placeholder="Number of Users / Extensions" class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition">
-                </div>
-                <textarea rows="4" placeholder="Specific Requirements (e.g., Grandstream PBX setup, SIP trunks, remote extensions)..." class="w-full bg-SOZA-dark border border-slate-700 rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-SOZA-gold transition"></textarea>
-                <button type="submit" class="w-full bg-gradient-to-r from-SOZA-gold to-SOZA-goldDark text-SOZA-deep font-black py-4 rounded-xl uppercase tracking-wider text-xs transition shadow-lg">
-                    Request Proposal
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-SOZA-deep text-slate-400 py-12 px-6 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <div class="font-logo font-black text-xl tracking-wider">
-                    <span class="chrome-text">SOZA IT SOLUTIONS</span>
-                </div>
-                <p class="text-xs text-SOZA-gold tracking-widest font-bold uppercase mt-1">DESIGNED TO INSPIRE</p>
-            </div>
-            <div class="text-xs text-slate-500">
-                &copy; 2026 SOZA IT Solutions. All rights reserved.
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
