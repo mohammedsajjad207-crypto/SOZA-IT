@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cloud Infrastructure & Migration | SOZA IT Dubai</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Cloud Infrastructure Management | SOZA IT Dubai</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome 6 Free CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-    <!-- Google Fonts: Inter + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -16,209 +13,97 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        display: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        soza: {
-                            darkBlue: '#030712',
-                            gold: '#D4AF37',
-                            goldHover: '#E5C158',
-                        }
-                    }
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], display: ['Inter', 'sans-serif'] },
+                    colors: { soza: { darkBlue: '#030712', gold: '#D4AF37' } }
                 }
             }
         }
     </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #000000;
-            color: #FFFFFF;
-            overflow-x: hidden;
-        }
-
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000000; color: #FFFFFF; overflow-x: hidden; }
         .master-bg-wrapper {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=95');
-            background-attachment: fixed;
-            min-height: 100vh;
+            position: relative; width: 100%; overflow: hidden; background-size: cover; background-position: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2000&q=95');
+            background-attachment: fixed; min-height: 100vh;
         }
-
-        @keyframes slideFontX {
-            0% { transform: translateX(-15px); }
-            50% { transform: translateX(15px); }
-            100% { transform: translateX(-15px); }
-        }
-
-        .moving-title {
-            animation: slideFontX 6s ease-in-out infinite;
-        }
-
-        .transparent-nav {
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .transparent-glass-box {
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .transparent-glass-box:hover {
-            border-color: rgba(212, 175, 55, 0.8);
-            box-shadow: 0 30px 60px -12px rgba(255, 255, 255, 0.15);
-            background: rgba(0, 0, 0, 0.65);
-        }
-
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-strata-gold {
-            background: rgba(212, 175, 55, 0.9);
-            backdrop-filter: blur(6px);
-            color: #000000;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-        .btn-strata-gold:hover {
-            background: #D4AF37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
-        }
-        .btn-strata-outline {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(6px);
-            color: #FFFFFF;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-        }
-        .btn-strata-outline:hover {
-            border-color: #D4AF37;
-            color: #D4AF37;
-            background: rgba(212, 175, 55, 0.15);
-        }
-
-        .logo-transparent-filter {
-            mix-blend-mode: screen;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.6); }
-        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.4); border-radius: 3px; }
+        @keyframes slideFontX { 0% { transform: translateX(-15px); } 50% { transform: translateX(15px); } 100% { transform: translateX(-15px); } }
+        .moving-title { animation: slideFontX 6s ease-in-out infinite; }
+        .transparent-nav { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+        .transparent-glass-box { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); transition: all 0.4s ease; }
+        .transparent-glass-box:hover { border-color: rgba(212, 175, 55, 0.8); background: rgba(0, 0, 0, 0.65); }
+        .gold-gradient-text { background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-strata-gold { background: rgba(212, 175, 55, 0.9); backdrop-filter: blur(6px); color: #000000; font-weight: 700; transition: all 0.3s ease; }
+        .btn-strata-gold:hover { background: #D4AF37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+        .btn-strata-outline { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(6px); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease; }
+        .btn-strata-outline:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(212, 175, 55, 0.15); }
+        .logo-transparent-filter { mix-blend-mode: screen; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)); }
     </style>
 </head>
 <body class="bg-[#000000] text-[#FFFFFF]">
-
     <div class="master-bg-wrapper">
-
-        <!-- = NAVIGATION = -->
         <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
             <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
-                    <img src="log22.png" alt="SOZA IT Solutions Logo" class="h-16 sm:h-20 w-auto object-contain moving-title logo-transparent-filter" onerror="this.style.display='none';">
-                    <span id="logo-fallback-text" class="text-white font-extrabold text-xl tracking-wider hidden">SOZA <span class="text-[#D4AF37]">IT</span></span>
+                    <img src="log22.png" alt="SOZA IT Solutions Logo" class="h-16 sm:h-20 w-auto object-contain moving-title logo-transparent-filter">
                 </a>
-
                 <div class="hidden xl:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-[#FFFFFF]">
-                    <div class="relative group py-2">
-                        <a href="index.html" class="hover:text-[#D4AF37] transition flex items-center gap-1.5 cursor-pointer">
-                            Home <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
-                        </a>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-56 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
-                            <a href="index.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-home text-[#D4AF37] w-4"></i> Main Dashboard</a>
-                            <a href="index.html#about" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-info-circle text-[#D4AF37] w-4"></i> About SOZA IT</a>
-                        </div>
-                    </div>
-
-                    <div class="relative group py-2">
-                        <a href="index.html#managed-it" class="text-[#D4AF37] hover:text-[#D4AF37] transition flex items-center gap-1.5 cursor-pointer">
-                            Managed IT <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
-                        </a>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
-                            <a href="cloud-infrastructure-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#D4AF37] font-bold transition flex items-center gap-2"><i class="fas fa-cloud text-[#D4AF37] w-4"></i> Cloud Infrastructure</a>
-                            <a href="backup-storage-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-database text-[#D4AF37] w-4"></i> Backup Storage</a>
-                        </div>
-                    </div>
+                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="cloud-infrastructure-management.html" class="text-[#D4AF37] hover:text-[#D4AF37] transition">Cloud Infrastructure</a>
                     <a href="amc.html" class="hover:text-[#D4AF37] transition">AMC</a>
-                    <a href="index.html#contact" class="hover:text-[#D4AF37] transition">Contact</a>
                 </div>
-
                 <div class="flex items-center gap-4">
-                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
-                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp
-                    </a>
+                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow-lg"><i class="fab fa-whatsapp text-sm"></i> WhatsApp</a>
                 </div>
             </div>
         </nav>
 
-        <!-- = HERO = -->
         <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-10 items-center">
                 <div>
                     <div class="flex items-center gap-3 mb-4 moving-title">
                         <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
-                        <span class="text-[#FFFFFF] text-[11px] font-extrabold uppercase tracking-[0.3em] drop-shadow">Scalable Cloud Migration</span>
+                        <span class="text-[#FFFFFF] text-[11px] font-extrabold uppercase tracking-[0.3em]">SOZA IT Cloud Systems</span>
                     </div>
                     <div class="transparent-glass-box p-6 sm:p-8 rounded-3xl mb-6 shadow-2xl">
                         <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display tracking-tight leading-[1.2] mb-3 text-white">
-                            Cloud Infrastructure & <span class="gold-gradient-text">Management Solutions</span>
+                            Cloud Infrastructure <span class="gold-gradient-text">Management</span>
                         </h1>
                         <p class="text-[#FFFFFF] text-xs sm:text-sm font-medium leading-relaxed opacity-90">
-                            Accelerate your digital transformation with secure cloud architecture setup, Microsoft Azure, AWS integration, and hybrid data management optimized for remote teams.
+                            Microsoft 365, AWS, and Azure cloud migration, tenant optimization, identity management, and continuous resource monitoring.
                         </p>
                     </div>
                     <div class="flex flex-wrap gap-3">
                         <a href="index.html#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 font-bold">Migrate to Cloud <i class="fas fa-arrow-right text-[10px]"></i></a>
-                        <a href="index.html" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 font-bold"><i class="fas fa-chevron-left text-[10px]"></i> Back to Home</a>
+                        <a href="index.html" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 font-bold"><i class="fas fa-chevron-left text-[10px]"></i> Home</a>
                     </div>
                 </div>
                 <div class="transparent-glass-box p-3 rounded-3xl shadow-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85" alt="Cloud Infrastructure" class="w-full h-72 sm:h-96 object-cover rounded-2xl opacity-90 hover:scale-105 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85" alt="Cloud Infrastructure Management" class="w-full h-72 sm:h-96 object-cover rounded-2xl opacity-90 hover:scale-105 transition duration-700">
                 </div>
             </div>
         </section>
 
-        <!-- = DETAILS = -->
         <section class="py-16 px-6 max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-12 transparent-glass-box p-6 rounded-3xl moving-title shadow-2xl">
-                <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Enterprise Agility</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white mt-1">High-Performance Cloud Capabilities</h2>
-            </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <h3 class="text-base font-bold text-white mb-2">Seamless Migration</h3>
-                    <p class="text-xs text-white opacity-80 leading-relaxed">Zero-downtime transition of local servers, workloads, and emails onto secure cloud environments.</p>
+                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-cloud"></i></div>
+                    <h3 class="text-base font-bold text-white mb-2">Microsoft 365 & Azure</h3>
+                    <p class="text-xs text-white opacity-80 leading-relaxed">Full tenant setup, email migration, SharePoint libraries, and security policies.</p>
                 </div>
                 <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
                     <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-server"></i></div>
-                    <h3 class="text-base font-bold text-white mb-2">Hybrid Cloud Setup</h3>
-                    <p class="text-xs text-white opacity-80 leading-relaxed">Combine on-premises data centers with flexible cloud expansion for ultimate redundancy and speed.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Virtual Servers (IaaS)</h3>
+                    <p class="text-xs text-white opacity-80 leading-relaxed">Scalable cloud servers configured for maximum performance and cost-efficiency.</p>
                 </div>
                 <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
-                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="text-base font-bold text-white mb-2">Cost Optimization</h3>
-                    <p class="text-xs text-white opacity-80 leading-relaxed">Resource provisioning and active monitoring to ensure you only pay for the cloud resources you utilize.</p>
+                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-base font-bold text-white mb-2">Identity & Access Control</h3>
+                    <p class="text-xs text-white opacity-80 leading-relaxed">Multi-factor authentication (MFA) and conditional access rules for cloud users.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="transparent-glass-box text-white py-12 px-6 mt-12 text-center text-xs">
             <p class="text-[#D4AF37] font-bold">&copy; 2026 SOZA IT Solutions. All rights reserved.</p>
         </footer>
