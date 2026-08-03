@@ -1,53 +1,112 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backup Storage Management | SOZA IT Dubai</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backup & Storage Management | SOZA IT Dubai</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], logo: ['Orbitron', 'sans-serif'] }, colors: { SOZA: { deep: '#030712', dark: '#0A0F1D', cyanGlow: '#00F2FE' } } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], display: ['Inter', 'sans-serif'] },
+                    colors: { soza: { darkBlue: '#030712', gold: '#D4AF37' } }
+                }
+            }
+        }
     </script>
     <style>
-        .glass-card { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(0, 242, 254, 0.25); }
-        .cyan-text { background: linear-gradient(180deg, #E0F2FE 0%, #00F2FE 60%, #0284C7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .chrome-text { background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 60%, #64748B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000000; color: #FFFFFF; overflow-x: hidden; }
+        .master-bg-wrapper {
+            position: relative; width: 100%; overflow: hidden; background-size: cover; background-position: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0.98) 100%), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2000&q=95');
+            background-attachment: fixed; min-height: 100vh;
+        }
+        @keyframes slideFontX { 0% { transform: translateX(-15px); } 50% { transform: translateX(15px); } 100% { transform: translateX(-15px); } }
+        .moving-title { animation: slideFontX 6s ease-in-out infinite; }
+        .transparent-nav { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+        .transparent-glass-box { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); transition: all 0.4s ease; }
+        .transparent-glass-box:hover { border-color: rgba(212, 175, 55, 0.8); background: rgba(0, 0, 0, 0.65); }
+        .gold-gradient-text { background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-strata-gold { background: rgba(212, 175, 55, 0.9); backdrop-filter: blur(6px); color: #000000; font-weight: 700; transition: all 0.3s ease; }
+        .btn-strata-gold:hover { background: #D4AF37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+        .btn-strata-outline { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(6px); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.4); transition: all 0.3s ease; }
+        .btn-strata-outline:hover { border-color: #D4AF37; color: #D4AF37; background: rgba(212, 175, 55, 0.15); }
+        .logo-transparent-filter { mix-blend-mode: screen; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8)); }
     </style>
 </head>
-<body class="bg-SOZA-deep text-slate-100 font-sans">
-    <nav class="sticky top-0 z-50 bg-SOZA-deep/95 border-b border-slate-800 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-logo text-xl font-black chrome-text">SOZA IT</a>
-            <a href="index.html" class="text-xs font-bold uppercase text-SOZA-cyanGlow"><i class="fas fa-arrow-left mr-2"></i>Back to Home</a>
-        </div>
-    </nav>
+<body class="bg-[#000000] text-[#FFFFFF]">
+    <div class="master-bg-wrapper">
+        <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
+            <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
+                    <img src="log22.png" alt="SOZA IT Solutions Logo" class="h-16 sm:h-20 w-auto object-contain moving-title logo-transparent-filter">
+                </a>
+                <div class="hidden xl:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-[#FFFFFF]">
+                    <a href="index.html" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="backup-storage-management.html" class="text-[#D4AF37] hover:text-[#D4AF37] transition">Backup Storage</a>
+                    <a href="amc.html" class="hover:text-[#D4AF37] transition">AMC</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/971547271603" target="_blank" class="bg-[#25D366] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow-lg"><i class="fab fa-whatsapp text-sm"></i> WhatsApp</a>
+                </div>
+            </div>
+        </nav>
 
-    <section class="py-20 px-6 bg-gradient-to-b from-SOZA-dark to-SOZA-deep border-b border-slate-800">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="text-SOZA-cyanGlow font-black text-xs uppercase tracking-widest">Managed IT Sub-Service</span>
-            <h1 class="text-4xl sm:text-6xl font-black text-white mt-2 mb-6">Backup Storage <span class="cyan-text">Management</span></h1>
-            <p class="text-slate-300 text-lg max-w-3xl mx-auto">Automated hybrid backup architecture, immutable cloud snapshots, and high-availability disaster recovery execution.</p>
-        </div>
-    </section>
+        <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <div class="flex items-center gap-3 mb-4 moving-title">
+                        <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
+                        <span class="text-[#FFFFFF] text-[11px] font-extrabold uppercase tracking-[0.3em]">SOZA IT Data Resilience</span>
+                    </div>
+                    <div class="transparent-glass-box p-6 sm:p-8 rounded-3xl mb-6 shadow-2xl">
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display tracking-tight leading-[1.2] mb-3 text-white">
+                            Backup & <span class="gold-gradient-text">Storage Management</span>
+                        </h1>
+                        <p class="text-[#FFFFFF] text-xs sm:text-sm font-medium leading-relaxed opacity-90">
+                            Automated 3-2-1 backup strategies, disaster recovery planning, cloud storage synchronization, and local NAS array management.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="index.html#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 font-bold">Secure Data <i class="fas fa-arrow-right text-[10px]"></i></a>
+                        <a href="index.html" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 font-bold"><i class="fas fa-chevron-left text-[10px]"></i> Home</a>
+                    </div>
+                </div>
+                <div class="transparent-glass-box p-3 rounded-3xl shadow-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=85" alt="Backup Storage Management" class="w-full h-72 sm:h-96 object-cover rounded-2xl opacity-90 hover:scale-105 transition duration-700">
+                </div>
+            </div>
+        </section>
 
-    <section class="py-16 px-6 max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="glass-card p-8 rounded-3xl">
-            <i class="fas fa-database text-3xl text-SOZA-cyanGlow mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Immutable Snapshots</h3>
-            <p class="text-slate-400 text-sm">Ransomware-proof storage vaults that prevent modification or unauthorized deletion of business records.</p>
-        </div>
-        <div class="glass-card p-8 rounded-3xl">
-            <i class="fas fa-cloud text-3xl text-SOZA-cyanGlow mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Hybrid Cloud/NAS Sync</h3>
-            <p class="text-slate-400 text-sm">Local high-speed NAS recovery paired with offsite encrypted cloud replication (Azure / AWS).</p>
-        </div>
-        <div class="glass-card p-8 rounded-3xl">
-            <i class="fas fa-rotate-left text-3xl text-SOZA-cyanGlow mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Disaster Recovery Drills</h3>
-            <p class="text-slate-400 text-sm">Quarterly simulated failover drills guaranteeing minimal Recovery Time Objective (RTO).</p>
-        </div>
-    </section>
+        <section class="py-16 px-6 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
+                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-database"></i></div>
+                    <h3 class="text-base font-bold text-white mb-2">Automated 3-2-1 Backups</h3>
+                    <p class="text-xs text-white opacity-80 leading-relaxed">Multiple copies stored locally and offsite with daily verification reports.</p>
+                </div>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
+                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3 class="text-base font-bold text-white mb-2">Cloud Disaster Recovery</h3>
+                    <p class="text-xs text-white opacity-80 leading-relaxed">Instant server spin-up options in the cloud during hardware failure scenarios.</p>
+                </div>
+                <div class="transparent-glass-box p-6 rounded-2xl shadow-xl">
+                    <div class="w-10 h-10 bg-[#D4AF37]/20 text-[#D4AF37] rounded-xl flex items-center justify-center text-base mb-3"><i class="fas fa-hdd"></i></div>
+                    <h3 class="text-base font-bold text-white mb-2">NAS & SAN Architecture</h3>
+                    <p class="text-xs text-white opacity-80 leading-relaxed">High-speed local storage configuration with redundancy and fast file retrieval.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="transparent-glass-box text-white py-12 px-6 mt-12 text-center text-xs">
+            <p class="text-[#D4AF37] font-bold">&copy; 2026 SOZA IT Solutions. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
