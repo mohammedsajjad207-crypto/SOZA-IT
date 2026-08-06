@@ -3,79 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELV and VMS Systems Overview</title>
+    <title>SOZA-IT | ELV & VMS Management System</title>
+    <!-- Google Fonts & FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        h1, h2 { color: #0056b3; }
-        .section { margin-bottom: 40px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
-        .image-container { text-align: center; margin: 20px 0; }
-        .image-container img { max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; }
-        .caption { font-size: 0.9em; color: #666; font-style: italic; }
-        ul { background: #f9f9f9; padding: 20px 20px 20px 40px; border-radius: 5px; }
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --success-color: #22c55e;
+            --danger-color: #ef4444;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        aside {
+            width: 260px;
+            background-color: var(--card-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-brand {
+            padding: 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li.active a,
+        .sidebar-menu li a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success-color);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        /* Dashboard Container */
+        .dashboard-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Stats Row */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .stat-card span {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        /* VMS Camera Grid Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .camera-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .camera-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .camera-screen {
+            height: 180px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .camera-screen i {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .live-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(239, 68, 68, 0.85);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .camera-info {
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-action {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+
+        .btn-action:hover {
+            background-color: var(--accent-hover);
+        }
     </style>
 </head>
 <body>
 
-    <h1>Comprehensive Guide to ELV and VMS Systems</h1>
-    <p>Welcome to this detailed overview of Extra-Low Voltage (ELV) infrastructure and Video Management Systems (VMS). Below is a breakdown of core concepts, key components, and integration strategies.</p>
-
-    <!-- SECTION 1: ELV SYSTEMS -->
-    <div class="section">
-        <h2>1. What is an ELV System?</h2>
-        <p><strong>ELV (Extra-Low Voltage)</strong> systems encompass all modern smart technologies in a building that operate on low voltage to ensure safety, efficiency, and automated control. They are the digital nervous system of modern smart infrastructure.</p>
-        
-        <div class="image-container">
-            <!-- Image to mention in HTML: Architecture diagram of a smart building showing integrated ELV subsystems -->
-            <img src="placeholder-elv-architecture.jpg" alt="ELV Smart Building Integration Architecture">
-            <div class="caption">Figure 1: Typical ELV system integration layout in a commercial facility.</div>
+    <!-- Sidebar Navigation -->
+    <aside>
+        <div class="sidebar-brand">
+            <i class="fa-solidfa-network-wired"></i> SOZA-IT ELV
         </div>
-
-        <h3>Key Subsystems to Mention:</h3>
-        <ul>
-            <li><strong>CCTV & Surveillance:</strong> High-definition monitoring for site security.</li>
-            <li><strong>Access Control Systems (ACS):</strong> Biometrics, turnstiles, and smart card entry points.</li>
-            <li><strong>Fire Alarm & Detection:</strong> Life-safety sensors, smoke detectors, and emergency panels.</li>
-            <li><strong>BMS (Building Management System):</strong> Centralized control of HVAC, lighting, and power.</li>
-            <li><strong>Structured Cabling & Data Networks:</strong> The physical backbone (fiber/copper) supporting all communication.</li>
+        <ul class="sidebar-menu">
+            <li class="active"><a href="#"><i class="fa-solid fa-desktop"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa-solid fa-video"></i> VMS Feeds</a></li>
+            <li><a href="#"><i class="fa-solid fa-shield-halved"></i> Access Control</a></li>
+            <li><a href="#"><i class="fa-solid fa-fire-extinguisher"></i> Fire & Safety</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
         </ul>
-    </div>
+    </aside>
 
-    <!-- SECTION 2: VMS SYSTEMS -->
-    <div class="section">
-        <h2>2. What is a VMS (Video Management System)?</h2>
-        <p>A <strong>VMS</strong> is a software-driven component of an ELV security infrastructure designed to manage video feeds from cameras, handle recording, and offer real-time analytics. It serves as the brain behind modern surveillance setups.</p>
-        
-        <div class="image-container">
-            <!-- Image to mention in HTML: A modern security control room dashboard displaying multi-camera VMS feeds and analytics -->
-            <img src="placeholder-vms-dashboard.jpg" alt="VMS Control Room Dashboard">
-            <div class="caption">Figure 2: Advanced VMS interface showing live streams, PTZ controls, and event logs.</div>
+    <!-- Main Content Area -->
+    <main>
+        <header>
+            <div class="header-title">
+                <h1>ELV & VMS Command Dashboard</h1>
+            </div>
+            <div class="system-status">
+                <div class="status-dot"></div>
+                <span>Systems Operational</span>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>Active Cameras</span>
+                    <h3 id="active-cameras">12 / 12</h3>
+                </div>
+                <div class="stat-card">
+                    <span>Access Control Gates</span>
+                    <h3 id="access-gates">24 Online</h3>
+                </div>
+                <div class="stat-card">
+                    <span>Storage Utilization</span>
+                    <h3 id="storage-usage">78%</h3>
+                </div>
+                <div class="stat-card">
+                    <span>Active Alerts</span>
+                    <h3 id="active-alerts" style="color: var(--success-color);">0</h3>
+                </div>
+            </div>
+
+            <!-- VMS Surveillance Grid -->
+            <div>
+                <div class="section-header">
+                    <h2>Live VMS Feeds</h2>
+                    <button class="btn-action" id="refresh-feeds-btn"><i class="fa-solid fa-rotate"></i> Refresh Feeds</button>
+                </div>
+                <div class="camera-grid">
+                    <div class="camera-box">
+                        <div class="camera-screen">
+                            <div class="live-tag">LIVE</div>
+                            <div style="text-align: center;">
+                                <i class="fa-solid fa-video"></i>
+                                <p>Main Entrance - Cam 01</p>
+                            </div>
+                        </div>
+                        <div class="camera-info">
+                            <span>1080p @ 30fps</span>
+                            <button class="btn-action" onclick="expandCamera('Main Entrance')">Expand</button>
+                        </div>
+                    </div>
+                    <div class="camera-box">
+                        <div class="camera-screen">
+                            <div class="live-tag">LIVE</div>
+                            <div style="text-align: center;">
+                                <i class="fa-solid fa-video"></i>
+                                <p>Server Room - Cam 02</p>
+                            </div>
+                        </div>
+                        <div class="camera-info">
+                            <span>1080p @ 30fps</span>
+                            <button class="btn-action" onclick="expandCamera('Server Room')">Expand</button>
+                        </div>
+                    </div>
+                    <div class="camera-box">
+                        <div class="camera-screen">
+                            <div class="live-tag">LIVE</div>
+                            <div style="text-align: center;">
+                                <i class="fa-solid fa-video"></i>
+                                <p>Parking Garage - Cam 03</p>
+                            </div>
+                        </div>
+                        <div class="camera-info">
+                            <span>720p @ 25fps</span>
+                            <button class="btn-action" onclick="expandCamera('Parking Garage')">Expand</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </main>
 
-        <h3>Core Features to Highlight:</h3>
-        <ul>
-            <li><strong>Centralized Monitoring:</strong> Aggregates hundreds of camera feeds into a single pane of glass.</li>
-            <li><strong>Video Analytics:</strong> AI-powered tools for facial recognition, license plate recognition (LPR), and perimeter intrusion detection.</li>
-            <li><strong>Storage & Archiving:</strong> Manages local and cloud storage retention policies.</li>
-            <li><strong>Third-Party Integration:</strong> Seamlessly links with Access Control and Fire Alarms (triggering camera views upon alarm activation).</li>
-        </ul>
-    </div>
-
-    <!-- SECTION 3: INTEGRATION -->
-    <div class="section">
-        <h2>3. Synergy: How ELV and VMS Work Together</h2>
-        <p>While ELV is the broader umbrella framework, <strong>VMS is a critical specialized subsystem</strong> nested within ELV security design. Integrating them allows for automated incident response workflows.</p>
-        
-        <div class="image-container">
-            <!-- Image to mention in HTML: Flowchart showing an access control breach triggering a VMS camera zoom and alert -->
-            <img src="placeholder-integration-flowchart.jpg" alt="ELV and VMS Integration Flow">
-            <div class="caption">Figure 3: Event-driven automation workflow linking Access Control and VMS.</div>
-        </div>
-
-        <ul>
-            <li><strong>Event Triggering:</strong> An unauthorized door-opening alert from the Access Control (ELV) immediately directs the VMS to pan, tilt, and zoom (PTZ) a security camera to the exact location.</li>
-            <li><strong>Unified Interface:</strong> Operators monitor all building conditions from a single control center dashboard.</li>
-        </ul>
-    </div>
-
+    <!-- Link external script -->
+    <script src="script.js"></script>
 </body>
 </html>
