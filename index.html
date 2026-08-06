@@ -65,7 +65,6 @@
             background-size: cover;
             background-position: center;
             opacity: 1;
-            /* Updated background gradient overlay to make background image more visible (lower opacity layers) */
             background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.65) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
         }
 
@@ -115,7 +114,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        /* Ultra-Transparent Glass Boxes (Higher visibility adjustment) */
+        /* Ultra-Transparent Glass Boxes */
         .transparent-glass-box {
             background: rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(12px);
@@ -161,7 +160,6 @@
             background: rgba(212, 175, 55, 0.15);
         }
 
-        /* CSS Filter to remove white/solid background from logos and keep text visible against background images */
         .logo-transparent-filter {
             mix-blend-mode: screen;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
@@ -183,7 +181,6 @@
         <!-- = NAVIGATION = -->
         <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
             <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-                <!-- Logo Area with transparent blend mode filter applied and smaller size constraint -->
                 <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
                     <img src="Logo1.png" alt="SOZA IT Solutions Logo" class="h-12 sm:h-16 w-auto object-contain moving-title logo-transparent-filter" onerror="this.style.display='none'; document.getElementById('logo-fallback-text').style.display='block';">
                     <span id="logo-fallback-text" class="text-white font-extrabold text-xl tracking-wider hidden" style="display:none;">SOZA <span class="text-[#D4AF37]">IT</span></span>
@@ -226,7 +223,6 @@
                     <a href="#products" class="hover:text-[#D4AF37] transition">Products</a>
                     <a href="#blogs" class="hover:text-[#D4AF37] transition">Blogs</a>
                     <a href="#careers" class="hover:text-[#D4AF37] transition">Careers</a>
-                    <a href="#contact" class="hover:text-[#D4AF37] transition">Contact</a>
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -326,7 +322,7 @@
             </div>
         </section>
 
-        <!-- = NUMBER OF HAPPY CLIENTS SECTION (Updated values: 150+ happy clients, 200+ projects completed, 5+ years experience) = -->
+        <!-- = NUMBER OF HAPPY CLIENTS SECTION = -->
         <section class="slide-section py-16 px-6 max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-10 transparent-glass-box p-6 rounded-3xl moving-title shadow-2xl">
                 <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Trusted Excellence</span>
@@ -603,7 +599,7 @@
             </div>
         </section>
 
-        <!-- = PRODUCTS & AUTHORIZED SUPPLY BRANDS (Added Section) = -->
+        <!-- = PRODUCTS & AUTHORIZED SUPPLY BRANDS = -->
         <section id="products" class="slide-section py-20 px-6 max-w-7xl mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-10 transparent-glass-box p-6 rounded-3xl moving-title shadow-2xl">
                 <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Authorized Hardware & Software Supply</span>
@@ -918,7 +914,6 @@
         <footer class="slide-section transparent-glass-box text-white py-16 px-6">
             <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
                 <div>
-                    <!-- Footer Logo updated with transparent blend filter and small size -->
                     <img src="logo.png" alt="SOZA IT Solutions Logo" class="h-14 w-auto object-contain mb-2 moving-title logo-transparent-filter" onerror="this.style.display='none';">
                     <p class="text-xs leading-relaxed text-white opacity-80">Enterprise IT Support, Biometric Access Controls, CCTV, Managed Networking, and Cloud Backups across UAE.</p>
                 </div>
@@ -941,7 +936,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Contact</h4>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Get in Touch</h4>
                     <p class="text-xs mb-1.5 font-medium opacity-80"><i class="fas fa-location-dot mr-2 text-[#D4AF37]"></i> Dubai, UAE</p>
                     <p class="text-xs mb-1.5 font-medium opacity-80"><i class="fas fa-phone mr-2 text-[#D4AF37]"></i> +971 50 876 0143</p>
                     <p class="text-xs mb-3 font-medium opacity-80"><i class="fas fa-envelope mr-2 text-[#D4AF37]"></i> sales@soza-it.com</p>
