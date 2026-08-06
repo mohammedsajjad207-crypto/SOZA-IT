@@ -65,7 +65,8 @@
             background-size: cover;
             background-position: center;
             opacity: 1;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.95) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
+            /* Updated background gradient overlay to be lighter (background visible) and Burj Khalifa image in true color */
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.5) 100%), url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=2000&q=95');
         }
 
         .slide-section {
@@ -225,15 +226,11 @@
                     <a href="#products" class="hover:text-[#D4AF37] transition">Products</a>
                     <a href="#blogs" class="hover:text-[#D4AF37] transition">Blogs</a>
                     <a href="#careers" class="hover:text-[#D4AF37] transition">Careers</a>
-                    <a href="#contact" class="hover:text-[#D4AF37] transition">Contact</a>
                 </div>
 
                 <div class="flex items-center gap-4">
                     <a href="https://wa.me/971508760143" target="_blank" class="bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
                         <i class="fab fa-whatsapp text-sm"></i> WhatsApp
-                    </a>
-                    <a href="#contact" class="hidden sm:inline-block btn-strata-gold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold">
-                        Get Quote
                     </a>
                 </div>
             </div>
@@ -258,7 +255,7 @@
                 </div>
 
                 <div class="flex flex-wrap gap-3">
-                    <a href="#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg font-bold">
+                    <a href="#services" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg font-bold">
                         Get a Free Consultation <i class="fas fa-arrow-right text-[10px]"></i>
                     </a>
                     <a href="#services" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg font-bold">
@@ -288,7 +285,7 @@
                     <i class="fas fa-video text-[#D4AF37] text-base mb-1.5"></i>
                     <h5 class="text-[10px] font-bold uppercase tracking-wider text-white">CCTV & Access</h5>
                 </a>
-                <a href="#contact" class="transparent-glass-box p-3 rounded-xl text-center shadow-lg block hover:no-underline">
+                <a href="#services" class="transparent-glass-box p-3 rounded-xl text-center shadow-lg block hover:no-underline">
                     <i class="fas fa-headset text-[#D4AF37] text-base mb-1.5"></i>
                     <h5 class="text-[10px] font-bold uppercase tracking-wider text-white">IT Audits</h5>
                 </a>
@@ -861,7 +858,7 @@
                         <h3 class="text-lg font-bold text-white mb-2">Senior Network Engineer</h3>
                         <p class="text-white opacity-80 text-xs leading-relaxed mb-4">Seeking an experienced network specialist with hands-on expertise in Cisco/Fortinet routing, switching, VPN configurations, and structured cabling deployment.</p>
                     </div>
-                    <a href="#contact" class="btn-strata-gold py-2.5 px-4 rounded-xl text-center uppercase tracking-wider text-xs font-bold block">Apply Now</a>
+                    <a href="https://wa.me/971508760143" target="_blank" class="btn-strata-gold py-2.5 px-4 rounded-xl text-center uppercase tracking-wider text-xs font-bold block">Apply via WhatsApp</a>
                 </div>
 
                 <div class="transparent-glass-box p-6 rounded-3xl shadow-2xl flex flex-col justify-between">
@@ -873,47 +870,12 @@
                         <h3 class="text-lg font-bold text-white mb-2">IT Helpdesk Support Specialist</h3>
                         <p class="text-white opacity-80 text-xs leading-relaxed mb-4">Looking for a customer-oriented IT technician to provide tier-1/tier-2 technical support, hardware troubleshooting, and endpoint management for corporate clients.</p>
                     </div>
-                    <a href="#contact" class="btn-strata-gold py-2.5 px-4 rounded-xl text-center uppercase tracking-wider text-xs font-bold block">Apply Now</a>
+                    <a href="https://wa.me/971508760143" target="_blank" class="btn-strata-gold py-2.5 px-4 rounded-xl text-center uppercase tracking-wider text-xs font-bold block">Apply via WhatsApp</a>
                 </div>
             </div>
         </section>
 
-        <!-- = CONTACT FORM SECTION (Slide 8) = -->
-        <section id="contact" class="slide-section py-20 px-6 max-w-4xl mx-auto">
-            <div class="transparent-glass-box p-8 sm:p-10 rounded-3xl shadow-2xl">
-                <div class="text-center mb-6 moving-title">
-                    <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Get In Touch</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white mt-1">Request an Expert Consultation</h2>
-                    <div class="w-12 h-1 bg-[#D4AF37] mx-auto mt-2"></div>
-                    <p class="text-xs text-white opacity-80 mt-2">Speak with a SOZA IT Specialist within 15 minutes to discuss your project requirements.</p>
-                </div>
-
-                <form class="space-y-4">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Full Name *" class="w-full bg-black/50 border border-white/30 rounded-xl p-3 text-xs text-white placeholder-white/50 focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md font-medium" required>
-                        <input type="email" placeholder="Company Email *" class="w-full bg-black/50 border border-white/30 rounded-xl p-3 text-xs text-white placeholder-white/50 focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md font-medium" required>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="tel" placeholder="Phone Number *" class="w-full bg-black/50 border border-white/30 rounded-xl p-3 text-xs text-white placeholder-white/50 focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md font-medium" value="+971 50 876 0143" required>
-                        <select class="w-full bg-black/70 border border-white/30 rounded-xl p-3 text-xs text-white focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md font-medium">
-                            <option class="bg-black text-white">Select Required Service</option>
-                            <option class="bg-black text-white">Door Access Control & Biometrics</option>
-                            <option class="bg-black text-white">SIRA Approved CCTV Installation</option>
-                            <option class="bg-black text-white">Turnkey Office IT Setup</option>
-                            <option class="bg-black text-white">IT Audit & Risk Assessment</option>
-                            <option class="bg-black text-white">Fully Managed IT Support (AMC)</option>
-                            <option class="bg-black text-white">IP Phone & PBX Systems</option>
-                            <option class="bg-black text-white">ELV & VMS Systems</option>
-                            <option class="bg-black text-white">Career Application / General Inquiry</option>
-                        </select>
-                    </div>
-                    <textarea placeholder="Describe your requirement or project details..." rows="3" class="w-full bg-black/50 border border-white/30 rounded-xl p-3 text-xs text-white placeholder-white/50 focus:border-[#D4AF37] focus:outline-none transition shadow-inner backdrop-blur-md font-medium"></textarea>
-                    <button type="submit" class="w-full btn-strata-gold py-3 rounded-xl uppercase tracking-widest text-xs shadow-lg font-bold">Submit Inquiry</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- = FOOTER (Slide 9) = -->
+        <!-- = FOOTER (Slide 8) = -->
         <footer class="slide-section transparent-glass-box text-white py-16 px-6">
             <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
                 <div>
@@ -945,9 +907,9 @@
                     <p class="text-xs mb-1.5 font-medium opacity-80"><i class="fas fa-phone mr-2 text-[#D4AF37]"></i> +971 50 876 0143</p>
                     <p class="text-xs mb-3 font-medium opacity-80"><i class="fas fa-envelope mr-2 text-[#D4AF37]"></i> sales@soza-it.com</p>
                     <div class="flex gap-4 text-sm opacity-90">
-                        <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="hover:text-white transition"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/soza-it-solutions-l-l-c/?viewAsMember=true" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="hover:text-white transition"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61576890947709" target="_blank" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
