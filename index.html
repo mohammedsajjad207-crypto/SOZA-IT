@@ -222,6 +222,7 @@
                     <a href="amc.html" class="hover:text-[#D4AF37] transition">AMC</a>
                     <a href="#products" class="hover:text-[#D4AF37] transition">Products</a>
                     <a href="#blogs" class="hover:text-[#D4AF37] transition">Blogs</a>
+                    <a href="career.html" class="hover:text-[#D4AF37] transition text-[#D4AF37]">Careers</a>
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -257,8 +258,8 @@
                     <a href="#contact" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg font-bold">
                         Get a Free Consultation <i class="fas fa-arrow-right text-[10px]"></i>
                     </a>
-                    <a href="#services" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg font-bold">
-                        Explore Our Services <i class="fas fa-arrow-right text-[10px]"></i>
+                    <a href="career.html" class="btn-strata-outline px-6 py-3 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg font-bold">
+                        Join Our Team <i class="fas fa-briefcase text-[10px] text-[#D4AF37]"></i>
                     </a>
                 </div>
             </div>
@@ -284,9 +285,9 @@
                     <i class="fas fa-video text-[#D4AF37] text-base mb-1.5"></i>
                     <h5 class="text-[10px] font-bold uppercase tracking-wider text-white">CCTV & Access</h5>
                 </a>
-                <a href="#contact" class="transparent-glass-box p-3 rounded-xl text-center shadow-lg block hover:no-underline">
-                    <i class="fas fa-headset text-[#D4AF37] text-base mb-1.5"></i>
-                    <h5 class="text-[10px] font-bold uppercase tracking-wider text-white">IT Audits</h5>
+                <a href="career.html" class="transparent-glass-box p-3 rounded-xl text-center shadow-lg block hover:no-underline border-[#D4AF37]/50">
+                    <i class="fas fa-briefcase text-[#D4AF37] text-base mb-1.5"></i>
+                    <h5 class="text-[10px] font-bold uppercase tracking-wider text-white">Careers</h5>
                 </a>
             </div>
         </section>
@@ -578,7 +579,10 @@
                     <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white mt-2 mb-3 leading-tight">About Us - <span class="gold-gradient-text">SOZA IT Solutions</span></h2>
                     <p class="text-white opacity-90 text-xs sm:text-sm leading-relaxed mb-3">SOZA IT Solutions is a dynamic technology company dedicated to empowering businesses with Smart, Optimum, Zealous & Accurate IT solutions across Dubai and the UAE.</p>
                     <p class="text-white opacity-90 text-xs sm:text-sm leading-relaxed mb-3">Founded to bridge the gap between business needs and advanced technology, we specialize in supporting startups, SMEs, and enterprises with tailored digital solutions.</p>
-                    <p class="text-white opacity-90 text-xs sm:text-sm leading-relaxed">We are driven by <strong class="text-[#D4AF37]">innovation, integrity, and impact</strong>, building long-term partnerships for lasting digital success.</p>
+                    <p class="text-white opacity-90 text-xs sm:text-sm leading-relaxed mb-6">We are driven by <strong class="text-[#D4AF37]">innovation, integrity, and impact</strong>, building long-term partnerships for lasting digital success.</p>
+                    <a href="career.html" class="btn-strata-gold px-6 py-3 rounded-xl text-xs uppercase tracking-widest inline-flex items-center gap-2 shadow-lg font-bold">
+                        View Careers <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
                 <div class="space-y-4">
                     <div class="transparent-glass-box p-6 rounded-3xl shadow-2xl floating-heading">
@@ -892,7 +896,7 @@
                     <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-1.5 text-xs font-medium opacity-80">
                         <li><a href="#blogs" class="hover:text-white transition">Blogs & News</a></li>
-                        <li><a href="server-setup.html" class="hover:text-white transition">Server Room Setup</a></li>
+                        <li><a href="career.html" class="hover:text-white transition text-[#D4AF37]">Careers</a></li>
                         <li><a href="amc.html" class="hover:text-white transition">Fully Managed AMC</a></li>
                     </ul>
                 </div>
@@ -924,6 +928,11 @@
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
+                entries.entries?.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-slide');
+                    }
+                });
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active-slide');
