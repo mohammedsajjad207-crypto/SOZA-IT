@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOZA-IT - Blogs</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link your existing CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to SOZA-IT Blog</h1>
+        <a href="index.html">Home</a>
+    </header>
+
+    <main>
+        <section>
+            <h2>Latest Posts</h2>
+            <!-- This div will be filled automatically with blogs -->
+            <div id="blog-container">Loading blogs...</div>
+        </section>
+    </main>
+
+    <!-- JavaScript to fetch and display the blogs -->
+    <script>
+        // Replace with your target website's RSS feed URL
+        const rssUrl = "YOUR_TARGET_RSS_FEED_URL_HERE";
+        
+        // We use a free API like 'rss2json' to convert XML RSS to easy-to-read JSON
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('blog-container');
+                container.innerHTML = ""; // Clear "Loading..." text
+
+                if(data.status === 'ok') {
+                    data.items.forEach(item => {
+                        // Create HTML elements for each blog post
+                        const postElement = document.createElement('div');
+                        postElement.classList.add('blog-post');
+                        
+                        postElement.innerHTML = `
+                            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                            <p><small>Published on: ${new Date(item.pubDate).toLocaleDateString()}</small></p>
+                            <p>${item.description.substring(0, 150)}...</p>
+                            <a href="${item.link}" target="_blank">Read More</a>
+                            <hr>
+                        `;
+                        container.appendChild(postElement);
+                    });
+                } else {
+                    container.innerHTML = "<p>Failed to load blogs. Please check the RSS URL.</p>";
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching blogs:', error);
+                document.getElementById('blog-container').innerHTML = "<p>An error occurred while loading blogs.</p>";
+            });
+    </script>
+
+</body>
+</html>
