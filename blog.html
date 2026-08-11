@@ -1,64 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOZA-IT - Blogs</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link your existing CSS -->
-</head>
-<body>
-
-    <header>
-        <h1>Welcome to SOZA-IT Blog</h1>
-        <a href="index.html">Home</a>
-    </header>
-
-    <main>
-        <section>
-            <h2>Latest Posts</h2>
-            <!-- This div will be filled automatically with blogs -->
-            <div id="blog-container">Loading blogs...</div>
-        </section>
-    </main>
-
-    <!-- JavaScript to fetch and display the blogs -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOZA IT | Enterprise IT & Networking Solutions Dubai - Blogs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 Free CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts: Inter + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <script>
-        // Replace with your target website's RSS feed URL
-        const rssUrl = "https://mohammedsajjad207-crypto.github.io/SOZA-IT/#blogs";
-        
-        // We use a free API like 'rss2json' to convert XML RSS to easy-to-read JSON
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('blog-container');
-                container.innerHTML = ""; // Clear "Loading..." text
-
-                if(data.status === 'ok') {
-                    data.items.forEach(item => {
-                        // Create HTML elements for each blog post
-                        const postElement = document.createElement('div');
-                        postElement.classList.add('blog-post');
-                        
-                        postElement.innerHTML = `
-                            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-                            <p><small>Published on: ${new Date(item.pubDate).toLocaleDateString()}</small></p>
-                            <p>${item.description.substring(0, 150)}...</p>
-                            <a href="${item.link}" target="_blank">Read More</a>
-                            <hr>
-                        `;
-                        container.appendChild(postElement);
-                    });
-                } else {
-                    container.innerHTML = "<p>Failed to load blogs. Please check the RSS URL.</p>";
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        soza: {
+                            darkBlue: '#030712',
+                            gold: '#D4AF37',
+                            goldHover: '#E5C158',
+                        }
+                    }
                 }
-            })
-            .catch(error => {
-                console.error('Error fetching blogs:', error);
-                document.getElementById('blog-container').innerHTML = "<p>An error occurred while loading blogs.</p>";
-            });
+            }
+        }
     </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+        }
 
+        .master-bg-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.65) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
+        }
+
+        .slide-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide-section.active-slide {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes slideFontX {
+            0% { transform: translateX(-15px); }
+            50% { transform: translateX(15px); }
+            100% { transform: translateX(-15px); }
+        }
+
+        .moving-title {
+            animation: slideFontX 6s ease-in-out infinite;
+        }
+
+        @keyframes floatTextY {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-heading {
+            animation: floatTextY 4s ease-in-out infinite;
+        }
+
+        /* Highly Transparent Glassmorphism Navigation */
+        .transparent-nav {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Ultra-Transparent Glass Boxes */
+        .transparent-glass-box {
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .transparent-glass-box:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -12px rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-strata-gold {
+            background: rgba(212, 175, 55, 0.9);
+            backdrop-filter: blur(6px);
+            color: #000000;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .btn-strata-gold:hover {
+            background: #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+        }
+        .btn-strata-outline {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-strata-outline:hover {
+            border-color: #D4AF37;
+            color: #D4AF37;
+            background: rgba(212, 175, 55, 0.15);
+        }
+
+        .logo-transparent-filter {
+            mix-blend-mode: screen;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.6); }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.4); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="bg-[#000000] text-[#FFFFFF]">
+
+    <div class="master-bg-wrapper">
+        <div class="slideshow-container">
+            <div class="slide-bg"></div>
+        </div>
+
+        <!-- = NAVIGATION = -->
+        <nav class="fixed top-0 left-0 w-full z-40 transparent-nav">
+            <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3 group bg-transparent p-1 rounded-xl">
+                    <img src="Logo1.png" alt="SOZA IT Solutions Logo" class="h-12 sm:h-16 w-auto object-contain moving-title logo-transparent-filter" onerror="this.style.display='none'; document.getElementById('logo-fallback-text').style.display='block';">
+                    <span id="logo-fallback-text" class="text-white font-extrabold text-xl tracking-wider hidden" style="display:none;">SOZA <span class="text-[#D4AF37]">IT</span></span>
+                </a>
+
+                <div class="hidden xl:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-[#FFFFFF]">
+                    <a href="index.html#hero" class="hover:text-[#D4AF37] transition">Home</a>
+                    <a href="index.html#about" class="hover:text-[#D4AF37] transition">About Us</a>
+                    
+                    <div class="relative group py-2">
+                        <a href="index.html#services" class="hover:text-[#D4AF37] transition flex items-center gap-1.5 cursor-pointer">
+                            Services <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
+                        </a>
+                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
+                            <a href="door-access-control.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-door-closed text-[#D4AF37] w-4"></i> Door Access & Biometrics</a>
+                            <a href="cctv-installation.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-video text-[#D4AF37] w-4"></i> CCTV Installation</a>
+                            <a href="ip-phone-telephony.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-phone-alt text-[#D4AF37] w-4"></i> IP Phone & PBX</a>
+                            <a href="server-setup.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-server text-[#D4AF37] w-4"></i> Server Room Setup</a>
+                            <a href="structured-cabling.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-network-wired text-[#D4AF37] w-4"></i> Structured Cabling</a>
+                            <a href="cybersecurity.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-shield-alt text-[#D4AF37] w-4"></i> Cybersecurity & Firewall</a>
+                            <a href="elv-vms-system.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-network-wired text-[#D4AF37] w-4"></i> ELV & VMS Systems</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group py-2">
+                        <a href="index.html#managed-it" class="hover:text-[#D4AF37] transition flex items-center gap-1.5 cursor-pointer">
+                            Managed IT <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
+                        </a>
+                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
+                            <a href="web-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-globe text-[#D4AF37] w-4"></i> Web Management</a>
+                            <a href="application-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-cubes text-[#D4AF37] w-4"></i> Application Management</a>
+                            <a href="it-security-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-user-shield text-[#D4AF37] w-4"></i> IT Security Management</a>
+                            <a href="backup-storage-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-database text-[#D4AF37] w-4"></i> Backup Storage</a>
+                            <a href="cloud-infrastructure-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-cloud text-[#D4AF37] w-4"></i> Cloud Infrastructure</a>
+                            <a href="network-infrastructure-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-project-diagram text-[#D4AF37] w-4"></i> Network Infrastructure</a>
+                        </div>
+                    </div>
+
+                    <a href="amc.html" class="hover:text-[#D4AF37] transition">AMC</a>
+                    <a href="index.html#products" class="hover:text-[#D4AF37] transition">Products</a>
+                    <a href="blog.html" class="text-[#D4AF37] hover:text-[#D4AF37] transition drop-shadow">Blogs</a>
+                    <a href="index.html#careers" class="hover:text-[#D4AF37] transition">Careers</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/971508760143" target="_blank" class="bg-[#25D366] hover:bg-[#1ebc57] text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 transition shadow-lg">
+                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp
+                    </a>
+                    <a href="index.html#contact" class="hidden sm:inline-block btn-strata-gold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider font-bold">
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- = BLOG HERO SECTION = -->
+        <section class="slide-section pt-32 pb-16 px-6 max-w-7xl mx-auto active-slide">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-3 mb-4 moving-title">
+                    <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
+                    <span class="text-[#FFFFFF] text-[11px] font-extrabold uppercase tracking-[0.3em] drop-shadow">SOZA IT Insights Hub</span>
+                    <div class="w-8 h-[2px] bg-[#D4AF37]"></div>
+                </div>
+
+                <div class="transparent-glass-box p-8 sm:p-10 rounded-3xl mb-6 floating-heading shadow-2xl">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display tracking-tight leading-[1.2] mb-4 text-white drop-shadow-lg">
+                        Latest IT Trends & <span class="gold-gradient-text">Expert Articles</span>
+                    </h1>
+                    <p class="text-[#FFFFFF] text-xs sm:text-sm font-medium leading-relaxed drop-shadow max-w-2xl mx-auto opacity-90">
+                        Stay ahead of technology shifts with our professional insights covering enterprise cybersecurity, SIRA compliance, cloud migration, and network infrastructure in Dubai.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- = FULL BLOG POSTS GRID SECTION = -->
+        <section class="slide-section py-20 px-6 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-10 transparent-glass-box p-6 rounded-3xl moving-title shadow-2xl">
+                <span class="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.2em]">Knowledge Center</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-white mt-1">All Published Articles</h2>
+                <div class="w-12 h-1 bg-[#D4AF37] mx-auto mt-2"></div>
+                <p class="text-white opacity-90 mt-2 text-xs sm:text-sm">Explore our complete collection of resources designed for modern enterprises and business leaders.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog 1 -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Top IT Solutions for Dubai Businesses" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-calendar-alt mr-1.5 text-[#D4AF37]"></i> June 17, 2026</span>
+                            <h3 class="text-base font-bold text-white mb-2">Top IT Solutions for Dubai Businesses</h3>
+                            <p class="text-white opacity-80 text-xs leading-relaxed mb-4">In today's fast-paced business environment, Dubai companies can't afford outdated or unstable IT systems. Discover key infrastructure upgrades driving regional growth.</p>
+                        </div>
+                        <a href="blog-details.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Blog 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-calendar-alt mr-1.5 text-[#D4AF37]"></i> June 12, 2026</span>
+                            <h3 class="text-base font-bold text-white mb-2">Top Cybersecurity Trends for UAE Businesses in 2026</h3>
+                            <p class="text-white opacity-80 text-xs leading-relaxed mb-4">Discover how zero-trust architecture and advanced EDR protection are safeguarding corporate networks across Dubai.</p>
+                        </div>
+                        <a href="blog-details.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Blog 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-calendar-alt mr-1.5 text-[#D4AF37]"></i> May 28, 2026</span>
+                            <h3 class="text-base font-bold text-white mb-2">Why SIRA Compliance Matters for CCTV Installation in Dubai</h3>
+                            <p class="text-white opacity-80 text-xs leading-relaxed mb-4">An essential guide for commercial spaces and offices on meeting official security regulatory standards.</p>
+                        </div>
+                        <a href="blog-details.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" alt="Blog 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-calendar-alt mr-1.5 text-[#D4AF37]"></i> May 14, 2026</span>
+                            <h3 class="text-base font-bold text-white mb-2">Optimizing Office Productivity with Cloud Infrastructure</h3>
+                            <p class="text-white opacity-80 text-xs leading-relaxed mb-4">How transitioning your business applications to secure cloud storage scales operations seamlessly.</p>
+                        </div>
+                        <a href="blog-details.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 5 -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Blog 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-calendar-alt mr-1.5 text-[#D4AF37]"></i> April 30, 2026</span>
+                            <h3 class="text-base font-bold text-white mb-2">The Importance of Structured Cabling for Modern Offices</h3>
+                            <p class="text-white opacity-80 text-xs leading-relaxed mb-4">Prevent network bottlenecks and ensure crystal-clear data transmission with high-grade Cat6A and fiber backbones.</p>
+                        </div>
+                        <a href="blog-details.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Blog 6 -->
+                <div class="transparent-glass-box rounded-2xl overflow-hidden flex flex-col group shadow-2xl">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Blog 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[#D4AF37] text-[10px] font-bold uppercase tracking-wider block mb-1"><i class="fas fa-calendar-alt mr-1.5 text-[#D4AF37]"></i> April 15, 2026</span>
+                            <h3 class="text-base font-bold text-white mb-2">Why Your Business Needs a Managed IT Support Contract (AMC)</h3>
+                            <p class="text-white opacity-80 text-xs leading-relaxed mb-4">Discover how proactive 24/7 network monitoring and prompt IT helpdesk support save costs and eliminate downtime.</p>
+                        </div>
+                        <a href="blog-details.html" class="mt-3 inline-flex items-center gap-2 text-[#D4AF37] font-bold text-xs tracking-wider uppercase group-hover:translate-x-1 transition">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- = FOOTER = -->
+        <footer class="slide-section transparent-glass-box text-white py-16 px-6">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="logo.png" alt="SOZA IT Solutions Logo" class="h-14 w-auto object-contain mb-2 moving-title logo-transparent-filter" onerror="this.style.display='none';">
+                    <p class="text-xs leading-relaxed text-white opacity-80">Enterprise IT Support, Biometric Access Controls, CCTV, Managed Networking, and Cloud Backups across UAE.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Managed IT</h4>
+                    <ul class="space-y-1.5 text-xs font-medium opacity-80">
+                        <li><a href="web-management.html" class="hover:text-white transition">Web Management</a></li>
+                        <li><a href="application-management.html" class="hover:text-white transition">Application Management</a></li>
+                        <li><a href="it-security-management.html" class="hover:text-white transition">IT Security Management</a></li>
+                        <li><a href="backup-storage-management.html" class="hover:text-white transition">Backup Storage</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-1.5 text-xs font-medium opacity-80">
+                        <li><a href="blog.html" class="hover:text-white transition">Blogs & News</a></li>
+                        <li><a href="index.html#careers" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="server-setup.html" class="hover:text-white transition">Server Room Setup</a></li>
+                        <li><a href="amc.html" class="hover:text-white transition">Fully Managed AMC</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Get in Touch</h4>
+                    <p class="text-xs mb-1.5 font-medium opacity-80"><i class="fas fa-location-dot mr-2 text-[#D4AF37]"></i> Dubai, UAE</p>
+                    <p class="text-xs mb-1.5 font-medium opacity-80"><i class="fas fa-phone mr-2 text-[#D4AF37]"></i> +971 50 876 0143</p>
+                    <p class="text-xs mb-3 font-medium opacity-80"><i class="fas fa-envelope mr-2 text-[#D4AF37]"></i> sales@soza-it.com</p>
+                    <div class="flex gap-4 text-sm opacity-90">
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto text-center text-xs mt-12 pt-4 border-t border-white/20 text-[#D4AF37] font-bold">
+                &copy; 2026 SOZA IT Solutions. All rights reserved.
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.25
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-slide');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.slide-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
