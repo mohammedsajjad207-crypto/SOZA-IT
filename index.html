@@ -65,7 +65,8 @@
             background-size: cover;
             background-position: center;
             opacity: 1;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.65) 100%), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=95');
+            /* Updated to a high-end data center / server room enterprise background image */
+            background-image: linear-gradient(to bottom, rgba(3, 7, 18, 0.6) 0%, rgba(3, 7, 18, 0.75) 50%, rgba(3, 7, 18, 0.9) 100%), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2400&q=95');
         }
 
         .slide-section {
@@ -128,6 +129,20 @@
             transform: translateY(-5px);
             box-shadow: 0 30px 60px -12px rgba(255, 255, 255, 0.15);
             background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Solid Opaque Background for Services and Managed IT Dropdown menus */
+        .solid-dropdown-menu {
+            background: #030712 !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        .solid-dropdown-menu a {
+            background: #030712 !important;
+        }
+        .solid-dropdown-menu a:hover {
+            background: rgba(212, 175, 55, 0.15) !important;
         }
 
         .gold-gradient-text {
@@ -194,14 +209,14 @@
                         <a href="#services" class="hover:text-[#D4AF37] transition flex items-center gap-1.5 cursor-pointer">
                             Services <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
                         </a>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
-                            <a href="door-access-control.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-door-closed text-[#D4AF37] w-4"></i> Door Access & Biometrics</a>
-                            <a href="cctv-installation.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-video text-[#D4AF37] w-4"></i> CCTV Installation</a>
-                            <a href="ip-phone-telephony.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-phone-alt text-[#D4AF37] w-4"></i> IP Phone & PBX</a>
-                            <a href="server-setup.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-server text-[#D4AF37] w-4"></i> Server Room Setup</a>
-                            <a href="structured-cabling.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-network-wired text-[#D4AF37] w-4"></i> Structured Cabling</a>
-                            <a href="cybersecurity.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-shield-alt text-[#D4AF37] w-4"></i> Cybersecurity & Firewall</a>
-                            <a href="elv-vms-system.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-network-wired text-[#D4AF37] w-4"></i> ELV & VMS Systems</a>
+                        <div class="absolute top-full left-0 hidden group-hover:block w-72 solid-dropdown-menu rounded-2xl p-3 shadow-2xl z-50 space-y-1">
+                            <a href="door-access-control.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-door-closed text-[#D4AF37] w-4"></i> Door Access & Biometrics</a>
+                            <a href="cctv-installation.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-video text-[#D4AF37] w-4"></i> CCTV Installation</a>
+                            <a href="ip-phone-telephony.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-phone-alt text-[#D4AF37] w-4"></i> IP Phone & PBX</a>
+                            <a href="server-setup.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-server text-[#D4AF37] w-4"></i> Server Room Setup</a>
+                            <a href="structured-cabling.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-network-wired text-[#D4AF37] w-4"></i> Structured Cabling</a>
+                            <a href="cybersecurity.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-shield-alt text-[#D4AF37] w-4"></i> Cybersecurity & Firewall</a>
+                            <a href="elv-vms-system.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-network-wired text-[#D4AF37] w-4"></i> ELV & VMS Systems</a>
                         </div>
                     </div>
 
@@ -209,13 +224,13 @@
                         <a href="#managed-it" class="hover:text-[#D4AF37] transition flex items-center gap-1.5 cursor-pointer">
                             Managed IT <i class="fas fa-chevron-down text-[8px] text-[#D4AF37]"></i>
                         </a>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-72 transparent-glass-box rounded-2xl p-3 shadow-2xl z-50 space-y-1">
-                            <a href="web-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-globe text-[#D4AF37] w-4"></i> Web Management</a>
-                            <a href="application-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-cubes text-[#D4AF37] w-4"></i> Application Management</a>
-                            <a href="it-security-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-user-shield text-[#D4AF37] w-4"></i> IT Security Management</a>
-                            <a href="backup-storage-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-database text-[#D4AF37] w-4"></i> Backup Storage</a>
-                            <a href="cloud-infrastructure-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-cloud text-[#D4AF37] w-4"></i> Cloud Infrastructure</a>
-                            <a href="network-infrastructure-management.html" class="block px-3 py-2 rounded-xl hover:bg-white/10 text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-project-diagram text-[#D4AF37] w-4"></i> Network Infrastructure</a>
+                        <div class="absolute top-full left-0 hidden group-hover:block w-72 solid-dropdown-menu rounded-2xl p-3 shadow-2xl z-50 space-y-1">
+                            <a href="web-management.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-globe text-[#D4AF37] w-4"></i> Web Management</a>
+                            <a href="application-management.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-cubes text-[#D4AF37] w-4"></i> Application Management</a>
+                            <a href="it-security-management.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-user-shield text-[#D4AF37] w-4"></i> IT Security Management</a>
+                            <a href="backup-storage-management.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-database text-[#D4AF37] w-4"></i> Backup Storage</a>
+                            <a href="cloud-infrastructure-management.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-cloud text-[#D4AF37] w-4"></i> Cloud Infrastructure</a>
+                            <a href="network-infrastructure-management.html" class="block px-3 py-2 rounded-xl text-xs text-[#FFFFFF] hover:text-[#D4AF37] transition flex items-center gap-2"><i class="fas fa-project-diagram text-[#D4AF37] w-4"></i> Network Infrastructure</a>
                         </div>
                     </div>
 
